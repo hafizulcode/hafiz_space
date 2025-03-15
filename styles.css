@@ -1,0 +1,239 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #fff;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff6f61;
+}
+
+.hero {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 10px 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff6f61;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #ff3b2f;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.video-container, .image-container, .quote-container, .gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+iframe {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+.quote-container .quote {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.quote-container .quote p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.quote-container .quote .reference {
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.gallery-container .gallery-item {
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.gallery-container .gallery-item:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  iframe {
+    height: 200px;
+  }
+
+  .image-container img, .gallery-container .gallery-item {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  section h2 {
+    font-size: 28px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Islamic Stickers */
+.sticker {
+  position: fixed;
+  font-family: 'Amiri', serif;
+  font-size: 24px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: float 5s infinite ease-in-out;
+}
+
+.sticker-1 {
+  top: 10%;
+  left: 5%;
+  transform: rotate(-10deg);
+}
+
+.sticker-2 {
+  top: 20%;
+  right: 5%;
+  transform: rotate(10deg);
+}
+
+.sticker-3 {
+  bottom: 20%;
+  left: 5%;
+  transform: rotate(-15deg);
+}
+
+.sticker-4 {
+  bottom: 10%;
+  right: 5%;
+  transform: rotate(15deg);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
