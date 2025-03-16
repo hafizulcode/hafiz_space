@@ -1,147 +1,88 @@
-/* General Styles */
+/* Modern Gradient Background */
 body {
-  font-family: 'Amiri', serif;
-  background-color: #0077b6; /* Blue background */
-  color: #ffffff; /* White text for contrast */
-  text-align: right; /* Align text to the right for Arabic */
-  direction: rtl; /* Right-to-left for Arabic */
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Sticker Container */
-.sticker-container {
+/* Glass Morphism Navigation */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Parallax Hero Effect */
+.parallax-hero {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('islamic-pattern.jpg') fixed center/cover;
+  height: 100vh;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 20px 0;
+  align-items: center;
+  justify-content: center;
 }
 
-.sticker {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffd700; /* Gold color for Arabic text */
-  padding: 10px;
-  border: 2px solid #ffd700;
-  border-radius: 10px;
-  margin: 10px;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+/* Animated Cards */
+.quran-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.quran-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
-/* Header and Navigation */
-header {
-  text-align: center;
-  padding: 50px 0;
-}
-
-.nav-links {
-  list-style: none;
-  padding: 0;
-}
-
-.nav-links li {
-  display: inline;
-  margin: 0 15px;
-}
-
-.nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-/* Hero Section */
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-}
-
-.hero .btn {
-  background-color: #ffd700;
-  color: #0077b6;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
-}
-
-/* Sections */
-section {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-/* Quote Section */
-.quote-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.quote {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-  margin: 10px;
-  width: 30%;
-}
-
-.quote p {
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-.quote .reference {
-  font-size: 1rem;
-  color: #ffd700;
-}
-
-/* Gallery Section */
-.gallery-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.gallery-item {
-  width: 200px;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  margin: 10px;
-  border-radius: 10px;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin-top: 50px;
-}
-
-/* Back to Top Button */
-#back-to-top {
+/* Floating Action Button */
+.fab-menu {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #ffd700;
-  color: #0077b6;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+.fab-button {
+  background: #ff6f61;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(255,111,97,0.3);
+  transition: all 0.3s;
 }
 
-#back-to-top:hover {
-  background-color: #e6b800;
+/* Gradient Sections */
+.gradient-section {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+}
+
+/* 3D Gallery Effect */
+.gallery-item {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.gallery-item img {
+  transition: transform 0.5s;
+}
+.gallery-item:hover img {
+  transform: rotateX(15deg) rotateY(15deg);
+}
+
+/* Animated Prayer Times */
+.prayer-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s;
+}
+.prayer-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff6f61;
+  border-radius: 10px;
 }

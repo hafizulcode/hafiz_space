@@ -1,35 +1,36 @@
-// Disable right-click and inspect element
-document.addEventListener("contextmenu", (e) => e.preventDefault());
-document.addEventListener("keydown", (e) => {
-  if (e.ctrlKey && (e.key === "u" || e.key === "U" || e.key === "I" || e.key === "i")) {
-    e.preventDefault();
-  }
+// Animate On Scroll (AOS) Initialization
+AOS.init({
+  duration: 1000,
+  once: true
 });
 
-// Back to Top Button
-const backToTopButton = document.getElementById("back-to-top");
-window.onscroll = function() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    backToTopButton.style.display = "block";
-  } else {
-    backToTopButton.style.display = "none";
-  }
-};
-
-backToTopButton.addEventListener("click", () => {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+// Interactive Floating Menu
+document.querySelector('.fab-button').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.fab-options').classList.toggle('show');
 });
 
-// Dark/Light Mode Toggle
-const themeToggle = document.getElementById("theme-toggle");
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  themeToggle.innerHTML = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-});
+// Dynamic Prayer Times Loader
+function updatePrayerTimes() {
+  // Add API integration here
+  const times = {
+    fajr: '4:30 AM',
+    dhuhr: '12:30 PM',
+    asr: '4:00 PM',
+    maghrib: '6:30 PM',
+    isha: '8:00 PM'
+  };
+  
+  Object.entries(times).forEach(([prayer, time]) => {
+    document.querySelector(`#${prayer}-time`).textContent = time;
+  });
+}
 
-// Loading Animation
-window.addEventListener("load", () => {
-  const loader = document.querySelector(".loader");
-  loader.style.display = "none";
+// Quran Player Controls
+document.querySelectorAll('.quran-card audio').forEach(player => {
+  player.addEventListener('play', function() {
+    document.querySelectorAll('audio').forEach(other => {
+      if(other !== this) other.pause();
+    });
+  });
 });
