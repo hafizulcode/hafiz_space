@@ -3,129 +3,624 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Welcome to Hafiz_space! Explore Islamic content in a modern way.">
-  <meta name="keywords" content="Islamic website, Quran, Hadith, Prayer Times, Islamic Art">
-  <meta name="author" content="Hafiz">
-  <title>Hafiz_space</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Scheherazade+New:wght@700&display=swap" rel="stylesheet">
+  <meta name="description" content="Islamic Website - Premium Platform for Videos, Images, and Audio Lectures">
+  <meta name="keywords" content="Islamic, Quran, Hadith, Videos, Images, Audio, Premium">
+  <meta name="author" content="Your Name">
+  <title>Premium Islamic Website</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&display=swap" rel="stylesheet">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f1f3f5;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  header {
+    background: linear-gradient(135deg, #2980b9, #6dd5fa);
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar {
+    background: #2c3e50;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-brand:hover {
+    color: #f39c12;
+  }
+
+  .section-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #2c3e50;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+
+  footer {
+    background: #2c3e50;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .media-section {
+    margin: 60px 0;
+  }
+
+  .media-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .media-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .media-card img, .media-card video, .media-card audio {
+    width: 100%;
+    border-radius: 15px;
+    max-height: 500px;
+    object-fit: cover;
+  }
+
+  .upload-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+
+  .btn-primary {
+    background: #2980b9;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: #6dd5fa;
+    transform: translateY(-2px);
+  }
+
+  .social-links a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .social-links a:hover {
+    color: #f39c12;
+  }
+
+  .share-buttons {
+    margin-top: 20px;
+  }
+
+  .share-buttons a {
+    margin-right: 15px;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+
+  .share-buttons a:hover {
+    color: #34495e;
+  }
+
+  .dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown-item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .dropdown-item:hover {
+    background-color: #2980b9;
+    color: #fff;
+  }
+
+  .sticker-icon {
+    font-size: 1.8rem;
+    margin-right: 10px;
+    color: #f39c12;
+  }
+
+  /* Extra Styling for Forms */
+  input, select, textarea {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: #2980b9;
+    outline: none;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Add some custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #2980b9;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #34495e;
+  }
+
+</style>
 </head>
 <body>
-  <!-- Preloader -->
-  <div class="loader"></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
-  <!-- Dynamic Bismillah Header -->
-  <div class="dynamic-header">
-    <div class="bismillah-carousel">
-      <div class="bismillah-slide active">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-      <div class="bismillah-slide">مَا شَاءَ اللَّهُ</div>
-      <div class="bismillah-slide">سُبْحَانَ اللَّهِ</div>
+  <!-- Header -->
+  <header>
+    <h1>Premium Islamic Website</h1>
+    <p>Explore and Share Islamic Videos, Images, and Audio Lectures</p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Islamic Website</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#images">Images</a></li>
+          <li class="nav-item"><a class="nav-link" href="#audio">Audio</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+              <i class="fas fa-ellipsis-v"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#prayer-times">Prayer Times</a></li>
+              <li><a class="dropdown-item" href="#live-streaming">Live Streaming</a></li>
+              <li><a class="dropdown-item" href="#qa-forum">Q&A Forum</a></li>
+              <li><a class="dropdown-item" href="#news">Islamic News</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-
-  <!-- Floating Action Menu -->
-  <div class="fab-menu">
-    <button class="fab-button"><i class="fas fa-bars"></i></button>
-    <div class="fab-options">
-      <a href="#prayer-times"><i class="fas fa-clock"></i></a>
-      <a href="#donate"><i class="fas fa-hand-holding-heart"></i></a>
-      <a href="#contact"><i class="fas fa-envelope"></i></a>
-    </div>
-  </div>
-
-  <!-- Modern Navigation -->
-  <nav class="glass-nav">
-    <div class="logo">Hafiz_space</div>
-    <ul class="nav-links">
-      <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#quran"><i class="fas fa-quran"></i> Quran</a></li>
-      <li><a href="#hadith"><i class="fas fa-book-open"></i> Hadith</a></li>
-      <li><a href="#gallery"><i class="fas fa-camera"></i> Gallery</a></li>
-      <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
-    </ul>
   </nav>
 
-  <!-- Parallax Hero Section -->
-  <section class="parallax-hero" id="home">
-    <div class="hero-content">
-      <h1 data-aos="zoom-in">Welcome to Hafiz_space</h1>
-      <p data-aos="fade-up">A Modern Platform for Islamic Knowledge & Creativity</p>
-      <div class="cta-buttons" data-aos="fade-up">
-        <a href="#quran" class="btn btn-glow"><i class="fas fa-download"></i> Explore Now</a>
-        <a href="#donate" class="btn btn-glow"><i class="fas fa-donate"></i> Support Us</a>
-      </div>
-    </div>
-  </section>
+  <!-- Main Content -->
+  <div class="container my-5">
+    <!-- Home Section -->
+    <section id="home">
+      <h2 class="section-title"><i class="fas fa-home sticker-icon"></i>Welcome to Our Premium Islamic Website</h2>
+      <p>This platform allows you to upload and share Islamic videos, images, and audio lectures. Explore and learn more about Islam in a modern and user-friendly environment.</p>
+    </section>
 
-  <!-- Quran Section with Cards -->
-  <section id="quran" class="section">
-    <div class="section-header" data-aos="fade-right">
-      <h2><i class="fas fa-quran"></i> Quran Recitation</h2>
-      <p>Listen to Beautiful Recitations</p>
-    </div>
-    <div class="card-container">
-      <div class="quran-card" data-aos="flip-left">
-        <div class="card-icon"><i class="fas fa-play-circle"></i></div>
-        <h3>Surah Al-Fatiha</h3>
-        <audio controls>
-          <source src="fatiha.mp3" type="audio/mpeg">
-        </audio>
+    <!-- Video Section -->
+    <section id="videos" class="media-section">
+      <h2 class="section-title"><i class="fas fa-video sticker-icon"></i>Videos</h2>
+      <div class="upload-form">
+        <h3>Upload Video</h3>
+        <form action="/upload-video" method="post" enctype="multipart/form-data">
+          <input type="file" name="video" accept="video/*" required>
+          <button type="submit" class="btn btn-primary mt-3">Upload</button>
+        </form>
       </div>
-      <!-- Add more cards -->
-    </div>
-  </section>
-
-  <!-- Interactive Prayer Times -->
-  <section id="prayer-times" class="section gradient-section">
-    <div class="section-header" data-aos="fade-left">
-      <h2><i class="fas fa-clock"></i> Prayer Times</h2>
-      <p>Today's Prayer Schedule</p>
-    </div>
-    <div class="prayer-grid" data-aos="zoom-in">
-      <div class="prayer-card">
-        <span>Fajr</span>
-        <h4>4:30 AM</h4>
-      </div>
-      <!-- Add other prayers -->
-    </div>
-  </section>
-
-  <!-- 3D Gallery -->
-  <section id="gallery" class="section">
-    <div class="gallery-container">
-      <div class="gallery-item" data-aos="zoom-in">
-        <img src="islamic-art1.jpg" alt="Art 1">
-        <div class="gallery-overlay">
-          <h3>Islamic Calligraphy</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="media-card">
+            <video controls>
+              <source src="islamic-video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h4 class="mt-3">Video Title</h4>
+            <p>Description of the video.</p>
+            <div class="share-buttons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
         </div>
+        <!-- Add more video cards here -->
       </div>
-      <!-- Add more gallery items -->
-    </div>
-  </section>
+    </section>
 
-  <!-- Floating Donation Button -->
-  <div class="donation-bubble">
-    <div class="bubble-text">Support Our Work</div>
-    <button class="bubble-button"><i class="fas fa-donate"></i></button>
+    <!-- Image Section -->
+    <section id="images" class="media-section">
+      <h2 class="section-title"><i class="fas fa-image sticker-icon"></i>Images</h2>
+      <div class="upload-form">
+        <h3>Upload Image</h3>
+        <form action="/upload-image" method="post" enctype="multipart/form-data">
+          <input type="file" name="image" accept="image/*" required>
+          <button type="submit" class="btn btn-primary mt-3">Upload</button>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="media-card">
+            <img src="islamic-image.jpg" alt="Islamic Image">
+            <h4 class="mt-3">Image Title</h4>
+            <p>Description of the image.</p>
+            <div class="share-buttons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more image cards here -->
+      </div>
+    </section>
+
+    <!-- Audio Section -->
+    <section id="audio" class="media-section">
+      <h2 class="section-title"><i class="fas fa-music sticker-icon"></i>Audio Lectures</h2>
+      <div class="upload-form">
+        <h3>Upload Audio</h3>
+        <form action="/upload-audio" method="post" enctype="multipart/form-data">
+          <input type="file" name="audio" accept="audio/*" required>
+          <button type="submit" class="btn btn-primary mt-3">Upload</button>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="media-card">
+            <audio controls>
+              <source src="islamic-audio.mp3" type="audio/mpeg">
+              Your browser does not support the audio tag.
+            </audio>
+            <h4 class="mt-3">Audio Title</h4>
+            <p>Description of the audio.</p>
+            <div class="share-buttons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more audio cards here -->
+      </div>
+    </section>
+
+
+
+
+
+
+          
+          
+          
+          
+          
+           
+          
+          <!-- Prayer Times Section -->
+<section class="prayer-times">
+  <h2 class="section-title"><i class="fas fa-clock sticker-icon"></i>Today's Prayer Times</h2>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Fajr: 4:30 AM</li>
+    <li class="list-group-item">Dhuhr: 12:15 PM</li>
+    <!-- Add other prayer times -->
+  </ul>
+</section>
+
+<!-- Live Streaming Section -->
+<section class="live-streaming">
+  <h2 class="section-title"><i class="fas fa-video sticker-icon"></i>Live Lectures</h2>
+  <iframe src="https://drive.google.com/file/d/1-JgHYttGx5S8NNAIeyanPoEpB_YRNtE6/preview" width="100%" height="auto" style="max-width: 640px; max-height: 360px;" allow="autoplay"></iframe>
+</section>
+
+<!-- Quran Search Section -->
+<section class="quran-search">
+  <h2 class="section-title"><i class="fas fa-quran sticker-icon"></i>Search the Quran</h2>
+  <input type="text" class="form-control" placeholder="Search Surah or Ayah...">
+  <div class="search-results mt-2">
+    <div class="ayah-card">
+      <p class="arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+      <p class="translation">In the name of Allah, the Most Gracious, the Most Merciful.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Course Section -->
+<section class="course-card">
+  <h2 class="section-title"><i class="fas fa-graduation-cap sticker-icon"></i>Islamic Courses</h2>
+  <img src="tajweed-course.jpg" class="card-img-top">
+  <h5>Learn Tajweed</h5>
+  <p>Master Quranic recitation rules in 10 lessons.</p>
+  <button class="btn btn-primary">Enroll Now</button>
+</section>
+
+<!-- QA Forum Section -->
+<section class="qa-forum">
+  <h2 class="section-title"><i class="fas fa-question-circle sticker-icon"></i>Q&A Forum</h2>
+  <div class="question">
+    <h5>What is the Nisab for Zakat?</h5>
+    <p>Asked by: Muhammad</p>
+  </div>
+  <div class="answer">
+    <p>Answer: For gold, it is 7.5 tola (85 grams)...</p>
+    <p>Answered by: Scholar Abdullah</p>
+  </div>
+</section>
+
+<!-- News Section -->
+<section class="news-card">
+  <h2 class="section-title"><i class="fas fa-newspaper sticker-icon"></i>Islamic News</h2>
+  <img src="hajj-news.jpg" class="card-img-top">
+  <h5>2024 Hajj Applications Open!</h5>
+  <p>The Saudi government has announced...</p>
+  <a href="#" class="btn btn-primary">Read More</a>
+</section>
+
+<!-- Zakat Calculator Section -->
+<section class="zakat-calculator">
+  <h2 class="section-title"><i class="fas fa-calculator sticker-icon"></i>Zakat Calculator</h2>
+  <input type="number" class="form-control" placeholder="Enter your savings">
+  <button class="btn btn-primary mt-2">Calculate</button>
+  <div class="result mt-3">Zakat Amount: 2.5%</div>
+</section>
+
+<!-- Social Networking Section -->
+<section class="social-post">
+  <h2 class="section-title"><i class="fas fa-users sticker-icon"></i>Social Post</h2>
+  <div class="user-info">
+    <img src="user-avatar.jpg" class="avatar">
+    <h6>Muhammad</h6>
+  </div>
+  <p>Today's Hadith: "The best among you are those who benefit others."</p>
+  <div class="actions">
+    <button class="btn btn-sm btn-primary">Like</button>
+    <button class="btn btn-sm btn-secondary">Comment</button>
+  </div>
+</section>
+
+<!-- Event Management Section -->
+<section class="event-card">
+  <h2 class="section-title"><i class="fas fa-calendar-alt sticker-icon"></i>Islamic Events</h2>
+  <div class="card-body">
+    <h5>Ramadan Iftar Party</h5>
+    <p>Date: March 25, 2025</p>
+    <p>Location: Dhaka, Bangladesh</p>
+    <button class="btn btn-primary">Register Now</button>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+          
+          
+    <!-- Contact Section -->
+    <section id="contact" class="my-5">
+      <h2 class="section-title"><i class="fas fa-envelope sticker-icon"></i>Contact Us</h2>
+      <div class="upload-form">
+        <form action="/contact" method="post">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </section>
   </div>
 
-  <!-- Custom Footer -->
-  <footer class="gradient-footer">
-    <div class="footer-content">
-      <div class="social-links">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
-      <p>&copy; 2024 Hafiz_space. All rights reserved</p>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Premium Islamic Website. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
     </div>
   </footer>
+  
+  
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="script.js"></script>
+
+
+
+
+  
+    <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"> 
+      
+      
+  // 1. Smooth Scroll for Navigation
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  });
+
+  // 2. Sticky Navbar
+  window.onscroll = function() { stickyNavbar(); };
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  function stickyNavbar() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+
+  // 3. Scroll Animations
+  function animateOnScroll() {
+    var elements = document.querySelectorAll('.animate-on-scroll');
+    var windowHeight = window.innerHeight;
+
+    elements.forEach(function (element) {
+      var elementTop = element.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - 100) {
+        element.classList.add('fadeIn');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateOnScroll);
+  window.addEventListener('load', animateOnScroll); // Trigger on page load
+
+  // 4. Modal Popup (for Special Announcements)
+  var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+  myModal.show(); // Automatically show the modal on page load
+
+  // 5. Smooth Hover Effects for Buttons & Links
+  document.querySelectorAll('.hover-effect').forEach(item => {
+    item.addEventListener('mouseover', function() {
+      this.classList.add('hovered');
+    });
+    item.addEventListener('mouseout', function() {
+      this.classList.remove('hovered');
+    });
+  });
+
+  // 6. Testimonial Carousel (Bootstrap)
+  // Carousel will work automatically with the Bootstrap Carousel component
+  // No additional JS needed for it to work, but here is how you can trigger it:
+  var carousel = new bootstrap.Carousel(document.getElementById('carouselExample'));
+
+  // 7. Back-to-Top Button
+  var mybutton = document.getElementById("myBtn");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  };
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  // 8. Smooth Fade-in for Content (Page Load Animation)
+  window.onload = function() {
+    document.body.classList.add('fade-in');
+  };
+
+
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+ 
+ 
+ <!-- Add this to your HTML for images you want to lazy load -->
+<img src="placeholder.jpg" data-src="image-to-lazy-load.jpg" alt="Description" class="lazy-load">
+
+
+  // Lazy Load Images
+  document.addEventListener("DOMContentLoaded", function() {
+    let lazyImages = document.querySelectorAll('.lazy-load');
+    let observer = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove('lazy-load');
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    lazyImages.forEach(function(img) {
+      observer.observe(img);
+    });
+  });
+
+  </script>
+
 </body>
 </html>
