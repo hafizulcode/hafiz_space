@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-
-
-
-  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "38e69043-9c69-4b52-8899-339d161d77e7",
-    });
-  });
-</script>
-
-
-
-  
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Islamic Website - Premium Platform for Videos, Images, and Audio Lectures">
@@ -29,8 +13,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&display=swap" rel="stylesheet">
+  
   <style>
-    /* Your original CSS */
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #f1f3f5;
@@ -204,8 +188,6 @@
       background-color: #333 !important;
     }
 
-    
-
     /* Premium Frame for Content */
     .premium-frame {
       border: 2px solid #f39c12;
@@ -213,6 +195,7 @@
       padding: 20px;
       background: #fff;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      margin: 20px 0; /* Added margin for spacing */
     }
 
     /* New Features CSS */
@@ -225,7 +208,7 @@
       min-height: 400px;
     }
 
-   /* Image Gallery Lightbox */
+    /* Image Gallery Lightbox */
     .gallery-item {
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -281,6 +264,23 @@
       40% { transform: translateY(-30px); }
       60% { transform: translateY(-15px); }
     }
+
+    /* Added spacing for content */
+    .media-card {
+      margin: 20px 0; /* Added margin for spacing */
+    }
+
+    .media-card img, .media-card video, .media-card audio {
+      margin: 20px 0; /* Added margin for spacing */
+    }
+
+    .media-card h2, .media-card h4, .media-card p {
+      margin: 20px 0; /* Added margin for spacing */
+    }
+
+    .share-buttons {
+      margin: 20px 0; /* Added margin for spacing */
+    }
   </style>
 </head>
 <body>
@@ -317,25 +317,32 @@
   <div class="container my-5">
     <!-- Home Section -->
     <section id="home">
-      <h2 class="section-title"><i class="fas fa-home sticker-icon"></i>Welcome to Our Premium Islamic Website</h2>
+      <h2 class="section-title"><i class="fas fa-home sticker-icon"></i>HOME</h2>
       <p>This platform allows you to explore and share Islamic videos, images, and audio lectures. Learn more about Islam in a modern and user-friendly environment.</p>
     </section>
 
     <!-- Videos Section -->
     <section id="videos" class="media-section">
       <h2 class="section-title"><i class="fas fa-video sticker-icon"></i>Videos</h2>
+      
+      <!-- First video -->
       <div class="premium-frame">
-        <div class="media-card">
+        <div class="media-card">                            
           <h2 class="mt-3">Video Title 1</h2>
           <div class="video-container">
             <iframe src="https://www.youtube.com/embed/jaXx6HdumU4"></iframe>
           </div>
           <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/embed/jaXx6HdumU4" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20video:%20https://www.youtube.com/embed/jaXx6HdumU4" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/videos/1" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/videos/1&text=Check%20out%20this%20video" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="fb-messenger://share/?link=https://yourwebsite.com/videos/1" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20video:%20https://yourwebsite.com/videos/1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
+      
+      <!-- Second video -->
       <div class="premium-frame">
         <div class="media-card">
           <h2 class="mt-3">Video Title 2</h2>
@@ -343,8 +350,11 @@
             <iframe src="https://drive.google.com/file/d/1-JgHYttGx5S8NNAIeyanPoEpB_YRNtE6/preview"></iframe>
           </div>
           <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://drive.google.com/file/d/1-JgHYttGx5S8NNAIeyanPoEpB_YRNtE6/preview" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20video:%20https://drive.google.com/file/d/1-JgHYttGx5S8NNAIeyanPoEpB_YRNtE6/preview" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/videos/2" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/videos/2&text=Check%20out%20this%20video" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="fb-messenger://share/?link=https://yourwebsite.com/videos/2" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20video:%20https://yourwebsite.com/videos/2" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
@@ -359,8 +369,11 @@
           <h4 class="mt-3">Image Title</h4>
           <p>Description of the image.</p>
           <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/islamic-image.jpg" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20image:%20https://example.com/islamic-image.jpg" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/images/1" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/images/1&text=Check%20out%20this%20image" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="fb-messenger://share/?link=https://yourwebsite.com/images/1" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20image:%20https://yourwebsite.com/images/1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
@@ -378,8 +391,11 @@
           <h4 class="mt-3">Audio Title</h4>
           <p>Description of the audio.</p>
           <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/islamic-audio.mp3" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20audio:%20https://example.com/islamic-audio.mp3" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/audio/1" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/audio/1&text=Check%20out%20this%20audio" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="fb-messenger://share/?link=https://yourwebsite.com/audio/1" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20audio:%20https://yourwebsite.com/audio/1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
@@ -391,8 +407,11 @@
       <div class="premium-frame">
         <iframe src="https://drive.google.com/file/d/1-JgHYttGx5S8NNAIeyanPoEpB_YRNtE6/preview" width="100%" height="auto" style="max-width: 640px; max-height: 360px;" allow="autoplay"></iframe>
         <div class="share-buttons mt-3">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://drive.google.com/file/d/1-JgHYttGx5S8NNAIeyanPoEpB_YRNtE6/preview" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20live%20stream:%20https://drive.google.com/file/d/1-JgHYttGx5S8NNAIeyanPoEpB_YRNtE6/preview" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/live/1" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/live/1&text=Check%20out%20this%20live%20stream" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="fb-messenger://share/?link=https://yourwebsite.com/live/1" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+          <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20live%20stream:%20https://yourwebsite.com/live/1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </section>
@@ -406,15 +425,19 @@
           <h5>2024 Hajj Applications Open!</h5>
           <p>The Saudi government has announced...</p>
           <a href="#" class="btn btn-primary">Read More</a>
+          <div class="share-buttons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/news/1" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/news/1&text=Check%20out%20this%20news" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="fb-messenger://share/?link=https://yourwebsite.com/news/1" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20news:%20https://yourwebsite.com/news/1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
       </div>
     </section>
+  </div>
 
-    <!
-    
-    
-    
- <!-- Footer -->
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Premium Islamic Website. All rights reserved.</p>
     <p>Developed by <strong>Hafizul Islam</strong> | Phone: <a href="tel:01744348961">01744348961</a> | Email: <a href="mailto:hafizul9996@gmail.com">hafizul9996@gmail.com</a></p>
@@ -501,34 +524,30 @@
     const tooltipList = tooltipTriggerList.map(tooltipTriggerEl => {
       return new bootstrap.Tooltip(tooltipTriggerEl);
     });
-
-   
   </script>
 
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyAec-iZXss58NCLvLzE5xYrs7IQGOt_ib4",
-    authDomain: "push-b0651.firebaseapp.com",
-    projectId: "push-b0651",
-    storageBucket: "push-b0651.firebasestorage.app",
-    messagingSenderId: "997345780347",
-    appId: "1:997345780347:web:46eca581bf8ee97b7d78de",
-    measurementId: "G-D3F3EEKN8L"
-  };
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAec-iZXss58NCLvLzE5xYrs7IQGOt_ib4",
+      authDomain: "push-b0651.firebaseapp.com",
+      projectId: "push-b0651",
+      storageBucket: "push-b0651.firebasestorage.app",
+      messagingSenderId: "997345780347",
+      appId: "1:997345780347:web:46eca581bf8ee97b7d78de",
+      measurementId: "G-D3F3EEKN8L"
+    };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
 </body>
-
 </html>
