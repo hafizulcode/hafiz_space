@@ -15,260 +15,312 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&display=swap" rel="stylesheet">
   
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #e4e4e4;
-      color: #333;
-      line-height: 1.6;
-    }
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff82;
+  color: #333;
+  line-height: 1.6;
+}
 
-    header {
-      background: linear-gradient(135deg, #2980b9, #6dd5fa);
-      color: #fff;
-      padding: 1px 0;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .navbar {
-      background: #2c3e50;
-      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    }
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-    .navbar-brand {
-      font-family: 'Pacifico', cursive;
-      font-size: 3rem;
-      letter-spacing: px;
-      color: #fff;
-      transition: color 0.3s ease;
-    }
+::-webkit-scrollbar-thumb {
+  background-color: #2980b9;
+  border-radius: 10px;
+}
 
-    .navbar-brand:hover {
-      color: #f39c12;
-    }
+::-webkit-scrollbar-thumb:hover {
+  background-color: #34495e;
+}
 
-    .section-title {
-      font-family: 'Roboto', sans-serif;
-      font-size: 3rem;
-      font-weight: 600;
-      color: #2c3e50;
-      margin-bottom: 40px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-bottom: 3px solid #2c3e50;
-      display: inline-block;
-      padding-bottom: 10px;
-    }
 
-    footer {
-      background: #2c3e50;
-      color: #fff;
-      padding: 40px 0;
-      text-align: center;
-      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    }
 
-    .media-section {
-      margin: 60px 0;
-    }
 
-    .media-card {
-      background: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid #e0e0e0;
-    }
 
-    .media-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-    }
 
-    .media-card img, .media-card video, .media-card audio {
-      width: 100%;
-      border-radius: 15px;
-      max-height: 500px;
-      object-fit: cover;
-      border: 1px solid #e0e0e0;
-    }
 
-    .btn-primary {
-      background: #2980b9;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 30px;
-      letter-spacing: 1px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
+/* Header Styles */
+header {
+  background: linear-gradient(135deg, #2980b9, #6dd5fa);
+  color: #fff;
+  padding: 1px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-    .btn-primary:hover {
-      background: #6dd5fa;
-      transform: translateY(-2px);
-    }
 
-    .social-links a {
-      color: #fff;
-      margin: 0 15px;
-      font-size: 3.5rem;
-      transition: color 0.3s ease;
-    }
 
-    .social-links a:hover {
-      color: #f39c12;
-    }
 
-    .share-buttons {
-      margin-top: 10px;
-    }
 
-    .share-buttons a {
-      margin-right: 50px;
-      color: #2c3e50;
-      font-size: 3rem;
-      transition: color 0.3s ease;
-    }
 
-    .share-buttons a:hover {
-      color: #34495e;
-    }
 
-    .dropdown-menu {
-      border: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+/* Navigation Bar Styles */
+.navbar {
+  background: #2c3e50;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
 
-    .dropdown-item {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 500;
-      padding: 10px 20px;
-      transition: background-color 0.3s ease;
-    }
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  letter-spacing: px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
 
-    .dropdown-item:hover {
-      background-color: #2980b9;
-      color: #fff;
-    }
+.navbar-brand:hover {
+  color: #f39c12;
+}
 
-    .sticker-icon {
-      font-size: 3.5rem;
-      margin-right: 10px;
-      color: #f39c12;
-    }
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    /* Smooth Scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
+.dropdown-item {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
 
-    /* Add some custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
+.dropdown-item:hover {
+  background-color: #2980b9;
+  color: #fff;
+}
 
-    ::-webkit-scrollbar-thumb {
-      background-color: #2980b9;
-      border-radius: 10px;
-    }
 
-    ::-webkit-scrollbar-thumb:hover {
-      background-color: #34495e;
-    }
 
+
+
+
+
+
+
+/* Section Title Styles */
+.section-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #2c3e50;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+/* Footer Styles */
+footer {
+  background: #2c3e50;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-links a {
+  color: #fff;
+  margin: 0 15px;
+  font-size: 3.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #f39c12;
+}
+
+
+
+
+
+
+
+
+/* Media Section Styles */
+.media-section {
+  margin: 60px 0;
+}
+
+.media-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.media-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.media-card img, .media-card video, .media-card audio {
+  width: 100%;
+  border-radius: 15px;
+  max-height: 500px;
+  object-fit: cover;
+  border: 1px solid #e0e0e0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Share Buttons Styles */
+.share-buttons {
+  margin-top: 15px;
+}
+
+.share-buttons a {
+  margin-right: 17px;
+  color: ##1b14f3c2;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.share-buttons a:hover {
+  color: ##1b14f3c2;
+}
+
+
+
+
+
+
+
+/* Sticker Icon Styles */
+.sticker-icon {
+  font-size: 3rem;
+  margin-right: 10px;
+  color: #1b14f3c2;
+}
+
+
+<!---->
+
+
+
+/* Premium Frame Styles */
+.premium-frame {
+  border: 2px solid #000000;
+  border-radius: 30px;
+  padding: 20px;
+  background: #ffffff40;
   
+  margin: 80px 0;
+}
 
-    /* Premium Frame for Content */
-    .premium-frame {
-      border: 2px solid #f39c12;
-      border-radius: 15px;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      margin: 20px 0; /* Added margin for spacing */
-    }
 
-    /* New Features CSS */
-    /* Parallax Scrolling */
-    .parallax-section {
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      min-height: 400px;
-    }
 
-    /* Image Gallery Lightbox */
-    .gallery-item {
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .gallery-item:hover {
-      transform: scale(1.05);
-    }
 
- 
 
-    /* 3D Effects */
-    .card-3d {
-      transform: perspective(1000px) rotateY(5deg);
-      transition: transform 0.3s ease;
-    }
-    .card-3d:hover {
-      transform: perspective(1000px) rotateY(0);
-    }
 
-    /* Back-to-Top Button */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      display: none;
-      z-index: 1000;
-      animation: bounce 2s infinite;
-    }
 
-    /* Responsive Video */
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+/* Parallax Scrolling Styles */
+.parallax-section {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+}
 
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-30px); }
-      60% { transform: translateY(-15px); }
-    }
 
-    /* Added spacing for content */
-    .media-card {
-      margin: 20px 0; /* Added margin for spacing */
-    }
 
-    .media-card img, .media-card video, .media-card audio {
-      margin: 20px 0; /* Added margin for spacing */
-    }
 
-    .media-card h2, .media-card h4, .media-card p {
-      margin: 20px 0; /* Added margin for spacing */
-    }
 
-    .share-buttons {
-      margin: 20px 0; /* Added margin for spacing */
-    }
-  </style>
+
+/* Image Gallery Lightbox Styles */
+.gallery-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+
+/* 3D Effects Styles */
+.card-3d {
+  transform: perspective(1000px) rotateY(5deg);
+  transition: transform 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateY(0);
+}
+
+
+
+
+
+/* Back-to-Top Button Styles */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  z-index: 1000;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-30px); }
+  60% { transform: translateY(-15px); }
+}
+
+
+
+
+
+
+/* Responsive Video Styles */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
 </head>
 <body>
   <!-- Add Scroll Progress Bar -->
