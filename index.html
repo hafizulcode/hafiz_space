@@ -323,8 +323,35 @@ footer {
 
 
 
-    audio { width: 100%; max-width: 400px; }
+     .jp-video {
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+    .jp-controls {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .jp-controls li {
+      display: inline-block;
+      margin: 0 5px;
+    }
+    .jp-volume-bar {
+      width: 100px;
+      height: 10px;
+      background: #ddd;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .jp-volume-bar-value {
+      height: 100%;
+      background: #333;
+    }
 
+
+
+    
 
     
 </style>
@@ -369,6 +396,78 @@ footer {
 
 
 
+
+
+
+   <title>D. Ashraf Siddique Online Radio</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="path/to/jquery.jplayer.min.js"></script>
+  <script src="path/to/jplayer.playlist.min.js"></script>
+  <link rel="stylesheet" href="path/to/jplayer.blue.monday.css" />
+
+
+
+
+
+
+    <h1>D. Ashraf Siddique Online Radio</h1>
+  <div id="jp_container_1" class="jp-video jp-video-270p">
+    <div class="jp-type-playlist">
+      <div class="jp-gui">
+        <div class="jp-video-play">
+          <a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
+        </div>
+        <div class="jp-interface clearfix">
+          <div class="jp-controls-holder clearfix">
+            <ul class="jp-controls">
+              <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+              <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+              <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+            </ul>
+            <div class="progresRight clearfix">
+              <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+              <div class="player_title_outer">
+                <div class="title_radio">
+                  <label>D. Ashraf Siddique Online Radio</label>
+                </div>
+              </div>
+            </div>
+            <div class="rightSattings clearfix">
+              <div class="muteOuter clearfix">
+                <a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a>
+                <a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a>
+                <div class="jp-volume-bar">
+                  <div class="jp-volume-bar-value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+          $(this).jPlayer("setMedia", {
+            mp3: "https://fdsfdsfdsf.radio12345.com/intro.mp3", // Replace with your stream URL
+          }).jPlayer("play");
+        },
+        swfPath: "path/to/Jplayer.swf", // Path to the Jplayer SWF file
+        supplied: "mp3",
+        wmode: "window",
+        useStateClassSkin: true,
+        autoBlur: false,
+        smoothPlayBar: true,
+        keyEnabled: true,
+        remainingDuration: true,
+        toggleDuration: true,
+      });
+    });
+  </script>
 
 
 
