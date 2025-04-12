@@ -736,81 +736,77 @@ footer {
 
 
 
-
-<!-- COPY FROM HERE -->
-<section style="
-  position: relative;
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: #f9f9f9;
-  overflow: hidden;
-  font-family: 'Arial', sans-serif;
+<!-- COPY THIS CODE -->
+<div style="
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  text-align: center;
 ">
-  <!-- Shaped Background -->
+  <!-- Image Container -->
   <div style="
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    background: url('your-image.jpg') center/cover;
-    opacity: 0.15;
-    border-radius: 5px;
-    transform: rotate(-2deg);
-    z-index: 0;
-  "></div>
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  ">
+    <!-- Replace with your image -->
+    <img src="your-image.jpg" alt="Content Image" style="
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    ">
+  </div>
 
   <!-- Content -->
-  <div style="
-    max-width: 600px;
-    padding: 50px 30px;
-    text-align: center;
-    z-index: 1;
+  <h2 style="
+    font-size: 2.2rem;
+    color: #111827;
+    margin-bottom: 15px;
+    font-weight: 700;
   ">
-    <h1 style="
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: #222;
-      line-height: 1.2;
-    ">
-      Your Main Heading
-    </h1>
-    
-    <p style="
-      font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 35px;
-      line-height: 1.6;
-    ">
-      Your short description text goes here. Keep it concise.
-    </p>
-    
-    <a href="#" style="
-      display: inline-block;
-      padding: 14px 35px;
-      background: #3a86ff;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: all 0.3s;
-      border: 2px solid #3a86ff;
-    " 
-    onmouseover="this.style.background='#2667cc'; this.style.borderColor='#2667cc'" 
-    onmouseout="this.style.background='#3a86ff'; this.style.borderColor='#3a86ff'">
-      Watch Now
-    </a>
-  </div>
-</section>
-<!-- END COPY -->
+    Your Heading Here
+  </h2>
 
-<!-- Add this to your <head> if you can -->
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-</style>
+  <p style="
+    font-size: 1.1rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  ">
+    Your descriptive text goes here. Keep it concise and to the point for best results.
+  </p>
+
+  <!-- Single Button -->
+  <a href="#" style="
+    display: inline-block;
+    padding: 14px 40px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+    border: 2px solid #2563eb;
+  " 
+  onmouseover="this.style.background='#1d4ed8'; this.style.transform='translateY(-2px)'" 
+  onmouseout="this.style.background='#2563eb'; this.style.transform='none'">
+    Watch Now
+  </a>
+</div>
       <!-- First video -->
       <div class="premium-frame">
         <div class="media-card">                            
