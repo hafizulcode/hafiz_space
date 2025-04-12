@@ -61,40 +61,6 @@ header {
 
 
 
-/* Navigation Bar Styles */
-.navbar {
-  background: #2c3e50;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-brand {
-  font-family: 'Pacifico', cursive;
-  font-size: 3rem;
-  letter-spacing: px;
-  color: #fff;
-  transition: color 0.3s ease;
-}
-
-.navbar-brand:hover {
-  color: #f39c12;
-}
-
-.dropdown-menu {
-  border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-item {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-}
-
-.dropdown-item:hover {
-  background-color: #2980b9;
-  color: #fff;
-}
 
 
 
@@ -320,6 +286,71 @@ footer {
   width: 100%;
   height: 100%;
 }
+
+
+
+
+
+
+
+
+   .luxury-slideshow {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 70vh;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+    
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1.5s ease, transform 8s ease;
+      transform: scale(1.05);
+      object-fit: cover;
+    }
+    
+    .slide.active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 1;
+    }
+    
+    .slide-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 40px;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: white;
+      z-index: 2;
+    }
+    
+    .progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: rgba(255,255,255,0.5);
+      z-index: 3;
+      animation: progress 5s linear infinite;
+    }
+    
+    @keyframes progress {
+      0% { width: 0% }
+      100% { width: 100% }
+    }
+    
+    
+    
+    
+
+
 </style>
 </head>
 <body>
@@ -328,384 +359,83 @@ footer {
 
   <!-- Header -->
   <header>
-    <h1>Premium Islamic Website</h1>
-    <p>Explore and Share Islamic Videos, Images, and Audio Lectures</p>
+    <h1>Wellcome to Islamic Website</h1>
+   
   </header>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Islamic Website</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#images">Images</a></li>
-          <li class="nav-item"><a class="nav-link" href="#audio">Audio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#live-streaming">Live Streaming</a></li>
-          <li class="nav-item"><a class="nav-link" href="#news">Islamic News</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Main Content -->
-  <div class="container my-5">
-    <!-- Home Section -->
-    <section id="home">
-      <h2 class="section-title"><i class="fas fa-home sticker-icon"></i>HOME</h2>
-      <p>This নিচে দেখুন .</p>
-      
-      
-      
-      
-<!-- Islamic Year Timeline - Premium Dashboard -->
-<div class="islamic-year-timeline" style="
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: 'Inter', sans-serif;
-    padding: 20px;
-">
 
-    <!-- 1. Islamic New Year -->
-    <div class="event-card" style="
-        background: linear-gradient(135deg, rgba(41,128,185,0.9), rgba(44,62,80,0.9));
-        color: white;
-        padding: 18px;
-        border-radius: 14px;
-        border: 1px solid rgba(255,255,255,0.15);
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            top: -12px;
-            right: -12px;
-            background: rgba(255,255,255,0.9);
-            color: #2C3E50;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        ">📅</div>
-        
-        <h3 style="margin: 8px 0 12px; font-size: 16px; font-weight: 600; letter-spacing: 0.5px;">ISLAMIC NEW YEAR</h3>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <div style="
-                background: rgba(255,255,255,0.2);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                1 Muharram 1446
-            </div>
-            <div style="
-                background: rgba(255,255,255,0.2);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                19 July 2024
-            </div>
-        </div>
-    </div>
 
-    <!-- 2. Ashura -->
-    <div class="event-card" style="
-        background: linear-gradient(135deg, rgba(109,33,79,0.9), rgba(179,55,113,0.9));
-        color: white;
-        padding: 18px;
-        border-radius: 14px;
-        border: 1px solid rgba(255,255,255,0.15);
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            top: -12px;
-            right: -12px;
-            background: rgba(255,255,255,0.9);
-            color: #B33771;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        ">⚔️</div>
-        
-        <h3 style="margin: 8px 0 12px; font-size: 16px; font-weight: 600; letter-spacing: 0.5px;">DAY OF ASHURA</h3>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <div style="
-                background: rgba(255,255,255,0.2);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                10 Muharram 1446
-            </div>
-            <div style="
-                background: rgba(255,255,255,0.2);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                28 July 2024
-            </div>
-        </div>
-    </div>
+   
+   
+   
+   
+   
+   
+  
+ 
+  
 
-    <!-- 3. Ramadan Begins -->
-    <div class="event-card" style="
-        background: linear-gradient(135deg, rgba(34,139,34,0.9), rgba(0,100,0,0.9));
-        color: white;
-        padding: 18px;
-        border-radius: 14px;
-        border: 1px solid rgba(255,255,255,0.15);
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            top: -12px;
-            right: -12px;
-            background: rgba(255,255,255,0.9);
-            color: #228B22;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        ">🌙</div>
-        
-        <h3 style="margin: 8px 0 12px; font-size: 16px; font-weight: 600; letter-spacing: 0.5px;">FIRST OF RAMADAN</h3>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <div style="
-                background: rgba(255,255,255,0.2);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                1 Ramadan 1446
-            </div>
-            <div style="
-                background: rgba(255,255,255,0.2);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                12 March 2025
-            </div>
-            <div id="ramadan-countdown" style="
-                background: rgba(0,0,0,0.3);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-family: 'Space Mono', monospace;
-            "></div>
-        </div>
-    </div>
-
-    <!-- 4. Eid ul-Fitr -->
-    <div class="event-card" style="
-        background: linear-gradient(135deg, rgba(233,168,0,0.9), rgba(255,215,0,0.9));
-        color: #333;
-        padding: 18px;
-        border-radius: 14px;
-        border: 1px solid rgba(255,255,255,0.3);
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            top: -12px;
-            right: -12px;
-            background: rgba(255,255,255,0.9);
-            color: #E9A800;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        ">✨</div>
-        
-        <h3 style="margin: 8px 0 12px; font-size: 16px; font-weight: 600; letter-spacing: 0.5px;">EID UL-FITR</h3>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <div style="
-                background: rgba(255,255,255,0.4);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                1 Shawwal 1446
-            </div>
-            <div style="
-                background: rgba(255,255,255,0.4);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                10 April 2025
-            </div>
-            <div id="eid-fitr-countdown" style="
-                background: rgba(0,0,0,0.1);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-family: 'Space Mono', monospace;
-            "></div>
-        </div>
-    </div>
-
-    <!-- 5. Eid ul-Adha -->
-    <div class="event-card" style="
-        background: linear-gradient(135deg, rgba(178,34,34,0.9), rgba(139,0,0,0.9));
-        color: white;
-        padding: 18px;
-        border-radius: 14px;
-        border: 1px solid rgba(255,255,255,0.15);
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            top: -12px;
-            right: -12px;
-            background: rgba(255,255,255,0.9);
-            color: #B22222;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        ">🐑</div>
-        
-        <h3 style="margin: 8px 0 12px; font-size: 16px; font-weight: 600; letter-spacing: 0.5px;">EID UL-ADHA</h3>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <div style="
-                background: rgba(255,255,255,0.2);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                10 Dhul-Hijjah 1446
-            </div>
-            <div style="
-                background: rgba(255,255,255,0.2);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                16 June 2025
-            </div>
-            <div id="eid-adha-countdown" style="
-                background: rgba(0,0,0,0.3);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-family: 'Space Mono', monospace;
-            "></div>
-        </div>
-    </div>
-
-    <!-- 6. Milad-un-Nabi -->
-    <div class="event-card" style="
-        background: linear-gradient(135deg, rgba(142,45,226,0.9), rgba(74,0,224,0.9));
-        color: white;
-        padding: 18px;
-        border-radius: 14px;
-        border: 1px solid rgba(255,255,255,0.15);
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            top: -12px;
-            right: -12px;
-            background: rgba(255,255,255,0.9);
-            color: #8E2DE2;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        ">ﷺ</div>
-        
-        <h3 style="margin: 8px 0 12px; font-size: 16px; font-weight: 600; letter-spacing: 0.5px;">EID-E-MILAD-UN-NABI</h3>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <div style="
-                background: rgba(255,255,255,0.2);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                12 Rabi al-Awwal 1446
-            </div>
-            <div style="
-                background: rgba(255,255,255,0.2);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 500;
-            ">
-                15 September 2024
-            </div>
-            <div id="milad-countdown" style="
-                background: rgba(0,0,0,0.3);
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-family: 'Space Mono', monospace;
-            "></div>
-        </div>
-    </div>
+<div class="luxury-slideshow">
+  <img src="image1.jpg" class="slide active" loading="lazy" alt="Premium Content">
+  <img src="image2.jpg" class="slide" loading="lazy" alt="Premium Content">
+  <img src="image3.jpg" class="slide" loading="lazy" alt="Premium Content">
+  
+  <div class="slide-overlay">
+    <h2>Professional Title</h2>
+    <p>Optional description text</p>
+  </div>
+  
+  <div class="progress-bar"></div>
 </div>
 
 
 
-    </section>
-    
+
+
+
+
+
+   
+ 
+ 
+<div class="google-map-container" style="width: 100%; max-width: 800px; margin: 20px auto; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden;">
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.23456789!2d89.3555275!3d24.8844991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDUzJzA0LjIiTiA4OcKwMjEnMTkuOSJF!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd&maptype=satellite" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <p style="text-align: center; font-family: Arial, sans-serif; color: #555; margin-top: 8px; font-size: 14px;">
+        Bogra City Bypass Mosque – Satellite View
+    </p>
+</div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
     
     
     
@@ -719,14 +449,23 @@ footer {
     
     
 
-    <!-- Videos Section -->
-    <section id="videos" class="media-section">
-      <h2 class="section-title"><i class="fas fa-video sticker-icon"></i>Videos</h2>
-      
-      
-      
-      <div class="videos-section">
-  <h1>VIDEOS</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -803,7 +542,7 @@ footer {
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(100, 210, 255, 0.3);
     ">
-      <img src="your-image.jpg" alt="Logo" style="
+      <img src="your-logo-or-image.png" alt="Logo" style="
         width: 70%;
         height: 70%;
         object-fit: contain;
@@ -834,7 +573,7 @@ footer {
     </p>
 
     <!-- Button -->
-    <a href="music.html" style="
+    <a href="#" style="
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -876,126 +615,662 @@ footer {
 
 <!-- Add this to your <head> -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
- 
-        
-        
-        
-        
-        
-        
-        
-        
-        <!-- First video -->
-      <div class="premium-frame">
-        <div class="media-card">                            
-          <h2 class="mt-3">Video Title 1</h2>
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/jaXx6HdumU4"></iframe>
-          </div>
-          <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/videos/1" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/videos/1&text=Check%20out%20this%20video" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="fb-messenger://share/?link=https://yourwebsite.com/videos/1" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20video:%20https://yourwebsite.com/videos/1" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Second video -->
-      <div class="premium-frame">
-        <div class="media-card">
-          <h2 class="mt-3">Video Title 2</h2>
-          <div class="video-container">
-            <iframe src="https://drive.google.com/file/d/1-JgHYttGx5S8NNAIeyanPoEpB_YRNtE6/preview"></iframe>
-          </div>
-          <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/videos/2" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/videos/2&text=Check%20out%20this%20video" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="fb-messenger://share/?link=https://yourwebsite.com/videos/2" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20video:%20https://yourwebsite.com/videos/2" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Image Section -->
-    <section id="images" class="media-section">
-      <h2 class="section-title"><i class="fas fa-image sticker-icon"></i>Images</h2>
-      <div class="premium-frame">
-        <div class="media-card">
-          <img src="islamic-image.jpg" alt="Islamic Image">
-          <h4 class="mt-3">Image Title</h4>
-          <p>Description of the image.</p>
-          <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/images/1" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/images/1&text=Check%20out%20this%20image" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="fb-messenger://share/?link=https://yourwebsite.com/images/1" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20image:%20https://yourwebsite.com/images/1" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Audio Section -->
-    <section id="audio" class="media-section">
-      <h2 class="section-title"><i class="fas fa-music sticker-icon"></i>Audio Lectures</h2>
-      <div class="premium-frame">
-        <div class="media-card">
-          <audio controls>
-            <source src="islamic-audio.mp3" type="audio/mpeg">
-            Your browser does not support the audio tag.
-          </audio>
-          <h4 class="mt-3">Audio Title</h4>
-          <p>Description of the audio.</p>
-          <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/audio/1" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/audio/1&text=Check%20out%20this%20audio" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="fb-messenger://share/?link=https://yourwebsite.com/audio/1" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20audio:%20https://yourwebsite.com/audio/1" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Live Streaming Section -->
-    <section id="live-streaming" class="media-section">
-      <h2 class="section-title"><i class="fas fa-video sticker-icon"></i>Live Streaming</h2>
-      <div class="premium-frame">
-        <iframe src="https://drive.google.com/file/d/1-JgHYttGx5S8NNAIeyanPoEpB_YRNtE6/preview" width="100%" height="auto" style="max-width: 640px; max-height: 360px;" allow="autoplay"></iframe>
-        <div class="share-buttons mt-3">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/live/1" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/live/1&text=Check%20out%20this%20live%20stream" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="fb-messenger://share/?link=https://yourwebsite.com/live/1" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
-          <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20live%20stream:%20https://yourwebsite.com/live/1" target="_blank"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </section>
 
-    <!-- Islamic News Section -->
-    <section id="news" class="media-section">
-      <h2 class="section-title"><i class="fas fa-newspaper sticker-icon"></i>Islamic News</h2>
-      <div class="premium-frame">
-        <div class="media-card">
-          <img src="hajj-news.jpg" class="card-img-top">
-          <h5>2024 Hajj Applications Open!</h5>
-          <p>The Saudi government has announced...</p>
-          <a href="#" class="btn btn-primary">Read More</a>
-          <div class="share-buttons">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/news/1" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/news/1&text=Check%20out%20this%20news" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="fb-messenger://share/?link=https://yourwebsite.com/news/1" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20news:%20https://yourwebsite.com/news/1" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
+
+
+
+
+
+
+
+
+
+
+<!-- SWEET PROFESSIONAL HERO SECTION - COPY ALL BELOW -->
+<div style="
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+">
+
+  <!-- Background Blobs -->
+  <div style="
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(100, 210, 255, 0.15);
+    border-radius: 50%;
+    filter: blur(60px);
+    top: -100px;
+    right: -100px;
+    z-index: 0;
+  "></div>
+  <div style="
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 150, 200, 0.15);
+    border-radius: 50%;
+    filter: blur(60px);
+    bottom: -150px;
+    left: -150px;
+    z-index: 0;
+  "></div>
+
+  <!-- Content Card -->
+  <div style="
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 50px;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    position: relative;
+  ">
+
+    <!-- Image -->
+    <div style="
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #64d2ff, #ff96c8);
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(100, 210, 255, 0.3);
+    ">
+      <img src="your-logo-or-image.png" alt="Logo" style="
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+      ">
+    </div>
+
+    <!-- Text -->
+    <h1 style="
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    ">
+      Your Beautiful Title Here
+    </h1>
+
+    <p style="
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 35px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    ">
+      A sweet, professional description that captures attention while maintaining elegance.
+    </p>
+
+    <!-- Button -->
+    <a href="#" style="
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #64d2ff, #ff96c8);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 20px rgba(100, 210, 255, 0.4);
+      transition: all 0.3s ease;
+      border: none;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    " 
+    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(100, 210, 255, 0.6)'" 
+    onmouseout="this.style.transform='none'; this.style.boxShadow='0 5px 20px rgba(100, 210, 255, 0.4)'">
+      <span style="position: relative; z-index: 2;">
+        Get Started
+      </span>
+      <span style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #ff96c8, #64d2ff);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+      " 
+      onmouseover="this.style.opacity='1'" 
+      onmouseout="this.style.opacity='0'"></span>
+    </a>
   </div>
+</div>
+
+<!-- Add this to your <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+<!-- SWEET PROFESSIONAL HERO SECTION - COPY ALL BELOW -->
+<div style="
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+">
+
+  <!-- Background Blobs -->
+  <div style="
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(100, 210, 255, 0.15);
+    border-radius: 50%;
+    filter: blur(60px);
+    top: -100px;
+    right: -100px;
+    z-index: 0;
+  "></div>
+  <div style="
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 150, 200, 0.15);
+    border-radius: 50%;
+    filter: blur(60px);
+    bottom: -150px;
+    left: -150px;
+    z-index: 0;
+  "></div>
+
+  <!-- Content Card -->
+  <div style="
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 50px;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    position: relative;
+  ">
+
+    <!-- Image -->
+    <div style="
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #64d2ff, #ff96c8);
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(100, 210, 255, 0.3);
+    ">
+      <img src="your-logo-or-image.png" alt="Logo" style="
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+      ">
+    </div>
+
+    <!-- Text -->
+    <h1 style="
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    ">
+      Your Beautiful Title Here
+    </h1>
+
+    <p style="
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 35px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    ">
+      A sweet, professional description that captures attention while maintaining elegance.
+    </p>
+
+    <!-- Button -->
+    <a href="#" style="
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #64d2ff, #ff96c8);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 20px rgba(100, 210, 255, 0.4);
+      transition: all 0.3s ease;
+      border: none;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    " 
+    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(100, 210, 255, 0.6)'" 
+    onmouseout="this.style.transform='none'; this.style.boxShadow='0 5px 20px rgba(100, 210, 255, 0.4)'">
+      <span style="position: relative; z-index: 2;">
+        Get Started
+      </span>
+      <span style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #ff96c8, #64d2ff);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+      " 
+      onmouseover="this.style.opacity='1'" 
+      onmouseout="this.style.opacity='0'"></span>
+    </a>
+  </div>
+</div>
+
+<!-- Add this to your <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    <!-- Home Section -->
+    <section id="home">
+     
+      
+      
+      
+      
+<div class="timeline-container" style="
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0;
+    font-family: 'Inter', sans-serif;
+">
+
+    <!-- Gold Center line -->
+    <div style="
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(to bottom, 
+            transparent 0%, 
+            #d4af37 10%, 
+            #d4af37 90%, 
+            transparent 100%);
+        transform: translateX(-50%);
+        z-index: 1;
+    "></div>
+
+    <!-- 1. Islamic New Year (Left) -->
+    <div class="event-card" style="
+        width: 280px;
+        background: linear-gradient(145deg, rgba(41,128,185,0.95), rgba(44,62,80,0.95));
+        color: white;
+        padding: 5px 5px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        position: relative;
+        margin: 0 0 30px auto;
+        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
+        text-align: right;
+        z-index: 2;
+        backdrop-filter: blur(2px);
+    ">
+        <div class="event-icon" style="
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(145deg, #d4af37, #f9d423);
+            color: #2C3E50;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            border: 2px solid white;
+            z-index: 3;
+        ">📅</div>
+        
+        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">ISLAMIC NEW YEAR</h3>
+        <div style="display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap;">
+            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                1 Muharram 1446
+            </div>
+            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                19 July 2024
+            </div>
+        </div>
+        <div style="position: absolute; bottom: -8px; right: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7));"></div>
+    </div>
+
+    <!-- 2. Ashura (Right) -->
+    <div class="event-card" style="
+        width: 280px;
+        background: linear-gradient(145deg, rgba(109,33,79,0.95), rgba(179,55,113,0.95));
+        color: white;
+        padding: 5px 5px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        position: relative;
+        margin: 0 auto 30px 0;
+        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
+        z-index: 2;
+        backdrop-filter: blur(2px);
+    ">
+        <div class="event-icon" style="
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(145deg, #d4af37, #f9d423);
+            color: #B33771;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            border: 2px solid white;
+            z-index: 3;
+        ">⚔️</div>
+        
+        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">DAY OF ASHURA</h3>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                10 Muharram 1446
+            </div>
+            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                28 July 2024
+            </div>
+        </div>
+        <div style="position: absolute; bottom: -8px; left: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, rgba(212, 175, 55, 0.7), transparent);"></div>
+    </div>
+
+    <!-- 3. Ramadan (Left) -->
+    <div class="event-card" style="
+        width: 280px;
+        background: linear-gradient(145deg, rgba(34,139,34,0.95), rgba(0,100,0,0.95));
+        color: white;
+        padding: 5px 5px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        position: relative;
+        margin: 0 0 30px auto;
+        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
+        text-align: right;
+        z-index: 2;
+        backdrop-filter: blur(2px);
+    ">
+        <div class="event-icon" style="
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(145deg, #d4af37, #f9d423);
+            color: #228B22;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            border: 2px solid white;
+            z-index: 3;
+        ">🌙</div>
+        
+        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">FIRST OF RAMADAN</h3>
+        <div style="display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap;">
+            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                1 Ramadan 1446
+            </div>
+            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                12 March 2025
+            </div>
+        </div>
+        <div style="position: absolute; bottom: -8px; right: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7));"></div>
+    </div>
+
+    <!-- 4. Eid ul-Fitr (Right) -->
+    <div class="event-card" style="
+        width: 280px;
+        background: linear-gradient(145deg, rgba(233,168,0,0.95), rgba(255,215,0,0.95));
+        color: #2c3e50;
+        padding: 5px 5px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.3);
+        position: relative;
+        margin: 0 auto 30px 0;
+        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
+        z-index: 2;
+        backdrop-filter: blur(2px);
+    ">
+        <div class="event-icon" style="
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(145deg, #d4af37, #f9d423);
+            color: #E9A800;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            border: 2px solid white;
+            z-index: 3;
+        ">✨</div>
+        
+        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">EID UL-FITR</h3>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <div style="background: rgba(255,255,255,0.3); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                1 Shawwal 1446
+            </div>
+            <div style="background: rgba(255,255,255,0.3); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                10 April 2025
+            </div>
+        </div>
+        <div style="position: absolute; bottom: -8px; left: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, rgba(212, 175, 55, 0.7), transparent);"></div>
+    </div>
+
+    <!-- 5. Eid ul-Adha (Left) -->
+    <div class="event-card" style="
+        width: 280px;
+        background: linear-gradient(145deg, rgba(178,34,34,0.95), rgba(139,0,0,0.95));
+        color: white;
+        padding: 5px 5px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        position: relative;
+        margin: 0 0 30px auto;
+        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
+        text-align: right;
+        z-index: 2;
+        backdrop-filter: blur(2px);
+    ">
+        <div class="event-icon" style="
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(145deg, #d4af37, #f9d423);
+            color: #B22222;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            border: 2px solid white;
+            z-index: 3;
+        ">🐑</div>
+        
+        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">EID UL-ADHA</h3>
+        <div style="display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap;">
+            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                10 Dhul-Hijjah 1446
+            </div>
+            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                16 June 2025
+            </div>
+        </div>
+        <div style="position: absolute; bottom: -8px; right: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7));"></div>
+    </div>
+
+    <!-- 6. Milad-un-Nabi (Right) -->
+    <div class="event-card" style="
+        width: 280px;
+        background: linear-gradient(145deg, rgba(142,45,226,0.95), rgba(74,0,224,0.95));
+        color: white;
+        padding: 5px 5px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        position: relative;
+        margin: 0 auto 0 0;
+        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
+        z-index: 2;
+        backdrop-filter: blur(2px);
+    ">
+        <div class="event-icon" style="
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(145deg, #d4af37, #f9d423);
+            color: #8E2DE2;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            border: 2px solid white;
+            z-index: 3;
+        ">ﷺ</div>
+        
+        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">EID-E-MILAD-UN-NABI</h3>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                12 Rabi al-Awwal 1446
+            </div>
+            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
+                15 September 2024
+            </div>
+        </div>
+        <div style="position: absolute; bottom: -8px; left: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, rgba(212, 175, 55, 0.7), transparent);"></div>
+    </div>
+</div>
+
+
+
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
 
   <!-- Footer -->
   <footer>
@@ -1110,5 +1385,35 @@ footer {
     const analytics = getAnalytics(app);
     
   </script>
+  
+  
+  <script>
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  
+  function nextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+    
+    // Reset animation
+    const progress = document.querySelector('.progress-bar');
+    progress.style.animation = 'none';
+    void progress.offsetWidth; // Trigger reflow
+    progress.style.animation = 'progress 5s linear infinite';
+  }
+  
+  setInterval(nextSlide, 5000); // Change every 5 seconds
+  
+  // Pause on hover
+  const container = document.querySelector('.luxury-slideshow');
+  let slideInterval = setInterval(nextSlide, 5000);
+  
+  container.addEventListener('mouseenter', () => clearInterval(slideInterval));
+  container.addEventListener('mouseleave', () => {
+    slideInterval = setInterval(nextSlide, 5000);
+  });
+</script>
+
 </body>
 </html>
