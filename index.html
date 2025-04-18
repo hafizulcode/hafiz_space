@@ -366,6 +366,44 @@ footer {
     } 
     
     
+    
+    
+    
+    
+    
+    
+    
+ 
+
+  <style>
+    /* SCROLLBAR STYLE START */
+
+    /* For Chrome, Edge, Safari */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1; /* Scrollbar background */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #4CAF50; /* Scrollbar thumb color */
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #45a049; /* Thumb hover color */
+    }
+
+    /* For Firefox */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #4CAF50 #f1f1f1;
+    }
+
+    /* SCROLLBAR STYLE END */
+  
 
 </style>
 </head>
@@ -375,7 +413,7 @@ footer {
 
   <!-- Header -->
   <header>
-    <h1>Wellcome to Islamic Website</h1>
+    <h4>Wellcome to Islamic Website</h>
    
   </header>
 
@@ -418,8 +456,10 @@ footer {
 
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   
-    
-  
+    <!-- space-->
+   <br>  <br>
+   
+   
 </head>
 <body class="font-sans">
 
@@ -428,6 +468,16 @@ footer {
     <h1 class="text-4xl font-bold text-gray-800 drop-shadow-sm">Book Collection</h1>
     <p class="mt-2 text-gray-600">Curated Islamic knowledge — free to read & download</p>
   </header>
+  
+  
+  
+  
+  
+  
+   <!-- space-->
+   <br>  <br>
+  
+  
 
   <!-- Books Grid -->
   <main class="px-6 pb-10">
@@ -470,6 +520,587 @@ footer {
 
 
     
+
+
+
+
+
+
+
+
+    <!-- space-->
+   <br>  <br>
+  
+    <!-- space-->
+   <br>  <br>
+   
+    <!-- space-->
+   <br>  <br>
+    <!-- space-->
+   <br>  <br>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMD ASHRAF ALIMULLAH SIDDIQUE | Islamic Content</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e5f74;
+            --secondary: #1d2d50;
+            --accent: #fcdab7;
+            --text: #333;
+            --light: #f8f1f1;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Amiri', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap');
+        
+        body {
+            background: linear-gradient(135deg, #f8f1f1 0%, #e8f0f8 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Amiri', serif;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .header p.subtitle {
+            font-size: 1.2rem;
+            color: var(--primary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        
+        /* Categories Grid */
+        .categories-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .category {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 600;
+            font-family: 'Amiri', serif;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .category-header i {
+            font-size: 1.8rem;
+        }
+        
+        .category-content {
+            padding: 0;
+            max-height: 400px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--light);
+        }
+        
+        .category-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .category-content::-webkit-scrollbar-track {
+            background: var(--light);
+            border-radius: 10px;
+        }
+        
+        .category-content::-webkit-scrollbar-thumb {
+            background-color: var(--primary);
+            border-radius: 10px;
+        }
+        
+        /* Audio Player Styles */
+        .audio-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .audio-item:hover {
+            background-color: rgba(30, 95, 116, 0.03);
+        }
+        
+        .audio-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 15px;
+        }
+        
+        .audio-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        
+        .audio-details {
+            flex-grow: 1;
+        }
+        
+        .audio-title {
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        
+        .audio-date {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 3px;
+        }
+        
+        audio {
+            width: 100%;
+            height: 40px;
+            margin-top: 10px;
+        }
+        
+        audio::-webkit-media-controls-panel {
+            background-color: var(--light);
+        }
+        
+        /* View More Button */
+        .view-more {
+            text-align: center;
+            padding: 15px;
+            background: rgba(30, 95, 116, 0.05);
+        }
+        
+        .view-more a {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        
+        .view-more a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        
+        .view-more a i {
+            margin-left: 5px;
+        }
+        
+        /* Islamic Pattern Background */
+        .islamic-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231d2d50' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .category-header {
+                font-size: 1.4rem;
+                padding: 15px;
+            }
+            
+            .category-header i {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header p.subtitle {
+                font-size: 1rem;
+            }
+            
+            .audio-info {
+                gap: 10px;
+            }
+            
+            .audio-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="islamic-pattern"></div>
+    <div class="container">
+        <div class="header">
+            <h1>MMD ASHRAF ALIMULLAH SIDDIQUE</h1>
+            <p class="subtitle">Blessed recitations and spiritual guidance</p>
+        </div>
+        
+        <div class="categories-container">
+            <!-- NAAT Category -->
+            <div class="category">
+                <div class="category-header">
+                    <i class="fas fa-mosque"></i>
+                    <span>NAAT SHARIF</span>
+                </div>
+                <div class="category-content">
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Tala'al Badru Alayna - Beautiful Recitation</div>
+                                <div class="audio-date">Recorded: 15 Ramadan 1444</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="naat1.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</div>
+                                <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="naat2.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Ya Nabi Salam Alayka - Popular Naat</div>
+                                <div class="audio-date">Recorded: 1 Muharram 1444</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="naat3.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Mustafa Jaane Rahmat - Emotional Recitation</div>
+                                <div class="audio-date">Recorded: 27 Rajab 1443</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="naat4.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Madina Munawara - Live Performance</div>
+                                <div class="audio-date">Recorded: 10 Shawwal 1443</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="naat5.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a href="#">
+                        View More Naat <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+  <!-- space-->
+   <br>  <br>
+   
+   
+    <!-- space-->
+   <br>  <br>
+   
+   
+   
+   
+   
+            <!-- WAZ Category -->
+            <div class="category">
+                <div class="category-header">
+                    <i class="fas fa-microphone-alt"></i>
+                    <span>ISLAMIC LECTURES</span>
+                </div>
+                <div class="category-content">
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">The Importance of Salah - Full Lecture</div>
+                                <div class="audio-date">Recorded: 20 Jumada-al-Awwal 1444</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="waz1.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Purification of the Heart - Part 1</div>
+                                <div class="audio-date">Recorded: 5 Safar 1444</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="waz2.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Understanding Quran - Tafseer Series</div>
+                                <div class="audio-date">Recorded: 15 Dhul-Qadah 1443</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="waz3.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Fiqh of Marriage - Detailed Lecture</div>
+                                <div class="audio-date">Recorded: 3 Sha'ban 1443</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="waz4.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">The Life of Prophet Muhammad (PBUH)</div>
+                                <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1443</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="waz5.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a href="#">
+                        View More Lectures <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+             <!-- space-->
+   <br>  <br>
+   
+   
+   
+    <!-- space-->
+   <br>  <br>
+   
+   
+   
+   
+            <!-- MILLA Category -->
+            <div class="category">
+                <div class="category-header">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>ISLAMIC EVENTS</span>
+                </div>
+                <div class="category-content">
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Milad-un-Nabi Conference 2023</div>
+                                <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="milla1.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Annual Islamic Convention Speech</div>
+                                <div class="audio-date">Recorded: 15 Dhul-Hijjah 1443</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="milla2.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Islamic Book Fair 2023 Highlights</div>
+                                <div class="audio-date">Recorded: 1 Rajab 1443</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="milla3.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Quran Memorization Ceremony</div>
+                                <div class="audio-date">Recorded: 27 Ramadan 1443</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="milla4.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    
+                    <div class="audio-item">
+                        <div class="audio-info">
+                            <div class="audio-icon"><i class="fas fa-play"></i></div>
+                            <div class="audio-details">
+                                <div class="audio-title">Charity Fundraiser for Masjid</div>
+                                <div class="audio-date">Recorded: 15 Shaban 1443</div>
+                            </div>
+                        </div>
+                        <audio controls>
+                            <source src="milla5.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a href="#">
+                        View More Events <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
 
 
 
@@ -627,6 +1258,14 @@ footer {
 
 
 
+
+
+
+
+
+
+
+   
 
 
 
@@ -1261,6 +1900,11 @@ footer {
   container.addEventListener('mouseleave', () => {
     slideInterval = setInterval(nextSlide, 5000);
   });
+  
+  
+  
+  
+  
 </script>
 
 
@@ -1270,3 +1914,4 @@ footer {
 
 </body>
 </html>
+ 
