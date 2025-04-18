@@ -1005,30 +1005,145 @@ footer {
 
 
 
+
+/* pulse */
+
+.category-card {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+
+ /* 3d */
+
+.category-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.category-card:hover {
+  transform: translateY(-10px) rotateX(10deg);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+
+
+
+
+
+
+
+
+
+/* ===== Premium Card Container ===== */
 .category-card {
   position: relative;
   overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.category-card::before {
-  content: '';
+
+/* ===== Ultra-Premium Hover Hint ===== */
+.hover-hint {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    to bottom right,
-    transparent 45%,
-    rgba(252,218,183,0.3) 50%,
-    transparent 55%
-  );
-  transform: rotate(30deg);
-  transition: all 0.8s;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.category-card:hover::before {
-  left: 100%;
-  top: 100%;
+
+.hint-content {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
+.hint-content span {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.hint-arrow {
+  position: relative;
+  width: 20px;
+  height: 12px;
+}
+
+.arrow-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 15px;
+  height: 2px;
+  background: white;
+  transform: translateY(-50%);
+}
+
+.arrow-head {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* ===== Hover Effects ===== */
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(29, 45, 80, 0.3);
+}
+
+.category-card:hover .hover-hint {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+/* ===== Micro-Interaction ===== */
+.category-card:hover .hint-arrow {
+  animation: arrowBounce 1.5s infinite;
+}
+
+@keyframes arrowBounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+/* ===== Touch Device Adaptation ===== */
+@media (hover: none) {
+  .hover-hint {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
 
 
     </style>
@@ -1046,36 +1161,73 @@ footer {
         <div class="categories-container">
             <!-- NAAT Card -->
             <div class="category-card" onclick="openModal('naat')">
-                <div class="card-content">
-                    <i class="fas fa-mosque"></i>
-                    <h3>NAAT SHARIF</h3>
-                    <div class="card-ornament">﷽</div>
-                    <div class="card-hint">Click to explore</div>
-                </div>
-            </div>
+  <!-- Add this hover hint div as the first child -->
+  <div class="hover-hint">
+    <div class="hint-content">
+      <span>Listen to Naats</span>
+      <div class="hint-arrow">
+        <div class="arrow-line"></div>
+        <div class="arrow-head"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Your existing NAAT content stays below -->
+  <div class="card-content">
+    <i class="fas fa-mosque"></i>
+    <h3>NAAT SHARIF</h3>
+  </div>  
+</div>
+            
+            
+            
+            
+            
+           
+
             
             <!-- WAZ Card -->
             <div class="category-card" onclick="openModal('waz')">
-                <div class="card-content">
-                    <i class="fas fa-microphone-alt"></i>
-                    <h3>ISLAMIC LECTURES</h3>
-                    <div class="card-ornament">ﷺ</div>
-                    <div class="card-hint">Click to explore</div>
-                </div>
-            </div>
+  <!-- Hover hint -->
+  <div class="hover-hint">
+    <div class="hint-content">
+      <span>Explore Lectures</span>
+      <div class="hint-arrow">
+        <div class="arrow-line"></div>
+        <div class="arrow-head"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Existing WAZ content -->
+  <div class="card-content">
+    <i class="fas fa-microphone-alt"></i>
+    <h3>ISLAMIC LECTURES</h3>
+  </div>
+</div>
             
             <!-- MILLA Card -->
-            <div class="category-card" onclick="openModal('milla')">
-                <div class="card-content">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>ISLAMIC EVENTS</h3>
-                    <div class="card-ornament">﴾﴿</div>
-                    <div class="card-hint">Click to explore</div>
-                </div>
-            </div>
-        </div>
+           <div class="category-card" onclick="openModal('milla')">
+  <!-- Hover hint -->
+  <div class="hover-hint">
+    <div class="hint-content">
+      <span>View Events</span>
+      <div class="hint-arrow">
+        <div class="arrow-line"></div>
+        <div class="arrow-head"></div>
+      </div>
     </div>
-    
+  </div>
+  
+  <!-- Existing MILLA content -->
+  <div class="card-content">
+    <i class="fas fa-calendar-alt"></i>
+    <h3>ISLAMIC EVENTS</h3>
+  </div>
+</div>
+
+
+
     <!-- NAAT Modal -->
     <div class="modal-overlay" id="naat-modal">
         <div class="modal-container">
