@@ -1004,6 +1004,33 @@ footer {
 
 
 
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+}
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    transparent 45%,
+    rgba(252,218,183,0.3) 50%,
+    transparent 55%
+  );
+  transform: rotate(30deg);
+  transition: all 0.8s;
+}
+.category-card:hover::before {
+  left: 100%;
+  top: 100%;
+}
+
+
     </style>
 </head>
 <body>
