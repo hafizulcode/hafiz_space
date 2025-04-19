@@ -1,571 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Islamic Website - Premium Platform for Videos, Images, and Audio Lectures">
-  <meta name="keywords" content="Islamic, Quran, Hadith, Videos, Images, Audio, Premium">
-  <meta name="author" content="Hafizul Islam">
-  <title>Premium Islamic Website</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&display=swap" rel="stylesheet">
-  
-  <style>
-/* General Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #ffffff82;
-  color: #333;
-  line-height: 1.6;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #2980b9;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #34495e;
-}
-
-
-
-
-
-
-
-/* Header Styles */
-header {
-  background: linear-gradient(135deg, #2980b9, #6dd5fa);
-  color: #fff;
-  padding: 1px 0;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Section Title Styles */
-.section-title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 3rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 3px solid #2c3e50;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-
-
-
-
-
-
-
-/* Footer Styles */
-footer {
-  background: #2c3e50;
-  color: #fff;
-  padding: 40px 0;
-  text-align: center;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.social-links a {
-  color: #fff;
-  margin: 0 15px;
-  font-size: 3.5rem;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #f39c12;
-}
-
-
-
-
-
-
-
-
-/* Media Section Styles */
-.media-section {
-  margin: 60px 0;
-}
-
-.media-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #e0e0e0;
-}
-
-.media-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-.media-card img, .media-card video, .media-card audio {
-  width: 100%;
-  border-radius: 15px;
-  max-height: 500px;
-  object-fit: cover;
-  border: 1px solid #e0e0e0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Share Buttons Styles */
-.share-buttons {
-  margin-top: 15px;
-}
-
-.share-buttons a {
-  margin-right: 17px;
-  color: ##1b14f3c2;
-  font-size: 2rem;
-  transition: color 0.3s ease;
-}
-
-.share-buttons a:hover {
-  color: ##1b14f3c2;
-}
-
-
-
-
-
-
-
-/* Sticker Icon Styles */
-.sticker-icon {
-  font-size: 3rem;
-  margin-right: 10px;
-  color: #1b14f3c2;
-}
-
-
-<!---->
-
-
-
-/* Premium Frame Styles */
-.premium-frame {
-  border: 2px solid #000000;
-  border-radius: 30px;
-  padding: 20px;
-  background: #ffffff40;
-  
-  margin: 80px 0;
-}
-
-
-
-
-
-
-
-/* Parallax Scrolling Styles */
-.parallax-section {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 400px;
-}
-
-
-
-
-
-
-/* Image Gallery Lightbox Styles */
-.gallery-item {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: scale(1.05);
-}
-
-
-
-
-
-/* 3D Effects Styles */
-.card-3d {
-  transform: perspective(1000px) rotateY(5deg);
-  transition: transform 0.3s ease;
-}
-
-.card-3d:hover {
-  transform: perspective(1000px) rotateY(0);
-}
-
-
-
-
-
-/* Back-to-Top Button Styles */
-#backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: none;
-  z-index: 1000;
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-30px); }
-  60% { transform: translateY(-15px); }
-}
-
-
-
-
-
-
-/* Responsive Video Styles */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-
-
-
-
-
-
-
-   .luxury-slideshow {
-      position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-      height: 70vh;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-    }
-    
-    .slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 1.5s ease, transform 8s ease;
-      transform: scale(1.05);
-      object-fit: cover;
-    }
-    
-    .slide.active {
-      opacity: 1;
-      transform: scale(1);
-      z-index: 1;
-    }
-    
-    .slide-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 40px;
-      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-      color: white;
-      z-index: 2;
-    }
-    
-    .progress-bar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 3px;
-      background: rgba(255,255,255,0.5);
-      z-index: 3;
-      animation: progress 5s linear infinite;
-    }
-    
-    @keyframes progress {
-      0% { width: 0% }
-      100% { width: 100% }
-    }
-    
-    
-    
-    
-
-
-
-
- 
-   
-       <!--books-->
-       body {
-    background: linear-gradient(to right, #dbeafe, #fefce8);}
-    .glass {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      font-family: 'Poppins', sans-serif;
-    } 
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
-
-  <style>
-    /* SCROLLBAR STYLE START */
-
-    /* For Chrome, Edge, Safari */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1; /* Scrollbar background */
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #4CAF50; /* Scrollbar thumb color */
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #45a049; /* Thumb hover color */
-    }
-
-    /* For Firefox */
-    * {
-      scrollbar-width: thin;
-      scrollbar-color: #4CAF50 #f1f1f1;
-    }
-
-    /* SCROLLBAR STYLE END */
-  
-
-</style>
-</head>
-<body>
-  <!-- Add Scroll Progress Bar -->
-  <div id="scrollProgressBar"></div>
-
-  <!-- Header -->
-  <header>
-    <h4>Wellcome to Islamic Website</h>
-   
-  </header>
-
-
-
-
-
- 
-  
-
-<div class="luxury-slideshow">
-  <img src="image1.jpg" class="slide active" loading="lazy" alt="Premium Content">
-  <img src="image2.jpg" class="slide" loading="lazy" alt="Premium Content">
-  <img src="image3.jpg" class="slide" loading="lazy" alt="Premium Content">
-  
-  <div class="slide-overlay">
-    <h2>Professional Title</h2>
-    <p>Optional description text</p>
-  </div>
-  
-  <div class="progress-bar"></div>
-</div>
-
-
-
-
-
-
-
-
-   
-  
- 
- 
- 
- 
-
-    
-    
-
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  
-    <!-- space-->
-   <br>  <br>
-   
-   
-</head>
-<body class="font-sans">
-
-  <!-- Header -->
-  <header class="text-center p-10">
-    <h1 class="text-4xl font-bold text-gray-800 drop-shadow-sm">Book Collection</h1>
-    <p class="mt-2 text-gray-600">Curated Islamic knowledge — free to read & download</p>
-  </header>
-  
-  
-  
-  
-  
-  
-   <!-- space-->
-   <br>  <br>
-  
-  
-
-  <!-- Books Grid -->
-  <main class="px-6 pb-10">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-
-      <!-- Book Card -->
-      <div class="glass rounded-2xl shadow-xl p-5 flex flex-col items-center transition transform hover:-translate-y-1 hover:shadow-2xl">
-        <img src="book-cover.jpg" alt="Book 1" class="w-80 h-80 object-cover rounded-md mb-4 border-2 border-white shadow-sm">
-        <h2 class="text-lg font-semibold text-center text-gray-800 mb-2">Book Title 1</h2>
-        <a href="books/book1.pdf" target="_blank" class="mt-auto bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition">
-          View
-        </a>
-      </div>
-
-      <!-- Book Card 2 -->
-      <div class="glass rounded-2xl shadow-xl p-5 flex flex-col items-center transition transform hover:-translate-y-1 hover:shadow-2xl">
-        <img src="book-cover2.jpg" alt="Book 2" class="w-80 h-80 object-cover rounded-md mb-4 border-2 border-white shadow-sm">
-        <h2 class="text-lg font-semibold text-center text-gray-800 mb-2">Book Title 2</h2>
-        <a href="books/book2.pdf" target="_blank" class="mt-auto bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition">
-          View
-        </a>
-      </div>
-      
-      
-       <!-- Book Card 3 -->
-      <div class="glass rounded-2xl shadow-xl p-5 flex flex-col items-center transition transform hover:-translate-y-1 hover:shadow-2xl">
-        <img src="book-cover3.jpg" alt="Book 3" class="w-80 h-80 object-cover rounded-md mb-4 border-2 border-white shadow-sm">
-        <h2 class="text-lg font-semibold text-center text-gray-800 mb-2">Book Title 3</h2>
-        <a href="books/book3.pdf" target="_blank" class="mt-auto bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition">
-          View
-        </a>
-      </div>
-
-      <!-- Add more book cards as needed -->
-
-    </div>
-  </main>
-  
-  
-  <!-- More Books Button -->
-<div class="text-center mt-10">
-  <a href="more-books.html" class="inline-block px-16 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transform transition duration-300">
-    More Books →
-  </a>
-</div>
-
- 
-        
-    
-
-
-    
-
-
-
-
-
-
-
-
-   
-  
-    <!-- space-->
-   <br>  <br>
-
-    <!-- space-->
-   <br>  <br>
-    <!-- space-->
-   <br>  <br>
-<!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Divine Islamic content by MMD Ashraf Alimullah Siddique - Naat, Lectures, and Islamic Events">
     <title>MMD ASHRAF ALIMULLAH SIDDIQUE | Divine Islamic Content</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1e5f74;
+            --primary-dark: #133a4a;
             --secondary: #1d2d50;
             --accent: #fcdab7;
             --gold: #d4af37;
-            --text: #333;
+            --text: #333333;
+            --text-light: #555555;
             --light: #f8f1f1;
             --white: #ffffff;
             --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.32, 1.28);
+            --radius: 16px;
+            --radius-sm: 8px;
         }
         
         * {
@@ -574,13 +30,18 @@ footer {
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             background: linear-gradient(135deg, #f8f1f1 0%, #e8f0f8 100%);
             color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
-            font-family: 'Poppins', 'Amiri', sans-serif;
+            font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
+            position: relative;
         }
         
         /* Islamic Pattern Background */
@@ -593,6 +54,22 @@ footer {
             background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M20 20h60v60H20z' stroke='%231d2d50' stroke-width='0.5' stroke-opacity='0.05' fill='none'/%3E%3C/svg%3E");
             z-index: -1;
             opacity: 0.15;
+        }
+        
+        /* Skip to Content Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--secondary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: transform 0.3s;
+        }
+        
+        .skip-link:focus {
+            transform: translateY(40px);
         }
         
         .container {
@@ -657,7 +134,7 @@ footer {
         
         .category-card {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 18px;
+            border-radius: var(--radius);
             height: 220px;
             position: relative;
             overflow: hidden;
@@ -668,6 +145,12 @@ footer {
             align-items: center;
             justify-content: center;
             border: 1px solid rgba(255,255,255,0.1);
+            animation: pulse 8s infinite;
+        }
+        
+        .category-card:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
         }
         
         .category-card::before {
@@ -683,7 +166,7 @@ footer {
         }
         
         .category-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(29, 45, 80, 0.3);
         }
         
@@ -722,22 +205,80 @@ footer {
             line-height: 1;
         }
         
-        .card-hint {
+        /* Hover Hint */
+        .hover-hint {
             position: absolute;
             bottom: 20px;
             left: 0;
             width: 100%;
-            text-align: center;
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            z-index: 2;
             opacity: 0;
-            transform: translateY(10px);
+            transform: translateY(15px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        .category-card:hover .card-hint {
+        .hint-content {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hint-content span {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .hint-arrow {
+            position: relative;
+            width: 20px;
+            height: 12px;
+        }
+        
+        .arrow-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 15px;
+            height: 2px;
+            background: white;
+            transform: translateY(-50%);
+        }
+        
+        .arrow-head {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+        
+        .category-card:hover .hover-hint {
             opacity: 1;
             transform: translateY(0);
+            transition-delay: 0.1s;
+        }
+        
+        .category-card:hover .hint-arrow {
+            animation: arrowBounce 1.5s infinite;
+        }
+        
+        @keyframes arrowBounce {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
         }
         
         /* Premium Modal */
@@ -766,7 +307,7 @@ footer {
         
         .modal-container {
             background: var(--white);
-            border-radius: 20px;
+            border-radius: var(--radius);
             width: 100%;
             max-width: 800px;
             max-height: 90vh;
@@ -813,6 +354,11 @@ footer {
             color: var(--white);
         }
         
+        .modal-close:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
         .modal-close:hover {
             background: rgba(255, 255, 255, 0.25);
             transform: rotate(90deg);
@@ -822,12 +368,34 @@ footer {
             padding: 30px;
             overflow-y: auto;
             max-height: calc(90vh - 120px);
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) rgba(248, 241, 241, 0.5);
+        }
+        
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .modal-content::-webkit-scrollbar-track {
+            background: rgba(248, 241, 241, 0.3);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        .modal-content::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--primary), var(--secondary));
+            border-radius: 10px;
+            border: 2px solid rgba(248, 241, 241, 0.5);
+        }
+        
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
         }
         
         /* Enhanced Audio Player */
         .audio-item {
             padding: 20px;
-            border-radius: 12px;
+            border-radius: var(--radius-sm);
             margin-bottom: 15px;
             transition: var(--transition);
             background: rgba(248, 241, 241, 0.5);
@@ -852,7 +420,7 @@ footer {
             height: 50px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
-            border-radius: 12px;
+            border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -873,23 +441,46 @@ footer {
         
         .audio-date {
             font-size: 0.85rem;
-            color: #666;
+            color: var(--text-light);
             margin-top: 5px;
             font-family: 'Amiri', serif;
         }
         
         .audio-player {
             margin-top: 15px;
+            width: 100%;
         }
         
         audio {
             width: 100%;
-            border-radius: 10px;
+            border-radius: var(--radius-sm);
         }
         
         audio::-webkit-media-controls-panel {
             background: var(--light);
-            border-radius: 0 0 10px 10px;
+            border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+        }
+        
+        /* Loading State */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         
         /* View More Button */
@@ -911,9 +502,10 @@ footer {
             box-shadow: 0 5px 15px rgba(30, 95, 116, 0.3);
         }
         
-        .view-more a:hover {
+        .view-more a:hover, .view-more a:focus {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(30, 95, 116, 0.4);
+            outline: none;
         }
         
         .view-more a i {
@@ -923,6 +515,81 @@ footer {
         
         .view-more a:hover i {
             transform: translateX(3px);
+        }
+        
+       /* === Premium Smooth Pulse Animation === */
+@keyframes ultra-pulse {
+  0% {
+    transform: scale(1) translateZ(0);
+    filter: 
+      drop-shadow(0 1px 1px rgba(0, 0, 0, 0.03)) 
+      brightness(100%);
+  }
+  35% {
+    transform: scale(1.03) translateZ(0.5px) translateY(-1px);
+    filter: 
+      drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1)) 
+      brightness(102%);
+  }
+  70% {
+    transform: scale(1.01) translateZ(0.2px);
+    filter: 
+      drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06)) 
+      brightness(101%);
+  }
+  100% {
+    transform: scale(1) translateZ(0);
+    filter: 
+      drop-shadow(0 1px 1px rgba(0, 0, 0, 0.03)) 
+      brightness(100%);
+  }
+}
+
+/* === Ultra-Smooth Application === */
+.ultra-pulse {
+  animation: ultra-pulse 2.4s ease-in-out infinite;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* === Micro-Interaction on Hover === */
+.ultra-pulse:hover {
+  animation-duration: 1.8s;
+  filter: brightness(101%) !important;
+}
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-dark);
+            transform: translateY(-3px);
         }
         
         /* Responsive Design */
@@ -967,204 +634,154 @@ footer {
                 height: 45px;
                 font-size: 1.1rem;
             }
+            
+            .modal-header {
+                padding: 20px 15px;
+            }
+            
+            .modal-close {
+                width: 35px;
+                height: 35px;
+                top: 15px;
+                right: 15px;
+            }
+        }
+        
+        /* Touch Device Adaptation */
+        @media (hover: none) {
+            .hover-hint {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .category-card {
+                animation: none;
+            }
         }
         
         
-        
-        
-        
-        /* Custom Scrollbar Styling */
-.modal-content {
-    max-height: 65vh;
-    overflow-y: auto;
-    padding-right: 15px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) rgba(248, 241, 241, 0.5);
+        /* Additional Card Colors */
+.category-card.waz-lectures {
+  background: linear-gradient(135deg, #3a7ca5, #2f6690);
 }
 
-.modal-content::-webkit-scrollbar {
-    width: 8px;
+.category-card.munazad {
+  background: linear-gradient(135deg, #5d5179, #4a3f69);
 }
 
-.modal-content::-webkit-scrollbar-track {
-    background: rgba(248, 241, 241, 0.3);
-    border-radius: 10px;
-    margin: 10px 0;
+.category-card.question-answer {
+  background: linear-gradient(135deg, #4f772d, #31572c);
 }
 
-.modal-content::-webkit-scrollbar-thumb {
-    background: linear-gradient(var(--primary), var(--secondary));
-    border-radius: 10px;
-    border: 2px solid rgba(248, 241, 241, 0.5);
+/* Add these to the existing animation styles */
+.category-card.waz-lectures:hover {
+  box-shadow: 0 20px 40px rgba(47, 102, 144, 0.3);
 }
 
-.modal-content::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
+.category-card.munazad:hover {
+  box-shadow: 0 20px 40px rgba(74, 63, 105, 0.3);
 }
 
-
-
-
-
-/* pulse */
+.category-card.question-answer:hover {
+  box-shadow: 0 20px 40px rgba(49, 87, 44, 0.3);
+}
 
 .category-card {
-  animation: pulse 1.5s infinite;
+  /* Remove this line: */
+  /* animation: pulse 8s infinite; */
+
+  /* Add this instead: */
+  animation: ultra-pulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
-
-  0% { transform: scale(1); }
-  50% { transform: scale(1.03); }
-  100% { transform: scale(1); }
-}
-
-
- /* 3d */
-
-.category-card {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.category-card:hover {
-  transform: translateY(-10px) rotateX(10deg);
-  box-shadow: 0 20px 30px rgba(0,0,0,0.2);
-}
-
-
-
-
-
-
-
-
-
-/* ===== Premium Card Container ===== */
-.category-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* ===== Ultra-Premium Hover Hint ===== */
-.hover-hint {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 2;
-  opacity: 0;
-  transform: translateY(15px);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hint-content {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
-  padding: 8px 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.hint-content span {
-  color: white;
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-.hint-arrow {
-  position: relative;
-  width: 20px;
-  height: 12px;
-}
-
-.arrow-line {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 15px;
-  height: 2px;
-  background: white;
-  transform: translateY(-50%);
-}
-
-.arrow-head {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
-  transform: translateY(-50%) rotate(-45deg);
-}
-
-/* ===== Hover Effects ===== */
-.category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(29, 45, 80, 0.3);
-}
-
-.category-card:hover .hover-hint {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.1s;
-}
-
-/* ===== Micro-Interaction ===== */
-.category-card:hover .hint-arrow {
-  animation: arrowBounce 1.5s infinite;
-}
-
-@keyframes arrowBounce {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(5px); }
-}
-
-/* ===== Touch Device Adaptation ===== */
-@media (hover: none) {
-  .hover-hint {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes ultra-pulse {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  50% { 
+    transform: scale(1.03); 
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
   }
 }
-
-
-
-
-
-
-
-
-
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to Content</a>
     <div class="islamic-pattern"></div>
+    
     <div class="container">
-        <div class="header">
+        <header class="header" role="banner">
             <div class="islamic-border"></div>
             <h1>MMD ASHRAF ALIMULLAH SIDDIQUE</h1>
             <p class="subtitle">Divine Recitations & Sacred Knowledge</p>
             <div class="islamic-border"></div>
-        </div>
+        </header>
         
-        <div class="categories-container">
-            <!-- NAAT Card -->
-            <div class="category-card" onclick="openModal('naat')">
-  <!-- Add this hover hint div as the first child -->
+        <main id="main-content" role="main">
+            <div class="categories-container">
+                <!-- NAAT Card -->
+                <article class="category-card" tabindex="0" onclick="openModal('naat')" onkeydown="if(event.key === 'Enter') openModal('naat')">
+                    <div class="hover-hint">
+                        <div class="hint-content">
+                            <span>Listen to Naats</span>
+                            <div class="hint-arrow">
+                                <div class="arrow-line"></div>
+                                <div class="arrow-head"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <i class="fas fa-mosque" aria-hidden="true"></i>
+                        <h3>NAAT SHARIF</h3>
+                    </div>
+                    <span class="card-ornament" aria-hidden="true">ﷺ</span>
+                </article>
+                
+                <!-- WAZ Card -->
+                <article class="category-card" tabindex="0" onclick="openModal('waz')" onkeydown="if(event.key === 'Enter') openModal('waz')">
+                    <div class="hover-hint">
+                        <div class="hint-content">
+                            <span>Explore Lectures</span>
+                            <div class="hint-arrow">
+                                <div class="arrow-line"></div>
+                                <div class="arrow-head"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <i class="fas fa-microphone-alt" aria-hidden="true"></i>
+                        <h3>ISLAMIC LECTURES</h3>
+                    </div>
+                    <span class="card-ornament" aria-hidden="true">ﷺ</span>
+                </article>
+                
+                <!-- MILLA Card -->
+                <article class="category-card" tabindex="0" onclick="openModal('milla')" onkeydown="if(event.key === 'Enter') openModal('milla')">
+                    <div class="hover-hint">
+                        <div class="hint-content">
+                            <span>View Events</span>
+                            <div class="hint-arrow">
+                                <div class="arrow-line"></div>
+                                <div class="arrow-head"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        <h3>ISLAMIC EVENTS</h3>
+                    </div>
+                    <span class="card-ornament" aria-hidden="true">ﷺ</span>
+                </article>
+                
+                <!-- WAZ LECTURES Card -->
+<article class="category-card waz-lectures" tabindex="0" onclick="openModal('waz-lectures')" onkeydown="if(event.key === 'Enter') openModal('waz-lectures')">
   <div class="hover-hint">
     <div class="hint-content">
-      <span>Listen to Naats</span>
+      <span>Explore Waz Lectures</span>
       <div class="hint-arrow">
         <div class="arrow-line"></div>
         <div class="arrow-head"></div>
@@ -1172,26 +789,18 @@ footer {
     </div>
   </div>
   
-  <!-- Your existing NAAT content stays below -->
   <div class="card-content">
-    <i class="fas fa-mosque"></i>
-    <h3>NAAT SHARIF</h3>
-  </div>  
-</div>
-            
-            
-            
-            
-            
-           
+    <i class="fas fa-book-open" aria-hidden="true"></i>
+    <h3>WAZ LECTURES</h3>
+  </div>
+  <span class="card-ornament" aria-hidden="true">ﷺ</span>
+</article>
 
-            
-            <!-- WAZ Card -->
-            <div class="category-card" onclick="openModal('waz')">
-  <!-- Hover hint -->
+<!-- MUNAZAD Card -->
+<article class="category-card munazad" tabindex="0" onclick="openModal('munazad')" onkeydown="if(event.key === 'Enter') openModal('munazad')">
   <div class="hover-hint">
     <div class="hint-content">
-      <span>Explore Lectures</span>
+      <span>View Munazad</span>
       <div class="hint-arrow">
         <div class="arrow-line"></div>
         <div class="arrow-head"></div>
@@ -1199,19 +808,18 @@ footer {
     </div>
   </div>
   
-  <!-- Existing WAZ content -->
   <div class="card-content">
-    <i class="fas fa-microphone-alt"></i>
-    <h3>ISLAMIC LECTURES</h3>
+    <i class="fas fa-comments" aria-hidden="true"></i>
+    <h3>MUNAZAD</h3>
   </div>
-</div>
-            
-            <!-- MILLA Card -->
-           <div class="category-card" onclick="openModal('milla')">
-  <!-- Hover hint -->
+  <span class="card-ornament" aria-hidden="true">ﷺ</span>
+</article>
+
+<!-- QUESTION-ANSWER Card -->
+<article class="category-card question-answer" tabindex="0" onclick="openModal('question-answer')" onkeydown="if(event.key === 'Enter') openModal('question-answer')">
   <div class="hover-hint">
     <div class="hint-content">
-      <span>View Events</span>
+      <span>Explore Q&A</span>
       <div class="hint-arrow">
         <div class="arrow-line"></div>
         <div class="arrow-head"></div>
@@ -1219,136 +827,79 @@ footer {
     </div>
   </div>
   
-  <!-- Existing MILLA content -->
   <div class="card-content">
-    <i class="fas fa-calendar-alt"></i>
-    <h3>ISLAMIC EVENTS</h3>
+    <i class="fas fa-question-circle" aria-hidden="true"></i>
+    <h3>QUESTION-ANSWER</h3>
   </div>
-</div>
-
-
+  <span class="card-ornament" aria-hidden="true">ﷺ</span>
+</article>
+            </div>
+        </main>
+    </div>
+    
+  
 
     <!-- NAAT Modal -->
-    <div class="modal-overlay" id="naat-modal">
+    <div class="modal-overlay" id="naat-modal" role="dialog" aria-modal="true" aria-labelledby="naat-modal-title">
         <div class="modal-container">
             <div class="modal-header">
-                <h2>NAAT SHARIF COLLECTION</h2>
-                <button class="modal-close" onclick="closeModal()">
+                <h2 id="naat-modal-title">NAAT SHARIF
+                </h2>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="modal-content">
-                <div class="audio-item">
+                <article class="audio-item">
                     <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <div class="audio-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
                         <div class="audio-details">
-                            <div class="audio-title">Tala'al Badru Alayna - Beautiful Recitation</div>
-                            <div class="audio-date">Recorded: 15 Ramadan 1444</div>
+                            <h3 class="audio-title">Tala'al Badru Alayna - Beautiful Recitation</h3>
+                            <p class="audio-date">Recorded: 15 Ramadan 1444</p>
                         </div>
                     </div>
                     <div class="audio-player">
-                        <audio controls>
+                        <audio controls preload="metadata">
                             <source src="naat1.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-                </div>
+                </article>
                 
-                <div class="audio-item">
+                <article class="audio-item">
                     <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <div class="audio-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
                         <div class="audio-details">
-                            <div class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</div>
-                            <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
+                            <h3 class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</h3>
+                            <p class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</p>
                         </div>
                     </div>
                     <div class="audio-player">
-                        <audio controls>
+                        <audio controls preload="metadata">
                             <source src="naat2.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-                </div>
+                </article>
                 
-                
-                
-                
-                
-                
-              <!--2 autio-->  
-                
-                
-                <div class="audio-item">
+                <article class="audio-item">
                     <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <div class="audio-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
                         <div class="audio-details">
-                            <div class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</div>
-                            <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
+                            <h3 class="audio-title">Ya Nabi Salam Alayka - Soulful Rendition</h3>
+                            <p class="audio-date">Recorded: 1 Muharram 1445</p>
                         </div>
                     </div>
                     <div class="audio-player">
-                        <audio controls>
-                            <source src="naat2.mp3" type="audio/mpeg">
+                        <audio controls preload="metadata">
+                            <source src="naat3.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-                </div>
+                </article>
                 
-         <!----------------->       
-         
-         
-         
-         
-         
-         <!--2 autio-->  
-                
-                
-                <div class="audio-item">
-                    <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
-                        <div class="audio-details">
-                            <div class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</div>
-                            <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
-                        </div>
-                    </div>
-                    <div class="audio-player">
-                        <audio controls>
-                            <source src="naat2.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>
-                </div>
-                
-         <!----------------->       
-         
-         
-         
-         
-         
-         
-         <!--2 autio-->  
-                
-                
-                <div class="audio-item">
-                    <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
-                        <div class="audio-details">
-                            <div class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</div>
-                            <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
-                        </div>
-                    </div>
-                    <div class="audio-player">
-                        <audio controls>
-                            <source src="naat2.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>
-                </div>
-                
-         <!----------------->       
-              
                 <div class="view-more">
-                    <a href="#">
+                    <a href="#" class="btn-view-more">
                         View More Naat <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -1356,111 +907,66 @@ footer {
         </div>
     </div>
     
-    
-    
-    
-    
-    
-    
-    
-    
     <!-- WAZ Modal -->
-    <div class="modal-overlay" id="waz-modal">
+    <div class="modal-overlay" id="waz-modal" role="dialog" aria-modal="true" aria-labelledby="waz-modal-title">
         <div class="modal-container">
             <div class="modal-header">
-                <h2>ISLAMIC LECTURES</h2>
-                <button class="modal-close" onclick="closeModal()">
+                <h2 id="waz-modal-title">ISLAMIC LECTURES</h2>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="modal-content">
-                <div class="audio-item">
+                <article class="audio-item">
                     <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <div class="audio-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
                         <div class="audio-details">
-                            <div class="audio-title">The Importance of Salah - Full Lecture</div>
-                            <div class="audio-date">Recorded: 20 Jumada-al-Awwal 1444</div>
+                            <h3 class="audio-title">The Importance of Salah - Full Lecture</h3>
+                            <p class="audio-date">Recorded: 20 Jumada-al-Awwal 1444</p>
                         </div>
                     </div>
                     <div class="audio-player">
-                        <audio controls>
+                        <audio controls preload="metadata">
                             <source src="waz1.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-                </div>
+                </article>
                 
-                
-                
-                <!--2 autio-->  
-                
-                
-                <div class="audio-item">
+                <article class="audio-item">
                     <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <div class="audio-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
                         <div class="audio-details">
-                            <div class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</div>
-                            <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
+                            <h3 class="audio-title">The Beauty of Patience in Islam</h3>
+                            <p class="audio-date">Recorded: 15 Safar 1444</p>
                         </div>
                     </div>
                     <div class="audio-player">
-                        <audio controls>
-                            <source src="naat2.mp3" type="audio/mpeg">
+                        <audio controls preload="metadata">
+                            <source src="waz2.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-                </div>
+                </article>
                 
-         <!----------------->       
-         
-         
-         
-         <!--2 autio-->  
-                
-                
-                <div class="audio-item">
+                <article class="audio-item">
                     <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <div class="audio-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
                         <div class="audio-details">
-                            <div class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</div>
-                            <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
+                            <h3 class="audio-title">Understanding the Last Sermon of Prophet Muhammad (PBUH)</h3>
+                            <p class="audio-date">Recorded: 9 Dhul-Hijjah 1443</p>
                         </div>
                     </div>
                     <div class="audio-player">
-                        <audio controls>
-                            <source src="naat2.mp3" type="audio/mpeg">
+                        <audio controls preload="metadata">
+                            <source src="waz3.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-                </div>
+                </article>
                 
-         <!----------------->       
-         
-         
-         
-         <!--2 autio-->  
-                
-                
-                <div class="audio-item">
-                    <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
-                        <div class="audio-details">
-                            <div class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</div>
-                            <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
-                        </div>
-                    </div>
-                    <div class="audio-player">
-                        <audio controls>
-                            <source src="naat2.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>
-                </div>
-                
-         <!----------------->       
-         
                 <div class="view-more">
-                    <a href="#">
+                    <a href="#" class="btn-view-more">
                         View More Lectures <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -1469,103 +975,65 @@ footer {
     </div>
     
     <!-- MILLA Modal -->
-    <div class="modal-overlay" id="milla-modal">
+    <div class="modal-overlay" id="milla-modal" role="dialog" aria-modal="true" aria-labelledby="milla-modal-title">
         <div class="modal-container">
             <div class="modal-header">
-                <h2>ISLAMIC EVENTS</h2>
-                <button class="modal-close" onclick="closeModal()">
+                <h2 id="milla-modal-title">ISLAMIC EVENTS</h2>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="modal-content">
-                <div class="audio-item">
+                <article class="audio-item">
                     <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <div class="audio-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
                         <div class="audio-details">
-                            <div class="audio-title">Milad-un-Nabi Conference 2023</div>
-                            <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
+                            <h3 class="audio-title">Milad-un-Nabi Conference 2023</h3>
+                            <p class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</p>
                         </div>
                     </div>
                     <div class="audio-player">
-                        <audio controls>
+                        <audio controls preload="metadata">
                             <source src="milla1.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-                </div>
+                </article>
                 
-                
-                
-                
-                <!--2 autio-->  
-                
-                
-                <div class="audio-item">
+                <article class="audio-item">
                     <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <div class="audio-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
                         <div class="audio-details">
-                            <div class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</div>
-                            <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
+                            <h3 class="audio-title">Annual Islamic Convention 2023</h3>
+                            <p class="audio-date">Recorded: 15 Shawwal 1444</p>
                         </div>
                     </div>
                     <div class="audio-player">
-                        <audio controls>
-                            <source src="naat2.mp3" type="audio/mpeg">
+                        <audio controls preload="metadata">
+                            <source src="milla2.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-                </div>
+                </article>
                 
-         <!----------------->       
-         
-         
-         
-         <!--2 autio-->  
-                
-                
-                <div class="audio-item">
+                <article class="audio-item">
                     <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <div class="audio-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
                         <div class="audio-details">
-                            <div class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</div>
-                            <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
+                            <h3 class="audio-title">Quran Memorization Ceremony</h3>
+                            <p class="audio-date">Recorded: 27 Rajab 1444</p>
                         </div>
                     </div>
                     <div class="audio-player">
-                        <audio controls>
-                            <source src="naat2.mp3" type="audio/mpeg">
+                        <audio controls preload="metadata">
+                            <source src="milla3.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-                </div>
+                </article>
                 
-         <!----------------->       
-         
-         
-         
-         <!--2 autio-->  
-                
-                
-                <div class="audio-item">
-                    <div class="audio-info">
-                        <div class="audio-icon"><i class="fas fa-microphone-alt"></i></div>
-                        <div class="audio-details">
-                            <div class="audio-title">Mawlaya Salli Wa Sallim - Heart Touching</div>
-                            <div class="audio-date">Recorded: 12 Rabi-ul-Awwal 1444</div>
-                        </div>
-                    </div>
-                    <div class="audio-player">
-                        <audio controls>
-                            <source src="naat2.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>
-                </div>
-                
-         <!----------------->       
-         
                 <div class="view-more">
-                    <a href="#">
+                    <a href="#" class="btn-view-more">
                         View More Events <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -1573,17 +1041,141 @@ footer {
         </div>
     </div>
 
+
+
+<!-- WAZ LECTURES Modal -->
+<div class="modal-overlay" id="waz-lectures-modal" role="dialog" aria-modal="true" aria-labelledby="waz-lectures-modal-title">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h2 id="waz-lectures-modal-title">WAZ LECTURES COLLECTION</h2>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-content">
+      <article class="audio-item">
+        <div class="audio-info">
+          <div class="audio-icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
+          <div class="audio-details">
+            <h3 class="audio-title">The Importance of Tawheed</h3>
+            <p class="audio-date">Recorded: 10 Muharram 1444</p>
+          </div>
+        </div>
+        <div class="audio-player">
+          <audio controls preload="metadata">
+            <source src="waz-lectures1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </article>
+      
+      <div class="view-more">
+        <a href="#" class="btn-view-more">
+          View More Lectures <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MUNAZAD Modal -->
+<div class="modal-overlay" id="munazad-modal" role="dialog" aria-modal="true" aria-labelledby="munazad-modal-title">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h2 id="munazad-modal-title">MUNAZAD COLLECTION</h2>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-content">
+      <article class="audio-item">
+        <div class="audio-info">
+          <div class="audio-icon"><i class="fas fa-comments" aria-hidden="true"></i></div>
+          <div class="audio-details">
+            <h3 class="audio-title">Islamic Perspectives on Modern Issues</h3>
+            <p class="audio-date">Recorded: 15 Sha'ban 1444</p>
+          </div>
+        </div>
+        <div class="audio-player">
+          <audio controls preload="metadata">
+            <source src="munazad1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </article>
+      
+      <div class="view-more">
+        <a href="#" class="btn-view-more">
+          View More Munazad <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUESTION-ANSWER Modal -->
+<div class="modal-overlay" id="question-answer-modal" role="dialog" aria-modal="true" aria-labelledby="question-answer-modal-title">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h2 id="question-answer-modal-title">QUESTION-ANSWER SESSIONS</h2>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-content">
+      <article class="audio-item">
+        <div class="audio-info">
+          <div class="audio-icon"><i class="fas fa-question-circle" aria-hidden="true"></i></div>
+          <div class="audio-details">
+            <h3 class="audio-title">Common Misconceptions About Islam</h3>
+            <p class="audio-date">Recorded: 22 Rajab 1444</p>
+          </div>
+        </div>
+        <div class="audio-player">
+          <audio controls preload="metadata">
+            <source src="qa1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </article>
+      
+      <div class="view-more">
+        <a href="#" class="btn-view-more">
+          View More Q&A <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <script>
+        // Store the element that had focus before modal opened
+        let focusedElementBeforeModal;
+        
         // Modal functions
         function openModal(type) {
             const modal = document.getElementById(`${type}-modal`);
+            focusedElementBeforeModal = document.activeElement;
+            
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
+            document.documentElement.style.setProperty('--scrollbar-width', `${window.innerWidth - document.documentElement.clientWidth}px`);
+            document.body.style.paddingRight = 'var(--scrollbar-width)';
             
             // Trigger animation
             setTimeout(() => {
                 modal.classList.add('active');
             }, 10);
+            
+            // Focus first focusable element in modal
+            const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            if (focusableElements.length > 0) {
+                focusableElements[0].focus();
+            }
+            
+            // Trap focus inside modal
+            trapFocus(modal);
         }
         
         function closeModal() {
@@ -1597,6 +1189,12 @@ footer {
                     modal.style.display = 'none';
                 });
                 document.body.style.overflow = '';
+                document.body.style.paddingRight = '';
+                
+                // Return focus to the element that had it before modal opened
+                if (focusedElementBeforeModal) {
+                    focusedElementBeforeModal.focus();
+                }
             }, 400);
         }
         
@@ -1615,666 +1213,63 @@ footer {
                 closeModal();
             }
         });
+        
+        // Focus trap for accessibility
+        function trapFocus(modal) {
+            const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            const firstFocusableElement = focusableElements[0];
+            const lastFocusableElement = focusableElements[focusableElements.length - 1];
+            
+            modal.addEventListener('keydown', function(e) {
+                const isTabPressed = (e.key === 'Tab' || e.keyCode === 9);
+                
+                if (!isTabPressed) return;
+                
+                if (e.shiftKey) {
+                    if (document.activeElement === firstFocusableElement) {
+                        lastFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                } else {
+                    if (document.activeElement === lastFocusableElement) {
+                        firstFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                }
+            });
+        }
+        
+        // Handle audio loading states
+        document.querySelectorAll('audio').forEach(audio => {
+            audio.addEventListener('waiting', function() {
+                this.parentElement.classList.add('loading');
+            });
+            
+            audio.addEventListener('canplay', function() {
+                this.parentElement.classList.remove('loading');
+            });
+            
+            audio.addEventListener('error', function() {
+                this.parentElement.classList.remove('loading');
+                const errorMsg = document.createElement('p');
+                errorMsg.textContent = 'Error loading audio. Please try again later.';
+                errorMsg.style.color = 'red';
+                errorMsg.style.marginTop = '10px';
+                this.parentElement.appendChild(errorMsg);
+            });
+        });
+        
+        // Preload first audio file when modal opens
+        document.querySelectorAll('.modal-overlay').forEach(modal => {
+            modal.addEventListener('transitionstart', function() {
+                if (this.classList.contains('active')) {
+                    const firstAudio = this.querySelector('audio');
+                    if (firstAudio) {
+                        firstAudio.load();
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-<!-- SWEET PROFESSIONAL HERO SECTION - COPY ALL BELOW -->
-<div style="
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 90vh;
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-  overflow: hidden;
-">
-
-  <!-- Background Blobs -->
-  <div style="
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: rgba(100, 210, 255, 0.15);
-    border-radius: 50%;
-    filter: blur(60px);
-    top: -100px;
-    right: -100px;
-    z-index: 0;
-  "></div>
-  <div style="
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: rgba(255, 150, 200, 0.15);
-    border-radius: 50%;
-    filter: blur(60px);
-    bottom: -150px;
-    left: -150px;
-    z-index: 0;
-  "></div>
-
-  <!-- Content Card -->
-  <div style="
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 50px;
-    width: 90%;
-    max-width: 700px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    z-index: 1;
-    position: relative;
-  ">
-
-    <!-- Image -->
-    <div style="
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #64d2ff, #ff96c8);
-      margin: 0 auto 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(100, 210, 255, 0.3);
-    ">
-      <img src="your-logo-or-image.png" alt="Logo" style="
-        width: 70%;
-        height: 70%;
-        object-fit: contain;
-      ">
-    </div>
-
-    <!-- Text -->
-    <h1 style="
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      font-weight: 700;
-      color: #333;
-      margin-bottom: 20px;
-      line-height: 1.3;
-    ">
-      Your Beautiful Title Here
-    </h1>
-
-    <p style="
-      font-size: 1.1rem;
-      color: #666;
-      line-height: 1.7;
-      margin-bottom: 35px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    ">
-      A sweet, professional description that captures attention while maintaining elegance.
-    </p>
-
-    <!-- Button -->
-    <a hmusic.htmlef#ml" style="
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px 40px;
-      background: linear-gradient(135deg, #64d2ff, #ff96c8);
-      color: white;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      box-shadow: 0 5px 20px rgba(100, 210, 255, 0.4);
-      transition: all 0.3s ease;
-      border: none;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    " 
-    onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(100, 210, 255, 0.6)'" 
-    onmouseout="this.style.transform='none'; this.style.boxShadow='0 5px 20px rgba(100, 210, 255, 0.4)'">
-      <span style="position: relative; z-index: 2;">
-        Get Started
-      </span>
-      <span style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, #ff96c8, #64d2ff);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: 1;
-      " 
-      onmouseover="this.style.opacity='1'" 
-      onmouseout="this.style.opacity='0'"></span>
-    </a>
-  </div>
-</div>
-
-<!-- Add this to your <head> -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-    <!-- Home Section -->
-    <section id="home">
-     
-      
-      
-      
-      
-<div class="timeline-container" style="
-    max-width: 680px;
-    margin: 0 auto;
-    position: relative;
-    padding: 40px 0;
-    font-family: 'Inter', sans-serif;
-">
-
-    <!-- Gold Center line -->
-    <div style="
-        position: absolute;
-        left: 50%;
-        top: 0;
-        bottom: 0;
-        width: 3px;
-        background: linear-gradient(to bottom, 
-            transparent 0%, 
-            #d4af37 10%, 
-            #d4af37 90%, 
-            transparent 100%);
-        transform: translateX(-50%);
-        z-index: 1;
-    "></div>
-
-    <!-- 1. Islamic New Year (Left) -->
-    <div class="event-card" style="
-        width: 280px;
-        background: linear-gradient(145deg, rgba(41,128,185,0.95), rgba(44,62,80,0.95));
-        color: white;
-        padding: 5px 5px;
-        border-radius: 10px;
-        border: 1px solid rgba(255,255,255,0.2);
-        position: relative;
-        margin: 0 0 30px auto;
-        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
-        text-align: right;
-        z-index: 2;
-        backdrop-filter: blur(2px);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            left: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(145deg, #d4af37, #f9d423);
-            color: #2C3E50;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-            border: 2px solid white;
-            z-index: 3;
-        ">📅</div>
-        
-        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">ISLAMIC NEW YEAR</h3>
-        <div style="display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap;">
-            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                1 Muharram 1446
-            </div>
-            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                19 July 2024
-            </div>
-        </div>
-        <div style="position: absolute; bottom: -8px; right: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7));"></div>
-    </div>
-
-    <!-- 2. Ashura (Right) -->
-    <div class="event-card" style="
-        width: 280px;
-        background: linear-gradient(145deg, rgba(109,33,79,0.95), rgba(179,55,113,0.95));
-        color: white;
-        padding: 5px 5px;
-        border-radius: 10px;
-        border: 1px solid rgba(255,255,255,0.2);
-        position: relative;
-        margin: 0 auto 30px 0;
-        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
-        z-index: 2;
-        backdrop-filter: blur(2px);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            right: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(145deg, #d4af37, #f9d423);
-            color: #B33771;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-            border: 2px solid white;
-            z-index: 3;
-        ">⚔️</div>
-        
-        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">DAY OF ASHURA</h3>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                10 Muharram 1446
-            </div>
-            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                28 July 2024
-            </div>
-        </div>
-        <div style="position: absolute; bottom: -8px; left: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, rgba(212, 175, 55, 0.7), transparent);"></div>
-    </div>
-
-    <!-- 3. Ramadan (Left) -->
-    <div class="event-card" style="
-        width: 280px;
-        background: linear-gradient(145deg, rgba(34,139,34,0.95), rgba(0,100,0,0.95));
-        color: white;
-        padding: 5px 5px;
-        border-radius: 10px;
-        border: 1px solid rgba(255,255,255,0.2);
-        position: relative;
-        margin: 0 0 30px auto;
-        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
-        text-align: right;
-        z-index: 2;
-        backdrop-filter: blur(2px);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            left: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(145deg, #d4af37, #f9d423);
-            color: #228B22;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-            border: 2px solid white;
-            z-index: 3;
-        ">🌙</div>
-        
-        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">FIRST OF RAMADAN</h3>
-        <div style="display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap;">
-            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                1 Ramadan 1446
-            </div>
-            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                12 March 2025
-            </div>
-        </div>
-        <div style="position: absolute; bottom: -8px; right: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7));"></div>
-    </div>
-
-    <!-- 4. Eid ul-Fitr (Right) -->
-    <div class="event-card" style="
-        width: 280px;
-        background: linear-gradient(145deg, rgba(233,168,0,0.95), rgba(255,215,0,0.95));
-        color: #2c3e50;
-        padding: 5px 5px;
-        border-radius: 10px;
-        border: 1px solid rgba(255,255,255,0.3);
-        position: relative;
-        margin: 0 auto 30px 0;
-        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
-        z-index: 2;
-        backdrop-filter: blur(2px);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            right: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(145deg, #d4af37, #f9d423);
-            color: #E9A800;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-            border: 2px solid white;
-            z-index: 3;
-        ">✨</div>
-        
-        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">EID UL-FITR</h3>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <div style="background: rgba(255,255,255,0.3); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                1 Shawwal 1446
-            </div>
-            <div style="background: rgba(255,255,255,0.3); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                10 April 2025
-            </div>
-        </div>
-        <div style="position: absolute; bottom: -8px; left: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, rgba(212, 175, 55, 0.7), transparent);"></div>
-    </div>
-
-    <!-- 5. Eid ul-Adha (Left) -->
-    <div class="event-card" style="
-        width: 280px;
-        background: linear-gradient(145deg, rgba(178,34,34,0.95), rgba(139,0,0,0.95));
-        color: white;
-        padding: 5px 5px;
-        border-radius: 10px;
-        border: 1px solid rgba(255,255,255,0.2);
-        position: relative;
-        margin: 0 0 30px auto;
-        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
-        text-align: right;
-        z-index: 2;
-        backdrop-filter: blur(2px);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            left: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(145deg, #d4af37, #f9d423);
-            color: #B22222;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-            border: 2px solid white;
-            z-index: 3;
-        ">🐑</div>
-        
-        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">EID UL-ADHA</h3>
-        <div style="display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap;">
-            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                10 Dhul-Hijjah 1446
-            </div>
-            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                16 June 2025
-            </div>
-        </div>
-        <div style="position: absolute; bottom: -8px; right: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7));"></div>
-    </div>
-
-    <!-- 6. Milad-un-Nabi (Right) -->
-    <div class="event-card" style="
-        width: 280px;
-        background: linear-gradient(145deg, rgba(142,45,226,0.95), rgba(74,0,224,0.95));
-        color: white;
-        padding: 5px 5px;
-        border-radius: 10px;
-        border: 1px solid rgba(255,255,255,0.2);
-        position: relative;
-        margin: 0 auto 0 0;
-        box-shadow: 0 8px 25px -5px rgba(0,0,0,0.15);
-        z-index: 2;
-        backdrop-filter: blur(2px);
-    ">
-        <div class="event-icon" style="
-            position: absolute;
-            right: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(145deg, #d4af37, #f9d423);
-            color: #8E2DE2;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-            border: 2px solid white;
-            z-index: 3;
-        ">ﷺ</div>
-        
-        <h3 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px;">EID-E-MILAD-UN-NABI</h3>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                12 Rabi al-Awwal 1446
-            </div>
-            <div style="background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: 500;">
-                15 September 2024
-            </div>
-        </div>
-        <div style="position: absolute; bottom: -8px; left: 25px; width: 60%; height: 3px; background: linear-gradient(90deg, rgba(212, 175, 55, 0.7), transparent);"></div>
-    </div>
-</div>
-
-
-
-    </section>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Premium Islamic Website. All rights reserved.</p>
-    <p>Developed by <strong>Hafizul Islam</strong> | Phone: <a href="tel:01744348961">01744348961</a> | Email: <a href="mailto:hafizul9996@gmail.com">hafizul9996@gmail.com</a></p>
-    <div class="social-links">
-      <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
-      <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-    </div>
-  </footer>
-
-  <!-- Back-to-Top Button -->
-  <button id="backToTop" class="btn btn-primary"><i class="fas fa-arrow-up"></i></button>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Smooth Scroll for Navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      });
-    });
-
-    // Scroll Progress Bar
-    window.onscroll = function() {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById('scrollProgressBar').style.width = scrolled + '%';
-    };
-
-    // Dynamic Year in Footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-    // Sticky Header
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('.navbar');
-      if (window.scrollY > 100) {
-        header.classList.add('sticky-nav');
-      } else {
-        header.classList.remove('sticky-nav');
-      }
-    });
-
-    // Countdown Timer
-    const countDownDate = new Date('2024-03-10').getTime();
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-      
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
-      document.getElementById('countdown').innerHTML = 
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
-      
-      if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById('countdown').innerHTML = "EXPIRED";
-      }
-    }, 1000);
-
-    // Back to Top Button
-    window.addEventListener('scroll', () => {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById('backToTop').style.display = "block";
-      } else {
-        document.getElementById('backToTop').style.display = "none";
-      }
-    });
-
-    document.getElementById('backToTop').addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Initialize Bootstrap tooltips
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    const tooltipList = tooltipTriggerList.map(tooltipTriggerEl => {
-      return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-  </script>
-
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyAec-iZXss58NCLvLzE5xYrs7IQGOt_ib4",
-      authDomain: "push-b0651.firebaseapp.com",
-      projectId: "push-b0651",
-      storageBucket: "push-b0651.firebasestorage.app",
-      messagingSenderId: "997345780347",
-      appId: "1:997345780347:web:46eca581bf8ee97b7d78de",
-      measurementId: "G-D3F3EEKN8L"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    
-  </script>
-  
-  
-  <script>
-  const slides = document.querySelectorAll('.slide');
-  let currentSlide = 0;
-  
-  function nextSlide() {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-    
-    // Reset animation
-    const progress = document.querySelector('.progress-bar');
-    progress.style.animation = 'none';
-    void progress.offsetWidth; // Trigger reflow
-    progress.style.animation = 'progress 5s linear infinite';
-  }
-  
-  setInterval(nextSlide, 5000); // Change every 5 seconds
-  
-  // Pause on hover
-  const container = document.querySelector('.luxury-slideshow');
-  let slideInterval = setInterval(nextSlide, 5000);
-  
-  container.addEventListener('mouseenter', () => clearInterval(slideInterval));
-  container.addEventListener('mouseleave', () => {
-    slideInterval = setInterval(nextSlide, 5000);
-  });
-  
-  
-  
-  
-  
-</script>
-
-
-
- 
-
-
-</body>
-</html>
- 
