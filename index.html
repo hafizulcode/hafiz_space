@@ -1496,9 +1496,190 @@ document.addEventListener('DOMContentLoaded', () => {
     border-radius: 0;
   }
 }
+
+
+
+
+.islamic-library-viewer::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.library-panel.show ~ .islamic-library-viewer::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+
+
+
+
+/* Animation Keyframes */
+@keyframes slideUpFadeIn {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cardScaleDown {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes contentItemEntrance {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+.library-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--panel-bg);
+  z-index: 1000;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+
+.library-panel.show {
+  transform: translateY(0);
+  opacity: 1;
+  animation: slideUpFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+
+
+
+.access-card.clicked {
+  animation: cardScaleDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+
+
+
+
+.text-item {
+  animation: contentItemEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* Staggered delays for grid items */
+.text-item:nth-child(1) { animation-delay: 0.1s; }
+.text-item:nth-child(2) { animation-delay: 0.2s; }
+.text-item:nth-child(3) { animation-delay: 0.3s; }
+.text-item:nth-child(4) { animation-delay: 0.4s; }
+.text-item:nth-child(5) { animation-delay: 0.5s; }
+.text-item:nth-child(6) { animation-delay: 0.6s; }
+
+
+.text-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+
+
+
 </style>
 
 <script>
+    
+    function toggleLibraryViewer() {
+  const panel = document.querySelector('.library-panel');
+  const card = document.querySelector('.access-card');
+  
+  // Add clicked class to card
+  card.classList.add('clicked');
+  
+  // After card animation completes, open panel
+  setTimeout(() => {
+    panel.classList.toggle('show');
+    document.body.style.overflow = panel.classList.contains('show') ? 'hidden' : 'auto';
+    
+    // Reset card animation after panel opens
+    setTimeout(() => {
+      card.classList.remove('clicked');
+    }, 400);
+  }, 400);
+}
+
+
+
+
+function toggleLibraryViewer() {
+  const panel = document.querySelector('.library-panel');
+  
+  if (panel.classList.contains('show')) {
+    // Closing animation
+    panel.style.animation = 'none';
+    setTimeout(() => {
+      panel.style.animation = '';
+      panel.classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }, 10);
+  } else {
+    // Opening animation (as above)
+    const card = document.querySelector('.access-card');
+    card.classList.add('clicked');
+    setTimeout(() => {
+      panel.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        card.classList.remove('clicked');
+      }, 400);
+    }, 400);
+  }
+}
+
+    
 // Toggle Library Panel
 function toggleLibraryViewer() {
   const panel = document.querySelector('.library-panel');
