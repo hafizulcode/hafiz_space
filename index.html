@@ -2847,25 +2847,548 @@ footer {
   
 // Open modal
 function openModal(type) {
-  document.getElementById(`${type}-modal`).style.display = 'flex';
-}
-
-// Close modal
-function closeModal() {
-  document.querySelectorAll('.modal-overlay').forEach(modal => {
-    modal.style.display = 'none';
-  });
-}
-</script>
-  
-  
-</script>
-
-
-
- 
-
-
+<body style="margin:0;min-height:100vh;font-family:'Montserrat',Arial,sans-serif;color:#18313a; background:none;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran:wght@700&family=Tajawal:wght@700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <div style="display:flex;flex-direction:column;min-height:100vh;">
+    <!-- Bismillah & Salam -->
+    <div style="padding-top:32px;padding-bottom:10px;text-align:center;">
+      <div style="font-family: 'Amiri Quran', 'Tajawal', serif; font-size:2.2rem; color:#b79535; font-weight:700; letter-spacing:0.06em; margin-bottom:18px; text-shadow:0 2px 16px #ffe9b7, 0 1px 0 #fff7;">﷽</div>
+      <div style="font-family: 'Tajawal', 'Montserrat', sans-serif; font-size:1.5rem; color:#24816b; font-weight:700; margin-bottom:30px; letter-spacing:0.02em; text-shadow:0 2px 10px #e6b07b44, 0 1px 0 #fff7;">
+        السلام عليكم ورحمة الله وبركاته
+      </div>
+    </div>
+    <!-- Main Content -->
+    <main style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0;width:100%;">
+      <!-- Slideshow Section -->
+      <!-- Added max-width and horizontal padding for side space -->
+      <section style="width:100%;max-width:540px;margin:0 auto 20px auto;padding-left:16px;padding-right:16px;box-sizing:border-box;">
+        <style>
+        .luxe-visual-showcase--hafizulcode {
+          width: 100%;
+          margin: 0 auto;
+          border-radius: 18px;
+          background: #fff;
+          border: 4px solid #e6b07b;
+          box-sizing: border-box;
+          box-shadow: 0 8px 28px rgba(21,94,99,0.13),0 1.5px 6px 0 rgba(0,0,0,0.07);
+          font-family: 'Montserrat',sans-serif;
+          position: relative;
+          overflow: hidden;
+          padding: 18px 12px 38px 12px; /* space for timer at bottom */
+          perspective: 900px;
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-slides-wrapper {
+          display: grid;
+          width: 100%;
+          aspect-ratio: 16/9;
+          min-height: 180px;
+          max-height: 78vw;
+          background: transparent;
+          position: relative;
+        }
+        @media (max-width:600px){
+          .luxe-visual-showcase--hafizulcode .luxe-slides-wrapper{
+            aspect-ratio: 1/1;
+            min-height: 120px;
+            max-height: 97vw;
+          }
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-slide {
+          grid-area: 1/1;
+          width: 100%;
+          height: 100%;
+          border-radius: 16px;
+          opacity: 0;
+          pointer-events: none;
+          transform: scale(0.97) rotateY(30deg);
+          transition:
+            opacity 0.25s cubic-bezier(.4,0,.2,1),
+            transform 0.38s cubic-bezier(.77,-0.01,.18,1.01),
+            filter 0.32s cubic-bezier(.4,0,.2,1);
+          filter: blur(2.5px) brightness(0.93);
+          z-index: 1;
+          box-shadow: 0 2px 8px #bda96a22;
+          position: absolute;
+          top: 0; left: 0;
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-slide.luxe-prev-anim {
+          z-index: 2;
+          opacity: 1;
+          pointer-events: auto;
+          transform: scale(0.97) rotateY(-18deg) translateX(-14%) skewY(0.4deg);
+          filter: blur(0.6px) brightness(0.97);
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-slide.luxe-next-anim {
+          z-index: 2;
+          opacity: 1;
+          pointer-events: auto;
+          transform: scale(0.97) rotateY(18deg) translateX(14%) skewY(-0.4deg);
+          filter: blur(0.6px) brightness(0.97);
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-slide.luxe-active {
+          opacity: 1;
+          pointer-events: auto;
+          z-index: 3;
+          transform: scale(1) rotateY(0deg) translateX(0) skewY(0deg);
+          filter: blur(0) brightness(1) saturate(1.01);
+          box-shadow: 0 7px 18px #e6b07b24;
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-slide-bg{
+          position: absolute;
+          width: 100%; height: 100%;
+          z-index: 0;
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-slide-img{
+          width: 100%; height: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 16px;
+          filter: brightness(0.97) saturate(1.07);
+          transition: filter 0.32s;
+          user-select: none;
+          pointer-events: none;
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-slide-caption {
+          position: absolute;
+          left: 0; right: 0; bottom: 0;
+          background: rgba(255,255,255,0.85);
+          color: #18313a;
+          font-size: 1.01rem;
+          padding: 0.53em 1em 0.53em 1em;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
+          text-align: left;
+          box-shadow: 0 -2px 12px #e6b07b22;
+          opacity: 0.96;
+          z-index: 8;
+          font-family: 'Montserrat',sans-serif;
+          pointer-events: none;
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-slide-meta {
+          font-size: 0.93em;
+          color: #4066b2;
+          margin-top: 2px;
+          font-style: italic;
+        }
+        /* Progress & Timer */
+        .luxe-visual-showcase--hafizulcode .luxe-progress-container {
+          position: absolute;
+          left: 0; right: 0;
+          bottom: 10px;
+          width: 100%;
+          display: flex;
+          align-items: flex-end;
+          padding: 0 15%;
+          z-index: 4;
+          height: 22px;
+          pointer-events: none;
+        }
+        /* Timer to the left */
+        .luxe-visual-showcase--hafizulcode .luxe-progress-timer {
+          order: -1;
+          margin-right: 14px;
+          margin-left: 0;
+          margin-bottom: 0.5px;
+          background: #fff;
+          color: #2bb673;
+          font-size: 0.85rem;
+          font-weight: 700;
+          padding: 0.11em 0.55em;
+          border-radius: 11px;
+          box-shadow: 0 1px 6px #e6b07b55;
+          z-index: 6;
+          user-select: none;
+          opacity: 0.96;
+          letter-spacing: 0.5px;
+          min-width: 19px;
+          text-align: center;
+          border: 1.6px solid #e6b07b;
+          display: inline-block;
+          transition: font-size 0.2s, padding 0.2s, border-width 0.2s;
+          pointer-events: auto;
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-progress-track {
+          flex: 1 1 auto;
+          height: 3px;
+          background: linear-gradient(90deg, #4066b2 0%, #2bb673 100%);
+          opacity: 0.19;
+          border-radius: 2px;
+          position: relative;
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-progress-fill {
+          height: 100%;
+          background: linear-gradient(90deg, #e6b07b 0%, #2bb673 100%);
+          border-radius: 2px;
+          transition: width 0.17s cubic-bezier(0.65,0,0.35,1);
+        }
+        @media (max-width:600px){
+          .luxe-visual-showcase--hafizulcode {
+            padding: 6px 4px 21px 4px;
+          }
+          section {
+            padding-left: 6px !important;
+            padding-right: 6px !important;
+          }
+          .luxe-visual-showcase--hafizulcode .luxe-progress-container {
+            padding: 0 7%;
+            bottom: 4px;
+          }
+          .luxe-visual-showcase--hafizulcode .luxe-progress-timer {
+            font-size: 1rem;
+            padding: 0.09em 0.7em;
+            border-width: 2px;
+            min-width: 20px;
+            border-radius: 12px;
+            margin-right: 10px;
+          }
+        }
+        /* Navigation */
+        .luxe-visual-showcase--hafizulcode .luxe-nav-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 35px; height: 35px;
+          background: linear-gradient(135deg, #4066b2 10%, #155e63 100%);
+          border: 2px solid #fff9;
+          border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+          cursor: pointer;
+          box-shadow: 0 4px 8px #4066b244;
+          transition: all 0.13s;
+          z-index: 20;
+          opacity: 0.93;
+          outline: none;
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-nav-btn:active {
+          transform: translateY(-50%) scale(0.92);
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-prev { left: 1.5%; }
+        .luxe-visual-showcase--hafizulcode .luxe-next { right: 1.5%; }
+        .luxe-visual-showcase--hafizulcode .luxe-nav-btn svg {
+          fill: #fff;
+          width: 16px; height: 16px;
+        }
+        /* Pagination */
+        .luxe-visual-showcase--hafizulcode .luxe-pagination {
+          position: absolute;
+          bottom: 10px; left: 50%;
+          transform: translateX(-50%);
+          display: flex; gap: 10px;
+          z-index: 12;
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-dot {
+          width: 10px; height: 10px;
+          border-radius: 50%;
+          background: #e6b07b;
+          border: 2px solid #4066b2;
+          box-shadow: 0 1px 3px #e6b07b;
+          cursor: pointer;
+          transition: all 0.14s;
+          outline: none;
+        }
+        .luxe-visual-showcase--hafizulcode .luxe-dot.active {
+          background: #2bb673;
+          border-color: #155e63;
+          transform: scale(1.15);
+          box-shadow: 0 2px 8px #2bb67344;
+        }
+        .luxe-slider-controls {
+          position: absolute;
+          left: 8px; top: 8px;
+          display: flex; gap: 8px; z-index: 30;
+          pointer-events: auto;
+        }
+        .luxe-slider-btn {
+          background:rgba(255,255,255,0.95);
+          border:1.5px solid #e6b07b;
+          border-radius:50%;
+          width:25px; height:25px;
+          display:flex;align-items:center;justify-content:center;
+          cursor:pointer;
+          transition:box-shadow 0.12s, background 0.12s;
+          box-shadow:0 2px 8px #e6b07b33;
+          outline:none;
+        }
+        .luxe-slider-btn:active { background: #fae4c9; }
+        .luxe-slider-btn svg { width:14px; height:14px; fill:#155e63; }
+        </style>
+        <div class="luxe-visual-showcase--hafizulcode" id="luxe-slider" tabindex="0" aria-label="Luxe Visual Showcase Slider">
+          <div class="luxe-slider-controls">
+            <button class="luxe-slider-btn" id="luxe-fullscreen-btn" aria-label="Toggle Fullscreen">
+              <svg id="fullscreen-svg" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm12-8h-5v2h3v3h2V6zm-5 10h5v5h-5v-2h3v-3zm-7-8h3V4H4v5h2V6z"/></svg>
+            </button>
+            <button class="luxe-slider-btn" id="luxe-audio-btn" aria-label="Toggle Audio">
+              <svg id="audio-svg" viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2c0-1.77-1-3.29-2.5-4.03v8.05A4.992 4.992 0 0016.5 12zm2.5 0c0 3.04-2.18 5.64-5 6.32v2.02c4.01-.77 7-4.28 7-8.34s-2.99-7.58-7-8.34v2.02c2.82.68 5 3.28 5 6.32z"/></svg>
+            </button>
+          </div>
+          <audio id="luxe-audio" loop autoplay>
+            <source src="yourbackgroundmusic.mp3" type="audio/mpeg">
+          </audio>
+          <div class="luxe-slides-wrapper">
+            <!-- Slide 1 -->
+            <div class="luxe-slide luxe-active" data-slide="1" aria-hidden="false">
+              <div class="luxe-slide-bg">
+                <img srcset="image1-480w.jpg 480w, image1-800w.jpg 800w, image1-1920w.jpg 1920w"
+                  sizes="(max-width: 500px) 98vw, (max-width: 900px) 90vw, 540px"
+                  src="image1-800w.jpg"
+                  class="luxe-slide-img"
+                  loading="lazy"
+                  alt="Showcase image 1"
+                  width="1920" height="1080">
+              </div>
+              <div class="luxe-slide-caption">
+                Modern Mosque Interior
+                <div class="luxe-slide-meta">Photo by Hafizulcode &middot; 2025 &middot; 4K</div>
+              </div>
+            </div>
+            <div class="luxe-slide" data-slide="2" aria-hidden="true">
+              <div class="luxe-slide-bg">
+                <img srcset="image2-480w.jpg 480w, image2-800w.jpg 800w, image2-1920w.jpg 1920w"
+                  sizes="(max-width: 500px) 98vw, (max-width: 900px) 90vw, 540px"
+                  src="image2-800w.jpg"
+                  class="luxe-slide-img"
+                  loading="lazy"
+                  alt="Showcase image 2"
+                  width="1920" height="1080">
+              </div>
+              <div class="luxe-slide-caption">
+                Luxurious Prayer Carpet
+                <div class="luxe-slide-meta">Handwoven &middot; Iran &middot; Ultra High DPI</div>
+              </div>
+            </div>
+            <div class="luxe-slide" data-slide="3" aria-hidden="true">
+              <div class="luxe-slide-bg">
+                <img srcset="image3-480w.jpg 480w, image3-800w.jpg 800w, image3-1920w.jpg 1920w"
+                  sizes="(max-width: 500px) 98vw, (max-width: 900px) 90vw, 540px"
+                  src="image3-800w.jpg"
+                  class="luxe-slide-img"
+                  loading="lazy"
+                  alt="Showcase image 3"
+                  width="1920" height="1080">
+              </div>
+              <div class="luxe-slide-caption">
+                Golden Dome at Sunset
+                <div class="luxe-slide-meta">Istanbul &middot; Summer 2025 &middot; HDR</div>
+              </div>
+            </div>
+          </div>
+          <div class="luxe-progress-container">
+            <span class="luxe-progress-timer" id="luxe-progress-timer">4s</span>
+            <div class="luxe-progress-track">
+              <div class="luxe-progress-fill" style="width: 33.33%"></div>
+            </div>
+          </div>
+          <button class="luxe-nav-btn luxe-prev" aria-label="Previous slide" tabindex="0">
+            <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+          </button>
+          <button class="luxe-nav-btn luxe-next" aria-label="Next slide" tabindex="0">
+            <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+          </button>
+          <div class="luxe-pagination">
+            <button class="luxe-dot active" aria-label="Go to slide 1" tabindex="0"></button>
+            <button class="luxe-dot" aria-label="Go to slide 2" tabindex="0"></button>
+            <button class="luxe-dot" aria-label="Go to slide 3" tabindex="0"></button>
+          </div>
+        </div>
+        <script>
+        // (script remains unchanged)
+        (function() {
+          // --- Audio controls
+          var audio = document.getElementById("luxe-audio");
+          var audioBtn = document.getElementById("luxe-audio-btn");
+          var audioSvg = document.getElementById("audio-svg");
+          var isMuted = false;
+          audioBtn && audioBtn.addEventListener('click',function() {
+            isMuted = !isMuted;
+            audio.muted = isMuted;
+            audioSvg.innerHTML = isMuted ?
+              '<path d="M16.5 12c0-1.77-1-3.29-2.5-4.03v8.05A4.992 4.992 0 0016.5 12z" /><path d="M3 10v4h4l5 5V5L7 10H3zm12.5 0c0-1.77-1-3.29-2.5-4.03v8.05A4.992 4.992 0 0016.5 12zm2.5 0c0 3.04-2.18 5.64-5 6.32v2.02c4.01-.77 7-4.28 7-8.34s-2.99-7.58-7-8.34v2.02c2.82.68 5 3.28 5 6.32z"/>' :
+              '<path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2c0-1.77-1-3.29-2.5-4.03v8.05A4.992 4.992 0 0016.5 12zm2.5 0c0 3.04-2.18 5.64-5 6.32v2.02c4.01-.77 7-4.28 7-8.34s-2.99-7.58-7-8.34v2.02c2.82.68 5 3.28 5 6.32z"/>';
+          });
+          // --- Fullscreen controls
+          var slider = document.getElementById("luxe-slider");
+          var fullscreenBtn = document.getElementById("luxe-fullscreen-btn");
+          var fullscreenSvg = document.getElementById("fullscreen-svg");
+          var isFullscreen = false;
+          fullscreenBtn && fullscreenBtn.addEventListener('click', function() {
+            if (!isFullscreen) {
+              if (slider.requestFullscreen) slider.requestFullscreen();
+              else if (slider.webkitRequestFullscreen) slider.webkitRequestFullscreen();
+              else if (slider.msRequestFullscreen) slider.msRequestFullscreen();
+            } else {
+              if (document.exitFullscreen) document.exitFullscreen();
+              else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+              else if (document.msExitFullscreen) document.msExitFullscreen();
+            }
+          });
+          document.addEventListener('fullscreenchange', function() {
+            isFullscreen = !!document.fullscreenElement;
+            if(fullscreenSvg) fullscreenSvg.innerHTML = isFullscreen ?
+              '<path d="M6 16h2v2h8v-2h2v4H6v-4zm12-8V4H6v4h2V6h8v2h2z"/>' :
+              '<path d="M7 14H5v5h5v-2H7v-3zm12-8h-5v2h3v3h2V6zm-5 10h5v5h-5v-2h3v-3zm-7-8h3V4H4v5h2V6z"/>';
+          });
+          class LuxeSliderHafizul {
+            constructor(container) {
+              this.slider = document.querySelector(container);
+              this.slides = this.slider.querySelectorAll('.luxe-slide');
+              this.dots = this.slider.querySelectorAll('.luxe-dot');
+              this.prevBtn = this.slider.querySelector('.luxe-prev');
+              this.nextBtn = this.slider.querySelector('.luxe-next');
+              this.progressFill = this.slider.querySelector('.luxe-progress-fill');
+              this.progressTimer = this.slider.querySelector('#luxe-progress-timer');
+              this.slidesWrapper = this.slider.querySelector('.luxe-slides-wrapper');
+              this.currentIndex = 0;
+              this.totalSlides = this.slides.length;
+              this.autoPlayInterval = null;
+              this.progressInterval = null;
+              this.autoPlayDelay = 4000;
+              this.timeLeft = Math.floor(this.autoPlayDelay / 1000);
+              this.isPaused = false;
+              this.touchStartX = 0;
+              this.touchEndX = 0;
+              this.animating = false;
+              this.init();
+            }
+            init() {
+              this.prevBtn.addEventListener('click', () => this.prevSlide());
+              this.nextBtn.addEventListener('click', () => this.nextSlide());
+              this.dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => this.goToSlide(index));
+              });
+              this.slider.addEventListener('touchstart', (e) => {
+                this.touchStartX = e.changedTouches[0].screenX;
+                this.pauseAutoPlay();
+              });
+              this.slider.addEventListener('touchend', (e) => {
+                this.touchEndX = e.changedTouches[0].screenX;
+                this.handleSwipe();
+                if (!this.isPaused) this.startAutoPlay();
+              });
+              this.slider.addEventListener('mouseenter', () => this.pauseAutoPlay());
+              this.slider.addEventListener('mouseleave', () => { if (!this.isPaused) this.startAutoPlay(); });
+              this.startAutoPlay();
+              this.updateSlider();
+              this.updateProgressTimer();
+            }
+            updateSlider(prevIndex) {
+              this.slides.forEach((slide, i) => {
+                slide.classList.remove('luxe-active','luxe-prev-anim','luxe-next-anim');
+                slide.style.zIndex = (i === this.currentIndex) ? 3 : 1;
+              });
+              let prev = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+              let next = (this.currentIndex + 1) % this.totalSlides;
+              this.slides[this.currentIndex].classList.add('luxe-active');
+              this.slides[prev].classList.add('luxe-prev-anim');
+              this.slides[next].classList.add('luxe-next-anim');
+              this.dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === this.currentIndex);
+              });
+              const progress = ((this.currentIndex + 1) / this.totalSlides) * 100;
+              this.progressFill.style.width = `${progress}%`;
+              this.timeLeft = Math.floor(this.autoPlayDelay / 1000);
+              this.updateProgressTimer();
+            }
+            nextSlide() {
+              if(this.animating) return;
+              this.animating = true;
+              let prevIndex = this.currentIndex;
+              this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+              this.updateSlider(prevIndex);
+              setTimeout(()=>{this.animating=false;}, 280);
+              this.resetAutoPlay();
+            }
+            prevSlide() {
+              if(this.animating) return;
+              this.animating = true;
+              let prevIndex = this.currentIndex;
+              this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+              this.updateSlider(prevIndex);
+              setTimeout(()=>{this.animating=false;}, 280);
+              this.resetAutoPlay();
+            }
+            goToSlide(index) {
+              if(this.animating || index === this.currentIndex) return;
+              this.animating = true;
+              let prevIndex = this.currentIndex;
+              this.currentIndex = index;
+              this.updateSlider(prevIndex);
+              setTimeout(()=>{this.animating=false;}, 280);
+              this.resetAutoPlay();
+            }
+            handleSwipe() {
+              const threshold = 24;
+              const difference = this.touchStartX - this.touchEndX;
+              if (difference > threshold) this.nextSlide();
+              else if (difference < -threshold) this.prevSlide();
+            }
+            startAutoPlay() {
+              this.clearAutoPlay();
+              if (!this.isPaused) {
+                this.autoPlayInterval = setInterval(() => this.nextSlide(), this.autoPlayDelay);
+                this.startProgressTimer();
+              }
+            }
+            pauseAutoPlay() {
+              this.clearAutoPlay();
+              this.clearProgressTimer();
+            }
+            resetAutoPlay() {
+              this.pauseAutoPlay();
+              if (!this.isPaused) this.startAutoPlay();
+            }
+            clearAutoPlay() {
+              clearInterval(this.autoPlayInterval);
+            }
+            startProgressTimer() {
+              this.clearProgressTimer();
+              this.timeLeft = Math.floor(this.autoPlayDelay / 1000);
+              this.updateProgressTimer();
+              this.progressInterval = setInterval(() => {
+                if (this.timeLeft > 1) {
+                  this.timeLeft -= 1;
+                  this.updateProgressTimer();
+                } else {
+                  this.timeLeft = Math.floor(this.autoPlayDelay / 1000);
+                  this.updateProgressTimer();
+                }
+              }, 1000);
+            }
+            clearProgressTimer() {
+              clearInterval(this.progressInterval);
+            }
+            updateProgressTimer() {
+              if (this.progressTimer) {
+                this.progressTimer.textContent = `${this.timeLeft}s`;
+              }
+            }
+          }
+          document.addEventListener('DOMContentLoaded', () => {
+            new LuxeSliderHafizul('.luxe-visual-showcase--hafizulcode');
+            var audio = document.getElementById("luxe-audio");
+            if (audio && typeof audio.play === "function") {
+              try { audio.play(); } catch(e){}
+            }
+          });
+        })();
+        </script>
+      </section>
+    </main>
+    <footer style="background:linear-gradient(90deg,#155e63 0%,#e6b07b 100%);color:#fff;text-align:center;padding:13px 0 7px 0;font-size:1.01rem;border-top-left-radius:16px;border-top-right-radius:16px;box-shadow:0 -2px 10px #155e6322;">
+      &copy; 2025 Luxe Visual Showcase. All rights reserved.
+      <div style="font-size:0.91rem;color:#fff8;margin-top:3px;">
+        Designed for Android &amp; all premium displays
+      </div>
+    </footer>
+    <style>
+      @media (max-width:600px){
+        body{background:none;}
+        header{padding:13px 0 7px 0 !important;}
+        main section{padding:0 !important;}
+        h1{font-size:1.05rem !important;}
+        footer{font-size:0.92rem !important;}
+      }
+      a:active{opacity:0.8;}
+    </style>
+  </div>
 </body>
-</html>
-             
