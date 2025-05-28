@@ -12,7 +12,6 @@
     <!-- Main Content -->
     <main style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0;width:100%;">
       <!-- Slideshow Section -->
-      <!-- Added max-width and horizontal padding for side space -->
       <section style="width:100%;max-width:540px;margin:0 auto 20px auto;padding-left:16px;padding-right:16px;box-sizing:border-box;">
         <style>
         .luxe-visual-showcase--hafizulcode {
@@ -26,7 +25,7 @@
           font-family: 'Montserrat',sans-serif;
           position: relative;
           overflow: hidden;
-          padding: 18px 12px 38px 12px; /* space for timer at bottom */
+          padding: 18px 12px 38px 12px;
           perspective: 900px;
         }
         .luxe-visual-showcase--hafizulcode .luxe-slides-wrapper {
@@ -45,6 +44,7 @@
             max-height: 97vw;
           }
         }
+        /* 3D Slideshow styles */
         .luxe-visual-showcase--hafizulcode .luxe-slide {
           grid-area: 1/1;
           width: 100%;
@@ -52,12 +52,12 @@
           border-radius: 16px;
           opacity: 0;
           pointer-events: none;
-          transform: scale(0.97) rotateY(30deg);
+          transform: scale(0.93) rotateY(32deg);
           transition:
-            opacity 0.25s cubic-bezier(.4,0,.2,1),
-            transform 0.38s cubic-bezier(.77,-0.01,.18,1.01),
+            opacity 0.28s cubic-bezier(.4,0,.2,1),
+            transform 0.55s cubic-bezier(.77,-0.01,.18,1.01),
             filter 0.32s cubic-bezier(.4,0,.2,1);
-          filter: blur(2.5px) brightness(0.93);
+          filter: blur(2.5px) brightness(0.91);
           z-index: 1;
           box-shadow: 0 2px 8px #bda96a22;
           position: absolute;
@@ -67,22 +67,22 @@
           z-index: 2;
           opacity: 1;
           pointer-events: auto;
-          transform: scale(0.97) rotateY(-18deg) translateX(-14%) skewY(0.4deg);
+          transform: scale(0.95) rotateY(-23deg) translateX(-14%) skewY(0.4deg);
           filter: blur(0.6px) brightness(0.97);
         }
         .luxe-visual-showcase--hafizulcode .luxe-slide.luxe-next-anim {
           z-index: 2;
           opacity: 1;
           pointer-events: auto;
-          transform: scale(0.97) rotateY(18deg) translateX(14%) skewY(-0.4deg);
+          transform: scale(0.95) rotateY(23deg) translateX(14%) skewY(-0.4deg);
           filter: blur(0.6px) brightness(0.97);
         }
         .luxe-visual-showcase--hafizulcode .luxe-slide.luxe-active {
           opacity: 1;
           pointer-events: auto;
           z-index: 3;
-          transform: scale(1) rotateY(0deg) translateX(0) skewY(0deg);
-          filter: blur(0) brightness(1) saturate(1.01);
+          transform: scale(1.01) rotateY(0deg) translateX(0) skewY(0deg);
+          filter: blur(0) brightness(1) saturate(1.03);
           box-shadow: 0 7px 18px #e6b07b24;
         }
         .luxe-visual-showcase--hafizulcode .luxe-slide-bg{
@@ -135,7 +135,6 @@
           height: 22px;
           pointer-events: none;
         }
-        /* Timer to the left */
         .luxe-visual-showcase--hafizulcode .luxe-progress-timer {
           order: -1;
           margin-right: 14px;
@@ -280,9 +279,7 @@
             <!-- Slide 1 -->
             <div class="luxe-slide luxe-active" data-slide="1" aria-hidden="false">
               <div class="luxe-slide-bg">
-                <img srcset="image1-480w.jpg 480w, image1-800w.jpg 800w, image1-1920w.jpg 1920w"
-                  sizes="(max-width: 500px) 98vw, (max-width: 900px) 90vw, 540px"
-                  src="image1-800w.jpg"
+                <img src="image1s.jpg"
                   class="luxe-slide-img"
                   loading="lazy"
                   alt="Showcase image 1"
@@ -295,9 +292,7 @@
             </div>
             <div class="luxe-slide" data-slide="2" aria-hidden="true">
               <div class="luxe-slide-bg">
-                <img srcset="image2-480w.jpg 480w, image2-800w.jpg 800w, image2-1920w.jpg 1920w"
-                  sizes="(max-width: 500px) 98vw, (max-width: 900px) 90vw, 540px"
-                  src="image2-800w.jpg"
+                <img src="image2s.jpg"
                   class="luxe-slide-img"
                   loading="lazy"
                   alt="Showcase image 2"
@@ -310,9 +305,7 @@
             </div>
             <div class="luxe-slide" data-slide="3" aria-hidden="true">
               <div class="luxe-slide-bg">
-                <img srcset="image3-480w.jpg 480w, image3-800w.jpg 800w, image3-1920w.jpg 1920w"
-                  sizes="(max-width: 500px) 98vw, (max-width: 900px) 90vw, 540px"
-                  src="image3-800w.jpg"
+                <img src="image3s.jpg"
                   class="luxe-slide-img"
                   loading="lazy"
                   alt="Showcase image 3"
@@ -343,7 +336,6 @@
           </div>
         </div>
         <script>
-        // (script remains unchanged)
         (function() {
           // --- Audio controls
           var audio = document.getElementById("luxe-audio");
