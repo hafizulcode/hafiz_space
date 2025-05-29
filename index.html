@@ -462,45 +462,7 @@
     min-height: 120px;
   }
 }
-  /* Toggle for more contents */
-  .ultra-modal-more-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0 18px 0;
-    padding: 0;
-    width: 100%;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.1rem;
-    transition: color 0.18s;
-    border-radius: 1.5rem;
-    outline: none;
-    z-index: 2;
-    gap: 7px;
-    box-shadow: 0 2px 12px rgba(30,34,56,0.06);
-    min-height: 41px;
-  }
-  .modal1 .ultra-modal-more-toggle { background: var(--modal-link-bg); color: #fff;}
-  .modal2 .ultra-modal-more-toggle { background: var(--modal-link-bg2); color: #fff;}
-  .modal3 .ultra-modal-more-toggle { background: var(--modal-link-bg3); color: #fff;}
-  .ultra-modal-more-toggle[aria-expanded="true"] i.fa-chevron-down { transform: rotate(180deg);}
-  .ultra-modal-more-toggle i { transition: transform 0.19s; }
-  .ultra-modal-more-list {
-    display: none;
-    width: 100%;
-    padding: 0 0 6px 0;
-    margin: 0 auto 0 auto;
-    text-align: center;
-    animation: fadein 0.5s;
-    z-index: 2;
-  }
-  .ultra-modal-more-list.active { display: block; }
-  @keyframes fadein {  from {opacity:0;} to {opacity:1;} }
-  /* ...rest of your style unchanged... */
+ 
   
   
   
@@ -1296,9 +1258,7 @@
             <!-- ...more videos... -->
           </div>
         </div>
-        <button class="ultra-modal-more-toggle" aria-expanded="false" onclick="toggleMore(this, 'waz-lectures')">
-          <i class="fa-solid fa-chevron-down"></i> More Contents
-        </button>
+        
         <div class="ultra-modal-more-list" id="more-waz-lectures">
           <ul style="list-style:none; padding:0; margin:1.1em 0 0 0;">
             <li><a href="#" target="_blank"><i class="fa-solid fa-arrow-right"></i> View More Waz Lectures</a></li>
@@ -1355,9 +1315,7 @@
             <!-- ...more videos... -->
           </div>
         </div>
-        <button class="ultra-modal-more-toggle" aria-expanded="false" onclick="toggleMore(this, 'munazad')">
-          <i class="fa-solid fa-chevron-down"></i> More Contents
-        </button>
+        
         <div class="ultra-modal-more-list" id="more-munazad">
           <ul style="list-style:none; padding:0; margin:1.1em 0 0 0;">
             <li><a href="#" target="_blank"><i class="fa-solid fa-arrow-right"></i> View More Debates</a></li>
@@ -1414,9 +1372,7 @@
             <!-- ...more videos... -->
           </div>
         </div>
-        <button class="ultra-modal-more-toggle" aria-expanded="false" onclick="toggleMore(this, 'question-answer')">
-          <i class="fa-solid fa-chevron-down"></i> More Contents
-        </button>
+
         <div class="ultra-modal-more-list" id="more-question-answer">
           <ul style="list-style:none; padding:0; margin:1.1em 0 0 0;">
             <li><a href="#" target="_blank"><i class="fa-solid fa-arrow-right"></i> View More Q&A</a></li>
