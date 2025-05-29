@@ -1,4 +1,543 @@
-<body style="margin:0;min-height:100vh;font-family:'Montserrat',Arial,sans-serif;color:#18313a; background:none;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Prevent zoom/scale issues on Android -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MMD ASHRAF ALIMULLAH SIDDIQUE | Divine Islamic Content</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Amiri:wght@700&family=Scheherazade+New:wght@700&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --main-bg: #f5f8fa;
+    --primary: #1a2238;
+    --accent: #f48c06;
+    --card1-grad: linear-gradient(135deg, #fbeee6 0%, #f4d6a8 100%);
+    --card2-grad: linear-gradient(135deg, #e6f6fb 0%, #a8d8f4 100%);
+    --card3-grad: linear-gradient(135deg, #f5e6fb 0%, #cfa8f4 100%);
+    --card1-border: #f48c06;
+    --card2-border: #1cb5e0;
+    --card3-border: #a259d9;
+    --modal1-grad: linear-gradient(120deg, #fff3e6 0%, #ffd2a8 100%);
+    --modal2-grad: linear-gradient(120deg, #e6f8ff 0%, #a8e6ff 100%);
+    --modal3-grad: linear-gradient(120deg, #f7e6ff 0%, #e0a8ff 100%);
+    --modal1-border: #f48c06;
+    --modal2-border: #1cb5e0;
+    --modal3-border: #a259d9;
+    --modal-radius: 2.7rem;
+    --modal-header-size: 2.3rem;
+    --modal-tab-size: 1.13rem;
+    --modal-shadow: 0 14px 64px 0 rgba(30, 34, 56, 0.21);
+    --modal-link-bg: linear-gradient(90deg, #f48c06 0%, #ffbb00 100%);
+    --modal-link-bg2: linear-gradient(90deg, #1cb5e0 0%, #1de9b6 100%);
+    --modal-link-bg3: linear-gradient(90deg, #a259d9 0%, #6741d9 100%);
+    --modal-link-color: #fff;
+    --modal-link-shadow: 0 3px 16px 0 rgba(55,114,255,0.09);
+    --modal-padding: 36px 0 24px 0;
+    --modal-max-width: 960px;
+    --modal-close-size: 54px;
+    --modal-header-icon-size: 2.9rem;
+    --anim-fast: 0.16s cubic-bezier(.4,0,.2,1);
+    --anim-slow: 0.25s cubic-bezier(.4,0,.2,1);
+    --card-radius: 2.3rem;
+    --card-shadow: 0 6px 32px rgba(30,34,56,0.13);
+    --card-hover-shadow: 0 18px 48px rgba(244,140,6,0.14);
+    --card-scale: 1.04;
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--main-bg);
+    font-family: 'Poppins', 'Amiri', 'Scheherazade New', serif;
+    color: var(--primary);
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+  }
+  .divine-ultra-root {
+    padding-bottom: 60px;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .divine-ultra-heading-card {
+    margin: 40px auto 50px auto;
+    max-width: 680px;
+    background: linear-gradient(115deg, #fff 60%, #f5f8fa 100%);
+    border-radius: 2.7rem;
+    box-shadow: 0 10px 32px 0 rgba(30,34,56,0.04);
+    border: 4.5px solid #fff;
+    text-align: center;
+    padding: 54px 30px 38px 30px;
+    color: var(--primary);
+    position: relative;
+    z-index: 2;
+  }
+  .divine-ultra-heading-card h1 {
+    font-family: var(--heading-font);
+    font-size: clamp(2.6rem,6vw,3.7rem);
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+    color: var(--accent);
+    background: linear-gradient(90deg, #f48c06 15%, #1cb5e0 65%, #a259d9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip:text;
+    text-fill-color: transparent;
+    font-weight: 800;
+  }
+  .divine-ultra-heading-card .subtitle {
+    font-size: 1.25rem;
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    color: #4a5874;
+    margin-bottom: 0;
+    font-weight: 600;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .divine-ultra-heading-card .premium-badge { display: none !important; }
+  .ultra-cards-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 38px;
+    margin: 0 auto 28px auto;
+    max-width: 1200px;
+    padding-bottom: 10px;
+    z-index: 1;
+    position: relative;
+  }
+  .ultra-card {
+    width: 220px;
+    min-height: 140px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    border: 3.5px solid;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    outline: none;
+    transition: box-shadow var(--anim-fast),transform var(--anim-fast);
+    background-clip: padding-box;
+    z-index: 1;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: visible;
+  }
+  .ultra-card:hover, .ultra-card:focus {
+    box-shadow: var(--card-hover-shadow);
+    transform: scale(var(--card-scale)) translateY(-7px);
+    z-index: 11;
+  }
+  .ultra-card .corner-glow {
+    content: '';
+    position: absolute;
+    top: -12px; left: -12px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(9px);
+    opacity: .18;
+    pointer-events: none;
+  }
+  .ultra-card.card1 {
+    background: var(--card1-grad);
+    border-color: var(--card1-border);
+  }
+  .ultra-card.card1 .corner-glow { background: #f48c06; }
+  .ultra-card.card2 {
+    background: var(--card2-grad);
+    border-color: var(--card2-border);
+  }
+  .ultra-card.card2 .corner-glow { background: #1cb5e0; }
+  .ultra-card.card3 {
+    background: var(--card3-grad);
+    border-color: var(--card3-border);
+  }
+  .ultra-card.card3 .corner-glow { background: #a259d9; }
+  .ultra-card .ultra-card-content {
+    text-align: center;
+    padding: 20px 8px 10px 8px;
+    position: relative;
+    z-index: 2;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ultra-card .ultra-card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 2px 7px rgba(244,140,6,0.08));
+    border-radius: 1.5rem;
+    padding: 7px 0;
+  }
+  .ultra-card.card1 .ultra-card-icon { color: #f48c06; background:linear-gradient(90deg,#fffbe6 0,#ffe6d0 100%);}
+  .ultra-card.card2 .ultra-card-icon { color: #1cb5e0; background:linear-gradient(90deg,#e6f6fb 0,#d0f6ee 100%);}
+  .ultra-card.card3 .ultra-card-icon { color: #a259d9; background:linear-gradient(90deg,#f5e6fb 0,#e0a8ff 100%);}
+  .ultra-card .ultra-card-title {
+    font-size: 1.08rem;
+    font-family: var(--heading-font);
+    margin-bottom: 4px;
+    font-weight: 800;
+    letter-spacing: 0.23px;
+    color: var(--primary);
+  }
+  .ultra-card .ultra-card-desc {
+    font-size: 0.98rem;
+    color: #666;
+    opacity: .98;
+    margin-bottom: 10px;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 500;
+  }
+  .ultra-card .ultra-card-btn {
+    background: #fff;
+    color: inherit;
+    font-size: 1.01rem;
+    font-weight: 700;
+    border: 2px solid currentColor;
+    border-radius: 1.2rem;
+    padding: 8px 21px;
+    box-shadow: 0 2px 8px rgba(55,114,255,0.06);
+    cursor: pointer;
+    letter-spacing: 0.07px;
+    outline: none;
+    margin-bottom: 0;
+    transition: background var(--anim-fast), color var(--anim-fast), border-color var(--anim-fast), transform var(--anim-fast), box-shadow var(--anim-fast);
+    margin-top: 7px;
+    position: relative;
+    z-index: 2;
+  }
+  .ultra-card.card1 .ultra-card-btn { color: #f48c06; border-color: #f48c06;}
+  .ultra-card.card2 .ultra-card-btn { color: #1cb5e0; border-color: #1cb5e0;}
+  .ultra-card.card3 .ultra-card-btn { color: #a259d9; border-color: #a259d9;}
+  .ultra-card .ultra-card-btn:hover,
+  .ultra-card .ultra-card-btn:focus {
+    background: currentColor;
+    color: #fff;
+    border-color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(30,34,56,0.14);
+  }
+
+  .ultra-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(30, 42, 73, 0.20);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--anim-slow);
+  }
+  .ultra-modal-overlay.active { opacity: 1; visibility: visible; }
+  .ultra-modal {
+    border-radius: var(--modal-radius);
+    width: 95vw;
+    max-width: var(--modal-max-width);
+    min-height: 440px;
+    max-height: 90vh;
+    box-shadow: var(--modal-shadow);
+    transform: translateY(18px);
+    transition: all var(--anim-slow);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid;
+    overflow: hidden;
+    animation: modal-fade-in 0.7s var(--anim-slow);
+    background: #fff;
+    background-image: none;
+    padding: 0;
+    z-index: 1001;
+  }
+  .ultra-modal.modal1 { border-color: var(--modal1-border); background: var(--modal1-grad);}
+  .ultra-modal.modal2 { border-color: var(--modal2-border); background: var(--modal2-grad);}
+  .ultra-modal.modal3 { border-color: var(--modal3-border); background: var(--modal3-grad);}
+  
+    .ultra-modal-header .modal-header-icon { font-size: 2.1rem; margin: 0 10px 0 10px; }
+    .ultra-modal-tabs { font-size: 0.99rem; }
+    .ultra-modal-tab { padding: 18px 28px 13px 28px; font-size: 0.99rem;}
+    .ultra-modal-col { padding: 0 7px 0 7px; }
+  }
+  @keyframes modal-fade-in {
+    from { opacity:0; transform:translateY(80px);}
+    to { opacity:1; transform:translateY(0);}
+  }
+  .ultra-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 48px 0 0 0;
+    min-height: 85px;
+    border-radius: var(--modal-radius) var(--modal-radius) 0 0;
+    border-bottom: none;
+    position: relative;
+    background: transparent;
+    z-index: 2;
+  }
+  .ultra-modal-header .modal-header-icon {
+    font-size: var(--modal-header-icon-size);
+    margin: 0 28px 0 48px;
+    padding: 12px 0;
+    border-radius: 1.2rem;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(30,34,56,0.07);
+  }
+  .ultra-modal-header h2 {
+    font-size: var(--modal-header-size);
+    font-family: var(--heading-font);
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    margin: 0;
+    color: var(--primary);
+    text-shadow: 0 1px 8px rgba(55,114,255,0.06);
+    flex: 1 1 auto;
+    text-align: left;
+  }
+  .ultra-modal-close {
+    position: absolute;
+    top: 24px;
+    right: 42px;
+    width: var(--modal-close-size);
+    height: var(--modal-close-size);
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 3px solid #eee;
+    color: var(--primary);
+    font-size: 2.2rem;
+    z-index: 3;
+    transition: background 0.18s, border 0.18s, color 0.18s, box-shadow 0.18s;
+    box-shadow: 0 2px 12px rgba(55,114,255,0.13);
+  }
+  .ultra-modal-close:hover {
+    background: #ffe6d0;
+    color: #fff;
+    border: 3px solid var(--modal1-border);
+    box-shadow: 0 4px 24px rgba(244,140,6,0.12);
+  }
+  .ultra-modal.modal2 .ultra-modal-close:hover { border: 3px solid var(--modal2-border); background: #e6f6fb;}
+  .ultra-modal.modal3 .ultra-modal-close:hover { border: 3px solid var(--modal3-border); background: #f5e6fb;}
+
+  .ultra-modal-tabs {
+    display: flex;
+    border-bottom: 2.2px solid #eee;
+    background: #fff;
+    border-radius: 0 0 1rem 1rem;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 700;
+    font-size: var(--modal-tab-size);
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 0;
+    margin-top: 10px;
+    z-index: 2;
+  }
+  .ultra-modal-tab {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 22px 90px 16px 90px;
+    color: #888;
+    cursor: pointer;
+    border-radius: 1.3rem 1.3rem 0 0;
+    transition: all 0.18s;
+    font-size: var(--modal-tab-size);
+    letter-spacing: 0.13px;
+    position: relative;
+  }
+  .ultra-modal-tab.active,
+  .ultra-modal-tab:focus {
+    color: #fff;
+    background: linear-gradient(90deg, #f48c06 0%, #ffbb00 100%);
+    box-shadow: 0 -2px 16px rgba(244,140,6,0.11);
+    z-index: 2;
+  }
+  .ultra-modal.modal2 .ultra-modal-tab.active,
+  .ultra-modal.modal2 .ultra-modal-tab:focus {
+    background: linear-gradient(90deg, #1cb5e0 0%, #1de9b6 100%);
+  }
+  .ultra-modal.modal3 .ultra-modal-tab.active,
+  .ultra-modal.modal3 .ultra-modal-tab:focus {
+    background: linear-gradient(90deg, #a259d9 0%, #6741d9 100%);
+  }
+  .ultra-modal-content {
+    flex: 1 1 0;
+    width: 100%;
+    padding: var(--modal-padding);
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0 0 var(--modal-radius) var(--modal-radius);
+    font-size: 1.13rem;
+    min-height: 420px;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    /* always show scrollbar if overflow */
+    scrollbar-width: thin;
+    scrollbar-color: #bbb #fff;
+    z-index: 2;
+  }
+  .ultra-modal-content::-webkit-scrollbar {
+    width: 8px;
+    background: #fff;
+  }
+  .ultra-modal-content::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 8px;
+  }
+  .ultra-modal-col {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 710px;
+    background: none;
+    padding: 0 20px 0 20px;
+    border-radius: 0 0 var(--modal-radius) var(--modal-radius);
+    overflow-y: visible;
+    min-width: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    box-shadow: none;
+    z-index: 2;
+  }
+  .ultra-modal-col strong {
+    font-size: 1.21rem;
+    color: var(--primary);
+    font-family: var(--heading-font);
+    margin-bottom: 14px;
+    letter-spacing: 0.13px;
+    text-shadow: 0 1px 3px rgba(55,114,255,0.06);
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+ /* Responsive video frame for Android and all devices */
+.custom-player video {
+  width: calc(100% - 16px); /* Prevents touching the side borders */
+  max-width: 500px;
+  min-width: 0;
+  height: 220px;
+  border-radius: 1rem;
+  background: #000;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+@media (max-width: 800px) {
+  .custom-player video {
+    max-width: 99vw;
+    width: calc(100% - 10px);
+    height: 30vw;
+    min-height: 160px;
+  }
+}
+@media (max-width: 600px) {
+  .custom-player video {
+    max-width: 100vw;
+    width: calc(100% - 6px);
+    height: 160px;
+    min-height: 120px;
+  }
+}
+  /* Toggle for more contents */
+  .ultra-modal-more-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 18px 0;
+    padding: 0;
+    width: 100%;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.18s;
+    border-radius: 1.5rem;
+    outline: none;
+    z-index: 2;
+    gap: 7px;
+    box-shadow: 0 2px 12px rgba(30,34,56,0.06);
+    min-height: 41px;
+  }
+  .modal1 .ultra-modal-more-toggle { background: var(--modal-link-bg); color: #fff;}
+  .modal2 .ultra-modal-more-toggle { background: var(--modal-link-bg2); color: #fff;}
+  .modal3 .ultra-modal-more-toggle { background: var(--modal-link-bg3); color: #fff;}
+  .ultra-modal-more-toggle[aria-expanded="true"] i.fa-chevron-down { transform: rotate(180deg);}
+  .ultra-modal-more-toggle i { transition: transform 0.19s; }
+  .ultra-modal-more-list {
+    display: none;
+    width: 100%;
+    padding: 0 0 6px 0;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    animation: fadein 0.5s;
+    z-index: 2;
+  }
+  .ultra-modal-more-list.active { display: block; }
+  @keyframes fadein {  from {opacity:0;} to {opacity:1;} }
+  /* ...rest of your style unchanged... */
+  
+  
+  
+  .islamic-icons-bg {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.icon {
+  position: absolute;
+  opacity: 0.22;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12)) saturate(1.5);
+  transition: filter 0.3s;
+}
+.icon1 { left: 5vw; top: 7vh; width: 90px; animation: floatY1 7s ease-in-out infinite alternate; }
+.icon2 { right: 8vw; bottom: 7vh; width: 110px; animation: floatX2 9s ease-in-out infinite alternate; }
+.icon3 { left: 44vw; bottom: 18vh; width: 80px; animation: floatXY3 8s ease-in-out infinite alternate; }
+.icon4 { right: 25vw; top: 12vh; width: 75px; animation: floatY4 6s ease-in-out infinite alternate; }
+
+@keyframes floatY1 { from { transform: translateY(0) scale(1);} to { transform: translateY(38px) scale(1.08);} }
+@keyframes floatX2 { from { transform: translateX(0) scale(1);} to { transform: translateX(-36px) scale(1.06);} }
+@keyframes floatXY3 { 0% { transform: translate(0,0) scale(1);} 50% {transform: translate(-12px,16px) scale(1.04);} 100% { transform: translate(-6px,-8px) scale(1.02);} }
+@keyframes floatY4 { from { transform: translateY(0) scale(1);} to {transform: translateY(-28px) scale(1.05);} }
+  </style>
+</head>
+<body>
+    
+    
+    
+    <body style="margin:0;min-height:100vh;font-family:'Montserrat',Arial,sans-serif;color:#18313a;">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran:wght@700&family=Tajawal:wght@700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
   <div style="display:flex;flex-direction:column;min-height:100vh;">
@@ -12,19 +551,8 @@
     <!-- Main Content -->
     <main style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0;width:100%;">
       <!-- Slideshow Section -->
-      
-      
-      
-      
-      
-      
-      
       <section style="width:100%;max-width:540px;margin:0 auto 20px auto;padding-left:16px;padding-right:16px;box-sizing:border-box;">
         <style>
-            
-            html, body {
-  overflow-x: hidden;
-}
         .luxe-visual-showcase--hafizulcode {
           width: 100%;
           margin: 0 auto;
@@ -260,17 +788,7 @@
           display: flex; gap: 8px; z-index: 30;
           pointer-events: auto;
         }
-        .luxe-slider-btn {
-          background:rgba(255,255,255,0.95);
-          border:1.5px solid #e6b07b;
-          border-radius:50%;
-          width:25px; height:25px;
-          display:flex;align-items:center;justify-content:center;
-          cursor:pointer;
-          transition:box-shadow 0.12s, background 0.12s;
-          box-shadow:0 2px 8px #e6b07b33;
-          outline:none;
-        }
+        
         .luxe-slider-btn:active { background: #fae4c9; }
         .luxe-slider-btn svg { width:14px; height:14px; fill:#155e63; }
         </style>
@@ -528,632 +1046,33 @@
         </script>
       </section>
     </main>
-   
-  
-  
-  
-  
-  
-  
-  
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>MMD ASHRAF ALIMULLAH SIDDIQUE | Divine Islamic Content</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Amiri:wght@700&family=Scheherazade+New:wght@700&display=swap" rel="stylesheet">
-  <style>
-      
-      html, body {
-  overflow-x: hidden;
-}
+  </div>
+</body>
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="islamic-icons-bg">
+  <img class="icon icon1" src="https://cdn.jsdelivr.net/gh/hafizulcode/assets/islamic-moon-colorful.svg" alt="Crescent Moon">
+  <img class="icon icon2" src="https://cdn.jsdelivr.net/gh/hafizulcode/assets/islamic-mosque-colorful.svg" alt="Mosque">
+  <img class="icon icon3" src="https://cdn.jsdelivr.net/gh/hafizulcode/assets/islamic-lantern-colorful.svg" alt="Lantern">
+  <img class="icon icon4" src="https://cdn.jsdelivr.net/gh/hafizulcode/assets/islamic-quran-colorful.svg" alt="Quran">
+</div>
 
 
-  :root {
-    --main-bg: #f5f8fa;
-    --primary: #1a2238;
-    --accent: #f48c06;
-    --card1-grad: linear-gradient(135deg, #fbeee6 0%, #f4d6a8 100%);
-    --card2-grad: linear-gradient(135deg, #e6f6fb 0%, #a8d8f4 100%);
-    --card3-grad: linear-gradient(135deg, #f5e6fb 0%, #cfa8f4 100%);
-    --card1-border: #f48c06;
-    --card2-border: #1cb5e0;
-    --card3-border: #a259d9;
-    --modal1-grad: linear-gradient(120deg, #fff3e6 0%, #ffd2a8 100%);
-    --modal2-grad: linear-gradient(120deg, #e6f8ff 0%, #a8e6ff 100%);
-    --modal3-grad: linear-gradient(120deg, #f7e6ff 0%, #e0a8ff 100%);
-    --modal1-border: #f48c06;
-    --modal2-border: #1cb5e0;
-    --modal3-border: #a259d9;
-    --modal-radius: 2.7rem;
-    --modal-header-size: 2.3rem;
-    --modal-tab-size: 1.13rem;
-    --modal-shadow: 0 14px 64px 0 rgba(30, 34, 56, 0.21);
-    --modal-link-bg: linear-gradient(90deg, #f48c06 0%, #ffbb00 100%);
-    --modal-link-bg2: linear-gradient(90deg, #1cb5e0 0%, #1de9b6 100%);
-    --modal-link-bg3: linear-gradient(90deg, #a259d9 0%, #6741d9 100%);
-    --modal-link-color: #fff;
-    --modal-link-shadow: 0 3px 16px 0 rgba(55,114,255,0.09);
-    --modal-padding: 36px 0 24px 0;
-    --modal-max-width: 960px;
-    --modal-close-size: 54px;
-    --modal-header-icon-size: 2.9rem;
-    --anim-fast: 0.16s cubic-bezier(.4,0,.2,1);
-    --anim-slow: 0.25s cubic-bezier(.4,0,.2,1);
-    --card-radius: 2.3rem;
-    --card-shadow: 0 6px 32px rgba(30,34,56,0.13);
-    --card-hover-shadow: 0 18px 48px rgba(244,140,6,0.14);
-    --card-scale: 1.04;
-  }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background: var(--main-bg);
-    font-family: 'Poppins', 'Amiri', 'Scheherazade New', serif;
-    color: var(--primary);
-  }
-  .divine-ultra-root {
-    padding-bottom: 60px;
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-
-  /* PREMIUM MODERN HEADING */
-  .divine-ultra-heading-card {
-    margin: 40px auto 50px auto;
-    max-width: 680px;
-    background: linear-gradient(115deg, #fff 60%, #f5f8fa 100%);
-    border-radius: 2.7rem;
-    box-shadow: 0 10px 32px 0 rgba(30,34,56,0.04);
-    border: 4.5px solid #fff;
-    text-align: center;
-    padding: 54px 30px 38px 30px;
-    color: var(--primary);
-    position: relative;
-    z-index: 2;
-  }
-  .divine-ultra-heading-card h1 {
-    font-family: var(--heading-font);
-    font-size: clamp(2.6rem,6vw,3.7rem);
-    letter-spacing: 1.2px;
-    margin-bottom: 12px;
-    color: var(--accent);
-    background: linear-gradient(90deg, #f48c06 15%, #1cb5e0 65%, #a259d9 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip:text;
-    text-fill-color: transparent;
-    font-weight: 800;
-  }
-  .divine-ultra-heading-card .subtitle {
-    font-size: 1.25rem;
-    font-family: 'Amiri', serif;
-    font-style: italic;
-    color: #4a5874;
-    margin-bottom: 0;
-    font-weight: 600;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .divine-ultra-heading-card .premium-badge {
-    position: absolute;
-    top: -35px;
-    right: -25px;
-    background: linear-gradient(90deg, #ffbb00 0%, #f48c06 100%);
-    color: #fff;
-    font-size: 1.12rem;
-    font-weight: 700;
-    border-radius: 1.1rem;
-    padding: 9px 20px 7px 22px;
-    box-shadow: 0 3px 12px rgba(244,140,6,0.13);
-    letter-spacing: .09em;
-    transform: rotate(8deg);
-    z-index: 2;
-    border: 2px solid #fff;
-    text-shadow: 0 1px 10px rgba(244,140,6,0.12);
-  }
-  /* MODERN PREMIUM CARDS */
-  .ultra-cards-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 38px;
-    margin: 0 auto 28px auto;
-    max-width: 1200px;
-    padding-bottom: 10px;
-    z-index: 1;
-    position: relative;
-  }
-  .ultra-card {
-    width: 330px;
-    min-height: 210px;
-    border-radius: var(--card-radius);
-    box-shadow: var(--card-shadow);
-    border: 3.5px solid;
-    background: #fff;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    outline: none;
-    transition: box-shadow var(--anim-fast),transform var(--anim-fast);
-    background-clip: padding-box;
-    z-index: 1;
-    margin-bottom: 10px;
-    position: relative;
-    overflow: visible;
-  }
-  .ultra-card:hover, .ultra-card:focus {
-    box-shadow: var(--card-hover-shadow);
-    transform: scale(var(--card-scale)) translateY(-7px);
-    z-index: 11;
-  }
-  .ultra-card .corner-glow {
-    content: '';
-    position: absolute;
-    top: -12px; left: -12px;
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    z-index: 0;
-    filter: blur(9px);
-    opacity: .18;
-    pointer-events: none;
-  }
-  .ultra-card.card1 {
-    background: var(--card1-grad);
-    border-color: var(--card1-border);
-  }
-  .ultra-card.card1 .corner-glow { background: #f48c06; }
-  .ultra-card.card2 {
-    background: var(--card2-grad);
-    border-color: var(--card2-border);
-  }
-  .ultra-card.card2 .corner-glow { background: #1cb5e0; }
-  .ultra-card.card3 {
-    background: var(--card3-grad);
-    border-color: var(--card3-border);
-  }
-  .ultra-card.card3 .corner-glow { background: #a259d9; }
-  .ultra-card .ultra-card-content {
-    text-align: center;
-    padding: 38px 18px 18px 18px;
-    position: relative;
-    z-index: 2;
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .ultra-card .ultra-card-icon {
-    font-size: 2.8rem;
-    margin-bottom: 18px;
-    filter: drop-shadow(0 2px 7px rgba(244,140,6,0.08));
-    border-radius: 1.5rem;
-    padding: 13px 0;
-  }
-  .ultra-card.card1 .ultra-card-icon { color: #f48c06; background:linear-gradient(90deg,#fffbe6 0,#ffe6d0 100%);}
-  .ultra-card.card2 .ultra-card-icon { color: #1cb5e0; background:linear-gradient(90deg,#e6f6fb 0,#d0f6ee 100%);}
-  .ultra-card.card3 .ultra-card-icon { color: #a259d9; background:linear-gradient(90deg,#f5e6fb 0,#e0a8ff 100%);}
-  .ultra-card .ultra-card-title {
-    font-size: 1.25rem;
-    font-family: var(--heading-font);
-    margin-bottom: 6px;
-    font-weight: 800;
-    letter-spacing: 0.23px;
-    color: var(--primary);
-  }
-  .ultra-card .ultra-card-desc {
-    font-size: 1.07rem;
-    color: #666;
-    opacity: .98;
-    margin-bottom: 16px;
-    font-family: 'Poppins',sans-serif;
-    font-weight: 500;
-  }
-  .ultra-card .ultra-card-btn {
-    background: #fff;
-    color: inherit;
-    font-size: 1.09rem;
-    font-weight: 700;
-    border: 2px solid currentColor;
-    border-radius: 1.2rem;
-    padding: 12px 38px;
-    box-shadow: 0 2px 8px rgba(55,114,255,0.06);
-    cursor: pointer;
-    letter-spacing: 0.07px;
-    outline: none;
-    margin-bottom: 0;
-    transition: background var(--anim-fast), color var(--anim-fast), border-color var(--anim-fast), transform var(--anim-fast), box-shadow var(--anim-fast);
-    margin-top: 8px;
-    position: relative;
-    z-index: 2;
-  }
-  .ultra-card.card1 .ultra-card-btn { color: #f48c06; border-color: #f48c06;}
-  .ultra-card.card2 .ultra-card-btn { color: #1cb5e0; border-color: #1cb5e0;}
-  .ultra-card.card3 .ultra-card-btn { color: #a259d9; border-color: #a259d9;}
-  .ultra-card .ultra-card-btn:hover,
-  .ultra-card .ultra-card-btn:focus {
-    background: currentColor;
-    color: #fff;
-    border-color: #fff;
-    transform: scale(1.08);
-    box-shadow: 0 6px 16px rgba(30,34,56,0.14);
-  }
-
-  /* MODALS - PREMIUM DESIGN */
-  .ultra-modal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    background: rgba(30, 42, 73, 0.20);
-    backdrop-filter: blur(12px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--anim-slow);
-  }
-  .ultra-modal-overlay.active { opacity: 1; visibility: visible; }
-  .ultra-modal {
-    border-radius: var(--modal-radius);
-    width: 95vw;
-    max-width: var(--modal-max-width);
-    min-height: 440px;
-    max-height: 90vh;
-    box-shadow: var(--modal-shadow);
-    transform: translateY(18px);
-    transition: all var(--anim-slow);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    border: 5px solid;
-    overflow: hidden;
-    animation: modal-fade-in 0.7s var(--anim-slow);
-    background: #fff;
-    background-image: none;
-    padding: 0;
-  }
-  .ultra-modal.modal1 { border-color: var(--modal1-border); background: var(--modal1-grad);}
-  .ultra-modal.modal2 { border-color: var(--modal2-border); background: var(--modal2-grad);}
-  .ultra-modal.modal3 { border-color: var(--modal3-border); background: var(--modal3-grad);}
-  @keyframes modal-fade-in {
-    from { opacity:0; transform:translateY(80px);}
-    to { opacity:1; transform:translateY(0);}
-  }
-  .ultra-modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 48px 0 0 0;
-    min-height: 85px;
-    border-radius: var(--modal-radius) var(--modal-radius) 0 0;
-    border-bottom: none;
-    position: relative;
-    background: transparent;
-  }
-  .ultra-modal-header .modal-header-icon {
-    font-size: var(--modal-header-icon-size);
-    margin: 0 28px 0 48px;
-    padding: 12px 0;
-    border-radius: 1.2rem;
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(30,34,56,0.07);
-  }
-  .ultra-modal-header h2 {
-    font-size: var(--modal-header-size);
-    font-family: var(--heading-font);
-    font-weight: 800;
-    letter-spacing: 0.7px;
-    margin: 0;
-    color: var(--primary);
-    text-shadow: 0 1px 8px rgba(55,114,255,0.06);
-    flex: 1 1 auto;
-    text-align: left;
-  }
-  .ultra-modal-close {
-    position: absolute;
-    top: 24px;
-    right: 42px;
-    width: var(--modal-close-size);
-    height: var(--modal-close-size);
-    background: #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border: 3px solid #eee;
-    color: var(--primary);
-    font-size: 2.2rem;
-    z-index: 3;
-    transition: background 0.18s, border 0.18s, color 0.18s, box-shadow 0.18s;
-    box-shadow: 0 2px 12px rgba(55,114,255,0.13);
-  }
-  .ultra-modal-close:hover {
-    background: #ffe6d0;
-    color: #fff;
-    border: 3px solid var(--modal1-border);
-    box-shadow: 0 4px 24px rgba(244,140,6,0.12);
-  }
-  .ultra-modal.modal2 .ultra-modal-close:hover { border: 3px solid var(--modal2-border); background: #e6f6fb;}
-  .ultra-modal.modal3 .ultra-modal-close:hover { border: 3px solid var(--modal3-border); background: #f5e6fb;}
-
-  .ultra-modal-tabs {
-    display: flex;
-    border-bottom: 2.2px solid #eee;
-    background: #fff;
-    border-radius: 0 0 1rem 1rem;
-    font-family: 'Poppins',sans-serif;
-    font-weight: 700;
-    font-size: var(--modal-tab-size);
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-    margin-bottom: 0;
-    margin-top: 10px;
-  }
-  .ultra-modal-tab {
-    background: none;
-    border: none;
-    outline: none;
-    padding: 22px 90px 16px 90px;
-    color: #888;
-    cursor: pointer;
-    border-radius: 1.3rem 1.3rem 0 0;
-    transition: all 0.18s;
-    font-size: var(--modal-tab-size);
-    letter-spacing: 0.13px;
-    position: relative;
-  }
-  .ultra-modal-tab.active,
-  .ultra-modal-tab:focus {
-    color: #fff;
-    background: linear-gradient(90deg, #f48c06 0%, #ffbb00 100%);
-    box-shadow: 0 -2px 16px rgba(244,140,6,0.11);
-    z-index: 2;
-  }
-  .ultra-modal.modal2 .ultra-modal-tab.active,
-  .ultra-modal.modal2 .ultra-modal-tab:focus {
-    background: linear-gradient(90deg, #1cb5e0 0%, #1de9b6 100%);
-  }
-  .ultra-modal.modal3 .ultra-modal-tab.active,
-  .ultra-modal.modal3 .ultra-modal-tab:focus {
-    background: linear-gradient(90deg, #a259d9 0%, #6741d9 100%);
-  }
-  .ultra-modal-content {
-    flex: 1 1 0;
-    width: 100%;
-    padding: var(--modal-padding);
-    overflow-y: auto;
-    border-radius: 0 0 var(--modal-radius) var(--modal-radius);
-    font-size: 1.13rem;
-    min-height: 420px;
-    background: none;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-  }
-  .ultra-modal-col {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 710px;
-    background: none;
-    padding: 0 30px 0 30px;
-    border-radius: 0 0 var(--modal-radius) var(--modal-radius);
-    overflow-y: visible;
-    min-width: 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    box-shadow: none;
-  }
-  .ultra-modal-col strong {
-    font-size: 1.21rem;
-    color: var(--primary);
-    font-family: var(--heading-font);
-    margin-bottom: 14px;
-    letter-spacing: 0.13px;
-    text-shadow: 0 1px 3px rgba(55,114,255,0.06);
-    display: flex;
-    align-items: center;
-    gap: 13px;
-  }
-  .ultra-audio, .ultra-video {
-    background: #fff;
-    border-radius: 1.2rem;
-    box-shadow: 0 3px 16px rgba(244,140,6,0.07);
-    padding: 16px 14px 12px 14px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    border: 1.7px solid #e9e3d1;
-    min-height: 60px;
-    transition: box-shadow var(--anim-fast);
-    position: relative;
-  }
-  .ultra-audio:hover, .ultra-video:hover {
-    box-shadow: 0 8px 26px 0 rgba(244,140,6,0.13);
-  }
-  .ultra-audio .audio-icon, 
-  .ultra-video .video-icon {
-    width: 52px;
-    height: 52px;
-    background: linear-gradient(135deg, #fffbe6 0%, #ffe6d0 100%);
-    color: #f48c06;
-    border-radius: 1.1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.45rem;
-    flex-shrink: 0;
-    margin-top: 5px;
-    box-shadow: 0 2px 7px rgba(244,140,6,0.10);
-  }
-  .ultra-modal.modal2 .ultra-audio .audio-icon, .ultra-modal.modal2 .ultra-video .video-icon {
-    color: #1cb5e0; background: linear-gradient(135deg, #e6f6fb 0%, #d0f6ee 100%);
-  }
-  .ultra-modal.modal3 .ultra-audio .audio-icon, .ultra-modal.modal3 .ultra-video .video-icon {
-    color: #a259d9; background: linear-gradient(135deg, #f5e6fb 0%, #e0a8ff 100%);
-  }
-  .ultra-audio .audio-details, 
-  .ultra-video .video-details { flex: 1; }
-  .ultra-audio .audio-title, 
-  .ultra-video .video-title {
-    font-weight: 700;
-    font-size: 1.13rem;
-    color: var(--primary);
-    font-family: 'Poppins',sans-serif;
-  }
-  .ultra-audio .audio-date, 
-  .ultra-video .video-date {
-    font-size: 1.01rem;
-    color: #767d92;
-    margin-top: 2px;
-    font-family: var(--heading-font);
-    font-weight: 500;
-  }
-  .custom-player {
-    width: 100%;
-    border-radius: 9px;
-    overflow: hidden;
-    background: #f8f4ea;
-    box-shadow: 0 1px 6px rgba(244,140,6,0.10);
-    margin-top: 8px;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-  }
-  .custom-player audio,
-  .custom-player video {
-    width: 100%;
-    outline: none;
-    border-radius: 9px;
-    background: #f8f4ea;
-    border: none;
-    min-height: 44px;
-  }
-  audio::-webkit-media-controls-enclosure,
-  video::-webkit-media-controls-enclosure {
-    overflow: hidden;
-  }
-  audio::-webkit-media-controls-panel,
-  video::-webkit-media-controls-panel {
-    background-color: #f8f4ea !important;
-  }
-  audio::-webkit-media-controls-download-button,
-  video::-webkit-media-controls-download-button {
-    display: none !important;
-  }
-  audio[controls]::part(download-button),
-  video[controls]::part(download-button) {
-    display: none !important;
-  }
-  .ultra-modal-more {
-    text-align: center;
-    margin: 37px 0 15px 0;
-    display: block;
-    width: 100%;
-  }
-  .ultra-modal-more a {
-    display: inline-block;
-    font-weight: 800;
-    font-size: 1.22rem;
-    padding: 15px 56px;
-    margin: 0 auto;
-    border-radius: 24px;
-    color: var(--modal-link-color);
-    background: var(--modal-link-bg);
-    text-decoration: none;
-    letter-spacing: 0.11em;
-    box-shadow: var(--modal-link-shadow);
-    border: none;
-    transition: background var(--anim-fast),transform var(--anim-fast);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  }
-  .ultra-modal.modal2 .ultra-modal-more a { background: var(--modal-link-bg2);}
-  .ultra-modal.modal3 .ultra-modal-more a { background: var(--modal-link-bg3);}
-  .ultra-modal-more a:hover {
-    background: linear-gradient(90deg, #ffbb00 0%, #f48c06 100%);
-    color: #fff;
-    transform: scale(1.05);
-  }
-  .ultra-modal.modal2 .ultra-modal-more a:hover { background: linear-gradient(90deg, #1de9b6 0%, #1cb5e0 100%);}
-  .ultra-modal.modal3 .ultra-modal-more a:hover { background: linear-gradient(90deg, #6741d9 0%, #a259d9 100%);}
-  @media (max-width: 1100px) {
-    .ultra-modal { max-width: 99vw; }
-    .ultra-modal-col { padding: 0 16px;}
-    .ultra-modal-header { padding-top: 34px;}
-    .ultra-modal-tabs { font-size: 1.08rem;}
-    .ultra-modal-tab { padding: 17px 6vw 10px 6vw;}
-  }
-  @media (max-width: 800px) {
-    .ultra-modal-header .modal-header-icon { margin-left: 12px; margin-right: 18px;}
-    .ultra-modal-header h2 { font-size: 1.4rem;}
-    .ultra-modal-tabs { font-size: .98rem;}
-    .ultra-modal-tab { padding: 12px 3vw 10px 3vw;}
-  }
-  @media (max-width: 600px) {
-    .ultra-modal-header { padding-top: 18px;}
-    .ultra-modal-col { padding: 7px 2vw;}
-    .ultra-modal-close { right: 10px; top: 10px;}
-    .ultra-modal { border-radius: 1.3rem; }
-    .ultra-modal-content { padding-left: 0; padding-right: 0;}
-    .ultra-modal-header .modal-header-icon { margin-left: 7px; margin-right: 12px;}
-  }
-  .loader, ::-webkit-scrollbar { display: none !important; }
-  
-  
-  
-  
-  .modal-content {
-  /* Make sure it's scrollable */
-  overflow-y: auto;
-  max-height: 80vh;
-}
-
-.modal-content::-webkit-scrollbar {
-  width: 8px;
-  background: transparent; /* Transparent scrollbar track */
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.2); /* Semi-transparent thumb */
-  border-radius: 4px;
-}
-
-.modal-content::-webkit-scrollbar-thumb:hover {
-  background: rgba(0,0,0,0.4); /* Darker on hover */
-}
-
-
-
-
-.modal-content {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0,0,0,0.2) transparent;
-}
-  </style>
-</head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<body>
+    
   <div class="divine-ultra-root">
     <!-- Heading Card -->
     <div class="divine-ultra-heading-card">
-      <div class="premium-badge">🖤</div>
+     
       <h1>MMD ASHRAF ALIMULLAH SIDDIQUE</h1>
       <div class="subtitle">Divine Islamic Content: Lectures, Q&A, Debates and more</div>
     </div>
-    <!-- Premium Cards -->
+    <!-- Smaller Premium Cards -->
     <div class="ultra-cards-flex">
       <div class="ultra-card card1" data-modal="waz-lectures" tabindex="0">
         <div class="corner-glow"></div>
@@ -1218,54 +1137,90 @@
                 </div>
               </div>
             </div>
+            
+            
+            
+            
+            
+            
             <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">Mercy & Wisdom</div>
-                <div class="audio-date">Apr 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">Peace & Tolerance</div>
-                <div class="audio-date">Mar 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">Path of Righteousness</div>
-                <div class="audio-date">Feb 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">Faith & Practice</div>
-                <div class="audio-date">Jan 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
+  <div class="audio-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+  <div class="audio-details">
+    <div class="audio-title">The Light of Guidance</div>
+    <div class="audio-date">May 2025</div>
+    <div class="custom-player">
+      <audio controls controlslist="nodownload noremoteplayback">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="ultra-audio">
+  <div class="audio-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+  <div class="audio-details">
+    <div class="audio-title">The Light of Guidance</div>
+    <div class="audio-date">May 2025</div>
+    <div class="custom-player">
+      <audio controls controlslist="nodownload noremoteplayback">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="ultra-audio">
+  <div class="audio-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+  <div class="audio-details">
+    <div class="audio-title">The Light of Guidance</div>
+    <div class="audio-date">May 2025</div>
+    <div class="custom-player">
+      <audio controls controlslist="nodownload noremoteplayback">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="ultra-audio">
+  <div class="audio-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+  <div class="audio-details">
+    <div class="audio-title">The Light of Guidance</div>
+    <div class="audio-date">May 2025</div>
+    <div class="custom-player">
+      <audio controls controlslist="nodownload noremoteplayback">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+</div>
+
+            <!-- ...more audios... -->
           </div>
           <div class="ultra-modal-col modal-tab-content" data-tab="video" style="display:none;">
             <strong>Watch (Video)</strong>
@@ -1281,58 +1236,75 @@
                 </div>
               </div>
             </div>
+            
+            
+            
+            
+            
+            
+            
             <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">Sunnah Lifestyle</div>
-                <div class="video-date">Apr 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/YOUTUBE_ID_2/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">Quranic Stories</div>
-                <div class="video-date">Mar 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/rfscVS0vtbw/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">Journey of Faith</div>
-                <div class="video-date">Feb 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/3fumBcKC6RE/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">Love & Brotherhood</div>
-                <div class="video-date">Jan 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/u2M5bYb8FJQ/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
+  <div class="video-icon"><i class="fa-solid fa-play"></i></div>
+  <div class="video-details">
+    <div class="video-title">Ramadan Special</div>
+    <div class="video-date">May 2025</div>
+    <div class="custom-player">
+      <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/5g1hQGMPO0M/hqdefault.jpg" preload="metadata">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="ultra-video">
+  <div class="video-icon"><i class="fa-solid fa-play"></i></div>
+  <div class="video-details">
+    <div class="video-title">Ramadan Special</div>
+    <div class="video-date">May 2025</div>
+    <div class="custom-player">
+      <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/5g1hQGMPO0M/hqdefault.jpg" preload="metadata">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="ultra-video">
+  <div class="video-icon"><i class="fa-solid fa-play"></i></div>
+  <div class="video-details">
+    <div class="video-title">Ramadan Special</div>
+    <div class="video-date">May 2025</div>
+    <div class="custom-player">
+      <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/5g1hQGMPO0M/hqdefault.jpg" preload="metadata">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+            <!-- ...more videos... -->
           </div>
         </div>
-        <div class="ultra-modal-more">
-          <a href="#" target="_blank"><i class="fa-solid fa-arrow-right"></i> View More Waz Lectures</a>
+        <button class="ultra-modal-more-toggle" aria-expanded="false" onclick="toggleMore(this, 'waz-lectures')">
+          <i class="fa-solid fa-chevron-down"></i> More Contents
+        </button>
+        <div class="ultra-modal-more-list" id="more-waz-lectures">
+          <ul style="list-style:none; padding:0; margin:1.1em 0 0 0;">
+            <li><a href="#" target="_blank"><i class="fa-solid fa-arrow-right"></i> View More Waz Lectures</a></li>
+            <li><a href="#" target="_blank"><i class="fa-solid fa-headphones"></i> Audio Archive</a></li>
+            <li><a href="#" target="_blank"><i class="fa-solid fa-video"></i> Video Archive</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1364,54 +1336,7 @@
                 </div>
               </div>
             </div>
-            <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">Faith & Reason</div>
-                <div class="audio-date">Apr 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">Debate: Modern Issues</div>
-                <div class="audio-date">Mar 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">Faith & Society</div>
-                <div class="audio-date">Feb 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">The Straight Path</div>
-                <div class="audio-date">Jan 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
+            <!-- ...more audios... -->
           </div>
           <div class="ultra-modal-col modal-tab-content" data-tab="video" style="display:none;">
             <strong>Watch (Video)</strong>
@@ -1427,58 +1352,18 @@
                 </div>
               </div>
             </div>
-            <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">The True Path</div>
-                <div class="video-date">Apr 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/YOUTUBE_ID_4/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">Debate: Youth & Future</div>
-                <div class="video-date">Mar 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/bxqLsrlakK8/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">Debate: Science & Faith</div>
-                <div class="video-date">Feb 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/oHg5SJYRHA0/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">Debate: History & Present</div>
-                <div class="video-date">Jan 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
+            <!-- ...more videos... -->
           </div>
         </div>
-        <div class="ultra-modal-more">
-          <a href="#" target="_blank"><i class="fa-solid fa-arrow-right"></i> View More Debates</a>
+        <button class="ultra-modal-more-toggle" aria-expanded="false" onclick="toggleMore(this, 'munazad')">
+          <i class="fa-solid fa-chevron-down"></i> More Contents
+        </button>
+        <div class="ultra-modal-more-list" id="more-munazad">
+          <ul style="list-style:none; padding:0; margin:1.1em 0 0 0;">
+            <li><a href="#" target="_blank"><i class="fa-solid fa-arrow-right"></i> View More Debates</a></li>
+            <li><a href="#" target="_blank"><i class="fa-solid fa-headphones"></i> Audio Archive</a></li>
+            <li><a href="#" target="_blank"><i class="fa-solid fa-video"></i> Video Archive</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1510,54 +1395,7 @@
                 </div>
               </div>
             </div>
-            <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-circle-question"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">How to balance Deen & Dunya?</div>
-                <div class="audio-date">Apr 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-circle-question"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">Why Salah?</div>
-                <div class="audio-date">Mar 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-circle-question"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">Respecting Parents</div>
-                <div class="audio-date">Feb 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-audio">
-              <div class="audio-icon"><i class="fa-solid fa-circle-question"></i></div>
-              <div class="audio-details">
-                <div class="audio-title">Zakat in Modern Times</div>
-                <div class="audio-date">Jan 2025</div>
-                <div class="custom-player">
-                  <audio controls controlslist="nodownload noremoteplayback">
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mp3">
-                  </audio>
-                </div>
-              </div>
-            </div>
+            <!-- ...more audios... -->
           </div>
           <div class="ultra-modal-col modal-tab-content" data-tab="video" style="display:none;">
             <strong>Watch (Video)</strong>
@@ -1573,58 +1411,18 @@
                 </div>
               </div>
             </div>
-            <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">Islamic Q&A: Salah</div>
-                <div class="video-date">Apr 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/4Yb2f1c3w0Q/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">Islamic Q&A: Parents</div>
-                <div class="video-date">Mar 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">Islamic Q&A: Zakat</div>
-                <div class="video-date">Feb 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/oHg5SJYRHA0/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="ultra-video">
-              <div class="video-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="video-details">
-                <div class="video-title">Islamic Q&A: Community</div>
-                <div class="video-date">Jan 2025</div>
-                <div class="custom-player">
-                  <video controls controlslist="nodownload noremoteplayback" poster="https://img.youtube.com/vi/4Yb2f1c3w0Q/hqdefault.jpg" preload="metadata">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
+            <!-- ...more videos... -->
           </div>
         </div>
-        <div class="ultra-modal-more">
-          <a href="#" target="_blank"><i class="fa-solid fa-arrow-right"></i> View More Q&A</a>
+        <button class="ultra-modal-more-toggle" aria-expanded="false" onclick="toggleMore(this, 'question-answer')">
+          <i class="fa-solid fa-chevron-down"></i> More Contents
+        </button>
+        <div class="ultra-modal-more-list" id="more-question-answer">
+          <ul style="list-style:none; padding:0; margin:1.1em 0 0 0;">
+            <li><a href="#" target="_blank"><i class="fa-solid fa-arrow-right"></i> View More Q&A</a></li>
+            <li><a href="#" target="_blank"><i class="fa-solid fa-headphones"></i> Audio Archive</a></li>
+            <li><a href="#" target="_blank"><i class="fa-solid fa-video"></i> Video Archive</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1633,7 +1431,6 @@
   function openModal(modal) {
     document.getElementById('modal-' + modal + '-modal').classList.add('active');
     document.body.style.overflow = 'hidden';
-    // Always default to "audio" tab when opening
     var tabs = document.querySelectorAll('#modal-' + modal + '-modal .ultra-modal-tab');
     tabs.forEach(function(tab, idx) {
       if(idx === 0) tab.classList.add('active');
@@ -1644,6 +1441,13 @@
       if(col.getAttribute('data-tab') === 'audio') col.style.display = '';
       else col.style.display = 'none';
     });
+    // Hide more-content list and reset toggle
+    var moreToggle = document.querySelector('#modal-' + modal + '-modal .ultra-modal-more-toggle');
+    var moreList = document.getElementById('more-' + modal);
+    if (moreToggle && moreList) {
+      moreToggle.setAttribute('aria-expanded', 'false');
+      moreList.classList.remove('active');
+    }
     stopAllDivineMedia();
   }
   function closeModal(modal) {
@@ -1662,6 +1466,17 @@
       else col.style.display = 'none';
     });
     stopAllDivineMedia();
+  }
+  function toggleMore(btn, modal) {
+    var moreList = document.getElementById('more-' + modal);
+    var expanded = btn.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+      btn.setAttribute('aria-expanded', 'false');
+      moreList.classList.remove('active');
+    } else {
+      btn.setAttribute('aria-expanded', 'true');
+      moreList.classList.add('active');
+    }
   }
   document.querySelectorAll('.ultra-card').forEach(function(card){
     card.addEventListener('click', function(e){
@@ -1691,7 +1506,6 @@
       }
     });
   });
-  // --- Single play audio/video logic ---
   function stopAllDivineMedia(except) {
     var mediaEls = document.querySelectorAll('.ultra-modal audio, .ultra-modal video');
     mediaEls.forEach(function(el){
@@ -1709,8 +1523,14 @@
     }
   }, true);
   </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </body>
 </html>
-  
-  
-</body>
