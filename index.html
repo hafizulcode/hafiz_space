@@ -1,575 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=380, initial-scale=1.0">
-    <title>Vintage Radio Stream</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --radio-body: #23272F;
-            --radio-panel: #191C22;
-            --radio-accent: #FF7C36;
-            --radio-highlight: #FFB347;
-            --radio-text: #E6E6E6;
-            --radio-shadow: #111217;
-            --radio-dial: #333640;
-            --radio-glass: rgba(255,255,255,0.14);
-            --radio-linear: linear-gradient(135deg, #22242A 60%, #1A1C21 100%);
-            --radio-glow: 0 0 22px 1px #FFB34733;
-            --radio-glow-2: 0 0 10px 2px #FF7C3633;
-        }
+  <meta charset="UTF-8">
+  <title>YouTube Live Audio Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: linear-gradient(135deg, #95d5b2 0%, #7b2ff2 100%);
+      --card-bg: rgba(255,255,255,0.9);
+      --primary: #7b2ff2;
+      --accent: #f7971e;
+      --success: #1faa59;
+      --danger: #e63946;
+      --text-dark: #22223b;
+      --text-light: #fff;
+      --shadow: 0 4px 24px 0 rgba(44,62,80,0.10);
+    }
 
-        body {
-            background: linear-gradient(135deg, #121318, #181A20 80%);
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            color: var(--radio-text);
-        }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--main-bg);
+      font-family: 'Roboto', Arial, sans-serif;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .radio-container {
-            position: relative;
-            width: 410px;
-            height: 590px;
-            background: var(--radio-linear);
-            border-radius: 28px;
-            box-shadow: 0 18px 36px #000C  , 0 1px 4px #2228;
-            padding: 35px 34px 25px 34px;
-            display: flex;
-            flex-direction: column;
-            border: 1.5px solid #34384a;
-            overflow: hidden;
-            transition: box-shadow 0.25s;
-        }
-        .radio-container:hover {
-            box-shadow: 0 28px 60px #000E, 0 2px 8px #2328, var(--radio-glow-2);
-        }
+    .container {
+      background: var(--card-bg);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 48px 40px 40px 40px;
+      max-width: 420px;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 30px 0;
+      position: relative;
+    }
 
-        .radio-glass {
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 140px;
-            background: var(--radio-glass);
-            border-radius: 28px 28px 0 0;
-            backdrop-filter: blur(8px);
-            z-index: 1;
-        }
-        .radio-header {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            margin-bottom: 32px;
-        }
-        .radio-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 3.5px;
-            color: var(--radio-highlight);
-            text-shadow: 0 0 16px #ffb34788, var(--radio-glow);
-        }
-        .radio-subtitle {
-            font-size: 14px;
-            margin-top: 7px;
-            letter-spacing: 1.1px;
-            color: #bbb;
-        }
-        .auto-stop {
-            position: absolute;
-            top: 23px; right: 40px;
-            background: linear-gradient(90deg, #FF7C36 45%, #FFB347 100%);
-            color: #fff;
-            padding: 5.5px 15px;
-            border-radius: 16px;
-            font-size: 10.5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            box-shadow: 0 0 8px #ffb34733;
-            z-index: 2;
-            letter-spacing: 1.2px;
-            border: 1px solid #FF7C36;
-        }
-        .radio-display {
-            background: var(--radio-panel);
-            border: 2px solid #363a49;
-            border-radius: 10px;
-            padding: 18px 20px 20px 20px;
-            margin-bottom: 32px;
-            height: 90px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 16px #0003, inset 0 0 22px #0008;
-        }
-        .display-text {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 18px;
-            margin: 0;
-            color: var(--radio-highlight);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            text-shadow: var(--radio-glow);
-        }
-        .display-subtext {
-            font-size: 13px;
-            margin-top: 4px;
-            color: #888ba2;
-            letter-spacing: 0.5px;
-        }
-        .visualizer {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 7px;
-            display: flex;
-            gap: 3px;
-            padding: 0 3px;
-        }
-        .visualizer-bar {
-            background: var(--radio-accent);
-            flex-grow: 1;
-            border-radius: 3px 3px 0 0;
-            animation: visualizer-animation 1.6s infinite ease-in-out;
-            transform-origin: bottom;
-            box-shadow: 0 0 4px #FF7C3633;
-        }
-        @keyframes visualizer-animation {
-            0%, 100% { transform: scaleY(0.4); }
-            45% { transform: scaleY(1.7); }
-            60% { transform: scaleY(1.2);}
-        }
-        /* Visualizer delays for lively effect */
-        .visualizer-bar:nth-child(1) { animation-delay: 0.08s; }
-        .visualizer-bar:nth-child(2) { animation-delay: 0.2s; }
-        .visualizer-bar:nth-child(3) { animation-delay: 0.39s; }
-        .visualizer-bar:nth-child(4) { animation-delay: 0.12s; }
-        .visualizer-bar:nth-child(5) { animation-delay: 0.29s; }
-        .visualizer-bar:nth-child(6) { animation-delay: 0.44s; }
-        .visualizer-bar:nth-child(7) { animation-delay: 0.18s; }
-        .visualizer-bar:nth-child(8) { animation-delay: 0.36s; }
-        .visualizer-bar:nth-child(9) { animation-delay: 0.53s; }
+    .header-logo {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      width: 74px;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      box-shadow: 0 3px 20px #7b2ff244, 0 1px 2px #f7971e22;
+    }
 
-        .radio-dial {
-            background: var(--radio-dial);
-            height: 48px;
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            padding: 0 24px;
-            margin-bottom: 26px;
-            box-shadow: 0 2px 8px #0003, inset 0 2px 5px #0008;
-            border: 1.5px solid #2d2f3a;
-            justify-content: center;
-            gap: 20px;
-        }
-        .dial-label {
-            font-size: 13px;
-            color: #aaa;
-            font-weight: 600;
-            letter-spacing: 1.1px;
-        }
-        .dial-notch {
-            width: 3px; height: 16px;
-            background: #444;
-            border-radius: 2px;
-            margin: 0 17px;
-        }
-        .radio-controls {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-        .control-button {
-            background: #282b32;
-            border: none;
-            border-radius: 50%;
-            width: 54px; height: 54px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--radio-text);
-            font-size: 22px;
-            cursor: pointer;
-            transition: all 0.17s;
-            box-shadow: 0 2px 6px #0003, 0 1px 2px #fff1;
-            position: relative;
-        }
-        .control-button:active,
-        .control-button.active {
-            background: var(--radio-accent);
-            color: #fff;
-            box-shadow: 0 0 10px #FF7C3677;
-        }
-        .control-button.play {
-            grid-column: 3;
-            background: var(--radio-accent);
-            width: 80px;
-            height: 80px;
-            font-size: 32px;
-            margin: 0 auto;
-            box-shadow: 0 0 22px 2px #FFB34755, 0 6px 24px #0008;
-        }
-        .control-button.play::after {
-            content: '';
-            position: absolute;
-            top: -7px; left: -7px; right: -7px; bottom: -7px;
-            border: 2.5px solid var(--radio-highlight);
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .control-button.play.active::after {
-            opacity: 0.5;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.5; }
-            70% { transform: scale(1.15); opacity: 0; }
-            100% { transform: scale(1); opacity: 0; }
-        }
-        .radio-presets {
-            grid-column: 1 / span 5;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-        .preset-btn {
-            background: #22242A;
-            color: #FFB347;
-            border: 1.5px solid #444;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            width: 44px; height: 32px;
-            cursor: pointer;
-            margin: 0 2px;
-            transition: background 0.19s, color 0.14s, border-color 0.18s;
-        }
-        .preset-btn.active {
-            background: var(--radio-accent);
-            color: #fff;
-            border-color: #FFB347;
-        }
-        .volume-control {
-            display: flex;
-            align-items: center;
-            margin-top: 18px;
-            gap: 13px;
-        }
-        .volume-icon {
-            font-size: 22px;
-            color: var(--radio-accent);
-            margin-right: 4px;
-        }
-        .volume-slider {
-            flex-grow: 1;
-            -webkit-appearance: none;
-            height: 5px;
-            background: #383C48;
-            border-radius: 2.5px;
-            outline: none;
-            transition: background 0.2s;
-        }
-        .volume-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: var(--radio-accent);
-            cursor: pointer;
-            box-shadow: 0 0 8px #FF7C3666;
-        }
-        .volume-slider::-moz-range-thumb {
-            width: 18px; height: 18px; border-radius: 50%;
-            background: var(--radio-accent);
-            cursor: pointer;
-            box-shadow: 0 0 8px #FF7C3666;
-        }
-        .volume-slider::-ms-thumb {
-            width: 18px; height: 18px; border-radius: 50%;
-            background: var(--radio-accent);
-            cursor: pointer;
-            box-shadow: 0 0 8px #FF7C3666;
-        }
+    .header-logo svg {
+      width: 40px;
+      height: 40px;
+    }
 
-        .radio-footer {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12.5px;
-            color: #535670;
-            margin-top: auto;
-            letter-spacing: 1.1px;
-        }
-        .footer-link {
-            color: #FFB347;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: text-shadow 0.18s;
-        }
-        .footer-link:hover {
-            text-shadow: 0 0 8px #FFB34777;
-        }
-        /* Responsive tweaks */
-        @media (max-width: 480px) {
-            .radio-container {
-                width: 98vw;
-                height: auto;
-                min-height: 100vh;
-                border-radius: 0;
-                padding: 18px 2vw 30px 2vw;
-            }
-        }
-    </style>
+    h2 {
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      font-size: 2.1em;
+      letter-spacing: -1px;
+      margin: 0 0 10px 0;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--success));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      text-align: center;
+    }
+
+    #audiostatus {
+      font-size: 1.16em;
+      margin: 18px 0 10px 0;
+      text-align: center;
+      min-height: 28px;
+      font-weight: 500;
+    }
+
+    .audio-controls {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+
+    .audio-btn {
+      padding: 12px 32px;
+      border-radius: 24px;
+      border: none;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: #fff;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      font-size: 1.05em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 2px 10px #7b2ff233;
+      transition: background 0.2s, transform 0.1s;
+      outline: none;
+    }
+    .audio-btn:active {
+      transform: scale(0.97);
+      background: linear-gradient(90deg, var(--success), var(--accent));
+    }
+    .audio-btn[disabled] {
+      background: #ddd;
+      color: #bbb;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .yt-link {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      background: rgba(123,47,242,0.07);
+      border-radius: 16px;
+      padding: 6px 12px;
+      margin-top: 10px;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .yt-link:hover {
+      background: rgba(247,151,30,0.12);
+      color: var(--accent);
+    }
+
+    /* Hide the YouTube video, audio-only */
+    #ytplayer {
+      width: 1px;
+      height: 1px;
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    /* Turn ON/OFF radio group styles */
+    .onoff-group {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      justify-content: center;
+      margin: 16px 0 8px 0;
+    }
+    .onoff-label {
+      font-size: 1.05em;
+      font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+      font-weight: bold;
+      color: var(--primary);
+      margin-right: 7px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .onoff-label input[type="radio"] {
+      accent-color: var(--accent);
+      margin-right: 6px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 24px 8vw;
+        max-width: 98vw;
+      }
+      h2 {
+        font-size: 1.3em;
+      }
+      .audio-btn {
+        padding: 10px 18px;
+        font-size: 0.97em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="radio-container">
-        <div class="radio-glass"></div>
-        <div class="auto-stop">AUTO STOP SYSTEM</div>
-        <div class="radio-header">
-            <h1 class="radio-title">Vintage Radio</h1>
-            <p class="radio-subtitle">YouTube Live Stream Receiver</p>
-        </div>
-        <div class="radio-display">
-            <p class="display-text" id="nowPlaying">Tuning to station...</p>
-            <p class="display-subtext" id="listenersCount">-- listeners online</p>
-            <div class="visualizer" id="visualizer"></div>
-        </div>
-        <div class="radio-dial">
-            <span class="dial-label">FREQ</span>
-            <span class="dial-notch"></span>
-            <span class="dial-label">88.8 FM</span>
-            <span class="dial-notch"></span>
-            <span class="dial-label">LIVE</span>
-        </div>
-        <div class="radio-controls">
-            <button class="control-button" id="prevBtn" title="Previous Station">⏮</button>
-            <button class="control-button" id="rewindBtn" title="Rewind 10s">⏪</button>
-            <button class="control-button play" id="playButton" title="Play/Pause">▶</button>
-            <button class="control-button" id="forwardBtn" title="Forward 10s">⏩</button>
-            <button class="control-button" id="nextBtn" title="Next Station">⏭</button>
-        </div>
-        <div class="radio-presets">
-            <button class="preset-btn" data-index="0">1</button>
-            <button class="preset-btn" data-index="1">2</button>
-            <button class="preset-btn" data-index="2">3</button>
-            <button class="preset-btn" data-index="3">4</button>
-            <button class="preset-btn" data-index="4">5</button>
-        </div>
-        <div class="volume-control">
-            <span class="volume-icon" id="volIcon">🔊</span>
-            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
-        </div>
-        <div class="radio-footer">
-            <span>CH: <a class="footer-link" href="https://youtube.com/channel/UCqtGJe9AnRfq5wwjk27VsoQ" target="_blank">UCqtGJe9AnRfq5wwjk27VsoQ</a></span>
-            <span id="footerPwr">PWR: <span style="color: #FFB347">ON</span></span>
-        </div>
+  <div class="container">
+    <div class="header-logo">
+      <!-- Simple audio icon SVG -->
+      <svg viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="24" fill="#fff" opacity="0.06"/>
+        <path d="M32 19v10a2 2 0 0 1-2 2h-6l-6 4V13l6 4h6a2 2 0 0 1 2 2z" fill="#7b2ff2"/>
+        <path d="M39 24c0-3.9-2.6-7.3-6.2-8.6a1.5 1.5 0 1 0-1 2.8A7 7 0 0 1 37 24a7 7 0 0 1-5.2 6.8 1.5 1.5 0 1 0 1 2.8C36.4 31.3 39 27.9 39 24z" fill="#f7971e"/>
+      </svg>
     </div>
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-        // --- CONFIG ---
-        const presets = [
-            { name: "Vintage", channelId: "UCqtGJe9AnRfq5wwjk27VsoQ", label: "88.8 FM" },
-            { name: "Lofi Girl", channelId: "UCSJ4gkVC6NrvII8umztf0Ow", label: "88.2 FM" },
-            { name: "Chillhop", channelId: "UCOxqgCwgOqC2lMqC5PYz_Dg", label: "88.6 FM" },
-            { name: "Smooth Jazz", channelId: "UCmKtn_HvpfbTu3QV4lhJIMw", label: "88.1 FM" },
-            { name: "Cafe Music", channelId: "UC5ZFDzZV-v6FDTc9oUFW6Rw", label: "89.0 FM" }
-        ];
-        let currentPreset = 0;
-        let liveVideoId = null;
-        let player = null;
-        let isPlaying = false;
-        let apiKey = 'AIzaSyAeaesQoH0URUMllWkFpLlv-n8fC9u-YhU'; // Consider using a proxy or environment variable in production
-        let viewerInterval = null;
+    <h2>Live Audio from YouTube</h2>
+    <div class="onoff-group">
+      <label class="onoff-label">
+        <input type="radio" name="onoff" id="onRadio" value="on" checked>
+        On
+      </label>
+      <label class="onoff-label">
+        <input type="radio" name="onoff" id="offRadio" value="off">
+        Off
+      </label>
+    </div>
+    <div id="audiostatus">Checking for live stream...</div>
+    <div class="audio-controls">
+      <button id="audioplaybtn" class="audio-btn" style="display:none;">Play</button>
+      <button id="audiopausebtn" class="audio-btn" style="display:none;">Pause</button>
+    </div>
+    <iframe id="ytplayer" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+    <a class="yt-link" href="https://www.youtube.com/channel/UCqtGJe9AnRfq5wwjk27VsoQ/live" target="_blank" rel="noopener">
+      Visit the channel on YouTube
+    </a>
+  </div>
+  <script>
+    const channelId = "UCqtGJe9AnRfq5wwjk27VsoQ";
+    const apiKey = "AIzaSyAeaesQoH0URUMllWkFpLlv-n8fC9u-YhU";
+    const checkInterval = 30000; // 30 seconds
 
-        // --- DOM ---
-        const playButton = document.getElementById('playButton');
-        const volumeSlider = document.getElementById('volumeSlider');
-        const nowPlaying = document.getElementById('nowPlaying');
-        const listeners = document.getElementById('listenersCount');
-        const visualizer = document.getElementById('visualizer');
-        const footerPwr = document.getElementById('footerPwr');
-        const presetBtns = document.querySelectorAll('.preset-btn');
-        const volIcon = document.getElementById('volIcon');
+    const status = document.getElementById("audiostatus");
+    const ytplayer = document.getElementById("ytplayer");
+    const playBtn = document.getElementById("audioplaybtn");
+    const pauseBtn = document.getElementById("audiopausebtn");
+    const onRadio = document.getElementById("onRadio");
+    const offRadio = document.getElementById("offRadio");
 
-        // Visualizer
-        for (let i = 0; i < 9; i++) {
-            const bar = document.createElement('div');
-            bar.className = 'visualizer-bar';
-            visualizer.appendChild(bar);
-        }
+    let currentVideoId = null;
+    let intervalId = null;
+    let isOn = true;
 
-        // --- PLAYER SETUP ---
-        function onYouTubeIframeAPIReady() {
-            loadPreset(currentPreset, true);
-            volumeSlider.addEventListener('input', handleVolume);
-            playButton.addEventListener('click', handlePlayButtonClick);
-            presetBtns.forEach(btn => btn.addEventListener('click', presetClicked));
-            document.getElementById('rewindBtn').onclick = () => seekPlayer(-10);
-            document.getElementById('forwardBtn').onclick = () => seekPlayer(10);
-            document.getElementById('prevBtn').onclick = () => switchStation(-1);
-            document.getElementById('nextBtn').onclick = () => switchStation(1);
+    async function getLiveVideoId() {
+      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&eventType=live&type=video&key=${apiKey}`;
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        if (data.items && data.items.length > 0) {
+          return data.items[0].id.videoId;
         }
+      } catch (e) {
+        status.textContent = "⚠️ Could not check live status. Please reload.";
+      }
+      return null;
+    }
 
-        function presetClicked(e) {
-            let idx = parseInt(e.currentTarget.dataset.index);
-            if (!isNaN(idx)) loadPreset(idx);
+    function setPlayer(videoId) {
+      if (videoId && isOn) {
+        ytplayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1`;
+        status.innerHTML = `<span style="color:var(--success)">🔊 Live audio is playing!</span>`;
+        playBtn.style.display = "inline-block";
+        pauseBtn.style.display = "inline-block";
+        ytplayer.style.display = "";
+      } else {
+        ytplayer.src = "";
+        if (isOn) {
+          status.innerHTML = `<span style="color:var(--danger)">⏸️ No live stream currently.</span>`;
+        } else {
+          status.innerHTML = `<span style="color:var(--danger)">⏹️ Audio player is OFF.</span>`;
         }
+        playBtn.style.display = "none";
+        pauseBtn.style.display = "none";
+        ytplayer.style.display = "none";
+      }
+    }
 
-        function switchStation(offset) {
-            let newIdx = (currentPreset + offset + presets.length) % presets.length;
-            loadPreset(newIdx);
-        }
+    playBtn.onclick = () => {
+      ytplayer.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      status.innerHTML = `<span style="color:var(--success)">🔊 Live audio is playing!</span>`;
+    };
+    pauseBtn.onclick = () => {
+      ytplayer.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      status.innerHTML = `<span style="color:var(--danger)">⏸️ Live audio is paused.</span>`;
+    };
 
-        function seekPlayer(seconds) {
-            if (player && typeof player.getCurrentTime === "function") {
-                let t = player.getCurrentTime() + seconds;
-                player.seekTo(Math.max(0, t), true);
-            }
-        }
+    async function checkLive() {
+      if (!isOn) return;
+      const videoId = await getLiveVideoId();
+      if (videoId !== currentVideoId) {
+        currentVideoId = videoId;
+        setPlayer(videoId);
+      }
+    }
 
-        function loadPreset(idx) {
-            if (viewerInterval) clearInterval(viewerInterval);
-            currentPreset = idx;
-            presetBtns.forEach(btn => btn.classList.remove('active'));
-            if(presetBtns[idx]) presetBtns[idx].classList.add('active');
-            nowPlaying.textContent = "Tuning to station...";
-            listeners.textContent = "-- listeners online";
-            let ch = presets[idx].channelId;
-            let label = presets[idx].label;
-            document.querySelectorAll('.dial-label')[1].textContent = label;
-            document.querySelector('.footer-link').href = "https://youtube.com/channel/" + ch;
-            playButton.disabled = true; // Disable play until ready
-            checkLiveStream(ch);
-        }
+    function startChecking() {
+      if (intervalId) clearInterval(intervalId);
+      checkLive();
+      intervalId = setInterval(checkLive, checkInterval);
+    }
 
-        // --- YT API + DATA ---
-        function checkLiveStream(channelId) {
-            fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&eventType=live&type=video&key=${apiKey}`)
-            .then(r=>r.json()).then(data=>{
-                if(data.items && data.items.length) {
-                    let vid = data.items[0].id.videoId;
-                    liveVideoId = vid;
-                    setupPlayer(vid);
-                    updateVideoInfo(vid);
-                    updateViewerCount(vid);
-                    viewerInterval = setInterval(()=>updateViewerCount(vid), 25000);
-                } else {
-                    liveVideoId = null;
-                    nowPlaying.textContent = "No live broadcast detected";
-                    listeners.textContent = "-- listeners online";
-                    playButton.disabled = true;
-                    playButton.classList.remove('active');
-                    playButton.innerHTML = '▶';
-                    isPlaying = false;
-                    if (player) { player.stopVideo && player.stopVideo(); }
-                }
-            }).catch(()=>{
-                nowPlaying.textContent = "Signal lost - try again";
-                listeners.textContent = "-- listeners online";
-                playButton.disabled = true;
-            });
-        }
+    function stopChecking() {
+      if (intervalId) clearInterval(intervalId);
+      currentVideoId = null;
+      setPlayer(null);
+    }
 
-        function setupPlayer(videoId) {
-            playButton.disabled = true; // Disable play until ready
-            if (player) {
-                player.loadVideoById(videoId);
-                // onReady will re-enable play
-                return;
-            }
-            player = new YT.Player('player', {
-                height: '0', width: '0',
-                videoId: videoId,
-                playerVars: {
-                    autoplay: 0, controls: 0, disablekb: 1, modestbranding: 1
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
+    // Radio event listeners
+    onRadio.addEventListener("change", () => {
+      isOn = true;
+      startChecking();
+    });
+    offRadio.addEventListener("change", () => {
+      isOn = false;
+      stopChecking();
+    });
 
-        function onPlayerReady(e) {
-            playButton.disabled = false; // Enable play
-            e.target.setVolume(volumeSlider.value * 100);
-            nowPlaying.textContent = "Ready to broadcast";
-        }
-
-        function onPlayerStateChange(e) {
-            if (e.data === YT.PlayerState.PLAYING) {
-                isPlaying = true;
-                playButton.innerHTML = '❚❚';
-                playButton.classList.add('active');
-                footerPwr.innerHTML = 'PWR: <span style="color: #FFB347">ON</span>';
-            } else {
-                isPlaying = false;
-                playButton.innerHTML = '▶';
-                playButton.classList.remove('active');
-                footerPwr.innerHTML = 'PWR: <span style="color: #F76868">OFF</span>';
-            }
-        }
-
-        function handlePlayButtonClick() {
-            if (!player || !liveVideoId) return;
-            if (isPlaying) {
-                player.pauseVideo();
-            } else {
-                player.playVideo();
-            }
-        }
-
-        function handleVolume() {
-            if (player) {
-                player.setVolume(this.value * 100);
-            }
-            let v = +this.value;
-            if (v < 0.05) volIcon.textContent = "🔇";
-            else if (v < 0.35) volIcon.textContent = "🔈";
-            else if (v < 0.8) volIcon.textContent = "🔉";
-            else volIcon.textContent = "🔊";
-        }
-
-        function updateVideoInfo(videoId) {
-            fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${apiKey}`)
-            .then(r=>r.json()).then(data=>{
-                if(data.items && data.items.length) {
-                    nowPlaying.textContent = data.items[0].snippet.title;
-                }
-            });
-        }
-        function updateViewerCount(videoId) {
-            fetch(`https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id=${videoId}&key=${apiKey}`)
-            .then(r=>r.json()).then(data=>{
-                if(data.items && data.items.length) {
-                    let n = data.items[0].liveStreamingDetails.concurrentViewers;
-                    listeners.textContent = `${formatNumber(n)} listeners online`;
-                }
-            });
-        }
-        function formatNumber(num) {
-            if (!num) return '--';
-            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-
-        // --- Hidden Player Div ---
-        const playerDiv = document.createElement('div');
-        playerDiv.id = 'player';
-        playerDiv.style.display = 'none';
-        document.body.appendChild(playerDiv);
-    </script>
+    // Initial start
+    startChecking();
+  </script>
 </body>
 </html>
