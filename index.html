@@ -379,7 +379,6 @@
     </div>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-        // Improved, Premium, and Feature-Rich JS
         // --- CONFIG ---
         const presets = [
             { name: "Vintage", channelId: "UCqtGJe9AnRfq5wwjk27VsoQ", label: "88.8 FM" },
@@ -394,6 +393,7 @@
         let isPlaying = false;
         let apiKey = 'AIzaSyAeaesQoH0URUMllWkFpLlv-n8fC9u-YhU'; // Consider using a proxy or environment variable in production
         let viewerInterval = null;
+
         // --- DOM ---
         const playButton = document.getElementById('playButton');
         const volumeSlider = document.getElementById('volumeSlider');
@@ -403,38 +403,44 @@
         const footerPwr = document.getElementById('footerPwr');
         const presetBtns = document.querySelectorAll('.preset-btn');
         const volIcon = document.getElementById('volIcon');
+
         // Visualizer
         for (let i = 0; i < 9; i++) {
             const bar = document.createElement('div');
             bar.className = 'visualizer-bar';
             visualizer.appendChild(bar);
         }
+
         // --- PLAYER SETUP ---
         function onYouTubeIframeAPIReady() {
             loadPreset(currentPreset, true);
             volumeSlider.addEventListener('input', handleVolume);
-            playButton.addEventListener('click', togglePlayPause);
+            playButton.addEventListener('click', handlePlayButtonClick);
             presetBtns.forEach(btn => btn.addEventListener('click', presetClicked));
             document.getElementById('rewindBtn').onclick = () => seekPlayer(-10);
             document.getElementById('forwardBtn').onclick = () => seekPlayer(10);
             document.getElementById('prevBtn').onclick = () => switchStation(-1);
             document.getElementById('nextBtn').onclick = () => switchStation(1);
         }
+
         function presetClicked(e) {
             let idx = parseInt(e.currentTarget.dataset.index);
             if (!isNaN(idx)) loadPreset(idx);
         }
+
         function switchStation(offset) {
             let newIdx = (currentPreset + offset + presets.length) % presets.length;
             loadPreset(newIdx);
         }
+
         function seekPlayer(seconds) {
             if (player && typeof player.getCurrentTime === "function") {
                 let t = player.getCurrentTime() + seconds;
                 player.seekTo(Math.max(0, t), true);
             }
         }
-        function loadPreset(idx, first=false) {
+
+        function loadPreset(idx) {
             if (viewerInterval) clearInterval(viewerInterval);
             currentPreset = idx;
             presetBtns.forEach(btn => btn.classList.remove('active'));
@@ -445,17 +451,18 @@
             let label = presets[idx].label;
             document.querySelectorAll('.dial-label')[1].textContent = label;
             document.querySelector('.footer-link').href = "https://youtube.com/channel/" + ch;
-            checkLiveStream(ch, first);
+            playButton.disabled = true; // Disable play until ready
+            checkLiveStream(ch);
         }
 
         // --- YT API + DATA ---
-        function checkLiveStream(channelId, first=false) {
+        function checkLiveStream(channelId) {
             fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&eventType=live&type=video&key=${apiKey}`)
             .then(r=>r.json()).then(data=>{
                 if(data.items && data.items.length) {
                     let vid = data.items[0].id.videoId;
                     liveVideoId = vid;
-                    setupPlayer(vid, first);
+                    setupPlayer(vid);
                     updateVideoInfo(vid);
                     updateViewerCount(vid);
                     viewerInterval = setInterval(()=>updateViewerCount(vid), 25000);
@@ -475,10 +482,12 @@
                 playButton.disabled = true;
             });
         }
-        function setupPlayer(videoId, first) {
-            playButton.disabled = false;
+
+        function setupPlayer(videoId) {
+            playButton.disabled = true; // Disable play until ready
             if (player) {
                 player.loadVideoById(videoId);
+                // onReady will re-enable play
                 return;
             }
             player = new YT.Player('player', {
@@ -493,14 +502,13 @@
                 }
             });
         }
+
         function onPlayerReady(e) {
+            playButton.disabled = false; // Enable play
             e.target.setVolume(volumeSlider.value * 100);
             nowPlaying.textContent = "Ready to broadcast";
-            if (firstAutoPlay()) {
-                player.playVideo();
-                playButton.classList.add('active');
-            }
         }
+
         function onPlayerStateChange(e) {
             if (e.data === YT.PlayerState.PLAYING) {
                 isPlaying = true;
@@ -514,7 +522,8 @@
                 footerPwr.innerHTML = 'PWR: <span style="color: #F76868">OFF</span>';
             }
         }
-        function togglePlayPause() {
+
+        function handlePlayButtonClick() {
             if (!player || !liveVideoId) return;
             if (isPlaying) {
                 player.pauseVideo();
@@ -522,6 +531,7 @@
                 player.playVideo();
             }
         }
+
         function handleVolume() {
             if (player) {
                 player.setVolume(this.value * 100);
@@ -532,6 +542,7 @@
             else if (v < 0.8) volIcon.textContent = "🔉";
             else volIcon.textContent = "🔊";
         }
+
         function updateVideoInfo(videoId) {
             fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${apiKey}`)
             .then(r=>r.json()).then(data=>{
@@ -553,11 +564,7 @@
             if (!num) return '--';
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
-        // --- AUTOPLAY ON FIRST VISIT ---
-        function firstAutoPlay() {
-            // Optional: Autoplay only on first load and only if user interacted (for mobile browser restriction)
-            return false;
-        }
+
         // --- Hidden Player Div ---
         const playerDiv = document.createElement('div');
         playerDiv.id = 'player';
