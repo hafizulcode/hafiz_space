@@ -2,646 +2,490 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vintage Multi-Station Radio</title>
+    <meta name="viewport" content="width=380, initial-scale=1.0">
+    <title>Vintage Radio Stream</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Orbitron:wght@400;700&display=swap');
-        
         :root {
-            --radio-body: #2a2a2a;
-            --radio-accent: #ff5722;
-            --radio-highlight: #ff9800;
-            --radio-text: #e0e0e0;
-            --radio-shadow: #1a1a1a;
-            --radio-dial: #424242;
-            --radio-glass: rgba(255, 255, 255, 0.1);
-            --online: #4CAF50;
-            --offline: #F44336;
+            --radio-body: #23272F;
+            --radio-panel: #191C22;
+            --radio-accent: #FF7C36;
+            --radio-highlight: #FFB347;
+            --radio-text: #E6E6E6;
+            --radio-shadow: #111217;
+            --radio-dial: #333640;
+            --radio-glass: rgba(255,255,255,0.14);
+            --radio-linear: linear-gradient(135deg, #22242A 60%, #1A1C21 100%);
+            --radio-glow: 0 0 22px 1px #FFB34733;
+            --radio-glow-2: 0 0 10px 2px #FF7C3633;
         }
-        
+
         body {
-            background: linear-gradient(135deg, #121212, #1e1e1e);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: linear-gradient(135deg, #121318, #181A20 80%);
             min-height: 100vh;
             margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-family: 'Montserrat', sans-serif;
             color: var(--radio-text);
         }
-        
+
         .radio-container {
             position: relative;
-            width: 420px;
-            height: 600px;
-            background: var(--radio-body);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5),
-                        inset 0 5px 15px rgba(0, 0, 0, 0.3);
-            padding: 30px;
+            width: 410px;
+            height: 590px;
+            background: var(--radio-linear);
+            border-radius: 28px;
+            box-shadow: 0 18px 36px #000C  , 0 1px 4px #2228;
+            padding: 35px 34px 25px 34px;
             display: flex;
             flex-direction: column;
-            border: 1px solid #444;
+            border: 1.5px solid #34384a;
+            overflow: hidden;
+            transition: box-shadow 0.25s;
         }
-        
+        .radio-container:hover {
+            box-shadow: 0 28px 60px #000E, 0 2px 8px #2328, var(--radio-glow-2);
+        }
+
         .radio-glass {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 120px;
+            top: 0; left: 0; right: 0;
+            height: 140px;
             background: var(--radio-glass);
-            border-radius: 20px 20px 0 0;
-            backdrop-filter: blur(5px);
+            border-radius: 28px 28px 0 0;
+            backdrop-filter: blur(8px);
             z-index: 1;
         }
-        
         .radio-header {
             position: relative;
             z-index: 2;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 32px;
         }
-        
         .radio-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             margin: 0;
-            color: var(--radio-highlight);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+            letter-spacing: 3.5px;
+            color: var(--radio-highlight);
+            text-shadow: 0 0 16px #ffb34788, var(--radio-glow);
         }
-        
         .radio-subtitle {
-            font-size: 12px;
-            margin-top: 5px;
-            color: #aaa;
-            letter-spacing: 1px;
+            font-size: 14px;
+            margin-top: 7px;
+            letter-spacing: 1.1px;
+            color: #bbb;
         }
-        
         .auto-stop {
             position: absolute;
-            top: 20px;
-            right: 30px;
-            background: #d32f2f;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 11px;
-            font-weight: bold;
+            top: 23px; right: 40px;
+            background: linear-gradient(90deg, #FF7C36 45%, #FFB347 100%);
+            color: #fff;
+            padding: 5.5px 15px;
+            border-radius: 16px;
+            font-size: 10.5px;
+            font-weight: 700;
             text-transform: uppercase;
-            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 8px #ffb34733;
             z-index: 2;
+            letter-spacing: 1.2px;
+            border: 1px solid #FF7C36;
         }
-        
         .radio-display {
-            background: #121212;
-            border: 2px solid #333;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-            height: 100px;
+            background: var(--radio-panel);
+            border: 2px solid #363a49;
+            border-radius: 10px;
+            padding: 18px 20px 20px 20px;
+            margin-bottom: 32px;
+            height: 90px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 16px #0003, inset 0 0 22px #0008;
         }
-        
-        .station-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .station-logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #333;
-            margin-right: 15px;
-            overflow: hidden;
-            border: 2px solid #444;
-        }
-        
-        .station-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .station-text {
-            flex-grow: 1;
-        }
-        
-        .station-name {
+        .display-text {
             font-family: 'Orbitron', sans-serif;
-            font-size: 16px;
-            margin: 0 0 5px 0;
+            font-size: 18px;
+            margin: 0;
             color: var(--radio-highlight);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            text-shadow: var(--radio-glow);
         }
-        
-        .station-status {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        
-        .status-online {
-            background: var(--online);
-            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
-        }
-        
-        .status-offline {
-            background: var(--offline);
-            box-shadow: 0 0 8px rgba(244, 67, 54, 0.3);
-        }
-        
         .display-subtext {
-            font-size: 12px;
-            margin-top: 5px;
-            color: #777;
+            font-size: 13px;
+            margin-top: 4px;
+            color: #888ba2;
+            letter-spacing: 0.5px;
         }
-        
         .visualizer {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
+            bottom: 0; left: 0; right: 0;
+            height: 7px;
             display: flex;
-            gap: 2px;
-            padding: 0 2px;
+            gap: 3px;
+            padding: 0 3px;
         }
-        
         .visualizer-bar {
             background: var(--radio-accent);
             flex-grow: 1;
-            border-radius: 2px 2px 0 0;
-            animation: visualizer-animation 1.5s infinite ease-in-out;
+            border-radius: 3px 3px 0 0;
+            animation: visualizer-animation 1.6s infinite ease-in-out;
             transform-origin: bottom;
+            box-shadow: 0 0 4px #FF7C3633;
         }
-        
         @keyframes visualizer-animation {
-            0%, 100% { transform: scaleY(0.3); }
-            50% { transform: scaleY(1.8); }
+            0%, 100% { transform: scaleY(0.4); }
+            45% { transform: scaleY(1.7); }
+            60% { transform: scaleY(1.2);}
         }
-        
-        .preset-stations {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .preset-button {
-            background: #333;
-            border: none;
-            border-radius: 8px;
-            height: 60px;
+        /* Visualizer delays for lively effect */
+        .visualizer-bar:nth-child(1) { animation-delay: 0.08s; }
+        .visualizer-bar:nth-child(2) { animation-delay: 0.2s; }
+        .visualizer-bar:nth-child(3) { animation-delay: 0.39s; }
+        .visualizer-bar:nth-child(4) { animation-delay: 0.12s; }
+        .visualizer-bar:nth-child(5) { animation-delay: 0.29s; }
+        .visualizer-bar:nth-child(6) { animation-delay: 0.44s; }
+        .visualizer-bar:nth-child(7) { animation-delay: 0.18s; }
+        .visualizer-bar:nth-child(8) { animation-delay: 0.36s; }
+        .visualizer-bar:nth-child(9) { animation-delay: 0.53s; }
+
+        .radio-dial {
+            background: var(--radio-dial);
+            height: 48px;
+            border-radius: 24px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            color: var(--radio-text);
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3),
-                       inset 0 1px 2px rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
+            padding: 0 24px;
+            margin-bottom: 26px;
+            box-shadow: 0 2px 8px #0003, inset 0 2px 5px #0008;
+            border: 1.5px solid #2d2f3a;
+            justify-content: center;
+            gap: 20px;
         }
-        
-        .preset-button:active {
-            transform: translateY(2px);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        
-        .preset-button.active {
-            background: var(--radio-accent);
-            color: white;
-        }
-        
-        .preset-button .preset-number {
-            position: absolute;
-            top: 3px;
-            left: 5px;
-            font-size: 10px;
+        .dial-label {
+            font-size: 13px;
             color: #aaa;
+            font-weight: 600;
+            letter-spacing: 1.1px;
         }
-        
-        .preset-button .preset-img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+        .dial-notch {
+            width: 3px; height: 16px;
             background: #444;
-            margin-bottom: 5px;
-            overflow: hidden;
+            border-radius: 2px;
+            margin: 0 17px;
         }
-        
-        .preset-button .preset-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .preset-button .preset-name {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100%;
-            padding: 0 5px;
-        }
-        
         .radio-controls {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
         }
-        
         .control-button {
-            background: #333;
+            background: #282b32;
             border: none;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 54px; height: 54px;
             display: flex;
             justify-content: center;
             align-items: center;
             color: var(--radio-text);
-            font-size: 20px;
+            font-size: 22px;
             cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
-                       inset 0 2px 3px rgba(255, 255, 255, 0.1);
+            transition: all 0.17s;
+            box-shadow: 0 2px 6px #0003, 0 1px 2px #fff1;
             position: relative;
         }
-        
-        .control-button:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
+        .control-button:active,
         .control-button.active {
             background: var(--radio-accent);
-            color: white;
+            color: #fff;
+            box-shadow: 0 0 10px #FF7C3677;
         }
-        
         .control-button.play {
-            grid-column: 2;
+            grid-column: 3;
             background: var(--radio-accent);
             width: 80px;
             height: 80px;
-            font-size: 30px;
+            font-size: 32px;
             margin: 0 auto;
+            box-shadow: 0 0 22px 2px #FFB34755, 0 6px 24px #0008;
         }
-        
         .control-button.play::after {
             content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 2px solid var(--radio-highlight);
+            top: -7px; left: -7px; right: -7px; bottom: -7px;
+            border: 2.5px solid var(--radio-highlight);
             border-radius: 50%;
             opacity: 0;
             transition: opacity 0.3s;
         }
-        
         .control-button.play.active::after {
             opacity: 0.5;
             animation: pulse 1.5s infinite;
         }
-        
         @keyframes pulse {
             0% { transform: scale(1); opacity: 0.5; }
-            70% { transform: scale(1.2); opacity: 0; }
+            70% { transform: scale(1.15); opacity: 0; }
             100% { transform: scale(1); opacity: 0; }
         }
-        
-        .radio-footer {
+        .radio-presets {
+            grid-column: 1 / span 5;
             display: flex;
-            justify-content: space-between;
-            font-size: 11px;
-            color: #555;
-            margin-top: auto;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
         }
-        
+        .preset-btn {
+            background: #22242A;
+            color: #FFB347;
+            border: 1.5px solid #444;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            width: 44px; height: 32px;
+            cursor: pointer;
+            margin: 0 2px;
+            transition: background 0.19s, color 0.14s, border-color 0.18s;
+        }
+        .preset-btn.active {
+            background: var(--radio-accent);
+            color: #fff;
+            border-color: #FFB347;
+        }
         .volume-control {
             display: flex;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 18px;
+            gap: 13px;
         }
-        
         .volume-icon {
-            margin-right: 10px;
-            font-size: 18px;
+            font-size: 22px;
             color: var(--radio-accent);
+            margin-right: 4px;
         }
-        
         .volume-slider {
             flex-grow: 1;
             -webkit-appearance: none;
-            height: 4px;
-            background: #444;
-            border-radius: 2px;
+            height: 5px;
+            background: #383C48;
+            border-radius: 2.5px;
             outline: none;
+            transition: background 0.2s;
         }
-        
         .volume-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: var(--radio-accent);
             cursor: pointer;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 8px #FF7C3666;
         }
-        
-        /* Visualizer bars animation delays */
-        .visualizer-bar:nth-child(1) { animation-delay: 0.1s; }
-        .visualizer-bar:nth-child(2) { animation-delay: 0.3s; }
-        .visualizer-bar:nth-child(3) { animation-delay: 0.5s; }
-        .visualizer-bar:nth-child(4) { animation-delay: 0.2s; }
-        .visualizer-bar:nth-child(5) { animation-delay: 0.4s; }
-        .visualizer-bar:nth-child(6) { animation-delay: 0.6s; }
-        .visualizer-bar:nth-child(7) { animation-delay: 0.3s; }
-        .visualizer-bar:nth-child(8) { animation-delay: 0.5s; }
-        .visualizer-bar:nth-child(9) { animation-delay: 0.7s; }
+        .volume-slider::-moz-range-thumb {
+            width: 18px; height: 18px; border-radius: 50%;
+            background: var(--radio-accent);
+            cursor: pointer;
+            box-shadow: 0 0 8px #FF7C3666;
+        }
+        .volume-slider::-ms-thumb {
+            width: 18px; height: 18px; border-radius: 50%;
+            background: var(--radio-accent);
+            cursor: pointer;
+            box-shadow: 0 0 8px #FF7C3666;
+        }
+
+        .radio-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            color: #535670;
+            margin-top: auto;
+            letter-spacing: 1.1px;
+        }
+        .footer-link {
+            color: #FFB347;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: text-shadow 0.18s;
+        }
+        .footer-link:hover {
+            text-shadow: 0 0 8px #FFB34777;
+        }
+        /* Responsive tweaks */
+        @media (max-width: 480px) {
+            .radio-container {
+                width: 98vw;
+                height: auto;
+                min-height: 100vh;
+                border-radius: 0;
+                padding: 18px 2vw 30px 2vw;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="radio-container">
         <div class="radio-glass"></div>
         <div class="auto-stop">AUTO STOP SYSTEM</div>
-        
         <div class="radio-header">
             <h1 class="radio-title">Vintage Radio</h1>
-            <p class="radio-subtitle">5-Station YouTube Receiver</p>
+            <p class="radio-subtitle">YouTube Live Stream Receiver</p>
         </div>
-        
         <div class="radio-display">
-            <div class="station-info">
-                <div class="station-logo" id="stationLogo">
-                    <img src="https://via.placeholder.com/50" alt="Station Logo">
-                </div>
-                <div class="station-text">
-                    <h3 class="station-name" id="stationName">Select a station</h3>
-                    <span class="station-status status-offline" id="stationStatus">OFFLINE</span>
-                </div>
-            </div>
-            <p class="display-subtext" id="nowPlaying">No station selected</p>
-            
-            <div class="visualizer" id="visualizer">
-                <!-- Visualizer bars will be added by JavaScript -->
-            </div>
+            <p class="display-text" id="nowPlaying">Tuning to station...</p>
+            <p class="display-subtext" id="listenersCount">-- listeners online</p>
+            <div class="visualizer" id="visualizer"></div>
         </div>
-        
-        <div class="preset-stations" id="presetStations">
-            <!-- Preset stations will be added by JavaScript -->
+        <div class="radio-dial">
+            <span class="dial-label">FREQ</span>
+            <span class="dial-notch"></span>
+            <span class="dial-label">88.8 FM</span>
+            <span class="dial-notch"></span>
+            <span class="dial-label">LIVE</span>
         </div>
-        
         <div class="radio-controls">
-            <button class="control-button">◀◀</button>
-            <button class="control-button play" id="playButton">▶</button>
-            <button class="control-button">▶▶</button>
-            <button class="control-button">1</button>
-            <button class="control-button">2</button>
-            <button class="control-button">3</button>
+            <button class="control-button" id="prevBtn" title="Previous Station">⏮</button>
+            <button class="control-button" id="rewindBtn" title="Rewind 10s">⏪</button>
+            <button class="control-button play" id="playButton" title="Play/Pause">▶</button>
+            <button class="control-button" id="forwardBtn" title="Forward 10s">⏩</button>
+            <button class="control-button" id="nextBtn" title="Next Station">⏭</button>
         </div>
-        
+        <div class="radio-presets">
+            <button class="preset-btn" data-index="0">1</button>
+            <button class="preset-btn" data-index="1">2</button>
+            <button class="preset-btn" data-index="2">3</button>
+            <button class="preset-btn" data-index="3">4</button>
+            <button class="preset-btn" data-index="4">5</button>
+        </div>
         <div class="volume-control">
-            <span class="volume-icon">🔊</span>
+            <span class="volume-icon" id="volIcon">🔊</span>
             <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
         </div>
-        
         <div class="radio-footer">
-            <span>API: AIzaSyAeaesQoH0URUMllWkFpLlv-n8fC9u-YhU</span>
-            <span>PWR: ON</span>
+            <span>CH: <a class="footer-link" href="https://youtube.com/channel/UCqtGJe9AnRfq5wwjk27VsoQ" target="_blank">UCqtGJe9AnRfq5wwjk27VsoQ</a></span>
+            <span id="footerPwr">PWR: <span style="color: #FFB347">ON</span></span>
         </div>
     </div>
-
-    <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
-    
     <script>
-        // YouTube API and player variables
-        let player;
-        let isPlaying = false;
-        const apiKey = 'AIzaSyAeaesQoH0URUMllWkFpLlv-n8fC9u-YhU';
-        
-        // Station configuration
-        const stations = [
-            {
-                id: 1,
-                name: "Your Channel",
-                channelId: 'UCqtGJe9AnRfq5wwjk27VsoQ',
-                logo: 'https://via.placeholder.com/50/ff5722/ffffff?text=YT1',
-                currentVideo: null,
-                isLive: false
-            },
-            {
-                id: 2,
-                name: "Music Hits",
-                channelId: 'UC-9-kyTW8ZkZNDHQJ6FgpwQ',
-                logo: 'https://via.placeholder.com/50/2196F3/ffffff?text=YT2',
-                currentVideo: null,
-                isLive: false
-            },
-            {
-                id: 3,
-                name: "News 24/7",
-                channelId: 'UCYfdidRxbB8Qhf0Nx7ioOYw',
-                logo: 'https://via.placeholder.com/50/4CAF50/ffffff?text=YT3',
-                currentVideo: null,
-                isLive: false
-            },
-            {
-                id: 4,
-                name: "Tech Talks",
-                channelId: 'UCXuqSBlHAE6Xw-yeJA0Tunw',
-                logo: 'https://via.placeholder.com/50/FF9800/ffffff?text=YT4',
-                currentVideo: null,
-                isLive: false
-            },
-            {
-                id: 5,
-                name: "Gaming Live",
-                channelId: 'UCOpNcN46UbXVtpKMrmU4Abg',
-                logo: 'https://via.placeholder.com/50/9C27B0/ffffff?text=YT5',
-                currentVideo: null,
-                isLive: false
-            }
+        // Improved, Premium, and Feature-Rich JS
+        // --- CONFIG ---
+        const presets = [
+            { name: "Vintage", channelId: "UCqtGJe9AnRfq5wwjk27VsoQ", label: "88.8 FM" },
+            { name: "Lofi Girl", channelId: "UCSJ4gkVC6NrvII8umztf0Ow", label: "88.2 FM" },
+            { name: "Chillhop", channelId: "UCOxqgCwgOqC2lMqC5PYz_Dg", label: "88.6 FM" },
+            { name: "Smooth Jazz", channelId: "UCmKtn_HvpfbTu3QV4lhJIMw", label: "88.1 FM" },
+            { name: "Cafe Music", channelId: "UC5ZFDzZV-v6FDTc9oUFW6Rw", label: "89.0 FM" }
         ];
-        
-        let currentStation = null;
-        
-        // DOM elements
+        let currentPreset = 0;
+        let liveVideoId = null;
+        let player = null;
+        let isPlaying = false;
+        let apiKey = 'AIzaSyAeaesQoH0URUMllWkFpLlv-n8fC9u-YhU'; // Consider using a proxy or environment variable in production
+        let viewerInterval = null;
+        // --- DOM ---
         const playButton = document.getElementById('playButton');
         const volumeSlider = document.getElementById('volumeSlider');
-        const nowPlayingElement = document.getElementById('nowPlaying');
-        const stationNameElement = document.getElementById('stationName');
-        const stationStatusElement = document.getElementById('stationStatus');
-        const stationLogoElement = document.getElementById('stationLogo');
+        const nowPlaying = document.getElementById('nowPlaying');
+        const listeners = document.getElementById('listenersCount');
         const visualizer = document.getElementById('visualizer');
-        const presetStationsElement = document.getElementById('presetStations');
-        
-        // Create visualizer bars
+        const footerPwr = document.getElementById('footerPwr');
+        const presetBtns = document.querySelectorAll('.preset-btn');
+        const volIcon = document.getElementById('volIcon');
+        // Visualizer
         for (let i = 0; i < 9; i++) {
             const bar = document.createElement('div');
             bar.className = 'visualizer-bar';
             visualizer.appendChild(bar);
         }
-        
-        // Initialize the player when YouTube API is ready
+        // --- PLAYER SETUP ---
         function onYouTubeIframeAPIReady() {
-            // Create preset station buttons
-            stations.forEach(station => {
-                const presetButton = document.createElement('button');
-                presetButton.className = 'preset-button';
-                presetButton.innerHTML = `
-                    <span class="preset-number">${station.id}</span>
-                    <div class="preset-img">
-                        <img src="${station.logo}" alt="${station.name}">
-                    </div>
-                    <span class="preset-name">${station.name}</span>
-                `;
-                
-                presetButton.addEventListener('click', () => {
-                    selectStation(station);
-                });
-                
-                presetStationsElement.appendChild(presetButton);
-            });
-            
-            // Check initial status for all stations
-            stations.forEach(checkStationStatus);
-            
-            // Set up volume control
-            volumeSlider.addEventListener('input', function() {
-                if (player) {
-                    player.setVolume(this.value * 100);
-                }
-            });
-            
-            // Set up play/pause button
-            playButton.addEventListener('click', function() {
-                if (!currentStation || !player) return;
-                
-                if (isPlaying) {
-                    player.pauseVideo();
-                    playButton.classList.remove('active');
-                    visualizer.style.opacity = '0.3';
-                } else {
-                    if (currentStation.isLive) {
-                        player.playVideo();
-                        playButton.classList.add('active');
-                        visualizer.style.opacity = '1';
-                    }
-                }
-            });
+            loadPreset(currentPreset, true);
+            volumeSlider.addEventListener('input', handleVolume);
+            playButton.addEventListener('click', togglePlayPause);
+            presetBtns.forEach(btn => btn.addEventListener('click', presetClicked));
+            document.getElementById('rewindBtn').onclick = () => seekPlayer(-10);
+            document.getElementById('forwardBtn').onclick = () => seekPlayer(10);
+            document.getElementById('prevBtn').onclick = () => switchStation(-1);
+            document.getElementById('nextBtn').onclick = () => switchStation(1);
         }
-        
-        // Select a station
-        function selectStation(station) {
-            currentStation = station;
-            stationNameElement.textContent = station.name;
-            stationLogoElement.querySelector('img').src = station.logo;
-            
-            if (station.isLive) {
-                stationStatusElement.textContent = 'LIVE';
-                stationStatusElement.className = 'station-status status-online';
-                nowPlayingElement.textContent = station.currentVideo?.title || "Live now";
-                playButton.disabled = false;
-                
-                if (!player) {
-                    setupPlayer(station.currentVideo.id);
-                } else {
-                    player.loadVideoById(station.currentVideo.id);
-                    player.pauseVideo();
-                    playButton.classList.remove('active');
-                    visualizer.style.opacity = '0.3';
-                }
-            } else {
-                stationStatusElement.textContent = 'OFFLINE';
-                stationStatusElement.className = 'station-status status-offline';
-                nowPlayingElement.textContent = "Currently offline";
-                playButton.disabled = true;
-                
-                if (player) {
-                    player.stopVideo();
-                    playButton.classList.remove('active');
-                    visualizer.style.opacity = '0.3';
-                }
+        function presetClicked(e) {
+            let idx = parseInt(e.currentTarget.dataset.index);
+            if (!isNaN(idx)) loadPreset(idx);
+        }
+        function switchStation(offset) {
+            let newIdx = (currentPreset + offset + presets.length) % presets.length;
+            loadPreset(newIdx);
+        }
+        function seekPlayer(seconds) {
+            if (player && typeof player.getCurrentTime === "function") {
+                let t = player.getCurrentTime() + seconds;
+                player.seekTo(Math.max(0, t), true);
             }
         }
-        
-        // Check if a station is live
-        function checkStationStatus(station) {
-            fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${station.channelId}&eventType=live&type=video&key=${apiKey}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.items && data.items.length > 0) {
-                        station.isLive = true;
-                        station.currentVideo = {
-                            id: data.items[0].id.videoId,
-                            title: data.items[0].snippet.title
-                        };
-                        
-                        // Update the station button to show online status
-                        const presetButton = presetStationsElement.children[station.id - 1];
-                        presetButton.classList.add('active');
-                        
-                        // If this is the current station, update the display
-                        if (currentStation && currentStation.id === station.id) {
-                            selectStation(station);
-                        }
-                    } else {
-                        station.isLive = false;
-                        station.currentVideo = null;
-                        
-                        // Update the station button to show offline status
-                        const presetButton = presetStationsElement.children[station.id - 1];
-                        presetButton.classList.remove('active');
-                        
-                        // If this is the current station, update the display
-                        if (currentStation && currentStation.id === station.id) {
-                            selectStation(station);
-                        }
-                    }
-                })
-                .catch(error => {
-                    console.error("Error checking station status:", error);
-                    station.isLive = false;
-                });
-            
-            // Check status periodically (every 5 minutes)
-            setTimeout(() => checkStationStatus(station), 300000);
+        function loadPreset(idx, first=false) {
+            if (viewerInterval) clearInterval(viewerInterval);
+            currentPreset = idx;
+            presetBtns.forEach(btn => btn.classList.remove('active'));
+            if(presetBtns[idx]) presetBtns[idx].classList.add('active');
+            nowPlaying.textContent = "Tuning to station...";
+            listeners.textContent = "-- listeners online";
+            let ch = presets[idx].channelId;
+            let label = presets[idx].label;
+            document.querySelectorAll('.dial-label')[1].textContent = label;
+            document.querySelector('.footer-link').href = "https://youtube.com/channel/" + ch;
+            checkLiveStream(ch, first);
         }
-        
-        // Set up the YouTube player
-        function setupPlayer(videoId) {
+
+        // --- YT API + DATA ---
+        function checkLiveStream(channelId, first=false) {
+            fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&eventType=live&type=video&key=${apiKey}`)
+            .then(r=>r.json()).then(data=>{
+                if(data.items && data.items.length) {
+                    let vid = data.items[0].id.videoId;
+                    liveVideoId = vid;
+                    setupPlayer(vid, first);
+                    updateVideoInfo(vid);
+                    updateViewerCount(vid);
+                    viewerInterval = setInterval(()=>updateViewerCount(vid), 25000);
+                } else {
+                    liveVideoId = null;
+                    nowPlaying.textContent = "No live broadcast detected";
+                    listeners.textContent = "-- listeners online";
+                    playButton.disabled = true;
+                    playButton.classList.remove('active');
+                    playButton.innerHTML = '▶';
+                    isPlaying = false;
+                    if (player) { player.stopVideo && player.stopVideo(); }
+                }
+            }).catch(()=>{
+                nowPlaying.textContent = "Signal lost - try again";
+                listeners.textContent = "-- listeners online";
+                playButton.disabled = true;
+            });
+        }
+        function setupPlayer(videoId, first) {
+            playButton.disabled = false;
+            if (player) {
+                player.loadVideoById(videoId);
+                return;
+            }
             player = new YT.Player('player', {
-                height: '0',
-                width: '0',
+                height: '0', width: '0',
                 videoId: videoId,
                 playerVars: {
-                    autoplay: 0,
-                    controls: 0,
-                    disablekb: 1,
-                    modestbranding: 1
+                    autoplay: 0, controls: 0, disablekb: 1, modestbranding: 1
                 },
                 events: {
                     'onReady': onPlayerReady,
@@ -649,27 +493,72 @@
                 }
             });
         }
-        
-        // Player ready callback
-        function onPlayerReady(event) {
-            event.target.setVolume(volumeSlider.value * 100);
-            visualizer.style.opacity = '0.3';
-        }
-        
-        // Player state change callback
-        function onPlayerStateChange(event) {
-            if (event.data === YT.PlayerState.PLAYING) {
-                isPlaying = true;
-                playButton.textContent = '❚❚';
-                visualizer.style.opacity = '1';
-            } else {
-                isPlaying = false;
-                playButton.textContent = '▶';
-                visualizer.style.opacity = '0.3';
+        function onPlayerReady(e) {
+            e.target.setVolume(volumeSlider.value * 100);
+            nowPlaying.textContent = "Ready to broadcast";
+            if (firstAutoPlay()) {
+                player.playVideo();
+                playButton.classList.add('active');
             }
         }
-        
-        // Create a hidden player div (required by YouTube API)
+        function onPlayerStateChange(e) {
+            if (e.data === YT.PlayerState.PLAYING) {
+                isPlaying = true;
+                playButton.innerHTML = '❚❚';
+                playButton.classList.add('active');
+                footerPwr.innerHTML = 'PWR: <span style="color: #FFB347">ON</span>';
+            } else {
+                isPlaying = false;
+                playButton.innerHTML = '▶';
+                playButton.classList.remove('active');
+                footerPwr.innerHTML = 'PWR: <span style="color: #F76868">OFF</span>';
+            }
+        }
+        function togglePlayPause() {
+            if (!player || !liveVideoId) return;
+            if (isPlaying) {
+                player.pauseVideo();
+            } else {
+                player.playVideo();
+            }
+        }
+        function handleVolume() {
+            if (player) {
+                player.setVolume(this.value * 100);
+            }
+            let v = +this.value;
+            if (v < 0.05) volIcon.textContent = "🔇";
+            else if (v < 0.35) volIcon.textContent = "🔈";
+            else if (v < 0.8) volIcon.textContent = "🔉";
+            else volIcon.textContent = "🔊";
+        }
+        function updateVideoInfo(videoId) {
+            fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${apiKey}`)
+            .then(r=>r.json()).then(data=>{
+                if(data.items && data.items.length) {
+                    nowPlaying.textContent = data.items[0].snippet.title;
+                }
+            });
+        }
+        function updateViewerCount(videoId) {
+            fetch(`https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails&id=${videoId}&key=${apiKey}`)
+            .then(r=>r.json()).then(data=>{
+                if(data.items && data.items.length) {
+                    let n = data.items[0].liveStreamingDetails.concurrentViewers;
+                    listeners.textContent = `${formatNumber(n)} listeners online`;
+                }
+            });
+        }
+        function formatNumber(num) {
+            if (!num) return '--';
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        // --- AUTOPLAY ON FIRST VISIT ---
+        function firstAutoPlay() {
+            // Optional: Autoplay only on first load and only if user interacted (for mobile browser restriction)
+            return false;
+        }
+        // --- Hidden Player Div ---
         const playerDiv = document.createElement('div');
         playerDiv.id = 'player';
         playerDiv.style.display = 'none';
