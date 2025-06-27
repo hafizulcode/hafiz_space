@@ -2,540 +2,2472 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Premium YouTube Live Radio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MMD ASHRAF ALIMULLAH SIDDIQUE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #3e57f9;
-      --secondary: #f72585;
-      --accent: #4cc9f0;
-      --live: #00ff99;
-      --dark: #22223b;
-      --light: #f7f7fa;
-      --bg-gradient: linear-gradient(135deg, #f7f7fa 0%, #4cc9f0 100%);
-      --shadow: 0 8px 36px 0 rgba(44,62,80,0.16);
-    }
-    body {
+    /* Base Styles */
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: #f9f9f9;
+    }
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #fbeee6 100%);
       min-height: 100vh;
-      background: var(--bg-gradient);
-      font-family: 'Roboto', Arial, sans-serif;
-      color: var(--dark);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
+      color: #181c2e;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
     }
-    .radio-shell {
-      background: var(--light);
-      border-radius: 38px 38px 48px 48px;
-      box-shadow: var(--shadow);
-      max-width: 380px;
-      width: 97vw;
-      margin: 56px 0 0 0;
-      padding: 0 0 28px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-    .radio-top {
+
+    /* Bismillah Header Styles */
+    .header-container {
+      background: radial-gradient(circle at top, #fcf6e3, #f6f5ee 80%);
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 
+                  0 2px 8px rgba(0, 0, 0, 0.05), 
+                  0 1px 0 #ffe9b7;
       width: 100%;
-      border-radius: 38px 38px 0 0;
-      background: linear-gradient(90deg, var(--primary) 60%, var(--secondary));
-      padding: 36px 0 18px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 4px 22px #22223b13;
-      position: relative;
-    }
-    .live-badge {
-      position: absolute;
-      top: 15px;
-      right: 28px;
-      background: var(--live);
-      color: #222;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 1em;
-      font-weight: bold;
-      padding: 7px 18px;
-      border-radius: 18px;
-      box-shadow: 0 2px 10px #00ff9922;
-      letter-spacing: 0.12em;
-      display: flex;
-      align-items: center;
-      opacity: 0;
-      transform: scale(0.7);
-      transition: opacity 0.3s, transform 0.3s;
-      z-index: 2;
-    }
-    .live-badge.active {
-      opacity: 1;
-      transform: scale(1);
-    }
-    .radio-dial {
-      width: 104px;
-      height: 104px;
-      background: linear-gradient(135deg, #fff, #f1faee 70%);
-      border: 8px solid var(--primary);
-      border-radius: 50%;
-      box-shadow: 0 3px 18px #4cc9f038, 0 0px 1px #f7258544;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 9px;
+      padding: 15px 20px;
+      text-align: center;
       position: relative;
       overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
     }
-    .visualizer {
-      position: absolute;
-      left: 0; right: 0; top: 0; bottom: 0;
+    
+    .bismillah-text {
+      font-family: 'Traditional Arabic', 'Arial', 'Times New Roman', serif;
+      font-size: clamp(2rem, 8vw, 2.5rem);
+      color: #b79535;
+      font-weight: bold;
+      text-shadow: 0 3px 15px #ffe9b7cc, 
+                   0 2px 6px #e5c87b44, 
+                   0 1px 0 #fff7;
+      margin-bottom: 10px;
+      line-height: 1.3;
+      letter-spacing: 0.05em;
+      will-change: transform;
+    }
+
+    .salam-container {
+      height: 60px;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
-      z-index: 2;
+    }
+
+    .salam-text {
+      font-family: 'Traditional Arabic', 'Arial', 'Times New Roman', sans-serif;
+      font-size: clamp(1.4rem, 6vw, 1.8rem);
+      color: #24816b;
+      font-weight: bold;
+      text-shadow: 0 2px 9px rgba(36, 129, 107, 0.3), 
+                   0 1px 0 #fff7;
+      padding: 12px 15px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(246, 245, 238, 0.6));
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 
+                 0 2px 6px rgba(36, 129, 107, 0.1);
+      direction: rtl;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      min-width: 50px;
+      will-change: contents;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1.2em;
+      background-color: #24816b;
+      animation: blink 0.7s infinite;
+      vertical-align: middle;
+      margin-right: -4px;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Slider Styles */
+    .slider-wrap {
+      margin: 30px auto;
+      padding: 0;
+      width: 100%;
+      max-width: 900px;
+      aspect-ratio: 16 / 9;
+      background: #eee;
+      border-radius: 22px;
+      box-shadow: 0 2px 24px #3f51b11a;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: pan-y;
+      user-select: none;
+    }
+    
+    .slide-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      border-radius: 20px;
+      box-shadow: 0 2px 16px #3f51b122;
       pointer-events: none;
+      left: 0;
+      top: 0;
+      will-change: opacity, transform, filter;
+      z-index: 1;
     }
-    .bar {
-      width: 7px;
-      margin: 0 2px;
-      border-radius: 5px 5px 0 0;
-      background: linear-gradient(180deg, var(--accent), var(--secondary));
-      height: 20%;
-      transition: height 0.12s;
-      box-shadow: 0 2px 6px #4cc9f022;
+    
+    .slide-img.prev,
+    .slide-img.next {
+      opacity: 0;
+      z-index: 1;
+      transform: scale(1.12);
+      transition:
+        opacity 0.7s cubic-bezier(.4,0,.2,1),
+        transform 0.85s cubic-bezier(.4,0,.2,1);
     }
-    .radio-title {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 1.4em;
+    
+    .slide-img.fadeout {
+      opacity: 0;
+      z-index: 1;
+      transform: scale(1.08);
+      transition:
+        opacity 0.45s cubic-bezier(.4,0,.2,1),
+        transform 0.68s cubic-bezier(.4,0,.2,1);
+    }
+    
+    .slide-img.active {
+      opacity: 1;
+      z-index: 2;
+    }
+    
+    .slide-img.anim-fade-pop {
+      animation: fadePopIn 0.7s cubic-bezier(.4,0,.2,1);
+      transform: scale(1);
+      filter: none;
+    }
+    
+    @keyframes fadePopIn {
+      0% { opacity: 0; transform: scale(1.06);}
+      60% { opacity: 1; transform: scale(1.12);}
+      100% { opacity: 1; transform: scale(1);}
+    }
+    
+    .slide-img.anim-slide-left {
+      animation: slideLeftIn 0.85s cubic-bezier(.4,0,.2,1);
+      transform: translateX(0) scale(1);
+      filter: none;
+    }
+    
+    @keyframes slideLeftIn {
+      0% { opacity: 0; transform: translateX(-60px) scale(1.03);}
+      70% { opacity: 1; transform: translateX(12px) scale(1);}
+      100% { opacity: 1; transform: translateX(0) scale(1);}
+    }
+    
+    .slide-img.anim-zoom-rotate {
+      animation: zoomRotateIn 0.8s cubic-bezier(.4,0,.2,1);
+      transform: scale(1) rotate(0deg);
+      filter: none;
+    }
+    
+    @keyframes zoomRotateIn {
+      0% { opacity: 0; transform: scale(1.25) rotate(-7deg);}
+      55% { opacity: 1; transform: scale(1.02) rotate(3deg);}
+      100% { opacity: 1; transform: scale(1) rotate(0deg);}
+    }
+    
+    .slide-img.anim-blur-in {
+      animation: blurIn 0.75s cubic-bezier(.4,0,.2,1);
+      filter: blur(0);
+      transform: scale(1);
+    }
+    
+    @keyframes blurIn {
+      0% { opacity: 0; filter: blur(16px); transform: scale(1.08);}
+      50% { opacity: 1; filter: blur(2px);}
+      100% { opacity: 1; filter: blur(0); transform: scale(1);}
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      color: #333;
+      z-index: 10;
+      cursor: pointer;
+      opacity: 0.77;
+      border: none;
+      outline: none;
+      transition: background 0.18s, opacity 0.18s;
+    }
+    
+    .arrow:active { opacity: 1; background: rgba(255,255,255,0.85); }
+    .arrow.left { left: 18px; }
+    .arrow.right { right: 18px; }
+
+    .audio-btn {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      z-index: 20;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px #0002;
+      border: 1.5px solid #eee;
+      cursor: pointer;
+      opacity: 0.93;
+      transition: box-shadow .15s;
+      color: #3f51b1;
+      font-size: 2rem;
+      outline: none;
+    }
+    
+    .audio-btn:active { box-shadow: 0 2px 16px #3f51b133; }
+    
+    .audio-btn .music-icon-on {
+      display: inline;
+      color: #3f51b1;
+      font-size: 2rem;
+      pointer-events: none;
+      user-select: none;
+      animation: musicOnPulse 1.2s infinite alternate;
+    }
+    
+    .audio-btn .music-icon-off {
+      display: none;
+      color: #bbb;
+      font-size: 2rem;
+      pointer-events: none;
+      user-select: none;
+      animation: musicOffShake 1.1s infinite alternate;
+    }
+    
+    .audio-btn:not(.playing) .music-icon-on { display: none; }
+    .audio-btn:not(.playing) .music-icon-off { display: inline; }
+    .audio-btn.playing .music-icon-on {
+      color: #ffc107;
+      text-shadow: 0 0 12px #fff20088;
+    }
+
+    @keyframes musicOnPulse {
+      0% { transform: scale(1) rotate(-3deg); }
+      45% { transform: scale(1.19) rotate(4deg); }
+      100% { transform: scale(1) rotate(-3deg); }
+    }
+    
+    @keyframes musicOffShake {
+      0% { transform: rotate(0deg); }
+      20% { transform: rotate(-13deg); }
+      40% { transform: rotate(0deg); }
+      60% { transform: rotate(11deg); }
+      80% { transform: rotate(0deg); }
+      100% { transform: rotate(-8deg); }
+    }
+
+    .timer-fab {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      z-index: 20;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #fff;
+      color: #3f51b1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px #2196f355;
+      border: 1.5px solid #76c7b7;
+      font-size: 1.14rem;
       font-weight: 700;
-      letter-spacing: -1px;
-      color: var(--primary);
-      text-shadow: 0 1px 12px #22223b22;
-      margin: 0;
+      letter-spacing: 0.5px;
+      opacity: 0.94;
+      user-select: none;
+      overflow: hidden;
+    }
+    
+    .timer-progress {
+      position: absolute;
+      left: 0; top: 0; width: 100%; height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      border-radius: 50%;
+    }
+    
+    .timer-label {
+      position: relative;
+      z-index: 2;
+      background: transparent;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      color: inherit;
+    }
+
+    .slider-dots {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 16px;
+      display: flex;
+      gap: 14px;
+      z-index: 30;
+    }
+    
+    .slider-dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2.5px solid #bdc7e0;
+      transition: border-color 0.2s, background 0.2s;
+      cursor: pointer;
+      box-shadow: 0 1px 5px #0001;
+      opacity: 0.84;
+      outline: none;
+    }
+    
+    .slider-dot.active {
+      border-color: #3f51b1;
+      background: #3f51b1;
+      opacity: 1;
+    }
+
+    /* Main Content Styles */
+    .divine-ultra-root {
+      padding: 32px 15px 80px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .divine-ultra-heading-card {
+      margin: 30px auto 48px;
+      max-width: 700px;
+      background: linear-gradient(120deg, #fff 70%, #fbeee6 100%);
+      border-radius: 3.3rem;
+      box-shadow: 0 12px 48px rgba(30,34,56,0.09), 0 2px 14px rgba(244,140,6,0.13);
+      border: 6px double #f48c06;
+      outline: 5px solid #fffbe6;
+      outline-offset: 10px;
       text-align: center;
-      background: linear-gradient(90deg, var(--accent), #fff);
+      padding: 52px 32px 48px;
+      color: #1a2238;
+      position: relative;
+      background-clip: padding-box;
+      z-index: 2;
+      filter: drop-shadow(0 4px 50px rgba(247,230,163,0.17));
+      animation: fadeInDown 1.2s cubic-bezier(.47,1.64,.41,.8) both;
+    }
+
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-50px);}
+        to { opacity: 1; transform: translateY(0);}
+    }
+
+    .divine-ultra-heading-card h1 {
+      font-size: clamp(2.3rem, 6vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: 1.6px;
+      margin-bottom: 14px;
+      padding: 10px 0 0 0;
+      color: #f48c06;
+      background: linear-gradient(90deg, #f48c06 10%, #ffbb00 40%, #1cb5e0 70%, #a259d9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-fill-color: transparent;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 2px 38px rgba(255,187,0,0.19), 0 1px 0 rgba(255,255,255,0.49), 0 2px 20px rgba(28,181,224,0.23);
+      letter-spacing: 2.2px;
+      line-height: 1.08;
+      transition: text-shadow 0.24s;
+      font-family: 'Poppins', 'Segoe UI', 'Arial', sans-serif;
     }
-    .radio-sub {
-      font-family: 'Roboto', Arial, sans-serif;
-      font-size: 1.02em;
-      color: #f1faee;
-      opacity: 0.88;
-      text-align: center;
-      margin-top: 5px;
-      font-weight: 500;
+
+    .divine-ultra-heading-card h1:after {
+      content: "";
+      display: block;
+      margin: 16px auto 0;
+      width: 80px;
+      height: 6px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #f48c06, #1cb5e0, #a259d9);
+      box-shadow: 0 4px 16px rgba(244,140,6,0.32);
+      animation: gradientBar 2.2s infinite alternate;
     }
-    .nowplaying {
-      width: 89%;
-      background: #f1faee;
-      border-radius: 13px;
-      box-shadow: 0 1px 7px #22223b08;
-      margin: 0 0 18px 0;
-      padding: 14px 18px 11px 18px;
+    
+    @keyframes gradientBar {
+      from { filter: brightness(1);}
+      to { filter: brightness(1.18);}
+    }
+
+    .divine-ultra-heading-card .subtitle {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #35456c;
+      font-weight: 600;
+      max-width: 670px;
+      margin: 16px auto 0;
+      letter-spacing: 0.3px;
+      line-height: 1.6;
+      opacity: 0.93;
+      text-shadow: 0 2px 14px rgba(30,34,56,0.07);
+    }
+
+    .ultra-cards-flex {
       display: flex;
-      align-items: center;
-      gap: 13px;
       flex-wrap: wrap;
-      min-height: 40px;
+      justify-content: center;
+      gap: 36px;
+      margin: 0 auto 38px;
+      max-width: 1280px;
+      z-index: 1;
+      position: relative;
+      animation: fadeInUp 1.2s cubic-bezier(.47,1.64,.41,.8) 0.2s both;
     }
-    .nowplaying-thumb {
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px);}
+        to { opacity: 1; transform: translateY(0);}
+    }
+
+    .ultra-card {
+      width: 100%;
+      max-width: 340px;
+      min-height: 205px;
+      border-radius: 2.4rem;
+      box-shadow: 0 9px 40px rgba(30,34,56,0.16);
+      border: 3px solid;
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      outline: none;
+      transition: all 0.28s cubic-bezier(.47,1.64,.41,.8);
+      background-clip: padding-box;
+      z-index: 1;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: visible;
+      will-change: transform, box-shadow;
+      animation: fadeInUp 1.1s cubic-bezier(.47,1.64,.41,.8) both;
+    }
+
+    .ultra-card:hover, .ultra-card:focus {
+      box-shadow: 0 30px 72px rgba(244,140,6,0.22), 0 5px 28px rgba(28,181,224,0.14);
+      transform: scale(1.075) translateY(-10px) rotate(-1deg);
+      z-index: 12;
+      border-width: 4px;
+    }
+
+    .ultra-card .corner-glow {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: -14px;
       width: 38px;
       height: 38px;
-      border-radius: 8px;
-      object-fit: cover;
-      background: #ccc;
-      box-shadow: 0 1px 4px #22223b15;
-    }
-    .nowplaying-meta {
-      flex: 1;
-      min-width: 0;
-    }
-    .nowplaying-title {
-      font-size: 1.05em;
-      font-weight: bold;
-      color: var(--primary);
-      font-family: 'Montserrat', Arial, sans-serif;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .nowplaying-desc {
-      font-size: 0.95em;
-      color: #333;
-      opacity: 0.82;
-      margin-top: 2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .radio-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 4px;
-      margin-bottom: 12px;
-    }
-    .circle-btn {
-      width: 50px;
-      height: 50px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
-      color: #fff;
-      box-shadow: 0 2px 10px #4cc9f033;
-      border: none;
-      font-size: 2em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background 0.18s, box-shadow 0.18s, transform 0.07s;
-      outline: none;
-      margin: 0 7px;
-      position: relative;
-    }
-    .circle-btn:active {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      transform: scale(0.95);
-    }
-    .circle-btn[disabled] {
-      opacity: 0.5;
-      cursor: not-allowed;
-      box-shadow: none;
-    }
-    .switch-btn {
-      margin-left: 6px;
-      width: 55px;
-      height: 33px;
-      border-radius: 22px;
-      background: #e9ecef;
-      border: none;
-      display: flex;
-      align-items: center;
-      position: relative;
-      cursor: pointer;
-      transition: background 0.18s;
-      box-shadow: 0 1px 6px #4cc9f033;
-    }
-    .switch-knob {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      transition: left 0.22s cubic-bezier(.69,-0.48,.46,1.49);
-      width: 27px;
-      height: 27px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border-radius: 50%;
-      box-shadow: 0 2px 8px #4cc9f033;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1em;
-      z-index: 2;
-    }
-    .switch-btn.on .switch-knob {
-      left: 24px;
-      background: linear-gradient(135deg, var(--live), var(--secondary));
-      color: var(--dark);
-    }
-    .switch-label {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      z-index: 1;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: bold;
-      font-size: 0.98em;
-      color: #aaa;
+      z-index: 0;
+      filter: blur(10px);
+      opacity: .25;
       pointer-events: none;
-      padding: 0 9px;
+      animation: glowPulse 2.4s infinite alternate;
+    }
+    
+    @keyframes glowPulse {
+      from { opacity: .22;}
+      to { opacity: .31;}
+    }
+
+    .ultra-card.card1 { background: linear-gradient(135deg, #fbeee6 0%, #fffbe6 100%); border-color: #f48c06; }
+    .ultra-card.card2 { background: linear-gradient(135deg, #e6f6fb 0%, #f3fafe 100%); border-color: #1cb5e0; }
+    .ultra-card.card3 { background: linear-gradient(135deg, #f5e6fb 0%, #faf4ff 100%); border-color: #a259d9; }
+    .ultra-card.card1 .corner-glow { background: #f48c06; }
+    .ultra-card.card2 .corner-glow { background: #1cb5e0; }
+    .ultra-card.card3 .corner-glow { background: #a259d9; }
+
+    .ultra-card .ultra-card-content {
+      text-align: center;
+      padding: 34px 14px 26px 14px;
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ultra-card .ultra-card-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      border-radius: 1.3rem;
+      padding: 9px 0;
+      width: 70px;
+      filter: drop-shadow(0 2px 9px rgba(244,140,6,0.10));
+      background: #fffbe6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 2px 8px rgba(30,34,56,0.09);
+      transition: background 0.22s;
+    }
+
+    .ultra-card.card1 .ultra-card-icon { color: #f48c06; background: linear-gradient(90deg,#fffbe6 0,#ffe6d0 100%);}
+    .ultra-card.card2 .ultra-card-icon { color: #1cb5e0; background: linear-gradient(90deg,#e6f6fb 0,#d0f6ee 100%);}
+    .ultra-card.card3 .ultra-card-icon { color: #a259d9; background: linear-gradient(90deg,#f5e6fb 0,#e0a8ff 100%);}
+
+    .ultra-card .ultra-card-title {
+      font-size: 1.16rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+      letter-spacing: 0.37px;
+      color: #1a2238;
+      line-height: 1.2;
+    }
+
+    .ultra-card .ultra-card-desc {
+      font-size: 1.02rem;
+      color: #555;
+      opacity: .98;
+      margin-bottom: 15px;
+      font-weight: 500;
+      padding: 0 12px;
+      line-height: 1.5;
+      transition: color 0.18s;
+    }
+
+    .ultra-card .ultra-card-btn {
+      background: #fff;
+      color: inherit;
+      font-size: 1.09rem;
+      font-weight: 700;
+      border: 2.5px solid currentColor;
+      border-radius: 1.3rem;
+      padding: 9px 25px;
+      box-shadow: 0 2px 8px rgba(55,114,255,0.10);
+      cursor: pointer;
+      letter-spacing: 0.07px;
+      outline: none;
+      margin-top: auto;
+      position: relative;
+      z-index: 2;
+      transition: all 0.26s cubic-bezier(.47,1.64,.41,.8);
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: inherit;
+    }
+
+    .ultra-card.card1 .ultra-card-btn { color: #f48c06; border-color: #f48c06;}
+    .ultra-card.card2 .ultra-card-btn { color: #1cb5e0; border-color: #1cb5e0;}
+    .ultra-card.card3 .ultra-card-btn { color: #a259d9; border-color: #a259d9;}
+
+    .ultra-card .ultra-card-btn:hover,
+    .ultra-card .ultra-card-btn:focus {
+      background: currentColor;
+      color: #fff;
+      border-color: #fff;
+      transform: scale(1.11);
+      box-shadow: 0 12px 32px rgba(30,34,56,0.21);
+    }
+
+    /* Modal Overlay and Modal */
+    .ultra-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      background: rgba(30, 42, 73, 0.32);
+      backdrop-filter: blur(22px) saturate(1.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.34s cubic-bezier(.47,1.64,.41,.8);
+      padding: 18px;
+    }
+
+    .ultra-modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .ultra-modal {
+      border-radius: 2.8rem;
+      width: 100%;
+      max-width: 950px;
+      height: 92vh;
+      max-height: 850px;
+      box-shadow: 0 22px 80px rgba(30, 34, 56, 0.22), 0 6px 32px rgba(244,140,6,0.22);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: rgba(255,255,255,0.995);
+      background-clip: padding-box;
+      animation: modal-fade-in 0.75s cubic-bezier(.47,1.64,.41,.8);
+      margin: 0;
+      border: 3.5px solid;
+    }
+
+    .ultra-modal.modal1 { background: linear-gradient(120deg, #fff 85%, #fbeee6 100%); border-color: #f48c06; }
+    .ultra-modal.modal2 { background: linear-gradient(120deg, #fff 85%, #e6f6fb 100%); border-color: #1cb5e0; }
+    .ultra-modal.modal3 { background: linear-gradient(120deg, #fff 85%, #f5e6fb 100%); border-color: #a259d9; }
+
+    @keyframes modal-fade-in {
+        from { opacity:0; transform:scale(0.97) translateY(44px);}
+        to { opacity:1; transform:scale(1) translateY(0);}
+    }
+
+    .ultra-modal-header {
+      display: flex;
+      align-items: center;
+      padding: 28px 24px 10px;
+      min-height: 75px;
+      background: transparent;
+      z-index: 2;
+      position: relative;
+    }
+
+    .ultra-modal-header .modal-header-icon {
+      font-size: 2.3rem;
+      margin: 0 20px 0 22px;
+      padding: 9px 0;
+      border-radius: 1.5rem;
+      background: #fff;
+      box-shadow: 0 2px 13px rgba(30,34,56,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: inherit;
+      width: 60px;
+      height: 60px;
+    }
+
+    .ultra-modal-header h2 {
+      font-size: 1.65rem;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      margin: 0;
+      color: #1a2238;
+      text-shadow: 0 1px 8px rgba(55,114,255,0.11);
+      flex: 1;
+      text-align: left;
+    }
+
+    .ultra-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 26px;
+      width: 45px;
+      height: 45px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      color: #1a2238;
+      font-size: 1.65rem;
+      z-index: 3;
+      transition: all 0.25s cubic-bezier(.47,1.64,.41,.8);
+      box-shadow: 0 2px 12px rgba(55,114,255,0.15);
+    }
+
+    .ultra-modal-close:hover {
+      background: #ffe6d0;
+      color: #fff;
+      box-shadow: 0 5px 30px rgba(244,140,6,0.13);
+      transform: scale(1.11);
+    }
+
+    .ultra-modal-tabs {
+      display: flex;
+      border-bottom: 2.5px solid #efefef;
+      background: #fff;
+      border-radius: 0;
+      font-weight: 700;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      z-index: 2;
+      position: relative;
+      box-shadow: 0 2px 11px rgba(28,181,224,0.13);
+    }
+
+    .ultra-modal-tab {
+      background: none;
+      border: none;
+      outline: none;
+      padding: 16px 38px;
+      color: #888;
+      cursor: pointer;
+      border-radius: 0;
+      transition: all 0.22s cubic-bezier(.47,1.64,.41,.8);
+      font-size: 1.09rem;
+      letter-spacing: 0.18px;
+      position: relative;
+      font-weight: 700;
+      flex: 1;
+      max-width: 230px;
+      text-align: center;
       user-select: none;
     }
-    .switch-btn.on .switch-label span:last-child {
-      color: var(--live);
+
+    .ultra-modal-tab.active,
+    .ultra-modal-tab:focus {
+      color: #fff;
+      background: linear-gradient(90deg, #f48c06 0%, #ffbb00 100%);
+      box-shadow: 0 -2px 22px rgba(244,140,6,0.14);
+      z-index: 2;
     }
-    .switch-btn:not(.on) .switch-label span:first-child {
-      color: var(--primary);
+
+    .ultra-modal.modal2 .ultra-modal-tab.active,
+    .ultra-modal.modal2 .ultra-modal-tab:focus {
+      background: linear-gradient(90deg, #1cb5e0 0%, #1de9b6 100%);
     }
-    #audiostatus {
-      font-size: 1.09em;
-      margin: 8px 0 0 0;
+
+    .ultra-modal.modal3 .ultra-modal-tab.active,
+    .ultra-modal.modal3 .ultra-modal-tab:focus {
+      background: linear-gradient(90deg, #a259d9 0%, #6741d9 100%);
+    }
+
+    .ultra-modal-content {
+      flex: 1;
+      width: 100%;
+      padding: 22px 0;
+      overflow-y: auto;
+      border-radius: 0 0 2.8rem 2.8rem;
+      font-size: 1.05rem;
+      background: none;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      scrollbar-width: thin;
+      scrollbar-color: #f48c06 transparent;
+    }
+
+    .ultra-modal.modal2 .ultra-modal-content {
+      scrollbar-color: #1cb5e0 transparent;
+    }
+
+    .ultra-modal.modal3 .ultra-modal-content {
+      scrollbar-color: #a259d9 transparent;
+    }
+
+    .ultra-modal-content::-webkit-scrollbar {
+      width: 7px;
+      background: transparent;
+    }
+
+    .ultra-modal.modal1 .ultra-modal-content::-webkit-scrollbar-thumb {
+      background: linear-gradient(#f48c06, #ffbb00);
+      border-radius: 4px;
+    }
+
+    .ultra-modal.modal2 .ultra-modal-content::-webkit-scrollbar-thumb {
+      background: linear-gradient(#1cb5e0, #1de9b6);
+      border-radius: 4px;
+    }
+
+    .ultra-modal.modal3 .ultra-modal-content::-webkit-scrollbar-thumb {
+      background: linear-gradient(#a259d9, #6741d9);
+      border-radius: 4px;
+    }
+
+    .ultra-modal-content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .ultra-modal-col {
+      width: 100%;
+      margin: 0 auto;
+      max-width: 870px;
+      background: none;
+      padding: 0 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .ultra-modal-col strong {
+      font-size: 1.16rem;
+      color: #1a2238;
+      margin: 14px 18px 8px;
+      letter-spacing: 0.15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    .media-item {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 1.5rem;
+      box-shadow: 0 6px 26px rgba(0,0,0,0.11);
+      overflow: hidden;
+      transition: transform 0.22s cubic-bezier(.47,1.64,.41,.8), box-shadow 0.22s;
+      border-left: 6px solid;
+      border-right: 1px solid #ece8e0;
+    }
+
+    .ultra-modal.modal1 .media-item { border-left-color: #f48c06; }
+    .ultra-modal.modal2 .media-item { border-left-color: #1cb5e0; }
+    .ultra-modal.modal3 .media-item { border-left-color: #a259d9; }
+
+    .media-item:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 16px 45px rgba(244,140,6,0.17);
+    }
+
+    .media-header {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.97) 0%, rgba(245,248,250,0.98) 100%);
+      border-bottom: 1px solid #f7eee7;
+    }
+
+    .media-icon {
+      font-size: 1.7rem;
+      margin-right: 16px;
+      min-width: 36px;
       text-align: center;
-      min-height: 27px;
-      font-family: 'Roboto', Arial, sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.07em;
     }
-    .yt-link {
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: 600;
-      background: rgba(62,87,249,0.07);
-      border-radius: 16px;
-      padding: 7px 15px;
-      margin-top: 18px;
-      display: inline-block;
-      transition: background 0.2s, color 0.2s;
-      font-size: 1.02em;
-      letter-spacing: 0.03em;
-      box-shadow: 0 1px 3px #4cc9f022;
+
+    .ultra-modal.modal1 .media-icon { color: #f48c06; }
+    .ultra-modal.modal2 .media-icon { color: #1cb5e0; }
+    .ultra-modal.modal3 .media-icon { color: #a259d9; }
+
+    .media-info {
+      flex: 1;
     }
-    .yt-link:hover {
-      background: rgba(62,87,249,0.13);
-      color: var(--secondary);
+
+    .media-title {
+      font-size: 1.13rem;
+      font-weight: 700;
+      color: #1a2238;
+      margin-bottom: 2px;
+      line-height: 1.3;
     }
-    #ytplayer {
-      width: 1px;
-      height: 1px;
+
+    .media-date {
+      font-size: 0.94rem;
+      color: #5e698e;
+      opacity: 0.84;
+    }
+
+    .media-player {
+      width: 100%;
+      padding: 0 20px 20px;
+      background: #fcfbf9;
+    }
+
+    .media-player audio,
+    .media-player video {
+      width: 100%;
+      border-radius: 1rem;
+      margin: 0;
+      background: #000;
+      display: block;
+      outline: 1px solid #f0f0f0;
+    }
+
+    .media-player video {
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    
+    .media-player iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 1rem;
+      border: none;
+      background: #000;
+      display: block;
+      outline: 1px solid #f0f0f0;
+      margin: 0;
+      min-height: 180px;
+    }
+
+    /* Islamic Library Card Styles */
+    .islamic-library-card-embedbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 25px 0;
+      background: none !important;
+    }
+
+    .islamic-library-card {
+      display: flex;
+      align-items: center;
+      background: radial-gradient(circle at 30% 60%, 
+                rgba(255,246,222,0.93) 0%,   
+                rgba(240,222,255,0.97) 60%,  
+                rgba(210,227,255,0.79) 100%);
+      border-radius: 2.2rem;
+      box-shadow: 0 25px 60px -10px rgba(123,76,38,0.19),
+                  0 15px 25px -15px rgba(44,99,142,0.13),
+                  inset 0 0 15px rgba(255,255,255,0.85);
+      max-width: 500px;
+      width: 95vw;
+      min-height: 150px;
+      padding: 1.8rem 1.6rem;
+      gap: 1.4rem;
+      border: 3px solid rgba(210,180,140,0.38);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      animation: cardEntrance 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes cardEntrance {
+      0% { opacity: 0; transform: translateY(20px) scale(0.96); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .islamic-library-card::before {
+      content: '';
       position: absolute;
-      left: -9999px;
-      top: -9999px;
+      inset: -3px;
+      border-radius: 2.4rem;
+      padding: 3px;
+      background: linear-gradient(135deg, 
+                  #FFD700 0%,      
+                  #E9C46A 10%,     
+                  #8360c3 35%,     
+                  #2EB872 60%,     
+                  #5BE7C4 80%,     
+                  #5390D9 90%,     
+                  #FFD700 100%);   
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
       pointer-events: none;
+      z-index: 0;
+      opacity: 0.96;
+      transition: all 0.6s ease;
+    }
+
+    .islamic-library-card:hover {
+      transform: translateY(-5px) scale(1.025);
+      box-shadow: 0 30px 70px -5px rgba(123,76,38,0.25),
+                  0 20px 30px -10px rgba(44,99,142,0.20);
+    }
+
+    .islamic-library-card:hover::before {
+      opacity: 1;
+      background: linear-gradient(135deg, 
+                  #FFD700 0%, 
+                  #E9C46A 15%, 
+                  #8360c3 40%, 
+                  #2EB872 65%, 
+                  #5BE7C4 85%, 
+                  #5390D9 100%);
+      animation: borderFlow 8s linear infinite;
+      background-size: 300% 300%;
+    }
+
+    @keyframes borderFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .book-gallery {
+      display: flex;
+      gap: 0.5rem;
+      min-width: 0;
+      perspective: 1000px;
+      z-index: 2;
+    }
+
+    .book-cover {
+      width: 70px;
+      height: 100px;
+      border-radius: 1.4rem;
+      overflow: hidden;
+      border: 2px solid rgba(255,220,130,0.98);
+      background: linear-gradient(145deg, #fff9e6 0%, #f0e7fa 100%);
+      box-shadow: 0 8px 25px -5px rgba(210,180,140,0.08),
+                  inset 0 0 12px rgba(255,255,255,0.85);
+      flex: 0 0 auto;
+      position: relative;
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transform-style: preserve-3d;
+      animation: bookFloat 4s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+
+    .book-cover:nth-child(1) { animation-delay: 0s; }
+    .book-cover:nth-child(2) { animation-delay: 0.2s; }
+    .book-cover:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes bookFloat {
+      0% { transform: translateY(0) rotate(-2deg); }
+      100% { transform: translateY(-10px) rotate(2deg); }
+    }
+
+    .book-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 1.1rem;
+      transition: all 0.4s ease;
+      transform: translateZ(0);
+    }
+
+    .islamic-library-card:hover .book-cover {
+      animation: bookHover 0.8s ease forwards;
+      box-shadow: 0 12px 35px -3px rgba(131,96,195,0.18);
+    }
+
+    @keyframes bookHover {
+      0% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-15px) rotate(-5deg) scale(1.1); }
+      100% { transform: translateY(-8px) rotate(-3deg) scale(1.08); }
+    }
+
+    .islamic-library-card:hover .book-image {
+      filter: brightness(1.14) contrast(1.09) saturate(1.16);
+      transform: scale(1.05) translateZ(5px);
+    }
+
+    .card-content {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 0.3rem;
+      background: linear-gradient(90deg, 
+                  #FFD700 0%, 
+                  #8360c3 35%, 
+                  #5390D9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+      position: relative;
+      padding-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(131,96,195,0.07);
+    }
+
+    .card-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD700, #5390D9);
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+
+    .islamic-library-card:hover .card-title::after {
+      width: 60px;
+    }
+
+    .arabic-title {
+      font-family: 'Noto Naskh Arabic', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2EB872;
+      margin: 0.3rem 0;
+      direction: rtl;
+      text-align: left;
+      line-height: 1.3;
+      text-shadow: 0 1px 2px rgba(255,215,0,0.08);
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(90deg, rgba(46,184,114,0.1), transparent);
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .islamic-library-card:hover .arabic-title {
+      color: #FFD700;
+      transform: translateX(3px);
+    }
+
+    .card-description {
+      font-size: 0.95rem;
+      color: #8360c3;
+      margin: 0.5rem 0 0.8rem;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.4;
+      background: rgba(255,246,220,0.85);
+      backdrop-filter: blur(5px);
+      border-radius: 0.8rem;
+      padding: 0.7rem;
+      box-shadow: 0 2px 10px rgba(123,76,38,0.07),
+                  inset 0 0 0 1px rgba(210,180,140,0.18);
+      transition: all 0.4s ease;
+    }
+
+    .islamic-library-card:hover .card-description {
+      background: rgba(240,222,255,0.93);
+      box-shadow: 0 4px 15px rgba(123,76,38,0.10),
+                  inset 0 0 0 1px rgba(210,180,140,0.21);
+    }
+
+    .action-button {
+      align-self: flex-start;
+      background: linear-gradient(90deg, #FFD700 0%, #5390D9 100%);
+      color: #4d4034;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.7rem 1.8rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      box-shadow: 0 5px 20px -5px rgba(255,215,0,0.17),
+                  0 3px 10px -3px rgba(131,96,195,0.22),
+                  inset 0 1px 1px rgba(255,255,255,0.4);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .action-button::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(90deg, 
+                  rgba(255,255,255,0) 0%, 
+                  rgba(255,255,255,0.32) 50%, 
+                  rgba(255,255,255,0) 100%);
+      transform: rotate(45deg);
+      transition: all 0.6s ease;
       opacity: 0;
     }
-    @media (max-width: 500px) {
-      .radio-shell {
-        max-width: 100vw;
-        padding-bottom: 8px;
-      }
-      .nowplaying {
-        padding: 7px 7px 5px 7px;
-      }
-      .radio-dial {
-        width: 70px;
-        height: 70px;
-      }
+
+    .action-button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px -5px rgba(131,96,195,0.16),
+                  0 5px 15px -3px rgba(255,215,0,0.19),
+                  inset 0 1px 1px rgba(255,255,255,0.5);
+    }
+
+    .action-button:hover::before {
+      opacity: 1;
+      animation: shine 1.5s ease infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -50%; }
+      100% { left: 150%; }
+    }
+
+    .action-button i {
+      transition: all 0.3s ease;
+      font-style: normal;
+    }
+
+    .action-button:hover i {
+      transform: translateX(5px);
+    }
+
+    .islamic-ornament {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.16;
+      z-index: 0;
+      pointer-events: none;
+      transition: all 0.8s ease;
+    }
+
+    .ornament-1 {
+      top: -20px;
+      right: -20px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 20a30 30 0 1 1 0 60 30 30 0 0 1 0-60z" fill="%23FFD700"/><path d="M50 10a40 40 0 1 0 0 80 40 40 0 0 0 0-80zm0 15a25 25 0 1 1 0 50 25 25 0 0 1 0-50z" fill="%238360c3"/></svg>');
+      transform: rotate(15deg);
+    }
+
+    .ornament-2 {
+      bottom: -15px;
+      left: -15px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0 50a50 50 0 0 1 100 0 50 50 0 0 1-100 0zm20 0a30 30 0 0 0 60 0 30 30 0 0 0-60 0z" fill="%235BE7C4"/><path d="M10 50a40 40 0 0 1 80 0 40 40 0 0 1-80 0zm15 0a25 25 0 0 0 50 0 25 25 0 0 0-50 0z" fill="%235390D9"/></svg>');
+      transform: rotate(-10deg);
+    }
+
+    .islamic-library-card:hover .islamic-ornament {
+      opacity: 0.25;
+      transform: scale(1.1);
+    }
+
+    /* Premium Footer Styles */
+    #tazft-footer {
+      background: linear-gradient(135deg, #232526 0%, #414345 100%); 
+      color: #fff; 
+      padding: 8px 0 2px 0; 
+      font-family: 'Segoe UI', Arial, sans-serif; 
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.3); 
+      position: relative; 
+      z-index: 2222; 
+      border-radius: 15px 15px 0 0; 
+      max-width: 430px; 
+      margin: 0 auto; 
+      border-top: 2px solid #fcb90055;
+    }
+
+    .tazft-explore-btn {
+      background: linear-gradient(135deg, #fcb900 0%, #fc4a1a 100%);
+      color: #fff; border: none; border-radius: 12px;
+      font-weight: 700; font-size: 0.95rem; padding: 9px 18px 9px 15px;
+      cursor: pointer; box-shadow: 0 4px 14px rgba(252,185,0,0.27);
+      letter-spacing: 0.11px; outline: none; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: 2px solid rgba(255,255,255,0.22);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.19);
+    }
+    .tazft-explore-btn:hover, .tazft-explore-btn:focus {
+      background: linear-gradient(135deg, #fc4a1a 0%, #fcb900 100%);
+      color: #232526; box-shadow: 0 6px 20px rgba(252,185,0,0.32); transform: scale(1.06);
+    }
+
+    .tazft-modal {
+      display: none; position: fixed; z-index: 99999;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: radial-gradient(ellipse at center, rgba(34,37,59,0.92) 66%,rgba(74,78,105,0.86) 100%);
+      justify-content: center; align-items: center;
+      animation: tazft-modalBgIn 0.18s ease-out;
+    }
+    @keyframes tazft-modalBgIn { from { opacity:0; } to { opacity:1; } }
+    .tazft-modal-content { 
+      background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(252,185,0,0.07) 100%);
+      color: #232526; border-radius: 14px;
+      box-shadow: 0 8px 22px 4px rgba(0,0,0,0.23), 0 2px 8px rgba(252,185,0,0.13);
+      padding: 15px; width: 97vw; 
+      max-width: 315px; position: relative; text-align: left;
+      animation: tazft-popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255,255,255,0.2); outline: 1px solid rgba(255,255,255,0.06);
+      min-height: 38px; font-size: 0.98rem; backdrop-filter: blur(10px);
+    }
+    .tazft-glass { background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(35,37,38,0.89) 100%); backdrop-filter: blur(13px); }
+    .tazft-premium-option-wrap { display: flex; flex-wrap: wrap; gap: 16px 12px; justify-content: center; margin-top: 10px; }
+    .tazft-pill-option {
+      background: linear-gradient(135deg, rgba(255,255,255,0.91) 0%, #fcb900 100%);
+      color: #232526; border: none; border-radius: 999px;
+      font-weight: 700; font-size: 0.97rem; padding: 10px 20px 10px 14px;
+      cursor: pointer; box-shadow: 0 2px 7px rgba(0,0,0,0.08);
+      display: flex; align-items: center; gap: 8px; min-width: 108px;
+      position: relative; border: 1px solid rgba(252,185,0,0.18); transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .tazft-pill-option .tazft-option-icon { width: 27px; height: 27px; font-size: 1em; margin-right:1px; }
+    .tazft-pill-option .tazft-option-label { font-size: 1em; font-weight: 700; }
+    .tazft-pill-option:hover, .tazft-pill-option:focus {
+      background: linear-gradient(135deg, #fcb900 0%, #8f94fb 100%);
+      color: #232526; transform: scale(1.07) translateY(-1px);
+    }
+    .tazft-premium-card { border: 1px solid rgba(252,185,0,0.18); box-shadow: 0 4px 12px rgba(0,0,0,0.10); margin-bottom: 0; margin-top: 5px; padding-bottom: 10px; padding-top: 7px; border-radius: 10px; }
+    .tazft-premium-glass-gold { background: linear-gradient(135deg, rgba(252,185,0,0.09) 0%, rgba(255,255,255,0.92) 100%); }
+    .tazft-premium-glass-blue { background: linear-gradient(135deg, rgba(143,148,251,0.07) 0%, rgba(255,255,255,0.91) 100%); }
+    .tazft-premium-glass-dark { background: linear-gradient(135deg, rgba(35,37,38,0.94) 0%, rgba(65,67,69,0.96) 100%); color: #fff; }
+    .tazft-card-attractive { box-shadow: 0 4px 12px rgba(0,0,0,0.10); }
+    .tazft-card-title { font-weight: 700; font-size: 1em; letter-spacing: 0.3px; }
+    .tazft-hi-initials, .tazft-card-badge { border-radius: 7px; padding: 3px 9px; font-size: 1em; font-weight: 700; box-shadow: 0 2px 8px rgba(252,185,0,0.10); }
+    .tazft-bg-blue { background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%); color: #fff; }
+    .tazft-bg-dark { background: linear-gradient(135deg, #232526 0%, #414345 100%); color: #fcb900;}
+    .tazft-card-section { margin-bottom: 7px; font-size: 0.97em; color: #232526; line-height: 1.35; }
+    .tazft-card-divider { border-top: 1px solid rgba(252,185,0,0.13); margin: 9px 0; }
+    .tazft-card-contact-title { font-weight: 600; color: #fcb900; margin-bottom: 6px; font-size: 0.98em; }
+    .tazft-card-contact { margin-bottom: 7px; }
+    .tazft-card-icon { display: inline-block; width: 1.4em; }
+    .tazft-contact-link { color: #fcb900; text-decoration: none; font-weight: 500; transition: all 0.18s; font-size: 0.97em; }
+    .tazft-contact-link:hover, .tazft-contact-link:focus { color: #8f94fb; text-decoration: underline; }
+    .tazft-fb-list { display: flex; flex-direction: column; gap: 8px 0; margin-bottom: 2px; }
+    .tazft-fb-profile { display: flex; align-items: center; gap: 7px; text-decoration: none; font-size: 0.96em; font-weight: 600; color: #232526; transition: all 0.22s; padding: 7px 8px; border-radius: 8px; background: rgba(255,255,255,0.8); }
+    .tazft-fb-profile img { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #fff; background: #fff; object-fit: cover; }
+    .tazft-fb-avatar-border { padding: 1px; border-radius: 50%; }
+    .tazft-fb-profile span { color: #1877f2; font-weight: 700; letter-spacing: 0.1px;}
+    .tazft-fb-profile:hover { background: #fff; transform: translateY(-1px);}
+    .tazft-fb-profile:hover span { color: #fcb900;}
+    .tazft-social-links { display: flex; flex-wrap: wrap; gap: 5px 4px; font-size: 0.97em; margin-top: 6px; justify-content: center; }
+    .tazft-contact-social { color: #fcb900; text-decoration: none; background: linear-gradient(135deg, rgba(252,185,0,0.08) 0%, rgba(255,255,255,0.79) 100%); border-radius: 20px; padding: 4px 10px; font-weight: 600; font-size: 0.95em; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);}
+    .tazft-contact-social:hover, .tazft-contact-social:focus { background: linear-gradient(135deg, #8f94fb 0%, #fcb900 100%); color: #fff; transform: scale(1.05) translateY(-1px);}
+    .tazft-card-section ul { margin: 0; padding-left: 1em; line-height: 1.3;}
+    .tazft-card-section ul li { margin-bottom: 5px;}
+    .tazft-bullet { font-size: 1em; font-weight: 700; margin-right: 6px; }
+    .tazft-gold { color: #fcb900; }
+    .tazft-blue { color: #8f94fb; }
+    /* Modal controls */
+    .tazft-close-btn.tazft-cross, .tazft-back-btn.tazft-creative { position: absolute; top: 10px; right: 10px; left: auto; background: linear-gradient(135deg, #fcb900 40%, #fff 120%); border: none; font-size: 1em; cursor: pointer; padding: 0; border-radius: 50%; width: 28px; height: 28px; min-width: 28px; min-height: 28px; box-shadow: 0 2px 7px rgba(0,0,0,0.14); border: 1.2px solid #ffedb8; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); outline: none; z-index: 2;}
+    .tazft-close-btn.tazft-cross:hover, .tazft-close-btn.tazft-cross:focus, 
+    .tazft-back-btn.tazft-creative:hover, .tazft-back-btn.tazft-creative:focus { background: linear-gradient(135deg, #fff 20%, #fcb900 100%); color: #232526; transform: scale(1.09);}
+    .tazft-back-btn.tazft-bluebtn svg ellipse { fill: #8f94fb!important; stroke: #232526!important;}
+    .tazft-back-btn.tazft-bluebtn svg polyline { stroke: #fff!important;}
+    .tazft-back-btn.tazft-darkbtn svg ellipse { fill: #232526!important; stroke: #fcb900!important;}
+    .tazft-back-btn.tazft-darkbtn svg polyline { stroke: #fcb900!important;}
+    @keyframes tazft-popIn { 0% { transform: scale(0.85) rotate(-5deg); opacity: 0; filter: blur(1.5px); } 55% { transform: scale(1.05) rotate(2deg); filter: blur(0); } 85% { transform: scale(0.97) rotate(-1deg); } 100% { transform: scale(1) rotate(0); opacity: 1; filter: blur(0); } }
+
+    /* Responsive Enhancements */
+    @media (max-width: 900px) {
+        .ultra-modal { max-width: 99vw;}
+    }
+    
+    @media (max-width: 700px) {
+        .divine-ultra-heading-card {padding: 30px 10px 26px;}
+    }
+    
+    @media (max-width: 600px) {
+        .divine-ultra-root { padding-bottom: 32px;}
+        .divine-ultra-heading-card {
+            padding: 24px 8px 12px;
+            border-radius: 2.2rem;
+            margin-top: 12px;
+        }
+        .divine-ultra-heading-card h1 {
+            font-size: 1.35rem;
+        }
+        .divine-ultra-heading-card .subtitle {
+            font-size: 0.98rem;
+        }
+        .ultra-cards-flex { gap: 10px; }
+        .ultra-card { max-width: 100%; }
+        .ultra-modal { border-radius: 1.5rem; height: 95vh; }
+        .ultra-modal-header { padding: 12px 6px 5px; }
+        .ultra-modal-header .modal-header-icon { margin: 0 8px 0 10px; font-size: 1.6rem; width: 40px; height: 40px; }
+        .ultra-modal-header h2 { font-size: 1.18rem; }
+        .ultra-modal-close { top: 8px; right: 12px; width: 30px; height: 30px; font-size: 1.09rem; }
+        .ultra-modal-tab { padding: 8px 6px; font-size: 0.92rem; }
+        .ultra-modal-content { padding: 8px 0; }
+        .ultra-modal-col { padding: 0 6px; gap: 8px; }
+        .media-header { padding: 8px 6px; }
+        .media-icon { font-size: 1.2rem; margin-right: 7px; }
+        .media-title { font-size: 0.99rem; }
+        .media-date { font-size: 0.85rem; }
+        .media-player { padding: 0 6px 7px; }
+        .media-player iframe { min-height: 120px;}
+        
+        /* Slider Responsive */
+        .slider-wrap {
+          max-width: 98vw;
+          aspect-ratio: 16 / 10;
+        }
+        .audio-btn {
+          width: 32px;
+          height: 32px;
+          right: 8px;
+          bottom: 8px;
+        }
+        .audio-btn .music-icon-on,
+        .audio-btn .music-icon-off {
+          font-size: 1.3rem;
+        }
+        .timer-fab {
+          width: 32px;
+          height: 32px;
+          left: 8px;
+          bottom: 8px;
+          font-size: 0.95rem;
+        }
+        .slider-dot {
+          width: 10px;
+          height: 10px;
+        }
+        .slider-dots {
+          gap: 8px;
+          bottom: 7px;
+        }
+        
+        /* Islamic Library Card Responsive */
+        .islamic-library-card {
+          flex-direction: column;
+          padding: 1.5rem 1rem;
+          gap: 1.2rem;
+          border-radius: 1.8rem;
+        }
+        
+        .book-gallery {
+          justify-content: center;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+        
+        .card-content {
+          align-items: center;
+          text-align: center;
+        }
+        
+        .card-title::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        
+        .arabic-title {
+          text-align: center;
+        }
+        
+        .action-button {
+          align-self: center;
+        }
+        
+        /* Footer Responsive */
+        .tazft-modal-content, .tazft-glass, .tazft-adv-modal { 
+          padding: 8px 2vw; 
+          max-width: 99vw;
+        } 
+        .tazft-pill-option { 
+          padding: 8px 3vw 8px 3vw; 
+          font-size: 0.96em;
+        }
+        .tazft-close-btn.tazft-cross, 
+        .tazft-back-btn.tazft-creative { 
+          top: 6px; 
+          right: 6px;
+        }
+        .tazft-fb-profile img { 
+          width: 22px; 
+          height: 22px;
+        }
+    }
+    
+    @media (max-width: 400px) {
+        .ultra-modal-tab { padding: 6px 2px; font-size: 0.85rem; }
+        .ultra-modal { border-radius: 1.2rem;}
     }
   </style>
 </head>
 <body>
-  <div class="radio-shell" role="region" aria-label="Radio Player">
-    <div class="radio-top">
-      <div class="live-badge" id="liveBadge">LIVE</div>
-      <div class="radio-dial">
-        <div class="visualizer" id="visualizer">
-          <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-          <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+
+<!-- Bismillah Header -->
+<!-- Bismillah Header -->
+<div class="header-container">
+  <div class="bismillah-text">﷽</div>
+  <div class="salam-container">
+    <div class="salam-text" id="salamText"><span class="typing-cursor"></span></div>
+  </div>
+</div>
+
+<!-- Slider Section -->
+<div class="slider-wrap" id="slider1" tabindex="0" aria-label="Hero Slider">
+  <!-- Slides injected by JS -->
+  <button class="arrow left" aria-label="Previous slide">&#8249;</button>
+  <button class="arrow right" aria-label="Next slide">&#8250;</button>
+  <button class="audio-btn" id="audioBtn" aria-label="Toggle background music" aria-pressed="false">
+    <span class="music-icon-on" aria-label="Music On" title="Music On">🔊</span>
+    <span class="music-icon-off" aria-label="Music Off" title="Music Off">🔇</span>
+  </button>
+  <span class="timer-fab" id="timerFab">
+    <svg class="timer-progress" width="42" height="42" viewBox="0 0 42 42">
+      <circle
+        cx="21" cy="21" r="19"
+        stroke="#76c7b7"
+        stroke-width="2.7"
+        fill="none"
+        stroke-linecap="round"
+        stroke-dasharray="119.38"
+        stroke-dashoffset="0"
+        style="transition: stroke-dashoffset 1s cubic-bezier(.4,0,.2,1);"
+      />
+    </svg>
+    <span class="timer-label" id="timerLabel">4s</span>
+  </span>
+  <div class="slider-dots" id="sliderDots"></div>
+  <audio id="sliderMusic" preload="none" loop>
+    <source src="https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/%E0%A6%86%E0%A6%AE%E0%A6%BE%E0%A6%B0%20%E0%A6%8F%E0%A6%87%20%E0%A6%95%E0%A6%A8%E0%A7%8D%E0%A6%A0%E0%A7%87%20%E0%A6%86%E0%A6%AA%E0%A6%A8%E0%A6%BF%20%E0%A6%A8%E0%A6%AC%E0%A6%BF%E0%A6%9C%E0%A7%80%E0%A6%B0%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A7%87%E0%A6%AE%20%E0%A6%A6%E0%A6%BF%E0%A7%9F%E0%A7%87%E0%A6%9B%E0%A7%87%E0%A6%A8-mc.mp3" type="audio/mp3">
+  </audio>
+</div>
+
+<!-- Main Content Section -->
+<div class="divine-ultra-root">
+  <!-- Modified heading card to be clickable -->
+  <div class="divine-ultra-heading-card" onclick="openModal('main-content')" style="cursor: pointer;" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' '){openModal('main-content');}">
+    <h1>MMD ASHRAF ALIMULLAH SIDDIQUE</h1>
+    <div class="subtitle">Divine Islamic Content: Lectures, Q&A, Debates and more</div>
+  </div>
+  
+  <!-- Main Content Modal (this is new) -->
+  <div class="ultra-modal-overlay" id="modal-main-content" aria-modal="true" role="dialog">
+    <div class="ultra-modal" style="max-width: 900px; height: auto; max-height: 90vh;">
+      <div class="ultra-modal-header">
+        <span class="modal-header-icon"><i class="fa-solid fa-mosque"></i></span>
+        <h2>MMD ASHRAF ALIMULLAH SIDDIQUE</h2>
+        <button class="ultra-modal-close" aria-label="Close modal" onclick="closeModal('main-content')"><i class="fa-solid fa-arrow-left"></i></button>
+      </div>
+      <div class="ultra-modal-content" style="padding: 20px;">
+        <div class="ultra-cards-flex" style="margin: 0; gap: 24px;">
+          <!-- Waz Lectures Card -->
+          <div class="ultra-card card1" data-modal="waz-lectures" tabindex="0" aria-label="Waz Lectures" role="button" onclick="openModal('waz-lectures')" onkeydown="if(event.key==='Enter'||event.key===' '){openModal('waz-lectures');}">
+            <div class="corner-glow"></div>
+            <div class="ultra-card-content">
+              <div class="ultra-card-icon"><i class="fa-solid fa-mosque"></i></div>
+              <div class="ultra-card-title">Waz Lectures</div>
+              <div class="ultra-card-desc">Inspirational Islamic sermons from renowned scholars.</div>
+              <button class="ultra-card-btn" onclick="event.stopPropagation();openModal('waz-lectures')"><i class="fa-solid fa-play"></i> Explore</button>
+            </div>
+          </div>
+          <!-- Munazad Card -->
+          <div class="ultra-card card2" data-modal="munazad" tabindex="0" aria-label="Munazad" role="button" onclick="openModal('munazad')" onkeydown="if(event.key==='Enter'||event.key===' '){openModal('munazad');}">
+            <div class="corner-glow"></div>
+            <div class="ultra-card-content">
+              <div class="ultra-card-icon"><i class="fa-solid fa-comments"></i></div>
+              <div class="ultra-card-title">Munazad</div>
+              <div class="ultra-card-desc">Engaging debates and Islamic discussions.</div>
+              <button class="ultra-card-btn" onclick="event.stopPropagation();openModal('munazad')"><i class="fa-solid fa-play"></i> Explore</button>
+            </div>
+          </div>
+          <!-- Q&A Card -->
+          <div class="ultra-card card3" data-modal="question-answer" tabindex="0" aria-label="Q & A" role="button" onclick="openModal('question-answer')" onkeydown="if(event.key==='Enter'||event.key===' '){openModal('question-answer');}">
+            <div class="corner-glow"></div>
+            <div class="ultra-card-content">
+              <div class="ultra-card-icon"><i class="fa-solid fa-circle-question"></i></div>
+              <div class="ultra-card-title">Q & A</div>
+              <div class="ultra-card-desc">Get answers to your Islamic questions.</div>
+              <button class="ultra-card-btn" onclick="event.stopPropagation();openModal('question-answer')"><i class="fa-solid fa-play"></i> Explore</button>
+            </div>
+          </div>
         </div>
-        <svg viewBox="0 0 56 56" fill="none">
-          <circle cx="28" cy="28" r="28" fill="#3e57f9" opacity="0.09"/>
-          <circle cx="28" cy="28" r="12" stroke="#3e57f9" stroke-width="2" fill="none"/>
-          <circle cx="28" cy="28" r="6" stroke="#f72585" stroke-width="3" fill="none"/>
-          <circle cx="28" cy="28" r="2" fill="#f72585"/>
-          <path d="M13 28a15 15 0 1 1 30 0" stroke="#f72585" stroke-width="2" fill="none"/>
-        </svg>
-      </div>
-      <div class="radio-title">PREMIUM LIVE RADIO</div>
-      <div class="radio-sub">Streaming from YouTube – <b>Audio Mode</b></div>
-    </div>
-
-    <!-- Now Playing -->
-    <div class="nowplaying">
-      <img id="nowThumb" class="nowplaying-thumb" src="https://yt3.ggpht.com/ytc/AAUvwngJ6b2oCqTyt5pQ=s48-c-k-c0x00ffffff-no-rj" alt="Now Playing">
-      <div class="nowplaying-meta">
-        <div class="nowplaying-title" id="nowTitle">Checking Live...</div>
-        <div class="nowplaying-desc" id="nowDesc"></div>
       </div>
     </div>
-
-    <!-- Controls -->
-    <div class="radio-controls">
-      <button class="circle-btn" id="playBtn" title="Play" aria-label="Play" style="display:none;">
-        ▶
-      </button>
-      <button class="circle-btn" id="pauseBtn" title="Pause" aria-label="Pause" style="display:none;">
-        &#10073;&#10073;
-      </button>
-      <button class="switch-btn on" id="radioSwitch" aria-label="Radio On/Off" type="button">
-        <span class="switch-knob"><span id="switch-icon">&#128264;</span></span>
-        <span class="switch-label"><span>Off</span><span>On</span></span>
-      </button>
-    </div>
-
-    <div id="audiostatus">Checking for live stream...</div>
-    <!-- YouTube IFrame Player (hidden) -->
-    <div id="ytplayer"></div>
-    <a class="yt-link" href="https://www.youtube.com/channel/UCfBw_uwZb_oFLyVsjWk6owQ/live" target="_blank" rel="noopener">
-      🎵 Open channel on YouTube
-    </a>
   </div>
 
-  <!-- YouTube IFrame API -->
-  <script src="https://www.youtube.com/iframe_api"></script>
-  <script>
-    // --- Elements
-    const status = document.getElementById("audiostatus");
-    const playBtn = document.getElementById("playBtn");
-    const pauseBtn = document.getElementById("pauseBtn");
-    const radioSwitch = document.getElementById("radioSwitch");
-    const switchIcon = document.getElementById("switch-icon");
-    const visualizer = document.getElementById("visualizer");
-    const liveBadge = document.getElementById("liveBadge");
-    const nowThumb = document.getElementById("nowThumb");
-    const nowTitle = document.getElementById("nowTitle");
-    const nowDesc = document.getElementById("nowDesc");
+   <!-- Waz Lectures Modal -->
+  <div class="ultra-modal-overlay" id="modal-waz-lectures" aria-modal="true" role="dialog">
+    <div class="ultra-modal modal1">
+      <div class="ultra-modal-header">
+        <span class="modal-header-icon"><i class="fa-solid fa-mosque"></i></span>
+        <h2>Waz Lectures</h2>
+        <button class="ultra-modal-close" aria-label="Close modal" onclick="closeModal('waz-lectures')"><i class="fa-solid fa-arrow-left"></i></button>
+      </div>
+      <div class="ultra-modal-tabs">
+        <button class="ultra-modal-tab active" data-tab="audio" onclick="showTab(this, 'waz-lectures', 'audio')" tabindex="0">Audios</button>
+        <button class="ultra-modal-tab" data-tab="video" onclick="showTab(this, 'waz-lectures', 'video')" tabindex="0">Videos</button>
+      </div>
+      <div class="ultra-modal-content">
+        <!-- Audio Tab Content -->
+        <div class="ultra-modal-col modal-tab-content" data-tab="audio">
+          <strong><i class="fa-solid fa-microphone-lines"></i> Listen (Audio)</strong>
+          <div class="media-item">
+            <div class="media-header">
+              <div class="media-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+              <div class="media-info">
+                <div class="media-title">The Light of Guidance</div>
+                <div class="media-date">May 2025 • 35m</div>
+              </div>
+            </div>
+            <div class="media-player">
+              <audio controls controlsList="nodownload noremoteplayback">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3">
+              </audio>
+            </div>
+          </div>
+          <div class="media-item">
+            <div class="media-header">
+              <div class="media-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+              <div class="media-info">
+                <div class="media-title">Mercy to Mankind</div>
+                <div class="media-date">April 2025 • 42m</div>
+              </div>
+            </div>
+            <div class="media-player">
+              <audio controls controlsList="nodownload noremoteplayback">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mp3">
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- Video Tab Content -->
+        <div class="ultra-modal-col modal-tab-content" data-tab="video" style="display:none;">
+          <strong><i class="fa-solid fa-play"></i> Watch (Video)</strong>
+          <div class="media-item">
+            <div class="media-header">
+              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
+              <div class="media-info">
+                <div class="media-title">Ramadan Special: Night of Power</div>
+                <div class="media-date">May 2025 • 21m</div>
+              </div>
+            </div>
+            <div class="media-player">
+              <iframe class="yt-embed" width="400" height="225"  
+                src="https://www.youtube.com/embed/WC7VtoMHFiE?enablejsapi=1"  
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="Ramadan Special: Night of Power"></iframe>  
+            </div>
+          </div>
+          <div class="media-item">
+            <div class="media-header">
+              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
+              <div class="media-info">
+                <div class="media-title"> Night of Power</div>
+                <div class="media-date">May 2025 • 21m</div>
+              </div>
+            </div>
+            <div class="media-player">
+              <iframe class="yt-embed" width="400" height="225"  
+                src="https://www.youtube.com/embed/WC7VtoMHFiE?enablejsapi=1"  
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="Night of Power"></iframe>  
+            </div>
+          </div>
+          <div class="media-item">
+            <div class="media-header">
+              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
+              <div class="media-info">
+                <div class="media-title">The Prophet's Character</div>
+                <div class="media-date">April 2025 • 18m</div>
+              </div>
+            </div>
+            <div class="media-player">
+              <iframe class="yt-embed" width="400" height="225"  
+                src="https://www.youtube.com/embed/CV6zPo7L1vI?enablejsapi=1"  
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="The Prophet's Character"></iframe>  
+            </div>
+          </div>
+          <div class="media-item">
+            <div class="media-header">
+              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
+              <div class="media-info">
+                <div class="media-title">Stories of the Sahabah</div>
+                <div class="media-date">March 2025 • 24m</div>
+              </div>
+            </div>
+            <div class="media-player">
+              <iframe class="yt-embed" width="932" height="524"  
+                src="https://www.youtube.com/embed/wviz5Bj7UXM?enablejsapi=1"  
+                frameborder="0"  
+                allow="autoplay; encrypted-media" allowfullscreen title="Stories of the Sahabah"></iframe>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Munazad Modal -->
+  <div class="ultra-modal-overlay" id="modal-munazad" aria-modal="true" role="dialog">
+    <div class="ultra-modal modal2">
+      <div class="ultra-modal-header">
+        <span class="modal-header-icon"><i class="fa-solid fa-comments"></i></span>
+        <h2>Munazad</h2>
+        <button class="ultra-modal-close" aria-label="Close modal" onclick="closeModal('munazad')"><i class="fa-solid fa-arrow-left"></i></button>
+      </div>
+      <div class="ultra-modal-tabs">
+        <button class="ultra-modal-tab active" data-tab="audio" onclick="showTab(this, 'munazad', 'audio')" tabindex="0">Audios</button>
+        <button class="ultra-modal-tab" data-tab="video" onclick="showTab(this, 'munazad', 'video')" tabindex="0">Videos</button>
+      </div>
+      <div class="ultra-modal-content">
+        <div class="ultra-modal-col modal-tab-content" data-tab="audio">
+          <strong><i class="fa-solid fa-microphone-lines"></i> Listen (Audio)</strong>
+          <div class="media-item">
+            <div class="media-header">
+              <div class="media-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+              <div class="media-info">
+                <div class="media-title">Debate: Faith & Reason</div>
+                <div class="media-date">May 2025 • 47m</div>
+              </div>
+            </div>
+            <div class="media-player">
+              <audio controls controlsList="nodownload noremoteplayback">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" type="audio/mp3">
+              </audio>
+            </div>
+          </div>
+        </div>
+        <div class="ultra-modal-col modal-tab-content" data-tab="video" style="display:none;">
+          <strong><i class="fa-solid fa-play"></i> Watch (Video)</strong>
+          <div class="media-item">
+            <div class="media-header">
+              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
+              <div class="media-info">
+                <div class="media-title">Debate: Islam & Modernity</div>
+                <div class="media-date">May 2025 • 33m</div>
+              </div>
+            </div>
+            <div class="media-player">
+              <iframe class="yt-embed" src="https://www.youtube.com/embed/6b2Ew3v3p7c?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen title="Debate: Islam & Modernity"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Q&A Modal -->
+  <div class="ultra-modal-overlay" id="modal-question-answer" aria-modal="true" role="dialog">
+    <div class="ultra-modal modal3">
+      <div class="ultra-modal-header">
+        <span class="modal-header-icon"><i class="fa-solid fa-circle-question"></i></span>
+        <h2>Q & A</h2>
+        <button class="ultra-modal-close" aria-label="Close modal" onclick="closeModal('question-answer')"><i class="fa-solid fa-arrow-left"></i></button>
+      </div>
+      <div class="ultra-modal-tabs">
+        <button class="ultra-modal-tab active" data-tab="audio" onclick="showTab(this, 'question-answer', 'audio')" tabindex="0">Audios</button>
+        <button class="ultra-modal-tab" data-tab="video" onclick="showTab(this, 'question-answer', 'video')" tabindex="0">Videos</button>
+      </div>
+      <div class="ultra-modal-content">
+        <div class="ultra-modal-col modal-tab-content" data-tab="audio">
+          <strong><i class="fa-solid fa-microphone-lines"></i> Listen (Audio)</strong>
+          <div class="media-item">
+            <div class="media-header">
+              <div class="media-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+              <div class="media-info">
+                <div class="media-title">Q&A: Common Islamic Queries</div>
+                <div class="media-date">May 2025 • 29m</div>
+              </div>
+            </div>
+            <div class="media-player">
+              <audio controls controlsList="nodownload noremoteplayback">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mp3">
+              </audio>
+            </div>
+          </div>
+        </div>
+        <div class="ultra-modal-col modal-tab-content" data-tab="video" style="display:none;">
+          <strong><i class="fa-solid fa-play"></i> Watch (Video)</strong>
+          <div class="media-item">
+            <div class="media-header">
+              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
+              <div class="media-info">
+                <div class="media-title">Q&A: Live Audience Session</div>
+                <div class="media-date">May 2025 • 14m</div>
+              </div>
+            </div>
+            <div class="media-player">
+              <iframe class="yt-embed" src="https://www.youtube.com/embed/4e1k5X5TQbU?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen title="Q&A: Live Audience Session"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    // --- State
-    let player;
-    let currentVideoId = null;
-    let intervalId = null;
-    let isOn = true;
-    let isPlaying = false;
 
-    // --- Visualizer (Simulated)
-    function animateVisualizer(forceOff = false) {
-      if (forceOff) {
-        Array.from(visualizer.children).forEach(bar => bar.style.height = '20%');
-        return;
-      }
-      Array.from(visualizer.children).forEach(bar => {
-        bar.style.height = (20 + Math.random() * 70) + '%';
-      });
+<h2>
+<p>  Here is the Islamic pdf books</p>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Islamic Library Card -->
+  <div class="islamic-library-card-embedbox">
+    <div class="islamic-library-card">
+      <div class="islamic-ornament ornament-1"></div>
+      <div class="islamic-ornament ornament-2"></div>
+      
+      <div class="book-gallery">
+        <div class="book-cover">
+          <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/r/i/riyadus-saliheen.jpg" alt="Riyad us Saliheen" loading="lazy">
+        </div>
+        <div class="book-cover">
+          <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/q/u/quran-english-interpretation.jpg" alt="Quran English Interpretation" loading="lazy">
+        </div>
+        <div class="book-cover">
+          <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/f/i/fiqh-us-sunnah.jpg" alt="Fiqh Us Sunnah" loading="lazy">
+        </div>
+      </div>
+      
+      <div class="card-content">
+        <h3 class="card-title">Premium Islamic Library</h3>
+        <div class="arabic-title">المكتبة الإسلامية المميزة</div>
+        <p class="card-description">
+          Explore our exquisite collection of authentic Islamic books, manuscripts, and resources.
+        </p>
+      <button class="action-button" onclick="window.location.href='library.html'">
+  Explore our library <i>➡</i>
+</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<!-- Premium Footer -->
+<footer id="tazft-footer">
+  <div class="tazft-bar" style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 6px 0 4px 0;">
+    <span class="tazft-footer-copyright" style="font-size: 1rem; color: #fcb900; letter-spacing: 0.5px; font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,0.3); transition:.18s;">&copy; 2025 Hafizul</span>
+    <button onclick="tazftOpenModal('tazft-main-modal')" aria-label="Open navigation"
+      class="tazft-explore-btn tazft-explore-btn-custom" style="background: linear-gradient(135deg, #fcb900 0%, #fc4a1a 100%); box-shadow: 0 4px 20px rgba(252,185,0,0.3);">
+      <span style="font-size:1.14em; filter:drop-shadow(0 1px 1px rgba(0,0,0,0.3)); color:#232526;">☰</span>
+      <span style="font-size:0.97em; font-weight:700; letter-spacing:.2px; color:#fff; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">Explore</span>
+    </button>
+  </div>
+  
+  <!-- Main Navigation Modal -->
+  <div id="tazft-main-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="tazft-modal-content tazft-glass animate-pop" style="background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(35,37,38,0.97) 100%); backdrop-filter: blur(14px); padding:18px 6vw; max-width:320px;">
+      <button class="tazft-close-btn tazft-cross" onclick="tazftCloseModal('tazft-main-modal')" aria-label="Close" title="Close">
+        <span aria-hidden="true" style="display:block;font-size:1.25em;line-height:1;">&times;</span>
+      </button>
+      <div class="tazft-premium-option-wrap" style="gap:16px 12px; margin-top:16px;">
+        <button onclick="tazftOpenSubModal('tazft-about-modal');" class="tazft-pill-option" style="background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, #fcb900 100%);color:#232526;">
+          <span class="tazft-option-icon tazft-glow-gold" style="background: linear-gradient(135deg, #fcb900 0%, #f7b733 100%);color:#232526;">&#8505;</span>
+          <span class="tazft-option-label">About</span>
+        </button>
+        <button onclick="tazftOpenSubModal('tazft-services-modal');" class="tazft-pill-option" style="background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, #8f94fb 100%);color:#232526;">
+          <span class="tazft-option-icon tazft-glow-blue" style="background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%);color:#fff;">&#9881;</span>
+          <span class="tazft-option-label">Services</span>
+        </button>
+        <button onclick="tazftOpenSubModal('tazft-features-modal');" class="tazft-pill-option" style="background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, #232526 100%);color:#fcb900;">
+          <span class="tazft-option-icon tazft-glow-dark" style="background: linear-gradient(135deg, #232526 0%, #414345 100%); color: #fcb900;">&#9733;</span>
+          <span class="tazft-option-label">Features</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- About Modal -->
+  <div id="tazft-about-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="tazft-modal-content animate-pop tazft-adv-modal" style="max-width: 288px; padding: 12px 6vw 18px 6vw;">
+      <button class="tazft-back-btn tazft-creative" onclick="tazftBackToMenu('tazft-about-modal')" aria-label="Back" title="Back">
+        <svg viewBox="0 0 29 29" width="20" height="20"><ellipse cx="14.5" cy="14.5" rx="13.5" ry="13.5" fill="#fcb900" stroke="#4a4e69" stroke-width="2"/><polyline points="17,9 12,14.5 17,20" fill="none" stroke="#232526" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="tazft-premium-card tazft-premium-glass-gold tazft-card-attractive" style="padding:12px 8px 10px 8px;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
+          <span class="tazft-hi-initials" style="padding:3px 9px;font-size:1em;background:#232526;color:#fcb900;">HI</span>
+          <div class="tazft-card-title" style="font-size:1em; color: #fcb900;">About Developer</div>
+        </div>
+        <div class="tazft-card-section" style="font-size:0.99em; line-height:1.38; color: #232526;">
+          <b style="font-size: 1.01em; color:#232526;">Hafizul Islam</b><br>
+          <span style="color: #4e54c8; font-weight: 700;">Owner &amp; Lead Developer</span><br>
+          <span style="margin-top:4px; font-size:0.98em; color:#232526;">Crafting <span style="color:#000000;font-weight:400;">world-class</span> web experiences</span>
+        </div>
+        <div class="tazft-card-divider" style="margin:11px 0; border-top: 1px solid rgba(252,185,0,0.3);"></div>
+        <div class="tazft-card-section tazft-card-contact" style="font-size:0.98em; color: #232526;">
+          <div class="tazft-card-contact-title" style="margin-bottom:6px; color: #4e54c8; font-weight: 700;">Contact</div>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span class="tazft-card-icon" style="background:#4e54c8;color:#fff;width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;">📧</span>
+            <a href="mailto:hafizul9996@gmail.com" class="tazft-contact-link" style="color:#4e54c8;font-weight:600;">hafizul9996@gmail.com</a>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;margin-top:5px;">
+            <span class="tazft-card-icon" style="background:#fc4a1a;color:#fff;width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;">📞</span>
+            <a href="tel:+8801744348961" class="tazft-contact-link" style="color:#000000;font-weight:600;">01744348961</a>
+          </div>
+          <div class="tazft-card-contact-title" style="margin:10px 0 6px 0;font-size:0.98em;color:#4e54c8;font-weight:700;">Socials</div>
+          <div class="tazft-fb-list" style="gap:8px;">
+            <a href="https://facebook.com/your.profile1" target="_blank" class="tazft-fb-profile tazft-fb-visible" style="padding:7px 8px;background:rgba(255,255,255,0.9);">
+              <span class="tazft-fb-avatar-border"><img src="https://graph.facebook.com/100011122233344/picture?width=32&height=32" alt="Facebook Profile 1" style="width:28px;height:28px;"></span>
+              <span style="margin-left:8px;color:#1877f2;font-weight:600;">/your.profile1</span>
+            </a>
+            <a href="https://facebook.com/your.profile2" target="_blank" class="tazft-fb-profile tazft-fb-visible" style="padding:7px 8px;background:rgba(255,255,255,0.9);">
+              <span class="tazft-fb-avatar-border"><img src="https://graph.facebook.com/100022233344455/picture?width=32&height=32" alt="Facebook Profile 2" style="width:28px;height:28px;"></span>
+              <span style="margin-left:8px;color:#1877f2;font-weight:600;">/your.profile2</span>
+            </a>
+          </div>
+          <div class="tazft-social-links" style="margin-top:10px;gap:6px;">
+            <a href="https://www.youtube.com/" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#fc4a1a 0,#fcb900 100%);color:#fff;font-weight:600;padding:5px 12px;">YouTube</a>
+            <a href="https://wa.me/8801744348961" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#25d366 0,#128c7e 100%);color:#fff;font-weight:600;padding:5px 12px;">WhatsApp</a>
+            <a href="https://t.me/" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#229ed9 0,#0088cc 100%);color:#fff;font-weight:600;padding:5px 12px;">Telegram</a>
+            <a href="https://github.com/hafizul99" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#232526 0,#414345 100%);color:#fcb900;font-weight:600;padding:5px 12px;">GitHub</a>
+            <a href="https://linkedin.com/in/hafizul99" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#0077b5 0,#00a0dc 100%);color:#fff;font-weight:600;padding:5px 12px;">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Services Modal -->
+  <div id="tazft-services-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="tazft-modal-content animate-pop tazft-adv-modal" style="max-width: 288px; padding: 12px 6vw 18px 6vw;">
+      <button class="tazft-back-btn tazft-creative tazft-bluebtn" onclick="tazftBackToMenu('tazft-services-modal')" aria-label="Back" title="Back">
+        <svg viewBox="0 0 29 29" width="20" height="20"><ellipse cx="14.5" cy="14.5" rx="13.5" ry="13.5" fill="#8f94fb" stroke="#232526" stroke-width="2"/><polyline points="17,9 12,14.5 17,20" fill="none" stroke="#fff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="tazft-premium-card tazft-premium-glass-blue tazft-card-attractive" style="padding:12px 8px 10px 8px;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
+          <span class="tazft-card-badge tazft-bg-blue" style="padding:3px 9px;font-size:1em;">S</span>
+          <div class="tazft-card-title" style="font-size:1em; color:#8f94fb;">Professional Services</div>
+        </div>
+        <div class="tazft-card-section" style="font-size:0.99em;">
+          <ul style="padding-left:0; margin:0;">
+            <li style="display: flex; gap: 6px; margin-bottom:7px;">
+              <span class="tazft-bullet tazft-gold" style="color:#fc4a1a;">1</span>
+              <span style="color:#232526;">Premium Web & App Development</span>
+            </li>
+            <li style="display: flex; gap: 6px; margin-bottom:7px;">
+              <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">2</span>
+              <span style="color:#232526;">Responsive UI/UX, Branding & Design</span>
+            </li>
+            <li style="display: flex; gap: 6px; margin-bottom:7px;">
+              <span class="tazft-bullet tazft-gold" style="color:#fcb900;">3</span>
+              <span style="color:#232526;">E-commerce & Payment Integration</span>
+            </li>
+            <li style="display: flex; gap: 6px; margin-bottom:7px;">
+              <span class="tazft-bullet tazft-blue" style="color:#4e54c8;">4</span>
+              <span style="color:#232526;">Automation, API & System Integration</span>
+            </li>
+            <li style="display: flex; gap: 6px; margin-bottom:7px;">
+              <span class="tazft-bullet tazft-gold" style="color:#fc4a1a;">5</span>
+              <span style="color:#232526;">SEO, Performance & Analytics</span>
+            </li>
+            <li style="display: flex; gap: 6px; margin-bottom:7px;">
+              <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">6</span>
+              <span style="color:#232526;">Security Consulting & Hardening</span>
+            </li>
+            <li style="display: flex; gap: 6px;">
+              <span class="tazft-bullet tazft-gold" style="color:#fcb900;">7</span>
+              <span style="color:#232526;">Maintenance & Lifetime Support</span>
+            </li>
+          </ul>
+        </div>
+        <div class="tazft-card-divider" style="margin:9px 0;"></div>
+        <div class="tazft-card-section" style="font-size:0.96em;">
+          <div class="tazft-card-contact-title" style="margin-bottom:6px; color:#8f94fb;">About & Website</div>
+          <ul style="padding-left:0; margin:0;">
+            <li style="display:flex;gap:6px;">
+              <span class="tazft-bullet tazft-blue" style="font-size:1em;color:#8f94fb;">✓</span>
+              <span style="color:#232526;">This site is developed and maintained by Hafizul Islam.</span>
+            </li>
+            <li style="display:flex;gap:6px;">
+              <span class="tazft-bullet tazft-gold" style="font-size:1em;color:#fcb900;">✓</span>
+              <span style="color:#232526;">Comprehensive info about services & features.</span>
+            </li>
+            <li style="display:flex;gap:6px;">
+              <span class="tazft-bullet tazft-blue" style="font-size:1em;color:#4e54c8;">✓</span>
+              <span style="color:#232526;">Modern aesthetics, mobile-first design, premium UX.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Features Modal -->
+  <div id="tazft-features-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="tazft-modal-content animate-pop tazft-adv-modal" style="max-width: 288px; padding: 12px 6vw 18px 6vw;">
+      <button class="tazft-back-btn tazft-creative tazft-darkbtn" onclick="tazftBackToMenu('tazft-features-modal')" aria-label="Back" title="Back">
+        <svg viewBox="0 0 29 29" width="20" height="20"><ellipse cx="14.5" cy="14.5" rx="13.5" ry="13.5" fill="#232526" stroke="#fcb900" stroke-width="2"/><polyline points="17,9 12,14.5 17,20" fill="none" stroke="#fcb900" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="tazft-premium-card tazft-premium-glass-dark tazft-card-attractive" style="color:#fff; padding:12px 8px 10px 8px;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
+          <span class="tazft-card-badge tazft-bg-dark" style="padding:3px 9px;font-size:1em;">F</span>
+          <div class="tazft-card-title" style="color:#fcb900;font-size:1em;">Key Features</div>
+        </div>
+        <ul style="padding-left:0; margin:0;font-size:0.99em;">
+          <li style="display: flex; gap: 7px; margin-bottom:5px;">
+            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
+            <span style="color:#fff;">Modern Aesthetics &amp; Animations</span>
+          </li>
+          <li style="display: flex; gap: 7px; margin-bottom:5px;">
+            <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">★</span>
+            <span style="color:#fff;">Adaptive Theming (Glassmorphism, Gradients)</span>
+          </li>
+          <li style="display: flex; gap: 7px; margin-bottom:5px;">
+            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
+            <span style="color:#fff;">Mobile-first Responsive UI</span>
+          </li>
+          <li style="display: flex; gap: 7px; margin-bottom:5px;">
+            <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">★</span>
+            <span style="color:#fff;">One-click Social &amp; Chat Links</span>
+          </li>
+          <li style="display: flex; gap: 7px; margin-bottom:5px;">
+            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
+            <span style="color:#fff;">Modular, Clean, Scalable Code</span>
+          </li>
+          <li style="display: flex; gap: 7px; margin-bottom:5px;">
+            <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">★</span>
+            <span style="color:#fff;">Secure, Ultra-fast Hosting</span>
+          </li>
+          <li style="display: flex; gap: 7px;">
+            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
+            <span style="color:#fff;">Accessibility &amp; UX Best Practices</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+    // Bismillah Header Typing Animation
+document.addEventListener('DOMContentLoaded', function() {
+  const salamText = document.getElementById('salamText');
+  const arabicText = 'السلام عليكم ورحمة الله وبركاته';
+  const cursor = salamText.querySelector('.typing-cursor');
+  
+  // Clear existing content while preserving cursor
+  while (salamText.firstChild !== cursor) {
+    salamText.removeChild(salamText.firstChild);
+  }
+  
+  let i = 0;
+  const typingSpeed = 90;
+  let lastTypedTime = 0;
+  
+  function typeCharacter(timestamp) {
+    if (!lastTypedTime) lastTypedTime = timestamp;
+    const elapsed = timestamp - lastTypedTime;
+    
+    if (elapsed >= typingSpeed && i < arabicText.length) {
+      const charNode = document.createTextNode(arabicText.charAt(i));
+      salamText.insertBefore(charNode, cursor);
+      i++;
+      lastTypedTime = timestamp;
     }
-    setInterval(() => { if (isPlaying && isOn) animateVisualizer(); else animateVisualizer(true); }, 120);
-
-    // --- YouTube Player API
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('ytplayer', {
-        height: '1',
-        width: '1',
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-      });
+    
+    if (i < arabicText.length) {
+      requestAnimationFrame(typeCharacter);
+    } else {
+      cursor.style.display = 'none';
     }
+  }
+  
+  // Start animation after a short delay
+  setTimeout(() => {
+    requestAnimationFrame(typeCharacter);
+  }, 500);
+});
 
-    function onPlayerReady(event) {
-      console.log("YouTube Player Ready");
-    }
+// Slider Script
+(function() {
+  const images = [
+    "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S1.png",
+    "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S2.jpg",
+    "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S3.png",
+    "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S4.jpg"
+  ];
+  // Assign an animation class for each slide
+  const anims = [
+    "anim-fade-pop",
+    "anim-slide-left",
+    "anim-zoom-rotate",
+    "anim-blur-in"
+  ];
 
-    function onPlayerStateChange(event) {
-      if (event.data === YT.PlayerState.PLAYING) {
-        isPlaying = true;
-        status.innerHTML = `<span style="color:var(--primary)">🔊 Listening live!</span>`;
-      } else if (event.data === YT.PlayerState.PAUSED) {
-        isPlaying = false;
-        status.innerHTML = `<span style="color:var(--primary)">⏸️ Radio paused.</span>`;
-      }
-    }
+  let idx = 0, animating = false, prevIdx = 0;
+  const slider = document.getElementById('slider1');
+  const prevBtn = slider.querySelector('.arrow.left');
+  const nextBtn = slider.querySelector('.arrow.right');
+  const dotsWrap = document.getElementById('sliderDots');
+  const audioBtn = document.getElementById('audioBtn');
+  const audio = document.getElementById('sliderMusic');
+  const timerFab = document.getElementById('timerFab');
+  const timerLabel = document.getElementById('timerLabel');
+  const timerProgress = timerFab.querySelector('.timer-progress circle');
+  const CIRCUM = 2 * Math.PI * 19; // r=19
+  let musicOn = false;
+  let timer = 4, slideInterval = null, timerTimeout = null;
 
-    // --- Fetch Live Stream (Public API Proxy)
-    async function getLiveVideoId(channelId) {
-      const proxyUrl = `https://api.codetabs.com/v1/proxy/?quest=https://www.youtube.com/channel/${channelId}/live`;
-      try {
-        const res = await fetch(proxyUrl);
-        const html = await res.text();
-        const videoIdMatch = html.match(/"videoId":"([^"]+)"/);
-        if (videoIdMatch && videoIdMatch[1]) {
-          const titleMatch = html.match(/"title":"([^"]+)"/);
-          const channelMatch = html.match(/"ownerChannelName":"([^"]+)"/);
-          const thumbMatch = html.match(/"thumbnail":{"thumbnails":\[{"url":"([^"]+)"/);
-          return {
-            id: { videoId: videoIdMatch[1] },
-            snippet: {
-              title: titleMatch ? titleMatch[1] : "Live Stream",
-              channelTitle: channelMatch ? channelMatch[1] : "YouTube Channel",
-              thumbnails: { default: { url: thumbMatch ? thumbMatch[1] : "https://i.ytimg.com/vi/" + videoIdMatch[1] + "/default_live.jpg" } }
-            }
-          };
-        }
-      } catch (e) {
-        console.error("Error fetching live stream:", e);
-        status.textContent = "⚠️ Could not check live status.";
-      }
-      return null;
-    }
+  // --- Slide Management ---
+  function renderSlides() {
+    // Remove any existing img elements
+    [...slider.querySelectorAll('.slide-img')].forEach(e => e.remove());
+    images.forEach((src, i) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Slide ${i+1}`;
+      img.className = 'slide-img';
+      // Assign correct animation class
+      if (i === idx) img.classList.add('active', anims[i%anims.length]);
+      else if (i === getPrevIdx(idx)) img.classList.add('prev');
+      else if (i === getNextIdx(idx)) img.classList.add('next');
+      img.setAttribute('loading', 'lazy');
+      slider.insertBefore(img, prevBtn);
+    });
+  }
+  
+  function getPrevIdx(i) { return (i-1+images.length)%images.length; }
+  function getNextIdx(i) { return (i+1)%images.length; }
 
-    // --- Set Now Playing Info
-    function setNowPlaying(item) {
-      if (!item) {
-        nowThumb.src = "https://yt3.ggpht.com/ytc/AAUvwngJ6b2oCqTyt5pQ=s48-c-k-c0x00ffffff-no-rj";
-        nowTitle.textContent = "No live stream";
-        nowDesc.textContent = "";
-        liveBadge.classList.remove("active");
-        return;
-      }
-      nowThumb.src = item.snippet.thumbnails.default.url;
-      nowTitle.textContent = item.snippet.title;
-      nowDesc.textContent = item.snippet.channelTitle;
-      liveBadge.classList.add("active");
-    }
+  function show(i, direction = 0) {
+    if (animating) return;
+    const nextIdx = (i + images.length) % images.length;
+    if (nextIdx === idx) return;
+    animating = true;
+    prevIdx = idx;
 
-    // --- Player Control
-    function setPlayer(videoId) {
-      if (videoId && isOn) {
-        player.loadVideoById(videoId);
-        player.playVideo();
-        status.innerHTML = `<span style="color:var(--primary)">🔊 Listening live!</span>`;
-        playBtn.style.display = "inline-flex";
-        pauseBtn.style.display = "inline-flex";
-        isPlaying = true;
-        liveBadge.classList.add("active");
-      } else {
-        player.stopVideo();
-        if (isOn) {
-          status.innerHTML = `<span style="color:var(--primary)">⏸️ No live stream currently.</span>`;
-          liveBadge.classList.remove("active");
-        } else {
-          status.innerHTML = `<span style="color:var(--primary)">⏹️ Radio is OFF.</span>`;
-          liveBadge.classList.remove("active");
-        }
-        playBtn.style.display = "none";
-        pauseBtn.style.display = "none";
-        isPlaying = false;
-      }
-    }
-
-    playBtn.onclick = () => player.playVideo();
-    pauseBtn.onclick = () => player.pauseVideo();
-
-    // --- Live Stream Polling
-    async function checkLive() {
-      if (!isOn) return;
-      const item = await getLiveVideoId("UCfBw_uwZb_oFLyVsjWk6owQ"); // Channel ID
-      if (item && item.id.videoId !== currentVideoId) {
-        currentVideoId = item.id.videoId;
-        setNowPlaying(item);
-        setPlayer(item.id.videoId);
-      } else if (!item) {
-        setNowPlaying(null);
-        setPlayer(null);
-      }
-    }
-
-    function startChecking() {
-      if (intervalId) clearInterval(intervalId);
-      checkLive();
-      intervalId = setInterval(checkLive, 30000); // Check every 30s
-    }
-
-    function stopChecking() {
-      if (intervalId) clearInterval(intervalId);
-      currentVideoId = null;
-      setPlayer(null);
-      setNowPlaying(null);
-    }
-
-    // --- Toggle Switch
-    radioSwitch.addEventListener("click", () => {
-      isOn = !isOn;
-      radioSwitch.classList.toggle("on", isOn);
-      switchIcon.textContent = isOn ? "🔊" : "🔇";
-      if (isOn) startChecking();
-      else stopChecking();
+    // Animate current slide out
+    const imgs = slider.querySelectorAll('.slide-img');
+    imgs.forEach((img, n) => {
+      img.classList.remove('active', 'prev', 'next', 'fadeout', ...anims);
+      if (n === idx) img.classList.add('fadeout');
+      if (n === getPrevIdx(nextIdx)) img.classList.add('prev');
+      if (n === getNextIdx(nextIdx)) img.classList.add('next');
     });
 
-    // --- Initial Setup
-    setNowPlaying(null);
-    startChecking();
-  </script>
+    setTimeout(() => {
+      idx = nextIdx;
+      renderSlides();
+      renderDots();
+      animating = false;
+    }, 480); // slightly longer than fadeout for smooth
+  }
+
+  // --- Dots ---
+  function renderDots() {
+    dotsWrap.innerHTML = '';
+    images.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === idx ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.type = 'button';
+      dot.onclick = () => { show(i); resetTimer(); };
+      dotsWrap.appendChild(dot);
+    });
+  }
+
+  // --- Timer ---
+  function updateTimerUI() {
+    timerLabel.textContent = timer + 's';
+    // Animate progress: dashoffset = (max-timer)/max * CIRCUM
+    const offset = (1 - timer/4) * CIRCUM;
+    timerProgress.setAttribute('stroke-dasharray', CIRCUM.toFixed(2));
+    timerProgress.setAttribute('stroke-dashoffset', offset.toFixed(2));
+  }
+  
+  function nextAutoSlide() {
+    show(idx + 1);
+    resetTimer();
+  }
+  
+  function resetTimer() {
+    timer = 4;
+    updateTimerUI();
+    clearInterval(slideInterval);
+    clearTimeout(timerTimeout);
+    // Animate timer label (scale pop)
+    timerLabel.style.transition = 'none';
+    timerLabel.style.transform = 'scale(1.24)';
+    setTimeout(() => {
+      timerLabel.style.transition = 'transform 0.34s cubic-bezier(.45,.02,.4,1)';
+      timerLabel.style.transform = 'scale(1)';
+    }, 20);
+    slideInterval = setInterval(() => {
+      timer--;
+      if (timer <= 0) {
+        updateTimerUI();
+        setTimeout(nextAutoSlide, 180); // small overlap for smooth
+      } else {
+        updateTimerUI();
+        // Animate label tick
+        timerLabel.style.transition = 'none';
+        timerLabel.style.transform = 'scale(1.15)';
+        setTimeout(() => {
+          timerLabel.style.transition = 'transform 0.26s cubic-bezier(.46,.05,.2,1)';
+          timerLabel.style.transform = 'scale(1)';
+        }, 24);
+      }
+    }, 1000);
+  }
+
+  // --- Audio ---
+  function toggleAudio() {
+    musicOn = !musicOn;
+    audioBtn.setAttribute("aria-pressed", musicOn);
+    if (musicOn) {
+      audioBtn.classList.add('playing');
+      audio.volume = 1;
+      audio.play().catch(() => {});
+    } else {
+      audioBtn.classList.remove('playing');
+      audio.pause();
+    }
+  }
+  
+  document.addEventListener('play', function(e) {
+    if (e.target !== audio && (e.target.tagName === 'AUDIO' || e.target.tagName === 'VIDEO')) {
+      if (musicOn) {
+        audio.pause();
+        audioBtn.classList.remove('playing');
+        musicOn = false;
+      }
+    }
+  }, true);
+
+  // --- Events ---
+  function setupEventListeners() {
+    prevBtn.onclick = () => { show(idx - 1); resetTimer(); };
+    nextBtn.onclick = () => { show(idx + 1); resetTimer(); };
+    slider.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') { show(idx - 1); resetTimer(); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { show(idx + 1); resetTimer(); e.preventDefault(); }
+    });
+    let startX = 0;
+    slider.addEventListener('touchstart', e => {
+      if (e.touches.length > 1) return;
+      startX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    slider.addEventListener('touchend', e => {
+      let endX = e.changedTouches[0].screenX;
+      if (endX - startX > 20) { show(idx - 1); resetTimer(); }
+      if (startX - endX > 20) { show(idx + 1); resetTimer(); }
+    }, { passive: true });
+    audioBtn.onclick = function(e) {
+      e.stopPropagation();
+      toggleAudio();
+    };
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        audio.pause();
+      } else if (musicOn) {
+        audio.play().catch(() => {});
+      }
+    });
+  }
+
+  // --- Init ---
+  function initSlider() {
+    renderSlides();
+    renderDots();
+    updateTimerUI();
+    resetTimer();
+    setupEventListeners();
+  }
+  initSlider();
+})();
+
+// Main Content Modals and Media Handling
+let currentPlayingMedia = null;
+
+// Pause all other media when one starts playing
+document.addEventListener('play', function(e) {
+    const media = e.target;
+    if (currentPlayingMedia && currentPlayingMedia !== media) {
+        if (currentPlayingMedia.pause) currentPlayingMedia.pause();
+        if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
+    }
+    currentPlayingMedia = media;
+}, true);
+
+// YouTube API handling (only allow one YouTube video at a time)
+let ytPlayers = [];
+function onYouTubeIframeAPIReady() {
+    document.querySelectorAll('.yt-embed').forEach((iframe, i) => {
+        if (!iframe.id) iframe.id = 'yt-player-' + i;
+        const player = new YT.Player(iframe.id, {
+            events: {
+                'onStateChange': (e) => {
+                    if (e.data === YT.PlayerState.PLAYING) {
+                        if (currentPlayingMedia && currentPlayingMedia !== player) {
+                            if (currentPlayingMedia.pause) currentPlayingMedia.pause();
+                            if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
+                        }
+                        currentPlayingMedia = player;
+                    }
+                }
+            }
+        });
+        ytPlayers.push(player);
+    });
+}
+
+// Load YouTube API if needed
+if (document.querySelector('.yt-embed') && !window.YT) {
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+}
+
+// Modal functions
+function openModal(modal) {
+    document.getElementById('modal-' + modal).classList.add('active');
+    document.body.style.overflow = 'hidden';
+    // trap focus in modal for accessibility
+    setTimeout(() => {
+        const modalOverlay = document.getElementById('modal-' + modal);
+        const focusable = modalOverlay.querySelectorAll('button, [tabindex="0"], audio, iframe');
+        if(focusable.length) focusable[0].focus();
+    }, 100);
+}
+
+function closeModal(modal) {
+    document.getElementById('modal-' + modal).classList.remove('active');
+    document.body.style.overflow = '';
+    if (currentPlayingMedia) {
+        if (currentPlayingMedia.pause) currentPlayingMedia.pause();
+        if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
+        currentPlayingMedia = null;
+    }
+}
+
+function showTab(btn, modal, tab) {
+    const modalElem = document.getElementById('modal-' + modal);
+    modalElem.querySelectorAll('.ultra-modal-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    modalElem.querySelectorAll('.modal-tab-content').forEach(col => {
+        col.style.display = (col.getAttribute('data-tab') === tab) ? '' : 'none';
+    });
+    // pause any media when changing tab
+    if (currentPlayingMedia) {
+        if (currentPlayingMedia.pause) currentPlayingMedia.pause();
+        if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
+        currentPlayingMedia = null;
+    }
+}
+
+// Footer Modal Functions
+function tazftOpenModal(id) {
+  document.querySelectorAll('.tazft-modal').forEach(m => m.style.display = 'none');
+  document.getElementById(id).style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  setTimeout(function() {
+    const modal = document.getElementById(id);
+    const focusable = modal.querySelectorAll('a,button,input,[tabindex]:not([tabindex="-1"])');
+    if (focusable.length) focusable[0].focus();
+    modal.setAttribute('tabindex', '0');
+  }, 50);
+}
+function tazftOpenSubModal(id) {
+  document.querySelectorAll('.tazft-modal').forEach(m => m.style.display = 'none');
+  document.getElementById(id).style.display = 'flex';
+  setTimeout(function() {
+    const modal = document.getElementById(id);
+    const focusable = modal.querySelectorAll('a,button,input,[tabindex]:not([tabindex="-1"])');
+    if (focusable.length) focusable[0].focus();
+    modal.setAttribute('tabindex', '0');
+  }, 50);
+}
+function tazftBackToMenu(currentId) {
+  tazftCloseModal(currentId);
+  setTimeout(function() { tazftOpenModal('tazft-main-modal'); }, 60);
+}
+function tazftCloseModal(id) {
+  document.getElementById(id).style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Accessibility: Escape closes modals
+document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+        document.querySelectorAll('.ultra-modal-overlay.active').forEach(modal => {
+            modal.classList.remove('active');
+        });
+        document.querySelectorAll('.tazft-modal').forEach(modal => {
+            modal.style.display = 'none';
+        });
+        document.body.style.overflow = '';
+        if (currentPlayingMedia) {
+            if (currentPlayingMedia.pause) currentPlayingMedia.pause();
+            if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
+            currentPlayingMedia = null;
+        }
+    }
+});
+
+// Initialize YouTube API if needed
+if (document.querySelector('.yt-embed') && !window.YT) {
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+}
+// All the existing JavaScript remains the same, just add this new function:
+function openModal(modal) {
+    // If opening main content modal, close any other open modals first
+    if (modal === 'main-content') {
+        document.querySelectorAll('.ultra-modal-overlay.active').forEach(m => {
+            if (m.id !== 'modal-main-content') m.classList.remove('active');
+        });
+    }
+    
+    document.getElementById('modal-' + modal).classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // trap focus in modal for accessibility
+    setTimeout(() => {
+        const modalOverlay = document.getElementById('modal-' + modal);
+        const focusable = modalOverlay.querySelectorAll('button, [tabindex="0"], audio, iframe');
+        if(focusable.length) focusable[0].focus();
+    }, 100);
+}
+
+// Rest of the existing JavaScript remains exactly the same
+// ...
+// Load YouTube API only when video tab is clicked
+function loadYTAPI() {
+  if (!window.YT) {
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+  }
+}
+
+// Call this when video tab button is clicked
+</script>
 </body>
-</html>    
+</html>
