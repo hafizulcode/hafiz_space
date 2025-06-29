@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio & Video - FURFURA SHARIF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background 0.4s;
+    }
+    header {
+      width: 100vw;
+      background: linear-gradient(90deg, #1c0f3c 0%, #6a53a1 100%);
+      color: #fff;
+      padding: 2.2rem 0 1.2rem 0;
+      text-align: center;
+      letter-spacing: 2.2px;
+      box-shadow: 0 4px 22px rgba(36,26,87,0.22), 0 0.5px 8px rgba(106,48,147,0.14);
+      font-size: 2.1rem;
+      font-weight: 900;
+      border-bottom-left-radius: 2.5rem;
+      border-bottom-right-radius: 2.5rem;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 2.2rem;
+      text-shadow: 0 4px 18px #1c0f3cbb, 0 2px #6a53a1bb;
+      transition: background 0.3s;
+      box-sizing: border-box;
+      max-width: 100vw;
+      overflow-x: hidden;
+      user-select: none;
+    }
+    .tab-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 1.5rem;
+      margin-bottom: 2.1rem;
+      background: transparent;
+      width: 100vw;
+      max-width: 100vw;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    .tab-btn {
+      background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
+      color: #fff;
+      border: none;
+      border-radius: 1.5rem 1.5rem 0 0;
+      padding: 0.9rem 3rem;
+      font-size: 1.22rem;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      cursor: pointer;
+      box-shadow: 0 4px 18px #fc5c7d33, 0 1px 6px #6a82fb33;
+      outline: none;
+      border-bottom: 4px solid transparent;
+      position: relative;
+      z-index: 5;
+      min-width: 120px;
+      box-sizing: border-box;
+      transition:
+        background 0.22s,
+        color 0.22s,
+        box-shadow 0.18s,
+        border-bottom 0.18s,
+        transform 0.15s,
+        box-shadow 0.33s cubic-bezier(.4,0,.2,1);
+    }
+    .tab-btn.active,
+    .tab-btn:hover,
+    .tab-btn:focus {
+      background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+      color: #fff;
+      border-bottom: 4px solid #f7c873;
+      box-shadow: 0 8px 32px #fc5c7d99, 0 2px 10px #6a82fb99, 0 0 0 6px #ffe25933;
+      transform: scale(1.09) translateY(-4px);
+      outline: none;
+    }
+    .tab-btn:active {
+      filter: brightness(1.12) blur(0.5px);
+      box-shadow: 0 0 0 10px #ffe25922;
+      transform: scale(0.98);
+    }
+    .section {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto 2.2rem auto;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(135deg, #f8f5ff 50%, #ebe3ff 100%);
+      border-radius: 2rem;
+      box-shadow: 0 8px 32px #d4c6ee22, 0 2px 10px #d5aaff18;
+      padding: 2.2rem 2rem 2.1rem 2rem;
+      border: 2px solid #cbbff1;
+      outline: none;
+      color: #2d225e;
+      min-height: 340px;
+      z-index: 2;
+      animation: fadeIn 0.6s;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      transition: box-shadow .26s cubic-bezier(.4,0,.2,1), border 0.22s, background 0.18s;
+    }
+    .section.active {
+      display: flex;
+      animation: fadeIn 0.6s;
+    }
+    .section:hover, .section:focus-within {
+      box-shadow: 0 16px 48px #a483df44, 0 6px 24px #ffe25933, 0 0 0 2px #8f6ed5cc;
+      border-color: #8f6ed5;
+      background: linear-gradient(125deg, #fdf9ff 70%, #e2d2ff 100%);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .media-title {
+      font-size: 1.7rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #ffe259 0%, #8f6ed5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+      letter-spacing: 2.7px;
+      text-transform: uppercase;
+      text-shadow: 0 3px 14px #ffe25944, 0 1.5px #8f6ed5;
+      transition: letter-spacing 0.14s, filter 0.18s;
+      text-align: center;
+      user-select: none;
+      filter: drop-shadow(0 2px 8px #8f6ed522);
+    }
+    .media-title:hover, .media-title:focus {
+      letter-spacing: 4.4px;
+      filter: drop-shadow(0 6px 18px #ffe25999);
+    }
+    .media-desc {
+      color: #8f6ed5;
+      font-size: 1.14rem;
+      text-align: center;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.12em;
+      text-shadow: 0 1px 0 #8f6ed544, 0 0.5px 0 #fff5;
+      background: #f3f0fa;
+      border-radius: 0.95rem;
+      padding: 0.28rem 0.95rem;
+      border: 1.7px solid #cbbff1;
+      box-shadow: 0 1px 5px #ffe25911;
+      display: inline-block;
+      transition: background 0.19s, border 0.12s, color 0.16s, box-shadow 0.23s;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .media-desc:hover, .media-desc:focus {
+      background: #ffe259;
+      color: #6a53a1;
+      border-color: #8f6ed5;
+      box-shadow: 0 4px 12px #ffe25955, 0 2px 8px #8f6ed533;
+      outline: none;
+    }
+    .media-content {
+      width: 100%;
+      margin-bottom: 1.15rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    .audio-block, .video-block {
+      width: 100%;
+      background: #fff;
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 8px #cbbff13a;
+      border: 1.5px solid #ebe3ff;
+      margin-bottom: 1.4rem;
+      padding: 1.2rem 1rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition:
+        box-shadow 0.25s cubic-bezier(.4,0,.2,1),
+        border 0.17s, background 0.21s, transform 0.18s;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      cursor: pointer;
+    }
+    .audio-block:last-child, .video-block:last-child { margin-bottom: 0; }
+    .audio-block:hover, .audio-block:focus-within,
+    .video-block:hover, .video-block:focus-within {
+      background: linear-gradient(120deg, #f8f5ff 80%, #ffe25922 100%);
+      border-color: #ffe259;
+      box-shadow: 0 10px 32px #8f6ed544, 0 3px 12px #ffe25944;
+      transform: scale(1.025) translateY(-2px) rotate(-0.7deg);
+      outline: none;
+    }
+    .audio-title, .video-title {
+      font-size: 1.11rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      color: #6a53a1;
+      letter-spacing: 1.1px;
+      text-align: center;
+      transition: color 0.18s;
+      user-select: none;
+    }
+    .audio-block:hover .audio-title, .audio-block:focus-within .audio-title,
+    .video-block:hover .video-title, .video-block:focus-within .video-title {
+      color: #fc5c7d;
+      text-shadow: 0 1px 8px #8f6ed555;
+    }
+    audio {
+      width: 100%;
+      border-radius: 0.8rem;
+      background: #f8f5ff;
+      border: 2px solid #ffe259;
+      accent-color: #8f6ed5;
+      margin-bottom: 0.3rem;
+      outline: none;
+      box-shadow: 0 1px 5px #8f6ed522;
+      box-sizing: border-box;
+      transition: border 0.18s, box-shadow 0.17s;
+    }
+    .audio-block:hover audio,
+    .audio-block:focus-within audio {
+      border-color: #8f6ed5;
+      box-shadow: 0 3px 12px #8f6ed533;
+    }
+    .audio-block p, .video-block p {
+      color: #8f6ed5;
+      font-size: 1.01rem;
+      text-align: center;
+      margin: 0.4rem 0 0 0;
+      letter-spacing: 0.03em;
+      transition: color 0.16s;
+      user-select: none;
+    }
+    .audio-block:hover p, .audio-block:focus-within p,
+    .video-block:hover p, .video-block:focus-within p {
+      color: #fc5c7d;
+    }
+    .video-frame {
+      position:relative;
+      padding-bottom:56.25%;
+      height:0;
+      width:100%;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 14px #8f6ed533, 0 1px 7px #ffe25933;
+      border: 2.5px solid #ffe259;
+      background: #000;
+      margin-bottom: 0.5rem;
+      box-sizing: border-box;
+      transition: border 0.17s, box-shadow 0.17s;
+    }
+    .video-block:hover .video-frame, .video-block:focus-within .video-frame {
+      border-color: #8f6ed5;
+      box-shadow: 0 8px 32px #ffe25955, 0 2px 10px #8f6ed544;
+    }
+    .video-frame iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      border: none;
+      border-radius: 1rem;
+      background: #000;
+      box-sizing: border-box;
+    }
+    .back-btn {
+      margin: 2.4rem auto 1.2rem auto;
+      display: block;
+      background: linear-gradient(90deg, #8f6ed5 0%, #ffe259 100%);
+      color: #2d225e;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.8rem 2.7rem;
+      font-weight: 900;
+      font-size: 1.2rem;
+      letter-spacing: 1.6px;
+      cursor: pointer;
+      transition: 
+        background 0.24s, 
+        color 0.16s,
+        box-shadow 0.22s,
+        transform 0.16s,
+        letter-spacing 0.15s;
+      box-shadow: 0 4px 18px #8f6ed522, 0 1px 7px #ffe25918;
+      outline: none;
+      position: relative;
+      z-index: 3;
+      border: 2.5px solid #cbbff1;
+      box-sizing: border-box;
+      user-select: none;
+    }
+    .back-btn:hover, .back-btn:focus {
+      background: linear-gradient(90deg, #ffe259 10%, #8f6ed5 100%);
+      color: #fff;
+      box-shadow: 0 12px 32px #ffe25933, 0 5px 13px #8f6ed544, 0 0 0 8px #fc5c7d33;
+      transform: scale(1.10) rotate(-2deg);
+      text-shadow: 0 2px 6px #fff7;
+      letter-spacing: 2.2px;
+      border-color: #ffe259;
+    }
+    .back-btn:active::after {
+      content: "";
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 120%; height: 120%;
+      border-radius: 50%;
+      background: rgba(143,110,213,0.18);
+      transform: translate(-50%, -50%) scale(1.18);
+      animation: ripple .33s linear;
+      pointer-events: none;
+      z-index: 4;
+    }
+    @keyframes ripple {
+      from { opacity: 0.8; }
+      to   { opacity: 0; }
+    }
+    @media (max-width: 600px) {
+      html, body { max-width: 100vw; overflow-x: hidden; }
+      header { font-size: 1.19rem; padding: 1.2rem 0 0.7rem 0; border-bottom-left-radius: 1.2rem; border-bottom-right-radius: 1.2rem; }
+      .section { padding: 1.3rem .7rem 1.1rem .7rem; }
+      .audio-block, .video-block { padding: 0.8rem 0.5rem 0.7rem 0.5rem;}
+      .media-title { font-size: 1.14rem; }
+      .media-desc { font-size: 0.99rem; }
+      .back-btn { font-size: 0.98rem; padding: 0.5rem 1.5rem; }
+      .tab-btn { font-size: 1rem; padding: 0.7rem 1.5rem;}
+      .tab-row { gap: 0.7rem; }
+      .section { max-width: 99vw; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    FURFURA SHARIF &mdash; Audio & Video Collection
+  </header>
+
+  <div class="tab-row">
+    <button class="tab-btn active" id="audio-tab" onclick="showSection('audio-section')">Audio</button>
+    <button class="tab-btn" id="video-tab" onclick="showSection('video-section')">Video</button>
+  </div>
+
+  <section class="section active" id="audio-section">
+    <div class="media-title">Audio</div>
+    <div class="media-content">
+      <div class="audio-block" tabindex="0">
+        <div class="audio-title">Sufi Song 1</div>
+        <audio controls class="audio-player" preload="none">
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+        <p>Deep Sufi melodies for spiritual upliftment.</p>
+      </div>
+      <div class="audio-block" tabindex="0">
+        <div class="audio-title">Sufi Song 2</div>
+        <audio controls class="audio-player" preload="none">
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+        <p>Traditional Sufi rhythms and chants.</p>
+      </div>
+      <div class="audio-block" tabindex="0">
+        <div class="audio-title">Recitation 1</div>
+        <audio controls class="audio-player" preload="none">
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+        <p>Peaceful spiritual recitation.</p>
+      </div>
+    </div>
+    <div class="media-desc" tabindex="0">Spiritual recitations and Sufi music. Only one track can play at a time.</div>
+    <button class="back-btn" onclick="window.location='index.html'">&larr; Back Home</button>
+  </section>
+
+  <section class="section" id="video-section">
+    <div class="media-title">Video</div>
+    <div class="media-content">
+      <div class="video-block" tabindex="0">
+        <div class="video-title">Inspirational Lecture</div>
+        <div class="video-frame">
+          <iframe class="video-player" src="https://www.youtube.com/embed/6Dh-RL__uN4" allowfullscreen title="Sufi Lecture"></iframe>
+        </div>
+        <p>Motivational and enlightening talk for all.</p>
+      </div>
+      <div class="video-block" tabindex="0">
+        <div class="video-title">Dhikr Gathering</div>
+        <div class="video-frame">
+          <iframe class="video-player" src="https://www.youtube.com/embed/a3ICNMQW7Ok" allowfullscreen title="Dhikr Gathering"></iframe>
+        </div>
+        <p>Experience the serenity of a Dhikr session.</p>
+      </div>
+      <div class="video-block" tabindex="0">
+        <div class="video-title">Event Highlights</div>
+        <div class="video-frame">
+          <iframe class="video-player" src="https://www.youtube.com/embed/AQHk2bEvZy0" allowfullscreen title="Event Highlights"></iframe>
+        </div>
+        <p>Memorable moments from spiritual events.</p>
+      </div>
+    </div>
+    <div class="media-desc" tabindex="0">Inspirational lectures and events. Only one video can play at a time.</div>
+    <button class="back-btn" onclick="window.location='index.html'">Back Home</button>
+  </section>
+
+  <script>
+    // Section tab handling
+    function showSection(id) {
+      document.getElementById('audio-section').classList.remove('active');
+      document.getElementById('video-section').classList.remove('active');
+      document.getElementById('audio-tab').classList.remove('active');
+      document.getElementById('video-tab').classList.remove('active');
+      if(id === 'audio-section') {
+        document.getElementById('audio-section').classList.add('active');
+        document.getElementById('audio-tab').classList.add('active');
+      } else {
+        document.getElementById('video-section').classList.add('active');
+        document.getElementById('video-tab').classList.add('active');
+      }
+      document.getElementById(id).scrollIntoView({behavior: "smooth"});
+    }
+    // Only one audio can play at a time
+    document.addEventListener('play', function(e){
+      if(e.target.classList.contains('audio-player')){
+        var audios = document.querySelectorAll('.audio-player');
+        for(var i = 0, len = audios.length; i < len; i++){
+          if(audios[i] != e.target){
+            audios[i].pause();
+            audios[i].currentTime = 0;
+          }
+        }
+      }
+    }, true);
+    // Only one video can play at a time (YouTube)
+    function pauseOtherVideos(currentFrame) {
+      var iframes = document.querySelectorAll('.video-player');
+      for(var i=0; i<iframes.length; i++) {
+        if(iframes[i] !== currentFrame) {
+          var src = iframes[i].src;
+          iframes[i].src = src; // reload to stop
+        }
+      }
+    }
+    window.onload = function() {
+      var iframes = document.querySelectorAll('.video-player');
+      iframes.forEach(function(frame) {
+        frame.addEventListener('mouseenter', function() {
+          pauseOtherVideos(frame);
+        });
+        frame.addEventListener('focus', function() {
+          pauseOtherVideos(frame);
+        });
+      });
+    };
+  </script>
+</body>
+</html>
