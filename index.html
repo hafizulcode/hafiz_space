@@ -1827,6 +1827,8 @@
   <title>FURFURA SHARIF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,500,400,300&display=swap" rel="stylesheet">
+  <!-- Added a new font for the title only -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:700&display=swap" rel="stylesheet">
   <style>
     html, body {
       margin: 0;
@@ -1861,10 +1863,8 @@
     .premium-card {
       position: relative;
       background: linear-gradient(120deg, #fffdf9 58%, #f7faff 100%);
-      /* Rounded, organic corners */
       border-radius: 2.5rem;
-      /* Gradient + glow for border with rounded clipped corners */
-      border: 6px solid transparent;
+      border: 6px solid #23e3c9;
       background-clip: padding-box, border-box;
       box-shadow:
         0 0 0 8px #ffd70033,
@@ -1885,14 +1885,12 @@
       overflow: visible;
       z-index: 10;
       color: #212a39;
-      /* Two backgrounds: padding-box for main, border-box for border gradient */
       background-image:
         linear-gradient(120deg, #fffdf9 58%, #f7faff 100%),
         linear-gradient(95deg, #ffd700 10%, #23e3c9 60%, #1e68d6 100%);
       background-origin: padding-box, border-box;
       background-clip: padding-box, border-box;
       backdrop-filter: blur(1.3px);
-      /* Breathing animation always runs */
       animation: card-breathing 2.8s ease-in-out infinite;
       will-change: transform;
       margin: 0 auto;
@@ -1917,36 +1915,38 @@
       background-image:
         linear-gradient(120deg, #f8faff 65%, #fffbe7 100%),
         linear-gradient(90deg, #ffd700 0%, #1e68d6 100%);
+      border-color: #ffd700;
       box-shadow: 0 0 0 12px #ffd70044, 0 24px 54px 0 #ffd70029, 0 12px 30px #a6e3ff44, 0 0 0 10px #fffbe722;
       transform: scale(1.06) translateY(-2px) rotate(-1.3deg);
-      /* animation-play-state: paused;  <-- REMOVED SO BREATHING NEVER PAUSES */
     }
     .premium-card:active {
       outline: none;
+      border-color: #1e68d6;
       box-shadow: 0 0 0 14px #ffd70055, 0 26px 58px 0 #ffd70033, 0 12px 30px #23e3c922;
     }
 
+    /* Main title font and bold style changed */
     .main-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.55rem;
-      font-weight: 900;
+      font-family: 'Oswald', 'Montserrat', Arial, sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
       margin-bottom: 1.02rem;
-      letter-spacing: 2.3px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      background: linear-gradient(87deg, #1e68d6 10%, #23e3c9 45%, #ffd700 95%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 7px 25px #23e3c955, 0 1.5px 0px #fff6;
+      background: none;
+      color: #1e68d6;
+      text-shadow: 0 2px 25px #ffd70077, 0 1.5px 0px #fff6;
       filter: drop-shadow(0 2.5px 0 #fff8);
-      transition: letter-spacing 0.13s, filter 0.15s;
+      transition: letter-spacing 0.13s, filter 0.15s, color 0.2s;
       user-select: none;
+      font-style: normal;
     }
     .premium-card:hover .main-title, .premium-card:focus-within .main-title {
-      letter-spacing: 4px;
-      filter: drop-shadow(0 8px 20px #ffd70077);
+      letter-spacing: 7px;
+      filter: drop-shadow(0 8px 20px #ffd700bb);
+      color: #b99309;
     }
+
     .main-desc {
       color: #2d4969;
       font-size: 1.01rem;
@@ -2034,7 +2034,7 @@
         border-radius: 1.2rem;
       }
       .main-title {
-        font-size: 2.00rem;
+        font-size: 2.2rem;
       }
       .go-btn {
         font-size: 0.83rem;
