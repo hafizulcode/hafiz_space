@@ -1820,7 +1820,262 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FURFURA SHARIF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,500,400,300&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      box-sizing: border-box;
+      background: none;
+      overflow-x: hidden;
+    }
+    body {
+      min-height: 100vh;
+      display: block;
+      background: transparent;
+      width: 100vw;
+    }
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+    }
 
+    @keyframes card-breathing {
+      0%   { transform: scale(1);}
+      20%  { transform: scale(1.025);}
+      40%  { transform: scale(1.05);}
+      60%  { transform: scale(1.025);}
+      100% { transform: scale(1);}
+    }
+
+    .premium-card {
+      position: relative;
+      background: linear-gradient(120deg, #fffdf9 58%, #f7faff 100%);
+      /* Rounded, organic corners */
+      border-radius: 2.5rem;
+      /* Gradient + glow for border with rounded clipped corners */
+      border: 6px solid transparent;
+      background-clip: padding-box, border-box;
+      box-shadow:
+        0 0 0 8px #ffd70033,
+        0 10px 34px 0 rgba(36, 104, 214, 0.18),
+        0 3px 11px rgba(36, 227, 201, 0.10),
+        0 1.5px 0 rgba(0,0,0,0.03);
+      padding: 2.1rem 1.1rem 1.5rem 1.1rem;
+      text-align: center;
+      max-width: 340px;
+      width: 90vw;
+      transition:
+        box-shadow 0.22s cubic-bezier(.4,0,.2,1),
+        border 0.19s,
+        background 0.23s,
+        transform 0.18s cubic-bezier(.4,0,.2,1);
+      cursor: pointer;
+      outline: none;
+      overflow: visible;
+      z-index: 10;
+      color: #212a39;
+      /* Two backgrounds: padding-box for main, border-box for border gradient */
+      background-image:
+        linear-gradient(120deg, #fffdf9 58%, #f7faff 100%),
+        linear-gradient(95deg, #ffd700 10%, #23e3c9 60%, #1e68d6 100%);
+      background-origin: padding-box, border-box;
+      background-clip: padding-box, border-box;
+      backdrop-filter: blur(1.3px);
+      /* Breathing animation always runs */
+      animation: card-breathing 2.8s ease-in-out infinite;
+      will-change: transform;
+      margin: 0 auto;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .premium-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      z-index: 0;
+      background: 
+        radial-gradient(ellipse at 80% 13%, #f2d89d44 0%, transparent 60%),
+        radial-gradient(circle at 12% 90%, #a6e3ff44 0%, transparent 80%);
+      opacity: 0.28;
+      pointer-events: none;
+      transition: opacity 0.32s;
+      filter: blur(2.5px);
+    }
+    .premium-card:hover, .premium-card:focus-within {
+      background-image:
+        linear-gradient(120deg, #f8faff 65%, #fffbe7 100%),
+        linear-gradient(90deg, #ffd700 0%, #1e68d6 100%);
+      box-shadow: 0 0 0 12px #ffd70044, 0 24px 54px 0 #ffd70029, 0 12px 30px #a6e3ff44, 0 0 0 10px #fffbe722;
+      transform: scale(1.06) translateY(-2px) rotate(-1.3deg);
+      /* animation-play-state: paused;  <-- REMOVED SO BREATHING NEVER PAUSES */
+    }
+    .premium-card:active {
+      outline: none;
+      box-shadow: 0 0 0 14px #ffd70055, 0 26px 58px 0 #ffd70033, 0 12px 30px #23e3c922;
+    }
+
+    .main-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 900;
+      margin-bottom: 1.02rem;
+      letter-spacing: 2.3px;
+      text-transform: uppercase;
+      background: linear-gradient(87deg, #1e68d6 10%, #23e3c9 45%, #ffd700 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 7px 25px #23e3c955, 0 1.5px 0px #fff6;
+      filter: drop-shadow(0 2.5px 0 #fff8);
+      transition: letter-spacing 0.13s, filter 0.15s;
+      user-select: none;
+    }
+    .premium-card:hover .main-title, .premium-card:focus-within .main-title {
+      letter-spacing: 4px;
+      filter: drop-shadow(0 8px 20px #ffd70077);
+    }
+    .main-desc {
+      color: #2d4969;
+      font-size: 1.01rem;
+      font-weight: 400;
+      margin-bottom: 1.65rem;
+      letter-spacing: 0.11px;
+      text-shadow: 0 1px 0 #fff8, 0 0.5px 0 #b8e1ff44;
+      position: relative;
+      z-index: 2;
+      padding: 0.32rem 0.7rem;
+      line-height: 1.55;
+      background: rgba(255, 215, 0, 0.08);
+      border-radius: 1.3rem;
+      border: 1.1px solid #ffeabf;
+      display: inline-block;
+      transition: background 0.18s, border 0.12s, color 0.14s, box-shadow 0.14s;
+      box-shadow: 0 2px 8px #ffd7000e;
+      user-select: none;
+    }
+    .premium-card:hover .main-desc, .premium-card:focus-within .main-desc {
+      background: rgba(36, 227, 201, 0.13);
+      border-color: #23e3c9;
+      color: #134a3e;
+      box-shadow: 0 4px 18px #23e3c933;
+    }
+
+    .go-btn {
+      background: linear-gradient(90deg, #ffd700 0%, #23e3c9 68%, #1e68d6 100%);
+      color: #fff;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.9rem 2rem;
+      font-weight: 900;
+      font-size: 1.01rem;
+      letter-spacing: 1.3px;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: 0 5px 18px rgba(36,214,255,0.12), 0 2px 7px #ffd70022;
+      cursor: pointer;
+      transition: 
+        background 0.21s cubic-bezier(.4,0,.2,1), 
+        color 0.15s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.15s,
+        transform 0.13s,
+        letter-spacing 0.10s,
+        border 0.12s;
+      position: relative;
+      z-index: 2;
+      outline: none;
+      border: 2.1px solid #23e3c9;
+      margin-top: 0.88rem;
+      min-width: 135px;
+      color-scheme: dark;
+      text-shadow: 0 1.5px 6px #1e68d622;
+      text-transform: uppercase;
+    }
+    .go-btn:hover, .go-btn:focus {
+      background: linear-gradient(90deg, #23e3c9 0%, #ffd700 90%);
+      color: #1e68d6;
+      box-shadow: 0 12px 28px #ffd70033, 0 3px 13px #23e3c944;
+      transform: scale(1.08) rotate(-1.5deg);
+      text-shadow: 0 2px 10px #ffd70088;
+      letter-spacing: 2.1px;
+      border-color: #ffd700;
+    }
+    .go-btn:active::after {
+      content: "";
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 120%; height: 120%;
+      border-radius: 50%;
+      background: rgba(36,214,255,0.13);
+      transform: translate(-50%, -50%) scale(1.08);
+      animation: ripple .25s linear;
+      pointer-events: none;
+      z-index: 3;
+    }
+    @keyframes ripple {
+      from { opacity: 0.7; }
+      to   { opacity: 0; }
+    }
+    @media (max-width: 600px) {
+      .premium-card {
+        max-width: 99vw;
+        padding: 0.85rem .25rem 0.53rem .25rem;
+        border-radius: 1.2rem;
+      }
+      .main-title {
+        font-size: 2.00rem;
+      }
+      .go-btn {
+        font-size: 0.83rem;
+        padding: 0.46rem 0.9rem;
+        min-width: 84px;
+        border-radius: 1rem;
+      }
+      .main-desc {
+        font-size: 0.85rem;
+        padding: 0.09rem 0.13rem;
+        border-radius: 0.9rem;
+      }
+      body {
+        min-height: 100svh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Example: You can place a heading or intro here -->
+  <div style="text-align:center; margin-top:1.5rem; font-family:Montserrat, sans-serif; font-weight:700; letter-spacing:1.1px; color:#1e68d6;">
+    <!-- Add your top text here, or remove this div if not needed -->
+  </div>
+  <div class="card-container">
+    <div class="premium-card" onclick="window.location='furfura.html'" tabindex="0" role="button" aria-pressed="false">
+      <div class="main-title">FURFURA SHARIF</div>
+      <div class="main-desc">
+        Enjoy a premium spiritual audio & video library.<br>
+        <span style="font-weight:700;color:#1e68d6;">Explore Sufi soundscapes and visuals.<br>Click to continue.</span>
+      </div>
+      <button class="go-btn" type="button"
+        onclick="event.stopPropagation(); window.location='furfura.html';">
+        Enter Audio & Video
+      </button>
+    </div>
+  </div>
+  <div style="text-align:center; margin-bottom:1.5rem; font-family:Montserrat, sans-serif; font-weight:500; letter-spacing:0.7px; color:#23e3c9;">
+    <!-- Add your bottom text here, or remove this div if not needed -->
+  </div>
+</body>
+</html>
 
 
 
@@ -2017,6 +2272,40 @@
     </div>
   </div>
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer>
   <!-- Features Modal -->
   <div id="tazft-features-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
     <div class="tazft-modal-content animate-pop tazft-adv-modal" style="max-width: 288px; padding: 12px 6vw 18px 6vw;">
