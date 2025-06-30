@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
   <style>
-    /* Base Styles */
+    /* ========== BASE STYLES ========== */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -30,7 +30,7 @@
       line-height: 1.7;
     }
 
-    /* Bismillah Header Styles */
+    /* ========== BISMILLAH HEADER ========== */
     .header-container {
       background: radial-gradient(circle at top, #fcf6e3, #f6f5ee 80%);
       border-radius: 0 0 30px 30px;
@@ -102,7 +102,7 @@
       50% { opacity: 0; }
     }
 
-    /* Slider Styles */
+    /* ========== IMAGE SLIDER ========== */
     .slider-wrap {
       margin: 30px auto;
       padding: 0;
@@ -372,7 +372,7 @@
       opacity: 1;
     }
 
-    /* Main Content Styles */
+    /* ========== MAIN CONTENT ========== */
     .divine-ultra-root {
       padding: 32px 15px 80px;
       max-width: 1440px;
@@ -396,6 +396,7 @@
       z-index: 2;
       filter: drop-shadow(0 4px 50px rgba(247,230,163,0.17));
       animation: fadeInDown 1.2s cubic-bezier(.47,1.64,.41,.8) both;
+      cursor: pointer;
     }
 
     @keyframes fadeInDown {
@@ -476,7 +477,7 @@
       min-height: 205px;
       border-radius: 2.4rem;
       box-shadow: 0 9px 40px rgba(30,34,56,0.16);
-      border: 3px solid;
+      border: 6px double;
       background: #fff;
       cursor: pointer;
       display: flex;
@@ -498,7 +499,6 @@
       box-shadow: 0 30px 72px rgba(244,140,6,0.22), 0 5px 28px rgba(28,181,224,0.14);
       transform: scale(1.075) translateY(-10px) rotate(-1deg);
       z-index: 12;
-      border-width: 4px;
     }
 
     .ultra-card .corner-glow {
@@ -521,9 +521,9 @@
       to { opacity: .31;}
     }
 
-    .ultra-card.card1 { background: linear-gradient(135deg, #fbeee6 0%, #fffbe6 100%); border-color: #f48c06; }
-    .ultra-card.card2 { background: linear-gradient(135deg, #e6f6fb 0%, #f3fafe 100%); border-color: #1cb5e0; }
-    .ultra-card.card3 { background: linear-gradient(135deg, #f5e6fb 0%, #faf4ff 100%); border-color: #a259d9; }
+    .ultra-card.card1 { background: linear-gradient(135deg, #fbeee6 0%, #fffbe6 100%); border-color: #f48c06; outline: 5px solid #fffbe6; }
+    .ultra-card.card2 { background: linear-gradient(135deg, #e6f6fb 0%, #f3fafe 100%); border-color: #1cb5e0; outline: 5px solid #f3fafe; }
+    .ultra-card.card3 { background: linear-gradient(135deg, #f5e6fb 0%, #faf4ff 100%); border-color: #a259d9; outline: 5px solid #faf4ff; }
     .ultra-card.card1 .corner-glow { background: #f48c06; }
     .ultra-card.card2 .corner-glow { background: #1cb5e0; }
     .ultra-card.card3 .corner-glow { background: #a259d9; }
@@ -617,7 +617,7 @@
       box-shadow: 0 12px 32px rgba(30,34,56,0.21);
     }
 
-    /* Modal Overlay and Modal */
+    /* ========== MODAL STYLES ========== */
     .ultra-modal-overlay {
       position: fixed;
       top: 0;
@@ -656,7 +656,8 @@
       background-clip: padding-box;
       animation: modal-fade-in 0.75s cubic-bezier(.47,1.64,.41,.8);
       margin: 0;
-      border: 3.5px solid;
+      border: 6px double;
+      outline: 5px solid #fffbe6;
     }
 
     .ultra-modal.modal1 { background: linear-gradient(120deg, #fff 85%, #fbeee6 100%); border-color: #f48c06; }
@@ -943,7 +944,7 @@
       min-height: 180px;
     }
 
-    /* Islamic Library Card Styles */
+    /* ========== ISLAMIC LIBRARY CARD ========== */
     .islamic-library-card-embedbox {
       display: flex;
       justify-content: center;
@@ -1276,148 +1277,191 @@
       transform: scale(1.1);
     }
 
-    /* Premium Footer Styles */
-    #tazft-footer {
-      background: linear-gradient(135deg, #232526 0%, #414345 100%); 
-      color: #fff; 
-      padding: 8px 0 2px 0; 
-      font-family: 'Segoe UI', Arial, sans-serif; 
-      box-shadow: 0 -4px 24px rgba(0,0,0,0.3); 
-      position: relative; 
-      z-index: 2222; 
-      border-radius: 15px 15px 0 0; 
-      max-width: 430px; 
-      margin: 0 auto; 
-      border-top: 2px solid #fcb90055;
+    /* ========== FURFURA SHARIF CARD ========== */
+    .furfura-card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      margin: 30px 0;
     }
 
-    .tazft-explore-btn {
-      background: linear-gradient(135deg, #fcb900 0%, #fc4a1a 100%);
-      color: #fff; border: none; border-radius: 12px;
-      font-weight: 700; font-size: 0.95rem; padding: 9px 18px 9px 15px;
-      cursor: pointer; box-shadow: 0 4px 14px rgba(252,185,0,0.27);
-      letter-spacing: 0.11px; outline: none; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-      border: 2px solid rgba(255,255,255,0.22);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.19);
-    }
-    .tazft-explore-btn:hover, .tazft-explore-btn:focus {
-      background: linear-gradient(135deg, #fc4a1a 0%, #fcb900 100%);
-      color: #232526; box-shadow: 0 6px 20px rgba(252,185,0,0.32); transform: scale(1.06);
+    @keyframes card-breathing {
+      0%   { transform: scale(1);}
+      20%  { transform: scale(1.025);}
+      40%  { transform: scale(1.05);}
+      60%  { transform: scale(1.025);}
+      100% { transform: scale(1);}
     }
 
-    .tazft-modal {
-      display: none; position: fixed; z-index: 99999;
-      left: 0; top: 0; width: 100vw; height: 100vh;
-      background: radial-gradient(ellipse at center, rgba(34,37,59,0.92) 66%,rgba(74,78,105,0.86) 100%);
-      justify-content: center; align-items: center;
-      animation: tazft-modalBgIn 0.18s ease-out;
+    .premium-card {
+      position: relative;
+      background: linear-gradient(120deg, #fffdf9 58%, #f7faff 100%);
+      border-radius: 2.5rem;
+      border: 6px solid #23e3c9;
+      background-clip: padding-box, border-box;
+      box-shadow:
+        0 0 0 8px #ffd70033,
+        0 10px 34px 0 rgba(36, 104, 214, 0.18),
+        0 3px 11px rgba(36, 227, 201, 0.10),
+        0 1.5px 0 rgba(0,0,0,0.03);
+      padding: 2.1rem 1.1rem 1.5rem 1.1rem;
+      text-align: center;
+      max-width: 340px;
+      width: 90vw;
+      transition:
+        box-shadow 0.22s cubic-bezier(.4,0,.2,1),
+        border 0.19s,
+        background 0.23s,
+        transform 0.18s cubic-bezier(.4,0,.2,1);
+      cursor: pointer;
+      outline: none;
+      overflow: visible;
+      z-index: 10;
+      color: #212a39;
+      background-image:
+        linear-gradient(120deg, #fffdf9 58%, #f7faff 100%),
+        linear-gradient(95deg, #ffd700 10%, #23e3c9 60%, #1e68d6 100%);
+      background-origin: padding-box, border-box;
+      background-clip: padding-box, border-box;
+      backdrop-filter: blur(1.3px);
+      animation: card-breathing 2.8s ease-in-out infinite;
+      will-change: transform;
+      margin: 0 auto;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
     }
-    @keyframes tazft-modalBgIn { from { opacity:0; } to { opacity:1; } }
-    .tazft-modal-content { 
-      background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(252,185,0,0.07) 100%);
-      color: #232526; border-radius: 14px;
-      box-shadow: 0 8px 22px 4px rgba(0,0,0,0.23), 0 2px 8px rgba(252,185,0,0.13);
-      padding: 15px; width: 97vw; 
-      max-width: 315px; position: relative; text-align: left;
-      animation: tazft-popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid rgba(255,255,255,0.2); outline: 1px solid rgba(255,255,255,0.06);
-      min-height: 38px; font-size: 0.98rem; backdrop-filter: blur(10px);
+    .premium-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      z-index: 0;
+      background: 
+        radial-gradient(ellipse at 80% 13%, #f2d89d44 0%, transparent 60%),
+        radial-gradient(circle at 12% 90%, #a6e3ff44 0%, transparent 80%);
+      opacity: 0.28;
+      pointer-events: none;
+      transition: opacity 0.32s;
+      filter: blur(2.5px);
     }
-    .tazft-glass { background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(35,37,38,0.89) 100%); backdrop-filter: blur(13px); }
-    .tazft-premium-option-wrap { display: flex; flex-wrap: wrap; gap: 16px 12px; justify-content: center; margin-top: 10px; }
-    .tazft-pill-option {
-      background: linear-gradient(135deg, rgba(255,255,255,0.91) 0%, #fcb900 100%);
-      color: #232526; border: none; border-radius: 999px;
-      font-weight: 700; font-size: 0.97rem; padding: 10px 20px 10px 14px;
-      cursor: pointer; box-shadow: 0 2px 7px rgba(0,0,0,0.08);
-      display: flex; align-items: center; gap: 8px; min-width: 108px;
-      position: relative; border: 1px solid rgba(252,185,0,0.18); transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    .premium-card:hover, .premium-card:focus-within {
+      background-image:
+        linear-gradient(120deg, #f8faff 65%, #fffbe7 100%),
+        linear-gradient(90deg, #ffd700 0%, #1e68d6 100%);
+      border-color: #ffd700;
+      box-shadow: 0 0 0 12px #ffd70044, 0 24px 54px 0 #ffd70029, 0 12px 30px #a6e3ff44, 0 0 0 10px #fffbe722;
+      transform: scale(1.06) translateY(-2px) rotate(-1.3deg);
     }
-    .tazft-pill-option .tazft-option-icon { width: 27px; height: 27px; font-size: 1em; margin-right:1px; }
-    .tazft-pill-option .tazft-option-label { font-size: 1em; font-weight: 700; }
-    .tazft-pill-option:hover, .tazft-pill-option:focus {
-      background: linear-gradient(135deg, #fcb900 0%, #8f94fb 100%);
-      color: #232526; transform: scale(1.07) translateY(-1px);
+    .premium-card:active {
+      outline: none;
+      border-color: #1e68d6;
+      box-shadow: 0 0 0 14px #ffd70055, 0 26px 58px 0 #ffd70033, 0 12px 30px #23e3c922;
     }
-    .tazft-premium-card { border: 1px solid rgba(252,185,0,0.18); box-shadow: 0 4px 12px rgba(0,0,0,0.10); margin-bottom: 0; margin-top: 5px; padding-bottom: 10px; padding-top: 7px; border-radius: 10px; }
-    .tazft-premium-glass-gold { background: linear-gradient(135deg, rgba(252,185,0,0.09) 0%, rgba(255,255,255,0.92) 100%); }
-    .tazft-premium-glass-blue { background: linear-gradient(135deg, rgba(143,148,251,0.07) 0%, rgba(255,255,255,0.91) 100%); }
-    .tazft-premium-glass-dark { background: linear-gradient(135deg, rgba(35,37,38,0.94) 0%, rgba(65,67,69,0.96) 100%); color: #fff; }
-    .tazft-card-attractive { box-shadow: 0 4px 12px rgba(0,0,0,0.10); }
-    .tazft-card-title { font-weight: 700; font-size: 1em; letter-spacing: 0.3px; }
-    .tazft-hi-initials, .tazft-card-badge { border-radius: 7px; padding: 3px 9px; font-size: 1em; font-weight: 700; box-shadow: 0 2px 8px rgba(252,185,0,0.10); }
-    .tazft-bg-blue { background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%); color: #fff; }
-    .tazft-bg-dark { background: linear-gradient(135deg, #232526 0%, #414345 100%); color: #fcb900;}
-    .tazft-card-section { margin-bottom: 7px; font-size: 0.97em; color: #232526; line-height: 1.35; }
-    .tazft-card-divider { border-top: 1px solid rgba(252,185,0,0.13); margin: 9px 0; }
-    .tazft-card-contact-title { font-weight: 600; color: #fcb900; margin-bottom: 6px; font-size: 0.98em; }
-    .tazft-card-contact { margin-bottom: 7px; }
-    .tazft-card-icon { display: inline-block; width: 1.4em; }
-    .tazft-contact-link { color: #fcb900; text-decoration: none; font-weight: 500; transition: all 0.18s; font-size: 0.97em; }
-    .tazft-contact-link:hover, .tazft-contact-link:focus { color: #8f94fb; text-decoration: underline; }
-    .tazft-fb-list { display: flex; flex-direction: column; gap: 8px 0; margin-bottom: 2px; }
-    .tazft-fb-profile { display: flex; align-items: center; gap: 7px; text-decoration: none; font-size: 0.96em; font-weight: 600; color: #232526; transition: all 0.22s; padding: 7px 8px; border-radius: 8px; background: rgba(255,255,255,0.8); }
-    .tazft-fb-profile img { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #fff; background: #fff; object-fit: cover; }
-    .tazft-fb-avatar-border { padding: 1px; border-radius: 50%; }
-    .tazft-fb-profile span { color: #1877f2; font-weight: 700; letter-spacing: 0.1px;}
-    .tazft-fb-profile:hover { background: #fff; transform: translateY(-1px);}
-    .tazft-fb-profile:hover span { color: #fcb900;}
-    .tazft-social-links { display: flex; flex-wrap: wrap; gap: 5px 4px; font-size: 0.97em; margin-top: 6px; justify-content: center; }
-    .tazft-contact-social { color: #fcb900; text-decoration: none; background: linear-gradient(135deg, rgba(252,185,0,0.08) 0%, rgba(255,255,255,0.79) 100%); border-radius: 20px; padding: 4px 10px; font-weight: 600; font-size: 0.95em; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);}
-    .tazft-contact-social:hover, .tazft-contact-social:focus { background: linear-gradient(135deg, #8f94fb 0%, #fcb900 100%); color: #fff; transform: scale(1.05) translateY(-1px);}
-    .tazft-card-section ul { margin: 0; padding-left: 1em; line-height: 1.3;}
-    .tazft-card-section ul li { margin-bottom: 5px;}
-    .tazft-bullet { font-size: 1em; font-weight: 700; margin-right: 6px; }
-    .tazft-gold { color: #fcb900; }
-    .tazft-blue { color: #8f94fb; }
-    /* Modal controls */
-    .tazft-close-btn.tazft-cross, .tazft-back-btn.tazft-creative { position: absolute; top: 10px; right: 10px; left: auto; background: linear-gradient(135deg, #fcb900 40%, #fff 120%); border: none; font-size: 1em; cursor: pointer; padding: 0; border-radius: 50%; width: 28px; height: 28px; min-width: 28px; min-height: 28px; box-shadow: 0 2px 7px rgba(0,0,0,0.14); border: 1.2px solid #ffedb8; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); outline: none; z-index: 2;}
-    .tazft-close-btn.tazft-cross:hover, .tazft-close-btn.tazft-cross:focus, 
-    .tazft-back-btn.tazft-creative:hover, .tazft-back-btn.tazft-creative:focus { background: linear-gradient(135deg, #fff 20%, #fcb900 100%); color: #232526; transform: scale(1.09);}
-    .tazft-back-btn.tazft-bluebtn svg ellipse { fill: #8f94fb!important; stroke: #232526!important;}
-    .tazft-back-btn.tazft-bluebtn svg polyline { stroke: #fff!important;}
-    .tazft-back-btn.tazft-darkbtn svg ellipse { fill: #232526!important; stroke: #fcb900!important;}
-    .tazft-back-btn.tazft-darkbtn svg polyline { stroke: #fcb900!important;}
-    @keyframes tazft-popIn { 0% { transform: scale(0.85) rotate(-5deg); opacity: 0; filter: blur(1.5px); } 55% { transform: scale(1.05) rotate(2deg); filter: blur(0); } 85% { transform: scale(0.97) rotate(-1deg); } 100% { transform: scale(1) rotate(0); opacity: 1; filter: blur(0); } }
 
-    /* Responsive Enhancements */
-    @media (max-width: 900px) {
-        .ultra-modal { max-width: 99vw;}
+    .main-title {
+      font-family: 'Oswald', 'Montserrat', Arial, sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 1.02rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: none;
+      color: #1e68d6;
+      text-shadow: 0 2px 25px #ffd70077, 0 1.5px 0px #fff6;
+      filter: drop-shadow(0 2.5px 0 #fff8);
+      transition: letter-spacing 0.13s, filter 0.15s, color 0.2s;
+      user-select: none;
+      font-style: normal;
     }
-    
-    @media (max-width: 700px) {
-        .divine-ultra-heading-card {padding: 30px 10px 26px;}
+    .premium-card:hover .main-title, .premium-card:focus-within .main-title {
+      letter-spacing: 7px;
+      filter: drop-shadow(0 8px 20px #ffd700bb);
+      color: #b99309;
     }
-    
-    @media (max-width: 600px) {
-        .divine-ultra-root { padding-bottom: 32px;}
-        .divine-ultra-heading-card {
-            padding: 24px 8px 12px;
-            border-radius: 2.2rem;
-            margin-top: 12px;
-        }
-        .divine-ultra-heading-card h1 {
-            font-size: 1.35rem;
-        }
-        .divine-ultra-heading-card .subtitle {
-            font-size: 0.98rem;
-        }
-        .ultra-cards-flex { gap: 10px; }
-        .ultra-card { max-width: 100%; }
-        .ultra-modal { border-radius: 1.5rem; height: 95vh; }
-        .ultra-modal-header { padding: 12px 6px 5px; }
-        .ultra-modal-header .modal-header-icon { margin: 0 8px 0 10px; font-size: 1.6rem; width: 40px; height: 40px; }
-        .ultra-modal-header h2 { font-size: 1.18rem; }
-        .ultra-modal-close { top: 8px; right: 12px; width: 30px; height: 30px; font-size: 1.09rem; }
-        .ultra-modal-tab { padding: 8px 6px; font-size: 0.92rem; }
-        .ultra-modal-content { padding: 8px 0; }
-        .ultra-modal-col { padding: 0 6px; gap: 8px; }
-        .media-header { padding: 8px 6px; }
-        .media-icon { font-size: 1.2rem; margin-right: 7px; }
-        .media-title { font-size: 0.99rem; }
-        .media-date { font-size: 0.85rem; }
-        .media-player { padding: 0 6px 7px; }
-        .media-player iframe { min-height: 120px;}
+
+    .main-desc {
+      color: #2d4969;
+      font-size: 1.01rem;
+      font-weight: 400;
+      margin-bottom: 1.65rem;
+      letter-spacing: 0.11px;
+      text-shadow: 0 1px 0 #fff8, 0 0.5px 0 #b8e1ff44;
+      position: relative;
+      z-index: 2;
+      padding: 0.32rem 0.7rem;
+      line-height: 1.55;
+      background: rgba(255, 215, 0, 0.08);
+      border-radius: 1.3rem;
+      border: 1.1px solid #ffeabf;
+      display: inline-block;
+      transition: background 0.18s, border 0.12s, color 0.14s, box-shadow 0.14s;
+      box-shadow: 0 2px 8px #ffd7000e;
+      user-select: none;
+    }
+    .premium-card:hover .main-desc, .premium-card:focus-within .main-desc {
+      background: rgba(36, 227, 201, 0.13);
+      border-color: #23e3c9;
+      color: #134a3e;
+      box-shadow: 0 4px 18px #23e3c933;
+    }
+
+    .go-btn {
+      background: linear-gradient(90deg, #ffd700 0%, #23e3c9 68%, #1e68d6 100%);
+      color: #fff;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.9rem 2rem;
+      font-weight: 900;
+      font-size: 1.01rem;
+      letter-spacing: 1.3px;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: 0 5px 18px rgba(36,214,255,0.12), 0 2px 7px #ffd70022;
+      cursor: pointer;
+      transition: 
+        background 0.21s cubic-bezier(.4,0,.2,1), 
+        color 0.15s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.15s,
+        transform 0.13s,
+        letter-spacing 0.10s,
+        border 0.12s;
+      position: relative;
+      z-index: 2;
+      outline: none;
+      border: 2.1px solid #23e3c9;
+      margin-top: 0.88rem;
+      min-width: 135px;
+      color-scheme: dark;
+      text-shadow: 0 1.5px 6px #1e68d622;
+      text-transform: uppercase;
+    }
+    .go-btn:hover, .go-btn:focus {
+      background: linear-gradient(90deg, #23e3c9 0%, #ffd700 90%);
+      color: #1e68d6;
+      box-shadow: 0 12px 28px #ffd70033, 0 3px 13px #23e3c944;
+      transform: scale(1.08) rotate(-1.5deg);
+      text-shadow: 0 2px 10px #ffd70088;
+      letter-spacing: 2.1px;
+      border-color: #ffd700;
+    }
+    .go-btn:active::after {
+      content: "";
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 120%; height: 120%;
+      border-radius: 50%;
+      background: rgba(36,214,255,0.13);
+      transform: translate(-50%, -50%) scale(1.08);
+      animation: ripple .25s linear;
+      pointer-events: none;
+      z-index: 3;
+    }
+    @keyframes ripple {
+      from { opacity: 0.7; }
+      to   { opacity: 0; }
+    }
+
+ 
         
         /* Slider Responsive */
         .slider-wrap {
@@ -1482,36 +1526,486 @@
           align-self: center;
         }
         
-        /* Footer Responsive */
-        .tazft-modal-content, .tazft-glass, .tazft-adv-modal { 
-          padding: 8px 2vw; 
-          max-width: 99vw;
-        } 
-        .tazft-pill-option { 
-          padding: 8px 3vw 8px 3vw; 
-          font-size: 0.96em;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         :root {
+      --main-gold: #fcb900;
+      --main-orange: #fc4a1a;
+      --main-blue: #8f94fb;
+      --main-dark: #232526;
+      --main-gray: #414345;
+      --main-white: #fff;
+      --main-pink: #ff51a4;
+      --main-green: #25d366;
+      --main-cyan: #24c6dc;
+      --main-bg-glass: rgba(255,255,255,0.98);
+      --circle-btn-size: 72px;
+      --modal-max-width: 380px;
+      --click-indicator-size: 29px;
+    }
+    html { scroll-behavior: smooth; }
+    body { min-height: 180vh; transition: background 0.25s, color 0.25s; }
+
+    /* ========== CIRCLE FOOTER BUTTON ========== */
+    .footer-circle-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: var(--circle-btn-size);
+      height: var(--circle-btn-size);
+      border-radius: 50%;
+      background: conic-gradient(from 205deg, var(--main-gold) 0deg, var(--main-orange) 110deg, var(--main-blue) 250deg, var(--main-pink) 330deg, var(--main-gold) 360deg);
+      color: var(--main-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.7rem;
+      box-shadow: 0 6px 26px rgba(252,185,0,0.33),0 2px 8px rgba(34,37,38,0.08);
+      cursor: pointer;
+      z-index: 10000;
+      transition: all 0.28s cubic-bezier(.32,1.2,.45,1);
+      border: none;
+      outline: none;
+      opacity: 0;
+      pointer-events: none;
+      overflow: visible;
+    }
+    .footer-circle-btn.visible {
+      opacity: 1;
+      pointer-events: auto;
+      animation: circlePopIn 0.37s cubic-bezier(.45,1.5,.5,1.05);
+    }
+    @keyframes circlePopIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .footer-circle-btn:focus-visible {
+      outline: 3px solid var(--main-cyan);
+      outline-offset: 2px;
+    }
+    .footer-circle-btn:hover {
+      transform: scale(1.16) rotate(-5deg);
+      box-shadow: 0 13px 38px rgba(252,185,0,0.43), 0 8px 20px rgba(34,37,38,0.13);
+      filter: brightness(1.12);
+    }
+    .footer-circle-btn .circle-icon-animate {
+      animation: rotateIcon 1.25s infinite linear;
+      z-index: 2;
+    }
+    @keyframes rotateIcon {
+      100% { transform: rotate(360deg);}
+    }
+    .footer-circle-btn[data-has-news="true"]::after {
+      content: '';
+      position: absolute;
+      top: -14px; left: -14px; right: -14px; bottom: -14px;
+      border-radius: 50%;
+      border: 3px solid var(--main-pink);
+      animation: pulseRing 1.6s infinite cubic-bezier(.44,0,.56,1);
+      z-index: 1;
+      pointer-events: none;
+    }
+    @keyframes pulseRing {
+      0% { opacity: .42; transform: scale(0.95);}
+      60% { opacity: .31;}
+      100% { opacity: 0; transform: scale(1.19);}
+    }
+    /* Click indicator */
+    .footer-circle-btn .click-indicator {
+      position: absolute;
+      bottom: -11px; right: -11px;
+      width: var(--click-indicator-size);
+      height: var(--click-indicator-size);
+      background: linear-gradient(135deg,#fff 0%,#fcb900 70%);
+      color: var(--main-orange);
+      border-radius: 50%;
+      box-shadow: 0 2px 12px 0 #fcb90021;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.18em;
+      border: 2.3px solid #fcb900;
+      z-index: 10;
+      animation: clickPulse 1.3s infinite;
+      pointer-events: none;
+      opacity: 0.91;
+    }
+    @keyframes clickPulse {
+      0% { box-shadow: 0 0 0 0 #fcb90055; transform: scale(0.90);}
+      60% { box-shadow: 0 0 0 7px #fcb90011; }
+      100% { box-shadow: 0 0 0 0 #fcb90055; transform: scale(1);}
+    }
+
+    /* ========== POPUP MODAL ========== */
+    .circle-popup-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(ellipse at center, #26293bde 53%,#4a4e69d2 100%);
+      animation: circlePopupIn 0.18s cubic-bezier(.45,1.5,.5,1.05);
+    }
+    @keyframes circlePopupIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .circle-popup-content {
+      background: linear-gradient(135deg, var(--main-bg-glass) 0%, rgba(252,185,0,0.17) 100%);
+      color: #232526;
+      border-radius: 22px;
+      box-shadow: 0 12px 36px 8px rgba(0,0,0,0.23), 0 2px 8px rgba(252,185,0,0.11);
+      padding: 30px 22px 24px 22px;
+      width: 98vw;
+      max-width: var(--modal-max-width);
+      min-width: 0;
+      position: relative;
+      text-align: left;
+      animation: circleContentPopIn 0.24s cubic-bezier(.44,1.55,.41,1.04);
+      border: 2px solid rgba(252,185,0,0.13);
+      min-height: 38px;
+      font-size: 1.08rem;
+      backdrop-filter: blur(13px);
+      overflow: visible;
+    }
+    @keyframes circleContentPopIn {
+      from { transform: scale(0.82) rotate(-8deg); opacity: 0; }
+      60% { transform: scale(1.08) rotate(2.2deg);}
+      to { transform: scale(1) rotate(0); opacity: 1; }
+    }
+    .circle-popup-close {
+      position: absolute; top: 16px; left: 19px;
+      background: linear-gradient(135deg, #fcb900 70%, #fff 130%);
+      border: none; font-size: 1.36em; cursor: pointer; padding: 0;
+      border-radius: 50%; width: 32px; height: 32px; min-width: 32px; min-height: 32px;
+      box-shadow: 0 2px 7px rgba(0,0,0,0.13);
+      border: 1.3px solid #ffedb8;
+      transition: all 0.22s;
+      outline: none; z-index: 2;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .circle-popup-close:hover, .circle-popup-close:focus {
+      background: linear-gradient(135deg, #fff 15%, #fcb900 100%);
+      color: #232526; transform: scale(1.09);
+    }
+    /* Back button at the right in options mode */
+    .circle-popup-back {
+      position: absolute;
+      top: 16px;
+      right: 19px;
+      background: linear-gradient(135deg, #232526 0%, #fcb900 100%);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 32px; height: 32px; min-width: 32px; min-height: 32px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.18em;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+      outline: none;
+      z-index: 2;
+      transition: all 0.2s;
+      border: 1.5px solid #d1b800;
+    }
+    .circle-popup-back:hover, .circle-popup-back:focus {
+      background: linear-gradient(135deg, #fcb900 0%, #232526 100%);
+      color: #232526;
+      transform: scale(1.09);
+    }
+
+    /* Options grid */
+    .circle-footer-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px 14px;
+      margin-top: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 360px) {
+      .circle-footer-options { grid-template-columns: 1fr; }
+    }
+    .circle-option-btn {
+      background: linear-gradient(135deg, #fff 0%, var(--btn-color) 100%);
+      color: var(--btn-text-color);
+      border: none;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1.13em;
+      padding: 14px 17px 14px 15px;
+      cursor: pointer;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.09), 0 1px 3px var(--btn-color);
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 120px;
+      position: relative;
+      border: 1.6px solid rgba(252,185,0,0.17);
+      transition: background 0.19s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.19s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.19s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.19s cubic-bezier(0.25, 0.8, 0.25, 1); /* Only background, color, shadow, filter */
+      letter-spacing: 0.06em;
+      outline: none;
+      box-shadow: 0 2px 7px rgba(var(--btn-shadow-rgb), 0.15);
+      /* Removed transform from transition */
+    }
+    .circle-option-btn .circle-option-icon {
+      width: 32px; height: 32px; font-size: 1.19em;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .18s, color .18s;
+      background: var(--btn-icon-bg) !important;
+      color: var(--btn-icon-color) !important;
+    }
+    .circle-option-btn[data-hot="true"]::after {
+      content: '';
+      display: inline-block;
+      width: 13px; height: 13px;
+      background: radial-gradient(circle at 60% 40%, #fc4a1a 70%, #fcb900 100%);
+      border-radius: 50%;
+      margin-left: 6px;
+      box-shadow: 0 0 8px 3px #fc4a1a7a;
+      animation: hotPulse 1.2s infinite;
+      vertical-align: middle;
+    }
+    @keyframes hotPulse {
+      0% { box-shadow: 0 0 8px 2.5px #fc4a1a7a; }
+      60% { box-shadow: 0 0 15px 7.5px #fc4a1a33;}
+      100% { box-shadow: 0 0 8px 2.5px #fc4a1a7a;}
+    }
+    .circle-option-btn:hover, .circle-option-btn:focus {
+      background: linear-gradient(135deg, var(--btn-hover-color) 0%, var(--btn-color) 92%);
+      color: var(--btn-hover-text);
+      /* Removed: transform: scale(1.13) translateY(-2px); */
+      box-shadow: 0 12px 30px rgba(var(--btn-shadow-rgb), 0.23),0 3px 8px var(--main-pink);
+      /* No scaling or big size on touch/hover/focus */
+    }
+    .circle-option-btn:hover .circle-option-icon, .circle-option-btn:focus .circle-option-icon {
+      background: var(--btn-icon-hover-bg) !important;
+      color: var(--btn-icon-hover-color) !important;
+      box-shadow: 0 2px 8px rgba(252,185,0,0.13);
+    }
+    
+    /* Button specific styles */
+    .circle-option-btn.about {
+      --btn-color: #fcb900;
+      --btn-text-color: #232526;
+      --btn-hover-color: #fc4a1a;
+      --btn-hover-text: #fff;
+      --btn-shadow-rgb: 252, 185, 0;
+      --btn-icon-bg: linear-gradient(135deg,#fcb900 0%,#f7b733 100%);
+      --btn-icon-color: #232526;
+      --btn-icon-hover-bg: #fff;
+      --btn-icon-hover-color: #fc4a1a;
+    }
+    .circle-option-btn.services {
+      --btn-color: #8f94fb;
+      --btn-text-color: #fff;
+      --btn-hover-color: #4e54c8;
+      --btn-hover-text: #fff;
+      --btn-shadow-rgb: 143, 148, 251;
+      --btn-icon-bg: linear-gradient(135deg,#8f94fb 0%,#4e54c8 100%);
+      --btn-icon-color: #fff;
+      --btn-icon-hover-bg: #fff;
+      --btn-icon-hover-color: #4e54c8;
+    }
+    .circle-option-btn.features {
+      --btn-color: #232526;
+      --btn-text-color: #fcb900;
+      --btn-hover-color: #414345;
+      --btn-hover-text: #fcb900;
+      --btn-shadow-rgb: 35, 37, 38;
+      --btn-icon-bg: linear-gradient(135deg,#232526 0%,#414345 100%);
+      --btn-icon-color: var(--main-gold);
+      --btn-icon-hover-bg: #fff;
+      --btn-icon-hover-color: #232526;
+    }
+    .circle-option-btn.news {
+      --btn-color: #fc4a1a;
+      --btn-text-color: #fff;
+      --btn-hover-color: #fcb900;
+      --btn-hover-text: #fff;
+      --btn-shadow-rgb: 252, 74, 26;
+      --btn-icon-bg: linear-gradient(135deg,#fc4a1a 0%,#fcb900 100%);
+      --btn-icon-color: #fff;
+      --btn-icon-hover-bg: #fff;
+      --btn-icon-hover-color: #fc4a1a;
+    }
+    .circle-option-btn.contact {
+      --btn-color: #25d366;
+      --btn-text-color: #fff;
+      --btn-hover-color: #24c6dc;
+      --btn-hover-text: #fff;
+      --btn-shadow-rgb: 37, 211, 102;
+      --btn-icon-bg: linear-gradient(135deg, var(--main-green) 0%, var(--main-cyan) 100%);
+      --btn-icon-color: #fff;
+      --btn-icon-hover-bg: #fff;
+      --btn-icon-hover-color: #25d366;
+    }
+    .circle-option-btn.theme {
+      --btn-color: #ff51a4;
+      --btn-text-color: #fff;
+      --btn-hover-color: #fcb900;
+      --btn-hover-text: #fff;
+      --btn-shadow-rgb: 255, 81, 164;
+      --btn-icon-bg: linear-gradient(135deg,var(--main-pink) 0%, #fcb900 100%);
+      --btn-icon-color: #fff;
+      --btn-icon-hover-bg: #fff;
+      --btn-icon-hover-color: #ff51a4;
+    }
+
+    /* Content Sections */
+    .circle-section-content {
+      display: none;
+      margin-top: 8px;
+      animation: fadeIn 0.2s;
+    }
+    .circle-section-content.active {
+      display: block;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Section title */
+    .circle-section-title {
+      font-size: 1.16em; font-weight: 700; letter-spacing:.1px; margin-bottom: 11px; display:flex; align-items: center; gap:10px;
+    }
+    .circle-section-title span {
+      padding:3px 11px;font-size:1.08em;border-radius:8px;font-weight:700;
+    }
+    .circle-section-title .about { background:var(--main-dark);color:var(--main-gold);}
+    .circle-section-title .services { background:var(--main-blue);color:#fff; }
+    .circle-section-title .features { background:var(--main-dark);color:var(--main-gold);}
+    .circle-section-title .news { background:var(--main-orange);color:#fff;}
+    .circle-section-title .contact { background:var(--main-green);color:#fff;}
+    .circle-section-title .theme { background:var(--main-pink);color:#fff;}
+
+    .circle-news-badge {
+      display: inline-block;
+      background: linear-gradient(135deg,#fc4a1a 0,#fcb900 100%);
+      color: #fff;
+      border-radius: 11px;
+      font-size: 0.91em;
+      font-weight: 700;
+      padding: 2.5px 11px 2.5px 10px;
+      margin-left: 9px;
+      letter-spacing: .07em;
+      animation: hotPulse 1.45s infinite;
+    }
+    .circle-social-links {
+      display:flex; flex-wrap:wrap; gap:7px 6px; margin-top:10px; justify-content:center;
+    }
+    .circle-social-link {
+      padding: 6px 14px;
+      border-radius: 22px;
+      font-weight: 600;
+      font-size: 1em;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(135deg,#8f94fb 0,#4e54c8 100%);
+      transition: all 0.20s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+      display:inline-flex; align-items:center; gap:5px;
+    }
+    .circle-social-link.youtube { background:linear-gradient(135deg,#fc4a1a 0,#fcb900 100%);}
+    .circle-social-link.whatsapp { background:linear-gradient(135deg,#25d366 0,#128c7e 100%);}
+    .circle-social-link.telegram { background:linear-gradient(135deg,#229ed9 0,#0088cc 100%);}
+    .circle-social-link.github { background:linear-gradient(135deg,#232526 0,#414345 100%);color:#fcb900;}
+    .circle-social-link.linkedin { background:linear-gradient(135deg,#0077b5 0,#00a0dc 100%);}
+    .circle-social-link:hover, .circle-social-link:focus {
+      opacity: .94;
+      transform: scale(1.09) translateY(-1px);
+      filter: brightness(1.15);
+      text-decoration: underline;
+    }
+    .circle-fb-profile img {
+      width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; object-fit: cover; background: #fff;
+      margin-right: 7px;
+      transition: border-color .18s;
+    }
+    .circle-fb-profile:hover img { border-color: var(--main-gold);}
+    .circle-fb-profile {
+      display: flex; align-items: center; gap: 7px; text-decoration: none; font-size: 1.02em; font-weight: 600; color: #1877f2;
+      background: rgba(255,255,255,0.97); border-radius: 11px; padding: 6px 11px; margin-bottom: 2px;
+      transition: all .19s;
+    }
+    .circle-fb-profile:hover { background: #fff; color: var(--main-gold);}
+    .circle-footer-copyright {
+      display: block;
+      text-align: center;
+      font-size: 1em;
+      color: var(--main-gold);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin: 7px auto 5px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.11);
+    }
+
+    /* ========== RESPONSIVE STYLES ========== */
+    @media (max-width: 900px) {
+        .ultra-modal { max-width: 99vw;}
+    }
+    
+    @media (max-width: 700px) {
+        .divine-ultra-heading-card {padding: 30px 10px 26px;}
+    }
+    
+    @media (max-width: 600px) {
+        .divine-ultra-root { padding-bottom: 32px;}
+        .divine-ultra-heading-card {
+            padding: 24px 8px 12px;
+            border-radius: 2.2rem;
+            margin-top: 12px;
         }
-        .tazft-close-btn.tazft-cross, 
-        .tazft-back-btn.tazft-creative { 
-          top: 6px; 
-          right: 6px;
+        .divine-ultra-heading-card h1 {
+            font-size: 1.35rem;
         }
-        .tazft-fb-profile img { 
-          width: 22px; 
-          height: 22px;
+        .divine-ultra-heading-card .subtitle {
+            font-size: 0.98rem;
         }
+        .ultra-cards-flex { gap: 10px; }
+        .ultra-card { max-width: 100%; }
+        .ultra-modal { border-radius: 1.5rem; height: 95vh; }
+        .ultra-modal-header { padding: 12px 6px 5px; }
+        .ultra-modal-header .modal-header-icon { margin: 0 8px 0 10px; font-size: 1.6rem; width: 40px; height: 40px; }
+        .ultra-modal-header h2 { font-size: 1.18rem; }
+        .ultra-modal-close { top: 8px; right: 12px; width: 30px; height: 30px; font-size: 1.09rem; }
+        .ultra-modal-tab { padding: 8px 6px; font-size: 0.92rem; }
+        .ultra-modal-content { padding: 8px 0; }
+        .ultra-modal-col { padding: 0 6px; gap: 8px; }
+        .media-header { padding: 8px 6px; }
+        .media-icon { font-size: 1.2rem; margin-right: 7px; }
+        .media-title { font-size: 0.99rem; }
+        .media-date { font-size: 0.85rem; }
+        .media-player { padding: 0 6px 7px; }
+        .media-player iframe { min-height: 120px;}
     }
     
     @media (max-width: 400px) {
         .ultra-modal-tab { padding: 6px 2px; font-size: 0.85rem; }
         .ultra-modal { border-radius: 1.2rem;}
     }
+      
   </style>
 </head>
 <body>
 
-<!-- Bismillah Header -->
-<!-- Bismillah Header -->
+<!-- ========== BISMILLAH HEADER ========== -->
 <div class="header-container">
   <div class="bismillah-text">﷽</div>
   <div class="salam-container">
@@ -1519,7 +2013,7 @@
   </div>
 </div>
 
-<!-- Slider Section -->
+<!-- ========== IMAGE SLIDER ========== -->
 <div class="slider-wrap" id="slider1" tabindex="0" aria-label="Hero Slider">
   <!-- Slides injected by JS -->
   <button class="arrow left" aria-label="Previous slide">&#8249;</button>
@@ -1549,15 +2043,15 @@
   </audio>
 </div>
 
-<!-- Main Content Section -->
+<!-- ========== MAIN CONTENT ========== -->
 <div class="divine-ultra-root">
-  <!-- Modified heading card to be clickable -->
+  <!-- Main Heading Card -->
   <div class="divine-ultra-heading-card" onclick="openModal('main-content')" style="cursor: pointer;" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' '){openModal('main-content');}">
     <h1>MMD ASHRAF ALIMULLAH SIDDIQUE</h1>
     <div class="subtitle">Divine Islamic Content: Lectures, Q&A, Debates and more</div>
   </div>
   
-  <!-- Main Content Modal (this is new) -->
+  <!-- Main Content Modal -->
   <div class="ultra-modal-overlay" id="modal-main-content" aria-modal="true" role="dialog">
     <div class="ultra-modal" style="max-width: 900px; height: auto; max-height: 90vh;">
       <div class="ultra-modal-header">
@@ -1811,952 +2305,731 @@
   </div>
 </div>
 
-
-<h2>
-<p>  Here is the Islamic pdf books</p>
-</h2>
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>FURFURA SHARIF</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,500,400,300&display=swap" rel="stylesheet">
-  <!-- Added a new font for the title only -->
-  <link href="https://fonts.googleapis.com/css?family=Oswald:700&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
-      box-sizing: border-box;
-      background: none;
-      overflow-x: hidden;
-    }
-    body {
-      min-height: 100vh;
-      display: block;
-      background: transparent;
-      width: 100vw;
-    }
-    .card-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100vw;
-    }
-
-    @keyframes card-breathing {
-      0%   { transform: scale(1);}
-      20%  { transform: scale(1.025);}
-      40%  { transform: scale(1.05);}
-      60%  { transform: scale(1.025);}
-      100% { transform: scale(1);}
-    }
-
-    .premium-card {
-      position: relative;
-      background: linear-gradient(120deg, #fffdf9 58%, #f7faff 100%);
-      border-radius: 2.5rem;
-      border: 6px solid #23e3c9;
-      background-clip: padding-box, border-box;
-      box-shadow:
-        0 0 0 8px #ffd70033,
-        0 10px 34px 0 rgba(36, 104, 214, 0.18),
-        0 3px 11px rgba(36, 227, 201, 0.10),
-        0 1.5px 0 rgba(0,0,0,0.03);
-      padding: 2.1rem 1.1rem 1.5rem 1.1rem;
-      text-align: center;
-      max-width: 340px;
-      width: 90vw;
-      transition:
-        box-shadow 0.22s cubic-bezier(.4,0,.2,1),
-        border 0.19s,
-        background 0.23s,
-        transform 0.18s cubic-bezier(.4,0,.2,1);
-      cursor: pointer;
-      outline: none;
-      overflow: visible;
-      z-index: 10;
-      color: #212a39;
-      background-image:
-        linear-gradient(120deg, #fffdf9 58%, #f7faff 100%),
-        linear-gradient(95deg, #ffd700 10%, #23e3c9 60%, #1e68d6 100%);
-      background-origin: padding-box, border-box;
-      background-clip: padding-box, border-box;
-      backdrop-filter: blur(1.3px);
-      animation: card-breathing 2.8s ease-in-out infinite;
-      will-change: transform;
-      margin: 0 auto;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .premium-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      z-index: 0;
-      background: 
-        radial-gradient(ellipse at 80% 13%, #f2d89d44 0%, transparent 60%),
-        radial-gradient(circle at 12% 90%, #a6e3ff44 0%, transparent 80%);
-      opacity: 0.28;
-      pointer-events: none;
-      transition: opacity 0.32s;
-      filter: blur(2.5px);
-    }
-    .premium-card:hover, .premium-card:focus-within {
-      background-image:
-        linear-gradient(120deg, #f8faff 65%, #fffbe7 100%),
-        linear-gradient(90deg, #ffd700 0%, #1e68d6 100%);
-      border-color: #ffd700;
-      box-shadow: 0 0 0 12px #ffd70044, 0 24px 54px 0 #ffd70029, 0 12px 30px #a6e3ff44, 0 0 0 10px #fffbe722;
-      transform: scale(1.06) translateY(-2px) rotate(-1.3deg);
-    }
-    .premium-card:active {
-      outline: none;
-      border-color: #1e68d6;
-      box-shadow: 0 0 0 14px #ffd70055, 0 26px 58px 0 #ffd70033, 0 12px 30px #23e3c922;
-    }
-
-    /* Main title font and bold style changed */
-    .main-title {
-      font-family: 'Oswald', 'Montserrat', Arial, sans-serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin-bottom: 1.02rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      background: none;
-      color: #1e68d6;
-      text-shadow: 0 2px 25px #ffd70077, 0 1.5px 0px #fff6;
-      filter: drop-shadow(0 2.5px 0 #fff8);
-      transition: letter-spacing 0.13s, filter 0.15s, color 0.2s;
-      user-select: none;
-      font-style: normal;
-    }
-    .premium-card:hover .main-title, .premium-card:focus-within .main-title {
-      letter-spacing: 7px;
-      filter: drop-shadow(0 8px 20px #ffd700bb);
-      color: #b99309;
-    }
-
-    .main-desc {
-      color: #2d4969;
-      font-size: 1.01rem;
-      font-weight: 400;
-      margin-bottom: 1.65rem;
-      letter-spacing: 0.11px;
-      text-shadow: 0 1px 0 #fff8, 0 0.5px 0 #b8e1ff44;
-      position: relative;
-      z-index: 2;
-      padding: 0.32rem 0.7rem;
-      line-height: 1.55;
-      background: rgba(255, 215, 0, 0.08);
-      border-radius: 1.3rem;
-      border: 1.1px solid #ffeabf;
-      display: inline-block;
-      transition: background 0.18s, border 0.12s, color 0.14s, box-shadow 0.14s;
-      box-shadow: 0 2px 8px #ffd7000e;
-      user-select: none;
-    }
-    .premium-card:hover .main-desc, .premium-card:focus-within .main-desc {
-      background: rgba(36, 227, 201, 0.13);
-      border-color: #23e3c9;
-      color: #134a3e;
-      box-shadow: 0 4px 18px #23e3c933;
-    }
-
-    .go-btn {
-      background: linear-gradient(90deg, #ffd700 0%, #23e3c9 68%, #1e68d6 100%);
-      color: #fff;
-      border: none;
-      border-radius: 2rem;
-      padding: 0.9rem 2rem;
-      font-weight: 900;
-      font-size: 1.01rem;
-      letter-spacing: 1.3px;
-      font-family: 'Montserrat', sans-serif;
-      box-shadow: 0 5px 18px rgba(36,214,255,0.12), 0 2px 7px #ffd70022;
-      cursor: pointer;
-      transition: 
-        background 0.21s cubic-bezier(.4,0,.2,1), 
-        color 0.15s cubic-bezier(.4,0,.2,1),
-        box-shadow 0.15s,
-        transform 0.13s,
-        letter-spacing 0.10s,
-        border 0.12s;
-      position: relative;
-      z-index: 2;
-      outline: none;
-      border: 2.1px solid #23e3c9;
-      margin-top: 0.88rem;
-      min-width: 135px;
-      color-scheme: dark;
-      text-shadow: 0 1.5px 6px #1e68d622;
-      text-transform: uppercase;
-    }
-    .go-btn:hover, .go-btn:focus {
-      background: linear-gradient(90deg, #23e3c9 0%, #ffd700 90%);
-      color: #1e68d6;
-      box-shadow: 0 12px 28px #ffd70033, 0 3px 13px #23e3c944;
-      transform: scale(1.08) rotate(-1.5deg);
-      text-shadow: 0 2px 10px #ffd70088;
-      letter-spacing: 2.1px;
-      border-color: #ffd700;
-    }
-    .go-btn:active::after {
-      content: "";
-      position: absolute;
-      left: 50%; top: 50%;
-      width: 120%; height: 120%;
-      border-radius: 50%;
-      background: rgba(36,214,255,0.13);
-      transform: translate(-50%, -50%) scale(1.08);
-      animation: ripple .25s linear;
-      pointer-events: none;
-      z-index: 3;
-    }
-    @keyframes ripple {
-      from { opacity: 0.7; }
-      to   { opacity: 0; }
-    }
-    @media (max-width: 600px) {
-      .premium-card {
-        max-width: 99vw;
-        padding: 0.85rem .25rem 0.53rem .25rem;
-        border-radius: 1.2rem;
-      }
-      .main-title {
-        font-size: 2.2rem;
-      }
-      .go-btn {
-        font-size: 0.83rem;
-        padding: 0.46rem 0.9rem;
-        min-width: 84px;
-        border-radius: 1rem;
-      }
-      .main-desc {
-        font-size: 0.85rem;
-        padding: 0.09rem 0.13rem;
-        border-radius: 0.9rem;
-      }
-      body {
-        min-height: 100svh;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Example: You can place a heading or intro here -->
-  <div style="text-align:center; margin-top:1.5rem; font-family:Montserrat, sans-serif; font-weight:700; letter-spacing:1.1px; color:#1e68d6;">
-    <!-- Add your top text here, or remove this div if not needed -->
-  </div>
-  <div class="card-container">
-    <div class="premium-card" onclick="window.location='furfura.html'" tabindex="0" role="button" aria-pressed="false">
-      <div class="main-title">FURFURA SHARIF</div>
-      <div class="main-desc">
-        Enjoy a premium spiritual audio & video library.<br>
-        <span style="font-weight:700;color:#1e68d6;">Explore Sufi soundscapes and visuals.<br>Click to continue.</span>
-      </div>
-      <button class="go-btn" type="button"
-        onclick="event.stopPropagation(); window.location='furfura.html';">
-        Enter Audio & Video
-      </button>
+<!-- ========== FURFURA SHARIF CARD ========== -->
+<div class="furfura-card-container">
+  <div class="premium-card" onclick="window.location='furfura.html'" tabindex="0" role="button" aria-pressed="false">
+    <div class="main-title">FURFURA SHARIF</div>
+    <div class="main-desc">
+      Enjoy a premium spiritual audio & video library.<br>
+      <span style="font-weight:700;color:#1e68d6;">Explore Sufi soundscapes and visuals.<br>Click to continue.</span>
     </div>
-  </div>
-  <div style="text-align:center; margin-bottom:1.5rem; font-family:Montserrat, sans-serif; font-weight:500; letter-spacing:0.7px; color:#23e3c9;">
-    <!-- Add your bottom text here, or remove this div if not needed -->
-  </div>
-</body>
-</html>
-
-
-
-
-
-
- <!-- Islamic Library Card -->
-  <div class="islamic-library-card-embedbox">
-    <div class="islamic-library-card">
-      <div class="islamic-ornament ornament-1"></div>
-      <div class="islamic-ornament ornament-2"></div>
-      
-      <div class="book-gallery">
-        <div class="book-cover">
-          <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/r/i/riyadus-saliheen.jpg" alt="Riyad us Saliheen" loading="lazy">
-        </div>
-        <div class="book-cover">
-          <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/q/u/quran-english-interpretation.jpg" alt="Quran English Interpretation" loading="lazy">
-        </div>
-        <div class="book-cover">
-          <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/f/i/fiqh-us-sunnah.jpg" alt="Fiqh Us Sunnah" loading="lazy">
-        </div>
-      </div>
-      
-      <div class="card-content">
-        <h3 class="card-title">Premium Islamic Library</h3>
-        <div class="arabic-title">المكتبة الإسلامية المميزة</div>
-        <p class="card-description">
-          Explore our exquisite collection of authentic Islamic books, manuscripts, and resources.
-        </p>
-      <button class="action-button" onclick="window.location.href='library.html'">
-  Explore our library <i>➡</i>
-</button>
-      </div>
-    </div>
-  </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-<!-- Premium Footer -->
-<footer id="tazft-footer">
-  <div class="tazft-bar" style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 6px 0 4px 0;">
-    <span class="tazft-footer-copyright" style="font-size: 1rem; color: #fcb900; letter-spacing: 0.5px; font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,0.3); transition:.18s;">&copy; 2025 Hafizul</span>
-    <button onclick="tazftOpenModal('tazft-main-modal')" aria-label="Open navigation"
-      class="tazft-explore-btn tazft-explore-btn-custom" style="background: linear-gradient(135deg, #fcb900 0%, #fc4a1a 100%); box-shadow: 0 4px 20px rgba(252,185,0,0.3);">
-      <span style="font-size:1.14em; filter:drop-shadow(0 1px 1px rgba(0,0,0,0.3)); color:#232526;">☰</span>
-      <span style="font-size:0.97em; font-weight:700; letter-spacing:.2px; color:#fff; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">Explore</span>
+    <button class="go-btn" type="button"
+      onclick="event.stopPropagation(); window.location='furfura.html';">
+      Enter Audio & Video
     </button>
   </div>
-  
-  <!-- Main Navigation Modal -->
-  <div id="tazft-main-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
-    <div class="tazft-modal-content tazft-glass animate-pop" style="background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(35,37,38,0.97) 100%); backdrop-filter: blur(14px); padding:18px 6vw; max-width:320px;">
-      <button class="tazft-close-btn tazft-cross" onclick="tazftCloseModal('tazft-main-modal')" aria-label="Close" title="Close">
-        <span aria-hidden="true" style="display:block;font-size:1.25em;line-height:1;">&times;</span>
+</div>
+
+<!-- ========== ISLAMIC LIBRARY CARD ========== -->
+<div class="islamic-library-card-embedbox">
+  <div class="islamic-library-card">
+    <div class="islamic-ornament ornament-1"></div>
+    <div class="islamic-ornament ornament-2"></div>
+    
+    <div class="book-gallery">
+      <div class="book-cover">
+        <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/r/i/riyadus-saliheen.jpg" alt="Riyad us Saliheen" loading="lazy">
+      </div>
+      <div class="book-cover">
+        <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/q/u/quran-english-interpretation.jpg" alt="Quran English Interpretation" loading="lazy">
+      </div>
+      <div class="book-cover">
+        <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/f/i/fiqh-us-sunnah.jpg" alt="Fiqh Us Sunnah" loading="lazy">
+      </div>
+    </div>
+    
+    <div class="card-content">
+      <h3 class="card-title">Premium Islamic Library</h3>
+      <div class="arabic-title">المكتبة الإسلامية المميزة</div>
+      <p class="card-description">
+        Explore our exquisite collection of authentic Islamic books, manuscripts, and resources.
+      </p>
+      <button class="action-button" onclick="window.location.href='library.html'">
+        Explore our library <i>➡</i>
       </button>
-      <div class="tazft-premium-option-wrap" style="gap:16px 12px; margin-top:16px;">
-        <button onclick="tazftOpenSubModal('tazft-about-modal');" class="tazft-pill-option" style="background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, #fcb900 100%);color:#232526;">
-          <span class="tazft-option-icon tazft-glow-gold" style="background: linear-gradient(135deg, #fcb900 0%, #f7b733 100%);color:#232526;">&#8505;</span>
-          <span class="tazft-option-label">About</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br> </br>
+
+<br> </br>
+
+
+
+<!-- ========== CIRCLE FOOTER BUTTON ========== -->
+<button class="footer-circle-btn" id="footerCircleBtn" aria-label="Open footer popup" title="More info & navigation">
+  <i class="fas fa-circle-notch circle-icon-animate"></i>
+  <span class="click-indicator" aria-hidden="true">
+    <i class="fas fa-hand-pointer"></i>
+  </span>
+</button>
+
+<!-- ========== CIRCLE POPUP MODAL ========== -->
+<div class="circle-popup-modal" id="circlePopupModal" role="dialog" aria-modal="true" aria-labelledby="circlePopupTitle" tabindex="-1">
+  <div class="circle-popup-content" id="circlePopupContent">
+    <button class="circle-popup-close" id="circlePopupCloseBtn" aria-label="Close popup" title="Close">
+      <span aria-hidden="true" style="font-size:1.35em;line-height:1;">&times;</span>
+    </button>
+    <button class="circle-popup-back" id="circlePopupBackBtn" style="display:none;" aria-label="Back" title="Back">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <div id="circle-popup-main">
+      <div style="text-align:center; margin-bottom:2px;">
+        <span class="circle-footer-copyright">&copy; 2025 Hafizul</span>
+        <span style="font-size:1.21em; color:var(--main-gold); font-weight:800; letter-spacing:.2px; text-shadow:0 1px 2px rgba(0,0,0,0.11);">Quick Access</span>
+      </div>
+      <div class="circle-footer-options">
+        <button class="circle-option-btn about" onclick="showSection('about')" aria-label="About Developer">
+          <span class="circle-option-icon"><i class="fas fa-info-circle"></i></span>
+          About
         </button>
-        <button onclick="tazftOpenSubModal('tazft-services-modal');" class="tazft-pill-option" style="background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, #8f94fb 100%);color:#232526;">
-          <span class="tazft-option-icon tazft-glow-blue" style="background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%);color:#fff;">&#9881;</span>
-          <span class="tazft-option-label">Services</span>
+        <button class="circle-option-btn services" onclick="showSection('services')" aria-label="Professional Services">
+          <span class="circle-option-icon"><i class="fas fa-cogs"></i></span>
+          Services
         </button>
-        <button onclick="tazftOpenSubModal('tazft-features-modal');" class="tazft-pill-option" style="background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, #232526 100%);color:#fcb900;">
-          <span class="tazft-option-icon tazft-glow-dark" style="background: linear-gradient(135deg, #232526 0%, #414345 100%); color: #fcb900;">&#9733;</span>
-          <span class="tazft-option-label">Features</span>
+        <button class="circle-option-btn features" onclick="showSection('features')" aria-label="Key Features">
+          <span class="circle-option-icon"><i class="fas fa-star"></i></span>
+          Features
+        </button>
+        <button class="circle-option-btn news" onclick="showSection('news')" aria-label="News and Updates" data-hot="true">
+          <span class="circle-option-icon"><i class="fas fa-bolt"></i></span>
+          News
+        </button>
+        <button class="circle-option-btn contact" onclick="showSection('contact')" aria-label="Contact">
+          <span class="circle-option-icon"><i class="fas fa-paper-plane"></i></span>
+          Contact
+        </button>
+        <button class="circle-option-btn theme" onclick="showSection('theme')" aria-label="Theme Switcher">
+          <span class="circle-option-icon"><i class="fas fa-adjust"></i></span>
+          Theme
         </button>
       </div>
     </div>
-  </div>
-  
-  <!-- About Modal -->
-  <div id="tazft-about-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
-    <div class="tazft-modal-content animate-pop tazft-adv-modal" style="max-width: 288px; padding: 12px 6vw 18px 6vw;">
-      <button class="tazft-back-btn tazft-creative" onclick="tazftBackToMenu('tazft-about-modal')" aria-label="Back" title="Back">
-        <svg viewBox="0 0 29 29" width="20" height="20"><ellipse cx="14.5" cy="14.5" rx="13.5" ry="13.5" fill="#fcb900" stroke="#4a4e69" stroke-width="2"/><polyline points="17,9 12,14.5 17,20" fill="none" stroke="#232526" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="tazft-premium-card tazft-premium-glass-gold tazft-card-attractive" style="padding:12px 8px 10px 8px;">
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
-          <span class="tazft-hi-initials" style="padding:3px 9px;font-size:1em;background:#232526;color:#fcb900;">HI</span>
-          <div class="tazft-card-title" style="font-size:1em; color: #fcb900;">About Developer</div>
-        </div>
-        <div class="tazft-card-section" style="font-size:0.99em; line-height:1.38; color: #232526;">
-          <b style="font-size: 1.01em; color:#232526;">Hafizul Islam</b><br>
-          <span style="color: #4e54c8; font-weight: 700;">Owner &amp; Lead Developer</span><br>
-          <span style="margin-top:4px; font-size:0.98em; color:#232526;">Crafting <span style="color:#000000;font-weight:400;">world-class</span> web experiences</span>
-        </div>
-        <div class="tazft-card-divider" style="margin:11px 0; border-top: 1px solid rgba(252,185,0,0.3);"></div>
-        <div class="tazft-card-section tazft-card-contact" style="font-size:0.98em; color: #232526;">
-          <div class="tazft-card-contact-title" style="margin-bottom:6px; color: #4e54c8; font-weight: 700;">Contact</div>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <span class="tazft-card-icon" style="background:#4e54c8;color:#fff;width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;">📧</span>
-            <a href="mailto:hafizul9996@gmail.com" class="tazft-contact-link" style="color:#4e54c8;font-weight:600;">hafizul9996@gmail.com</a>
-          </div>
-          <div style="display:flex;align-items:center;gap:6px;margin-top:5px;">
-            <span class="tazft-card-icon" style="background:#fc4a1a;color:#fff;width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;">📞</span>
-            <a href="tel:+8801744348961" class="tazft-contact-link" style="color:#000000;font-weight:600;">01744348961</a>
-          </div>
-          <div class="tazft-card-contact-title" style="margin:10px 0 6px 0;font-size:0.98em;color:#4e54c8;font-weight:700;">Socials</div>
-          <div class="tazft-fb-list" style="gap:8px;">
-            <a href="https://facebook.com/your.profile1" target="_blank" class="tazft-fb-profile tazft-fb-visible" style="padding:7px 8px;background:rgba(255,255,255,0.9);">
-              <span class="tazft-fb-avatar-border"><img src="https://graph.facebook.com/100011122233344/picture?width=32&height=32" alt="Facebook Profile 1" style="width:28px;height:28px;"></span>
-              <span style="margin-left:8px;color:#1877f2;font-weight:600;">/your.profile1</span>
-            </a>
-            <a href="https://facebook.com/your.profile2" target="_blank" class="tazft-fb-profile tazft-fb-visible" style="padding:7px 8px;background:rgba(255,255,255,0.9);">
-              <span class="tazft-fb-avatar-border"><img src="https://graph.facebook.com/100022233344455/picture?width=32&height=32" alt="Facebook Profile 2" style="width:28px;height:28px;"></span>
-              <span style="margin-left:8px;color:#1877f2;font-weight:600;">/your.profile2</span>
-            </a>
-          </div>
-          <div class="tazft-social-links" style="margin-top:10px;gap:6px;">
-            <a href="https://www.youtube.com/" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#fc4a1a 0,#fcb900 100%);color:#fff;font-weight:600;padding:5px 12px;">YouTube</a>
-            <a href="https://wa.me/8801744348961" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#25d366 0,#128c7e 100%);color:#fff;font-weight:600;padding:5px 12px;">WhatsApp</a>
-            <a href="https://t.me/" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#229ed9 0,#0088cc 100%);color:#fff;font-weight:600;padding:5px 12px;">Telegram</a>
-            <a href="https://github.com/hafizul99" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#232526 0,#414345 100%);color:#fcb900;font-weight:600;padding:5px 12px;">GitHub</a>
-            <a href="https://linkedin.com/in/hafizul99" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#0077b5 0,#00a0dc 100%);color:#fff;font-weight:600;padding:5px 12px;">LinkedIn</a>
-          </div>
+    <!-- About Section -->
+    <div class="circle-section-content" id="circle-section-about">
+      <div class="circle-section-title"><span class="about">HI</span> About Developer</div>
+      <div style="font-size:1.01em; line-height:1.38; color: #232526;">
+        <b>Hafizul Islam</b><br>
+        <span style="color: #4e54c8; font-weight: 700;">Owner &amp; Lead Developer</span><br>
+        <span style="margin-top:4px; font-size:1em; color:#232526;">Crafting <span style="color:#000000;font-weight:400;">world-class</span> web experiences with a passion for innovation, usability, and scalability.</span>
+        <div style="margin-top: 9px; font-size: 0.98em; color: #8f94fb;">Specializes in JavaScript, Next.js, Node, UI/UX, API and secure web apps.</div>
+      </div>
+      <div style="margin:13px 0 7px 0; border-top: 1.5px solid rgba(252,185,0,0.20);"></div>
+      <div style="font-size:1em; color: #232526;">
+        <div style="font-weight:700; color:#4e54c8; margin-bottom:8px;">Find Me</div>
+        <a href="https://facebook.com/your.profile1" target="_blank" class="circle-fb-profile">
+          <img src="https://graph.facebook.com/100011122233344/picture?width=32&height=32" alt="Facebook Profile 1"> /your.profile1
+        </a>
+        <a href="https://facebook.com/your.profile2" target="_blank" class="circle-fb-profile">
+          <img src="https://graph.facebook.com/100022233344455/picture?width=32&height=32" alt="Facebook Profile 2"> /your.profile2
+        </a>
+        <div class="circle-social-links">
+          <a href="https://www.youtube.com/" target="_blank" class="circle-social-link youtube"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://wa.me/8801744348961" target="_blank" class="circle-social-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://t.me/" target="_blank" class="circle-social-link telegram"><i class="fab fa-telegram"></i> Telegram</a>
+          <a href="https://github.com/hafizul99" target="_blank" class="circle-social-link github"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://linkedin.com/in/hafizul99" target="_blank" class="circle-social-link linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
       </div>
     </div>
-  </div>
-  
-  <!-- Services Modal -->
-  <div id="tazft-services-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
-    <div class="tazft-modal-content animate-pop tazft-adv-modal" style="max-width: 288px; padding: 12px 6vw 18px 6vw;">
-      <button class="tazft-back-btn tazft-creative tazft-bluebtn" onclick="tazftBackToMenu('tazft-services-modal')" aria-label="Back" title="Back">
-        <svg viewBox="0 0 29 29" width="20" height="20"><ellipse cx="14.5" cy="14.5" rx="13.5" ry="13.5" fill="#8f94fb" stroke="#232526" stroke-width="2"/><polyline points="17,9 12,14.5 17,20" fill="none" stroke="#fff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="tazft-premium-card tazft-premium-glass-blue tazft-card-attractive" style="padding:12px 8px 10px 8px;">
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
-          <span class="tazft-card-badge tazft-bg-blue" style="padding:3px 9px;font-size:1em;">S</span>
-          <div class="tazft-card-title" style="font-size:1em; color:#8f94fb;">Professional Services</div>
-        </div>
-        <div class="tazft-card-section" style="font-size:0.99em;">
-          <ul style="padding-left:0; margin:0;">
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-gold" style="color:#fc4a1a;">1</span>
-              <span style="color:#232526;">Premium Web & App Development</span>
-            </li>
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">2</span>
-              <span style="color:#232526;">Responsive UI/UX, Branding & Design</span>
-            </li>
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-gold" style="color:#fcb900;">3</span>
-              <span style="color:#232526;">E-commerce & Payment Integration</span>
-            </li>
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-blue" style="color:#4e54c8;">4</span>
-              <span style="color:#232526;">Automation, API & System Integration</span>
-            </li>
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-gold" style="color:#fc4a1a;">5</span>
-              <span style="color:#232526;">SEO, Performance & Analytics</span>
-            </li>
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">6</span>
-              <span style="color:#232526;">Security Consulting & Hardening</span>
-            </li>
-            <li style="display: flex; gap: 6px;">
-              <span class="tazft-bullet tazft-gold" style="color:#fcb900;">7</span>
-              <span style="color:#232526;">Maintenance & Lifetime Support</span>
-            </li>
-          </ul>
-        </div>
-        <div class="tazft-card-divider" style="margin:9px 0;"></div>
-        <div class="tazft-card-section" style="font-size:0.96em;">
-          <div class="tazft-card-contact-title" style="margin-bottom:6px; color:#8f94fb;">About & Website</div>
-          <ul style="padding-left:0; margin:0;">
-            <li style="display:flex;gap:6px;">
-              <span class="tazft-bullet tazft-blue" style="font-size:1em;color:#8f94fb;">✓</span>
-              <span style="color:#232526;">This site is developed and maintained by Hafizul Islam.</span>
-            </li>
-            <li style="display:flex;gap:6px;">
-              <span class="tazft-bullet tazft-gold" style="font-size:1em;color:#fcb900;">✓</span>
-              <span style="color:#232526;">Comprehensive info about services & features.</span>
-            </li>
-            <li style="display:flex;gap:6px;">
-              <span class="tazft-bullet tazft-blue" style="font-size:1em;color:#4e54c8;">✓</span>
-              <span style="color:#232526;">Modern aesthetics, mobile-first design, premium UX.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <footer>
-  <!-- Features Modal -->
-  <div id="tazft-features-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
-    <div class="tazft-modal-content animate-pop tazft-adv-modal" style="max-width: 288px; padding: 12px 6vw 18px 6vw;">
-      <button class="tazft-back-btn tazft-creative tazft-darkbtn" onclick="tazftBackToMenu('tazft-features-modal')" aria-label="Back" title="Back">
-        <svg viewBox="0 0 29 29" width="20" height="20"><ellipse cx="14.5" cy="14.5" rx="13.5" ry="13.5" fill="#232526" stroke="#fcb900" stroke-width="2"/><polyline points="17,9 12,14.5 17,20" fill="none" stroke="#fcb900" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="tazft-premium-card tazft-premium-glass-dark tazft-card-attractive" style="color:#fff; padding:12px 8px 10px 8px;">
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
-          <span class="tazft-card-badge tazft-bg-dark" style="padding:3px 9px;font-size:1em;">F</span>
-          <div class="tazft-card-title" style="color:#fcb900;font-size:1em;">Key Features</div>
-        </div>
-        <ul style="padding-left:0; margin:0;font-size:0.99em;">
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
-            <span style="color:#fff;">Modern Aesthetics &amp; Animations</span>
-          </li>
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">★</span>
-            <span style="color:#fff;">Adaptive Theming (Glassmorphism, Gradients)</span>
-          </li>
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
-            <span style="color:#fff;">Mobile-first Responsive UI</span>
-          </li>
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">★</span>
-            <span style="color:#fff;">One-click Social &amp; Chat Links</span>
-          </li>
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
-            <span style="color:#fff;">Modular, Clean, Scalable Code</span>
-          </li>
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">★</span>
-            <span style="color:#fff;">Secure, Ultra-fast Hosting</span>
-          </li>
-          <li style="display: flex; gap: 7px;">
-            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
-            <span style="color:#fff;">Accessibility &amp; UX Best Practices</span>
-          </li>
+    <!-- Services Section -->
+    <div class="circle-section-content" id="circle-section-services">
+      <div class="circle-section-title"><span class="services">S</span> Professional Services</div>
+      <ul style="padding-left:1em; margin:0; font-size:1.02em;">
+        <li><span style="color:#fc4a1a;font-weight:700;">1</span> Web &amp; App Development (SPA, PWA, API)</li>
+        <li><span style="color:#8f94fb;font-weight:700;">2</span> UI/UX Design, Branding &amp; Interactive Animations</li>
+        <li><span style="color:#fcb900;font-weight:700;">3</span> E-commerce, Payment & Membership Integration</li>
+        <li><span style="color:#4e54c8;font-weight:700;">4</span> Automation, API, System Integration</li>
+        <li><span style="color:#fc4a1a;font-weight:700;">5</span> SEO, Analytics, Performance Tuning</li>
+        <li><span style="color:#8f94fb;font-weight:700;">6</span> Security Consulting & Hardening</li>
+        <li><span style="color:#fcb900;font-weight:700;">7</span> Maintenance & Lifetime Support</li>
+      </ul>
+      <div style="margin:12px 0 8px 0; border-top: 1.5px solid rgba(252,185,0,0.15);"></div>
+      <div style="font-size:1em;">
+        <div style="font-weight:700; color:#8f94fb; margin-bottom:7px;">Why Choose Me?</div>
+        <ul style="padding-left:1.2em; margin:0;">
+          <li><span style="color:#fcb900;font-weight:700;">✓</span> Modern, scalable, secure solutions</li>
+          <li><span style="color:#8f94fb;font-weight:700;">✓</span> Fast delivery & excellent support</li>
+          <li><span style="color:#fc4a1a;font-weight:700;">✓</span> User-focused, mobile-first design</li>
+          <li><span style="color:#4e54c8;font-weight:700;">✓</span> Transparent, friendly collaboration</li>
         </ul>
       </div>
     </div>
+    <!-- Features Section -->
+    <div class="circle-section-content" id="circle-section-features">
+      <div class="circle-section-title"><span class="features"><i class="fas fa-star"></i></span> Key Features</div>
+      <ul style="padding-left:1em; margin:0;font-size:1.01em;color:#232526;">
+        <li><span style="color:#fcb900;font-weight:700;">★</span> Modern Aesthetics &amp; Lively Animations</li>
+        <li><span style="color:#8f94fb;font-weight:700;">★</span> Adaptive Theming (Glass, Gradients, Dark/Light)</li>
+        <li><span style="color:#fcb900;font-weight:700;">★</span> Mobile-first Responsive UI</li>
+        <li><span style="color:#8f94fb;font-weight:700;">★</span> 1-click Social, Chat, & Contact links</li>
+        <li><span style="color:#fcb900;font-weight:700;">★</span> Modular & Clean, Scalable Code</li>
+        <li><span style="color:#8f94fb;font-weight:700;">★</span> Secure, Ultra-fast Hosting</li>
+        <li><span style="color:#fcb900;font-weight:700;">★</span> Accessibility &amp; UX Best Practices</li>
+        <li><span style="color:#fc4a1a;font-weight:700;">★</span> SEO Optimized, Fast Loading</li>
+      </ul>
+      <div style="margin-top:10px;font-size:0.97em;color:#4e54c8;">Always evolving with the latest trends!</div>
+    </div>
+    <!-- News Section -->
+    <div class="circle-section-content" id="circle-section-news">
+      <div class="circle-section-title">
+        <span class="news"><i class="fas fa-bolt"></i></span>
+        News & Updates <span class="circle-news-badge">New</span>
+      </div>
+      <ul style="padding-left:1em; margin:0;font-size:1.01em; color:#232526;">
+        <li><b>June 2025:</b> <span style="color:#fc4a1a;">✨</span> <b>Major UI upgrade!</b> Circle popup now has 6 options, glass/gradient effects, and animated icons.</li>
+        <li><b>May 2025:</b> <span style="color:#8f94fb;">🛡️</span> Security & performance boosted. Faster load, safer data.</li>
+        <li><b>Apr 2025:</b> <span style="color:#4e54c8;">📱</span> Mobile theme enhancements & accessibility improvements.</li>
+      </ul>
+      <div style="margin-top:13px; font-size:.98em; color:#8f94fb;">
+        <b>Stay tuned for more updates!</b>
+      </div>
+    </div>
+    <!-- Contact Section -->
+    <div class="circle-section-content" id="circle-section-contact">
+      <div class="circle-section-title"><span class="contact"><i class="fas fa-paper-plane"></i></span> Contact</div>
+      <div style="margin-bottom: 10px;">
+        <b>Email:</b>
+        <a href="mailto:hafizul9996@gmail.com" style="color: #4e54c8; font-weight:600; text-decoration:underline;">hafizul9996@gmail.com</a>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <b>Phone:</b>
+        <a href="tel:+8801744348961" style="color:#fc4a1a;font-weight:600;text-decoration:underline;">01744348961</a>
+      </div>
+      <div style="font-weight:600; color: #fcb900; margin-bottom:8px;">Or chat via:</div>
+      <div class="circle-social-links">
+        <a href="https://wa.me/8801744348961" target="_blank" class="circle-social-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://t.me/" target="_blank" class="circle-social-link telegram"><i class="fab fa-telegram"></i> Telegram</a>
+        <a href="https://facebook.com/your.profile1" target="_blank" class="circle-social-link" style="background:linear-gradient(135deg,#1877f2 0,#4e54c8 100%);"><i class="fab fa-facebook"></i> Facebook</a>
+      </div>
+      <div style="margin-top:12px; font-size:.98em; color:#8f94fb;">
+        <i class="fas fa-clock"></i> <b>Available:</b> 10:00 - 23:00 (GMT+6)
+      </div>
+    </div>
+    <!-- Theme Section -->
+    <div class="circle-section-content" id="circle-section-theme">
+      <div class="circle-section-title"><span class="theme"><i class="fas fa-adjust"></i></span> Theme Switcher</div>
+      <div style="font-size:1.03em; margin-bottom:9px;">Try out different color themes!</div>
+      <div style="display: flex; gap:13px; margin-bottom: 13px;">
+        <button onclick="setTheme('light')" style="background:linear-gradient(135deg,#fff 0,#fcb900 100%);border:none;border-radius:11px;padding:7px 18px;font-weight:700;cursor:pointer;color:#232526;box-shadow:0 2px 6px #fcb90044;">Light</button>
+        <button onclick="setTheme('dark')" style="background:linear-gradient(135deg,#232526 0,#414345 100%);border:none;border-radius:11px;padding:7px 18px;font-weight:700;cursor:pointer;color:#fcb900;box-shadow:0 2px 7px #23252644;">Dark</button>
+        <button onclick="setTheme('glass')" style="background:linear-gradient(135deg,#e9e9e9 0,#8f94fb 100%);border:none;border-radius:11px;padding:7px 18px;font-weight:700;cursor:pointer;color:#232526;box-shadow:0 2px 6px #8f94fb44;">Glass</button>
+      </div>
+      <div id="themeStatus" style="font-size:.98em; color:#8f94fb;"></div>
+      <div style="margin-top:13px; font-size:.97em; color:#232526;">
+        <i class="fas fa-lightbulb"></i> <b>Tip:</b> The popup always adapts to your preferred mode!
+      </div>
+    </div>
   </div>
-</footer>
 </div>
 
+
+
+
+
+
+
+<!-- ========== JAVASCRIPT ========== -->
 <script>
-    // Bismillah Header Typing Animation
-document.addEventListener('DOMContentLoaded', function() {
-  const salamText = document.getElementById('salamText');
-  const arabicText = 'السلام عليكم ورحمة الله وبركاته';
-  const cursor = salamText.querySelector('.typing-cursor');
-  
-  // Clear existing content while preserving cursor
-  while (salamText.firstChild !== cursor) {
-    salamText.removeChild(salamText.firstChild);
-  }
-  
-  let i = 0;
-  const typingSpeed = 90;
-  let lastTypedTime = 0;
-  
-  function typeCharacter(timestamp) {
-    if (!lastTypedTime) lastTypedTime = timestamp;
-    const elapsed = timestamp - lastTypedTime;
+  // Bismillah Header Typing Animation
+  document.addEventListener('DOMContentLoaded', function() {
+    const salamText = document.getElementById('salamText');
+    const arabicText = 'السلام عليكم ورحمة الله وبركاته';
+    const cursor = salamText.querySelector('.typing-cursor');
     
-    if (elapsed >= typingSpeed && i < arabicText.length) {
-      const charNode = document.createTextNode(arabicText.charAt(i));
-      salamText.insertBefore(charNode, cursor);
-      i++;
-      lastTypedTime = timestamp;
+    // Clear existing content while preserving cursor
+    while (salamText.firstChild !== cursor) {
+      salamText.removeChild(salamText.firstChild);
     }
     
-    if (i < arabicText.length) {
-      requestAnimationFrame(typeCharacter);
-    } else {
-      cursor.style.display = 'none';
+    let i = 0;
+    const typingSpeed = 90;
+    let lastTypedTime = 0;
+    
+    function typeCharacter(timestamp) {
+      if (!lastTypedTime) lastTypedTime = timestamp;
+      const elapsed = timestamp - lastTypedTime;
+      
+      if (elapsed >= typingSpeed && i < arabicText.length) {
+        const charNode = document.createTextNode(arabicText.charAt(i));
+        salamText.insertBefore(charNode, cursor);
+        i++;
+        lastTypedTime = timestamp;
+      }
+      
+      if (i < arabicText.length) {
+        requestAnimationFrame(typeCharacter);
+      } else {
+        cursor.style.display = 'none';
+      }
     }
-  }
-  
-  // Start animation after a short delay
-  setTimeout(() => {
-    requestAnimationFrame(typeCharacter);
-  }, 500);
-});
-
-// Slider Script
-(function() {
-  const images = [
-    "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S1.png",
-    "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S2.jpg",
-    "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S3.png",
-    "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S4.jpg"
-  ];
-  // Assign an animation class for each slide
-  const anims = [
-    "anim-fade-pop",
-    "anim-slide-left",
-    "anim-zoom-rotate",
-    "anim-blur-in"
-  ];
-
-  let idx = 0, animating = false, prevIdx = 0;
-  const slider = document.getElementById('slider1');
-  const prevBtn = slider.querySelector('.arrow.left');
-  const nextBtn = slider.querySelector('.arrow.right');
-  const dotsWrap = document.getElementById('sliderDots');
-  const audioBtn = document.getElementById('audioBtn');
-  const audio = document.getElementById('sliderMusic');
-  const timerFab = document.getElementById('timerFab');
-  const timerLabel = document.getElementById('timerLabel');
-  const timerProgress = timerFab.querySelector('.timer-progress circle');
-  const CIRCUM = 2 * Math.PI * 19; // r=19
-  let musicOn = false;
-  let timer = 4, slideInterval = null, timerTimeout = null;
-
-  // --- Slide Management ---
-  function renderSlides() {
-    // Remove any existing img elements
-    [...slider.querySelectorAll('.slide-img')].forEach(e => e.remove());
-    images.forEach((src, i) => {
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = `Slide ${i+1}`;
-      img.className = 'slide-img';
-      // Assign correct animation class
-      if (i === idx) img.classList.add('active', anims[i%anims.length]);
-      else if (i === getPrevIdx(idx)) img.classList.add('prev');
-      else if (i === getNextIdx(idx)) img.classList.add('next');
-      img.setAttribute('loading', 'lazy');
-      slider.insertBefore(img, prevBtn);
-    });
-  }
-  
-  function getPrevIdx(i) { return (i-1+images.length)%images.length; }
-  function getNextIdx(i) { return (i+1)%images.length; }
-
-  function show(i, direction = 0) {
-    if (animating) return;
-    const nextIdx = (i + images.length) % images.length;
-    if (nextIdx === idx) return;
-    animating = true;
-    prevIdx = idx;
-
-    // Animate current slide out
-    const imgs = slider.querySelectorAll('.slide-img');
-    imgs.forEach((img, n) => {
-      img.classList.remove('active', 'prev', 'next', 'fadeout', ...anims);
-      if (n === idx) img.classList.add('fadeout');
-      if (n === getPrevIdx(nextIdx)) img.classList.add('prev');
-      if (n === getNextIdx(nextIdx)) img.classList.add('next');
-    });
-
+    
+    // Start animation after a short delay
     setTimeout(() => {
-      idx = nextIdx;
+      requestAnimationFrame(typeCharacter);
+    }, 500);
+  });
+
+  // Slider Script
+  (function() {
+    const images = [
+      "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S1.png",
+      "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S2.jpg",
+      "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S3.png",
+      "https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S4.jpg"
+    ];
+    // Assign an animation class for each slide
+    const anims = [
+      "anim-fade-pop",
+      "anim-slide-left",
+      "anim-zoom-rotate",
+      "anim-blur-in"
+    ];
+
+    let idx = 0, animating = false, prevIdx = 0;
+    const slider = document.getElementById('slider1');
+    const prevBtn = slider.querySelector('.arrow.left');
+    const nextBtn = slider.querySelector('.arrow.right');
+    const dotsWrap = document.getElementById('sliderDots');
+    const audioBtn = document.getElementById('audioBtn');
+    const audio = document.getElementById('sliderMusic');
+    const timerFab = document.getElementById('timerFab');
+    const timerLabel = document.getElementById('timerLabel');
+    const timerProgress = timerFab.querySelector('.timer-progress circle');
+    const CIRCUM = 2 * Math.PI * 19; // r=19
+    let musicOn = false;
+    let timer = 4, slideInterval = null, timerTimeout = null;
+
+    // --- Slide Management ---
+    function renderSlides() {
+      // Remove any existing img elements
+      [...slider.querySelectorAll('.slide-img')].forEach(e => e.remove());
+      images.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `Slide ${i+1}`;
+        img.className = 'slide-img';
+        // Assign correct animation class
+        if (i === idx) img.classList.add('active', anims[i%anims.length]);
+        else if (i === getPrevIdx(idx)) img.classList.add('prev');
+        else if (i === getNextIdx(idx)) img.classList.add('next');
+        img.setAttribute('loading', 'lazy');
+        slider.insertBefore(img, prevBtn);
+      });
+    }
+    
+    function getPrevIdx(i) { return (i-1+images.length)%images.length; }
+    function getNextIdx(i) { return (i+1)%images.length; }
+
+    function show(i, direction = 0) {
+      if (animating) return;
+      const nextIdx = (i + images.length) % images.length;
+      if (nextIdx === idx) return;
+      animating = true;
+      prevIdx = idx;
+
+      // Animate current slide out
+      const imgs = slider.querySelectorAll('.slide-img');
+      imgs.forEach((img, n) => {
+        img.classList.remove('active', 'prev', 'next', 'fadeout', ...anims);
+        if (n === idx) img.classList.add('fadeout');
+        if (n === getPrevIdx(nextIdx)) img.classList.add('prev');
+        if (n === getNextIdx(nextIdx)) img.classList.add('next');
+      });
+
+      setTimeout(() => {
+        idx = nextIdx;
+        renderSlides();
+        renderDots();
+        animating = false;
+      }, 480); // slightly longer than fadeout for smooth
+    }
+
+    // --- Dots ---
+    function renderDots() {
+      dotsWrap.innerHTML = '';
+      images.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'slider-dot' + (i === idx ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.type = 'button';
+        dot.onclick = () => { show(i); resetTimer(); };
+        dotsWrap.appendChild(dot);
+      });
+    }
+
+    // --- Timer ---
+    function updateTimerUI() {
+      timerLabel.textContent = timer + 's';
+      // Animate progress: dashoffset = (max-timer)/max * CIRCUM
+      const offset = (1 - timer/4) * CIRCUM;
+      timerProgress.setAttribute('stroke-dasharray', CIRCUM.toFixed(2));
+      timerProgress.setAttribute('stroke-dashoffset', offset.toFixed(2));
+    }
+    
+    function nextAutoSlide() {
+      show(idx + 1);
+      resetTimer();
+    }
+    
+    function resetTimer() {
+      timer = 4;
+      updateTimerUI();
+      clearInterval(slideInterval);
+      clearTimeout(timerTimeout);
+      // Animate timer label (scale pop)
+      timerLabel.style.transition = 'none';
+      timerLabel.style.transform = 'scale(1.24)';
+      setTimeout(() => {
+        timerLabel.style.transition = 'transform 0.34s cubic-bezier(.45,.02,.4,1)';
+        timerLabel.style.transform = 'scale(1)';
+      }, 20);
+      slideInterval = setInterval(() => {
+        timer--;
+        if (timer <= 0) {
+          updateTimerUI();
+          setTimeout(nextAutoSlide, 180); // small overlap for smooth
+        } else {
+          updateTimerUI();
+          // Animate label tick
+          timerLabel.style.transition = 'none';
+          timerLabel.style.transform = 'scale(1.15)';
+          setTimeout(() => {
+            timerLabel.style.transition = 'transform 0.26s cubic-bezier(.46,.05,.2,1)';
+            timerLabel.style.transform = 'scale(1)';
+          }, 24);
+        }
+      }, 1000);
+    }
+
+    // --- Audio ---
+    function toggleAudio() {
+      musicOn = !musicOn;
+      audioBtn.setAttribute("aria-pressed", musicOn);
+      if (musicOn) {
+        audioBtn.classList.add('playing');
+        audio.volume = 1;
+        audio.play().catch(() => {});
+      } else {
+        audioBtn.classList.remove('playing');
+        audio.pause();
+      }
+    }
+    
+    document.addEventListener('play', function(e) {
+      if (e.target !== audio && (e.target.tagName === 'AUDIO' || e.target.tagName === 'VIDEO')) {
+        if (musicOn) {
+          audio.pause();
+          audioBtn.classList.remove('playing');
+          musicOn = false;
+        }
+      }
+    }, true);
+
+    // --- Events ---
+    function setupEventListeners() {
+      prevBtn.onclick = () => { show(idx - 1); resetTimer(); };
+      nextBtn.onclick = () => { show(idx + 1); resetTimer(); };
+      slider.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') { show(idx - 1); resetTimer(); e.preventDefault(); }
+        if (e.key === 'ArrowRight') { show(idx + 1); resetTimer(); e.preventDefault(); }
+      });
+      let startX = 0;
+      slider.addEventListener('touchstart', e => {
+        if (e.touches.length > 1) return;
+        startX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      slider.addEventListener('touchend', e => {
+        let endX = e.changedTouches[0].screenX;
+        if (endX - startX > 20) { show(idx - 1); resetTimer(); }
+        if (startX - endX > 20) { show(idx + 1); resetTimer(); }
+      }, { passive: true });
+      audioBtn.onclick = function(e) {
+        e.stopPropagation();
+        toggleAudio();
+      };
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          audio.pause();
+        } else if (musicOn) {
+          audio.play().catch(() => {});
+        }
+      });
+    }
+
+    // --- Init ---
+    function initSlider() {
       renderSlides();
       renderDots();
-      animating = false;
-    }, 480); // slightly longer than fadeout for smooth
-  }
-
-  // --- Dots ---
-  function renderDots() {
-    dotsWrap.innerHTML = '';
-    images.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'slider-dot' + (i === idx ? ' active' : '');
-      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-      dot.type = 'button';
-      dot.onclick = () => { show(i); resetTimer(); };
-      dotsWrap.appendChild(dot);
-    });
-  }
-
-  // --- Timer ---
-  function updateTimerUI() {
-    timerLabel.textContent = timer + 's';
-    // Animate progress: dashoffset = (max-timer)/max * CIRCUM
-    const offset = (1 - timer/4) * CIRCUM;
-    timerProgress.setAttribute('stroke-dasharray', CIRCUM.toFixed(2));
-    timerProgress.setAttribute('stroke-dashoffset', offset.toFixed(2));
-  }
-  
-  function nextAutoSlide() {
-    show(idx + 1);
-    resetTimer();
-  }
-  
-  function resetTimer() {
-    timer = 4;
-    updateTimerUI();
-    clearInterval(slideInterval);
-    clearTimeout(timerTimeout);
-    // Animate timer label (scale pop)
-    timerLabel.style.transition = 'none';
-    timerLabel.style.transform = 'scale(1.24)';
-    setTimeout(() => {
-      timerLabel.style.transition = 'transform 0.34s cubic-bezier(.45,.02,.4,1)';
-      timerLabel.style.transform = 'scale(1)';
-    }, 20);
-    slideInterval = setInterval(() => {
-      timer--;
-      if (timer <= 0) {
-        updateTimerUI();
-        setTimeout(nextAutoSlide, 180); // small overlap for smooth
-      } else {
-        updateTimerUI();
-        // Animate label tick
-        timerLabel.style.transition = 'none';
-        timerLabel.style.transform = 'scale(1.15)';
-        setTimeout(() => {
-          timerLabel.style.transition = 'transform 0.26s cubic-bezier(.46,.05,.2,1)';
-          timerLabel.style.transform = 'scale(1)';
-        }, 24);
-      }
-    }, 1000);
-  }
-
-  // --- Audio ---
-  function toggleAudio() {
-    musicOn = !musicOn;
-    audioBtn.setAttribute("aria-pressed", musicOn);
-    if (musicOn) {
-      audioBtn.classList.add('playing');
-      audio.volume = 1;
-      audio.play().catch(() => {});
-    } else {
-      audioBtn.classList.remove('playing');
-      audio.pause();
+      updateTimerUI();
+      resetTimer();
+      setupEventListeners();
     }
-  }
-  
+    initSlider();
+  })();
+
+  // Main Content Modals and Media Handling
+  let currentPlayingMedia = null;
+
+  // Pause all other media when one starts playing
   document.addEventListener('play', function(e) {
-    if (e.target !== audio && (e.target.tagName === 'AUDIO' || e.target.tagName === 'VIDEO')) {
-      if (musicOn) {
-        audio.pause();
-        audioBtn.classList.remove('playing');
-        musicOn = false;
+      const media = e.target;
+      if (currentPlayingMedia && currentPlayingMedia !== media) {
+          if (currentPlayingMedia.pause) currentPlayingMedia.pause();
+          if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
       }
-    }
+      currentPlayingMedia = media;
   }, true);
 
-  // --- Events ---
-  function setupEventListeners() {
-    prevBtn.onclick = () => { show(idx - 1); resetTimer(); };
-    nextBtn.onclick = () => { show(idx + 1); resetTimer(); };
-    slider.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft') { show(idx - 1); resetTimer(); e.preventDefault(); }
-      if (e.key === 'ArrowRight') { show(idx + 1); resetTimer(); e.preventDefault(); }
-    });
-    let startX = 0;
-    slider.addEventListener('touchstart', e => {
-      if (e.touches.length > 1) return;
-      startX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    slider.addEventListener('touchend', e => {
-      let endX = e.changedTouches[0].screenX;
-      if (endX - startX > 20) { show(idx - 1); resetTimer(); }
-      if (startX - endX > 20) { show(idx + 1); resetTimer(); }
-    }, { passive: true });
-    audioBtn.onclick = function(e) {
-      e.stopPropagation();
-      toggleAudio();
-    };
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        audio.pause();
-      } else if (musicOn) {
-        audio.play().catch(() => {});
+  // YouTube API handling (only allow one YouTube video at a time)
+  let ytPlayers = [];
+  function onYouTubeIframeAPIReady() {
+      document.querySelectorAll('.yt-embed').forEach((iframe, i) => {
+          if (!iframe.id) iframe.id = 'yt-player-' + i;
+          const player = new YT.Player(iframe.id, {
+              events: {
+                  'onStateChange': (e) => {
+                      if (e.data === YT.PlayerState.PLAYING) {
+                          if (currentPlayingMedia && currentPlayingMedia !== player) {
+                              if (currentPlayingMedia.pause) currentPlayingMedia.pause();
+                              if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
+                          }
+                          currentPlayingMedia = player;
+                      }
+                  }
+              }
+          });
+          ytPlayers.push(player);
+      });
+  }
+
+  // Load YouTube API if needed
+  if (document.querySelector('.yt-embed') && !window.YT) {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(tag);
+  }
+
+  // Modal functions
+  function openModal(modal) {
+      document.getElementById('modal-' + modal).classList.add('active');
+      document.body.style.overflow = 'hidden';
+      // trap focus in modal for accessibility
+      setTimeout(() => {
+          const modalOverlay = document.getElementById('modal-' + modal);
+          const focusable = modalOverlay.querySelectorAll('button, [tabindex="0"], audio, iframe');
+          if(focusable.length) focusable[0].focus();
+      }, 100);
+  }
+
+  function closeModal(modal) {
+      document.getElementById('modal-' + modal).classList.remove('active');
+      document.body.style.overflow = '';
+      if (currentPlayingMedia) {
+          if (currentPlayingMedia.pause) currentPlayingMedia.pause();
+          if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
+          currentPlayingMedia = null;
       }
-    });
   }
 
-  // --- Init ---
-  function initSlider() {
-    renderSlides();
-    renderDots();
-    updateTimerUI();
-    resetTimer();
-    setupEventListeners();
+  function showTab(btn, modal, tab) {
+      const modalElem = document.getElementById('modal-' + modal);
+      modalElem.querySelectorAll('.ultra-modal-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      modalElem.querySelectorAll('.modal-tab-content').forEach(col => {
+          col.style.display = (col.getAttribute('data-tab') === tab) ? '' : 'none';
+      });
+      // pause any media when changing tab
+      if (currentPlayingMedia) {
+          if (currentPlayingMedia.pause) currentPlayingMedia.pause();
+          if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
+          currentPlayingMedia = null;
+      }
   }
-  initSlider();
-})();
 
-// Main Content Modals and Media Handling
-let currentPlayingMedia = null;
+ 
 
-// Pause all other media when one starts playing
-document.addEventListener('play', function(e) {
-    const media = e.target;
-    if (currentPlayingMedia && currentPlayingMedia !== media) {
-        if (currentPlayingMedia.pause) currentPlayingMedia.pause();
-        if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
+  // Accessibility: Escape closes modals
+  document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+          document.querySelectorAll('.ultra-modal-overlay.active').forEach(modal => {
+              modal.classList.remove('active');
+          });
+          document.querySelectorAll('.tazft-modal').forEach(modal => {
+              modal.style.display = 'none';
+          });
+          document.body.style.overflow = '';
+          if (currentPlayingMedia) {
+              if (currentPlayingMedia.pause) currentPlayingMedia.pause();
+              if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
+              currentPlayingMedia = null;
+          }
+      }
+  });
+
+  // Initialize YouTube API if needed
+  if (document.querySelector('.yt-embed') && !window.YT) {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(tag);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   // Show the circle button only after reaching the bottom
+  const footerCircleBtn = document.getElementById('footerCircleBtn');
+  let isCircleVisible = false;
+  function checkScrollBottom() {
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 8)) {
+      if (!isCircleVisible) {
+        footerCircleBtn.classList.add('visible');
+        isCircleVisible = true;
+      }
+    } else {
+      if (isCircleVisible) {
+        footerCircleBtn.classList.remove('visible');
+        isCircleVisible = false;
+      }
     }
-    currentPlayingMedia = media;
-}, true);
+  }
+  window.addEventListener('scroll', checkScrollBottom);
+  window.addEventListener('resize', checkScrollBottom);
+  window.addEventListener('DOMContentLoaded', checkScrollBottom);
 
-// YouTube API handling (only allow one YouTube video at a time)
-let ytPlayers = [];
-function onYouTubeIframeAPIReady() {
-    document.querySelectorAll('.yt-embed').forEach((iframe, i) => {
-        if (!iframe.id) iframe.id = 'yt-player-' + i;
-        const player = new YT.Player(iframe.id, {
-            events: {
-                'onStateChange': (e) => {
-                    if (e.data === YT.PlayerState.PLAYING) {
-                        if (currentPlayingMedia && currentPlayingMedia !== player) {
-                            if (currentPlayingMedia.pause) currentPlayingMedia.pause();
-                            if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
-                        }
-                        currentPlayingMedia = player;
-                    }
-                }
-            }
-        });
-        ytPlayers.push(player);
-    });
-}
+  // Notification pulse if there's news
+  footerCircleBtn.setAttribute('data-has-news', 'true');
 
-// Load YouTube API if needed
-if (document.querySelector('.yt-embed') && !window.YT) {
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(tag);
-}
+  // Popup modal logic
+  const popupModal = document.getElementById('circlePopupModal');
+  const popupContent = document.getElementById('circlePopupContent');
+  const popupClose = document.getElementById('circlePopupCloseBtn');
+  const popupBack = document.getElementById('circlePopupBackBtn');
+  const mainSection = document.getElementById('circle-popup-main');
 
-// Modal functions
-function openModal(modal) {
-    document.getElementById('modal-' + modal).classList.add('active');
+  function showSection(section) {
+    mainSection.style.display = 'none';
+    document.querySelectorAll('.circle-section-content').forEach(sec => sec.classList.remove('active'));
+    document.getElementById('circle-section-'+section).classList.add('active');
+    popupBack.style.display = 'flex';
+    setTimeout(function() {
+      const firstLink = document.getElementById('circle-section-'+section).querySelector('a,button,input,[tabindex]:not([tabindex="-1"])');
+      if (firstLink) firstLink.focus();
+    }, 80);
+  }
+  function backToMain() {
+    document.querySelectorAll('.circle-section-content').forEach(sec => sec.classList.remove('active'));
+    mainSection.style.display = 'block';
+    popupBack.style.display = 'none';
+    setTimeout(function() {
+      const firstBtn = mainSection.querySelector('.circle-option-btn');
+      if (firstBtn) firstBtn.focus();
+    }, 80);
+  }
+  footerCircleBtn.addEventListener('click', function() {
+    popupModal.style.display = 'flex';
+    setTimeout(function(){
+      popupContent.setAttribute('tabindex','0');
+      popupContent.focus();
+    }, 80);
     document.body.style.overflow = 'hidden';
-    // trap focus in modal for accessibility
-    setTimeout(() => {
-        const modalOverlay = document.getElementById('modal-' + modal);
-        const focusable = modalOverlay.querySelectorAll('button, [tabindex="0"], audio, iframe');
-        if(focusable.length) focusable[0].focus();
-    }, 100);
-}
-
-function closeModal(modal) {
-    document.getElementById('modal-' + modal).classList.remove('active');
+    backToMain();
+    // Hide the circle while popup is open
+    footerCircleBtn.classList.remove('visible');
+    isCircleVisible = false;
+  });
+  popupClose.addEventListener('click', function() {
+    popupModal.style.display = 'none';
     document.body.style.overflow = '';
-    if (currentPlayingMedia) {
-        if (currentPlayingMedia.pause) currentPlayingMedia.pause();
-        if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
-        currentPlayingMedia = null;
+    backToMain();
+    // Show the circle button when popup is closed if at bottom
+    checkScrollBottom();
+  });
+  popupBack.addEventListener('click', backToMain);
+  popupModal.addEventListener('click', function(e){
+    if(e.target === popupModal){
+      popupModal.style.display = 'none';
+      document.body.style.overflow = '';
+      backToMain();
+      checkScrollBottom();
     }
-}
-
-function showTab(btn, modal, tab) {
-    const modalElem = document.getElementById('modal-' + modal);
-    modalElem.querySelectorAll('.ultra-modal-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-    modalElem.querySelectorAll('.modal-tab-content').forEach(col => {
-        col.style.display = (col.getAttribute('data-tab') === tab) ? '' : 'none';
-    });
-    // pause any media when changing tab
-    if (currentPlayingMedia) {
-        if (currentPlayingMedia.pause) currentPlayingMedia.pause();
-        if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
-        currentPlayingMedia = null;
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && popupModal.style.display === 'flex'){
+      popupModal.style.display = 'none';
+      document.body.style.overflow = '';
+      backToMain();
+      checkScrollBottom();
     }
-}
-
-// Footer Modal Functions
-function tazftOpenModal(id) {
-  document.querySelectorAll('.tazft-modal').forEach(m => m.style.display = 'none');
-  document.getElementById(id).style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  setTimeout(function() {
-    const modal = document.getElementById(id);
-    const focusable = modal.querySelectorAll('a,button,input,[tabindex]:not([tabindex="-1"])');
-    if (focusable.length) focusable[0].focus();
-    modal.setAttribute('tabindex', '0');
-  }, 50);
-}
-function tazftOpenSubModal(id) {
-  document.querySelectorAll('.tazft-modal').forEach(m => m.style.display = 'none');
-  document.getElementById(id).style.display = 'flex';
-  setTimeout(function() {
-    const modal = document.getElementById(id);
-    const focusable = modal.querySelectorAll('a,button,input,[tabindex]:not([tabindex="-1"])');
-    if (focusable.length) focusable[0].focus();
-    modal.setAttribute('tabindex', '0');
-  }, 50);
-}
-function tazftBackToMenu(currentId) {
-  tazftCloseModal(currentId);
-  setTimeout(function() { tazftOpenModal('tazft-main-modal'); }, 60);
-}
-function tazftCloseModal(id) {
-  document.getElementById(id).style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
-
-// Accessibility: Escape closes modals
-document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-        document.querySelectorAll('.ultra-modal-overlay.active').forEach(modal => {
-            modal.classList.remove('active');
-        });
-        document.querySelectorAll('.tazft-modal').forEach(modal => {
-            modal.style.display = 'none';
-        });
-        document.body.style.overflow = '';
-        if (currentPlayingMedia) {
-            if (currentPlayingMedia.pause) currentPlayingMedia.pause();
-            if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
-            currentPlayingMedia = null;
+  });
+  // Keyboard navigation: Tab trap in modal
+  popupModal.addEventListener('keydown', function(e){
+    if (popupModal.style.display === 'flex' && e.key === 'Tab') {
+      const focusableEls = popupModal.querySelectorAll('a, button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
+      if (!focusableEls.length) return;
+      const firstEl = focusableEls[0];
+      const lastEl = focusableEls[focusableEls.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          lastEl.focus();
+          e.preventDefault();
         }
+      } else {
+        if (document.activeElement === lastEl) {
+          firstEl.focus();
+          e.preventDefault();
+        }
+      }
     }
-});
+  });
 
-// Initialize YouTube API if needed
-if (document.querySelector('.yt-embed') && !window.YT) {
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(tag);
-}
-// All the existing JavaScript remains the same, just add this new function:
-function openModal(modal) {
-    // If opening main content modal, close any other open modals first
-    if (modal === 'main-content') {
-        document.querySelectorAll('.ultra-modal-overlay.active').forEach(m => {
-            if (m.id !== 'modal-main-content') m.classList.remove('active');
-        });
+  // Theme switch demo (actually switches body background)
+  function setTheme(theme) {
+    document.body.classList.remove('theme-light','theme-dark','theme-glass');
+    let status = '';
+    if(theme === 'light') {
+      document.body.classList.add('theme-light');
+      status = "Light mode activated!";
+      document.body.style.background = "#fff";
+      document.body.style.color = "#232526";
+    } else if(theme === 'dark') {
+      document.body.classList.add('theme-dark');
+      status = "Dark mode activated!";
+      document.body.style.background = "linear-gradient(135deg,#232526 0,#414345 100%)";
+      document.body.style.color = "#fcb900";
+    } else {
+      document.body.classList.add('theme-glass');
+      status = "Glassmorphism mode activated!";
+      document.body.style.background = "linear-gradient(135deg,rgba(255,255,255,0.89) 0%,rgba(143,148,251,0.09) 100%)";
+      document.body.style.color = "#232526";
     }
-    
-    document.getElementById('modal-' + modal).classList.add('active');
-    document.body.style.overflow = 'hidden';
-    
-    // trap focus in modal for accessibility
-    setTimeout(() => {
-        const modalOverlay = document.getElementById('modal-' + modal);
-        const focusable = modalOverlay.querySelectorAll('button, [tabindex="0"], audio, iframe');
-        if(focusable.length) focusable[0].focus();
-    }, 100);
-}
-
-// Rest of the existing JavaScript remains exactly the same
-// ...
-// Load YouTube API only when video tab is clicked
-function loadYTAPI() {
-  if (!window.YT) {
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(tag);
+    document.getElementById('themeStatus').innerText = status;
+    setTimeout(()=>{ document.getElementById('themeStatus').innerText='';}, 2200);
   }
-}
-
-// Call this when video tab button is clicked
 </script>
 </body>
 </html>
