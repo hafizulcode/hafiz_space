@@ -2001,9 +2001,13 @@
         .ultra-modal { border-radius: 1.2rem;}
     }
       
+      
+      
+      
   </style>
 </head>
 <body>
+    
 
 <!-- ========== BISMILLAH HEADER ========== -->
 <div class="header-container">
@@ -2012,6 +2016,19 @@
     <div class="salam-text" id="salamText"><span class="typing-cursor"></span></div>
   </div>
 </div>
+
+
+
+
+
+
+<br> </br>
+<br> </br>
+<br> </br>
+
+
+
+
 
 <!-- ========== IMAGE SLIDER ========== -->
 <div class="slider-wrap" id="slider1" tabindex="0" aria-label="Hero Slider">
@@ -2042,6 +2059,17 @@
     <source src="https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/%E0%A6%86%E0%A6%AE%E0%A6%BE%E0%A6%B0%20%E0%A6%8F%E0%A6%87%20%E0%A6%95%E0%A6%A8%E0%A7%8D%E0%A6%A0%E0%A7%87%20%E0%A6%86%E0%A6%AA%E0%A6%A8%E0%A6%BF%20%E0%A6%A8%E0%A6%AC%E0%A6%BF%E0%A6%9C%E0%A7%80%E0%A6%B0%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A7%87%E0%A6%AE%20%E0%A6%A6%E0%A6%BF%E0%A7%9F%E0%A7%87%E0%A6%9B%E0%A7%87%E0%A6%A8-mc.mp3" type="audio/mp3">
   </audio>
 </div>
+
+
+
+
+
+
+
+
+<br> </br>
+<br> </br>
+<br> </br>
 
 <!-- ========== MAIN CONTENT ========== -->
 <div class="divine-ultra-root">
@@ -2305,6 +2333,23 @@
   </div>
 </div>
 
+
+
+
+
+
+
+
+
+<br> </br>
+<br> </br>
+<br> </br>
+
+
+
+
+
+
 <!-- ========== FURFURA SHARIF CARD ========== -->
 <div class="furfura-card-container">
   <div class="premium-card" onclick="window.location='furfura.html'" tabindex="0" role="button" aria-pressed="false">
@@ -2319,6 +2364,21 @@
     </button>
   </div>
 </div>
+
+
+
+
+
+
+
+<br> </br>
+<br> </br>
+<br> </br>
+
+
+
+
+
 
 <!-- ========== ISLAMIC LIBRARY CARD ========== -->
 <div class="islamic-library-card-embedbox">
@@ -2364,11 +2424,15 @@
 
 
 
+<br> </br>
+<br> </br>
+<br> </br>
 
 
 <br> </br>
-
 <br> </br>
+<br> </br>
+
 
 
 
@@ -2421,6 +2485,8 @@
         </button>
       </div>
     </div>
+    
+    
     <!-- About Section -->
     <div class="circle-section-content" id="circle-section-about">
       <div class="circle-section-title"><span class="about">HI</span> About Developer</div>
@@ -2901,11 +2967,27 @@
   
   
   
-   // Show the circle button only after reaching the bottom
+// Improved Footer Circle Button Script
+document.addEventListener('DOMContentLoaded', function() {
+  // Elements
   const footerCircleBtn = document.getElementById('footerCircleBtn');
+  const popupModal = document.getElementById('circlePopupModal');
+  const popupContent = document.getElementById('circlePopupContent');
+  const popupClose = document.getElementById('circlePopupCloseBtn');
+  const popupBack = document.getElementById('circlePopupBackBtn');
+  const mainSection = document.getElementById('circle-popup-main');
+  
+  // State variables
   let isCircleVisible = false;
+  let scrollTimeout;
+
+  // 1. Show/hide circle button based on scroll position
   function checkScrollBottom() {
-    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 8)) {
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const pageHeight = document.body.offsetHeight;
+    const threshold = pageHeight - 300; // Show 300px before bottom
+
+    if (scrollPosition >= threshold) {
       if (!isCircleVisible) {
         footerCircleBtn.classList.add('visible');
         isCircleVisible = true;
@@ -2917,119 +2999,197 @@
       }
     }
   }
-  window.addEventListener('scroll', checkScrollBottom);
-  window.addEventListener('resize', checkScrollBottom);
-  window.addEventListener('DOMContentLoaded', checkScrollBottom);
 
-  // Notification pulse if there's news
-  footerCircleBtn.setAttribute('data-has-news', 'true');
+  // Throttled scroll handler
+  window.addEventListener('scroll', function() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(checkScrollBottom, 100);
+  });
 
-  // Popup modal logic
-  const popupModal = document.getElementById('circlePopupModal');
-  const popupContent = document.getElementById('circlePopupContent');
-  const popupClose = document.getElementById('circlePopupCloseBtn');
-  const popupBack = document.getElementById('circlePopupBackBtn');
-  const mainSection = document.getElementById('circle-popup-main');
+  // Initial check
+  checkScrollBottom();
 
-  function showSection(section) {
+  // 2. Popup Modal Functions
+  function showSection(sectionId) {
+    // Hide main section and show requested section
     mainSection.style.display = 'none';
-    document.querySelectorAll('.circle-section-content').forEach(sec => sec.classList.remove('active'));
-    document.getElementById('circle-section-'+section).classList.add('active');
-    popupBack.style.display = 'flex';
-    setTimeout(function() {
-      const firstLink = document.getElementById('circle-section-'+section).querySelector('a,button,input,[tabindex]:not([tabindex="-1"])');
-      if (firstLink) firstLink.focus();
-    }, 80);
+    popupClose.style.display = 'none';
+    
+    // Hide all sections first
+    document.querySelectorAll('.circle-section-content').forEach(section => {
+      section.classList.remove('active');
+    });
+    
+    // Show requested section
+    const section = document.getElementById(`circle-section-${sectionId}`);
+    if (section) {
+      section.classList.add('active');
+      popupBack.style.display = 'flex';
+      
+      // Focus first focusable element
+      setTimeout(() => {
+        const focusable = section.querySelector('button, a, input, [tabindex]:not([tabindex="-1"])');
+        if (focusable) focusable.focus();
+      }, 50);
+    }
   }
+
   function backToMain() {
-    document.querySelectorAll('.circle-section-content').forEach(sec => sec.classList.remove('active'));
+    // Hide all sections
+    document.querySelectorAll('.circle-section-content').forEach(section => {
+      section.classList.remove('active');
+    });
+    
+    // Show main section
     mainSection.style.display = 'block';
     popupBack.style.display = 'none';
-    setTimeout(function() {
+    popupClose.style.display = 'flex';
+    
+    // Focus first button
+    setTimeout(() => {
       const firstBtn = mainSection.querySelector('.circle-option-btn');
       if (firstBtn) firstBtn.focus();
-    }, 80);
+    }, 50);
   }
+
+  // 3. Event Listeners
+  // Open popup
   footerCircleBtn.addEventListener('click', function() {
     popupModal.style.display = 'flex';
-    setTimeout(function(){
-      popupContent.setAttribute('tabindex','0');
-      popupContent.focus();
-    }, 80);
     document.body.style.overflow = 'hidden';
     backToMain();
-    // Hide the circle while popup is open
+    
+    setTimeout(() => {
+      popupContent.focus();
+    }, 50);
+    
+    // Hide circle button
     footerCircleBtn.classList.remove('visible');
     isCircleVisible = false;
   });
+
+  // Close popup
   popupClose.addEventListener('click', function() {
     popupModal.style.display = 'none';
     document.body.style.overflow = '';
-    backToMain();
-    // Show the circle button when popup is closed if at bottom
     checkScrollBottom();
   });
+
+  // Back button
   popupBack.addEventListener('click', backToMain);
-  popupModal.addEventListener('click', function(e){
-    if(e.target === popupModal){
+
+  // Close when clicking outside
+  popupModal.addEventListener('click', function(e) {
+    if (e.target === popupModal) {
       popupModal.style.display = 'none';
       document.body.style.overflow = '';
-      backToMain();
       checkScrollBottom();
     }
   });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && popupModal.style.display === 'flex'){
+
+  // Close with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && popupModal.style.display === 'flex') {
       popupModal.style.display = 'none';
       document.body.style.overflow = '';
-      backToMain();
       checkScrollBottom();
     }
   });
-  // Keyboard navigation: Tab trap in modal
-  popupModal.addEventListener('keydown', function(e){
-    if (popupModal.style.display === 'flex' && e.key === 'Tab') {
-      const focusableEls = popupModal.querySelectorAll('a, button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
-      if (!focusableEls.length) return;
-      const firstEl = focusableEls[0];
-      const lastEl = focusableEls[focusableEls.length - 1];
+
+  // Tab key navigation trap
+  popupModal.addEventListener('keydown', function(e) {
+    if (e.key === 'Tab' && popupModal.style.display === 'flex') {
+      const focusable = Array.from(popupModal.querySelectorAll(
+        'button, a, input, [tabindex]:not([tabindex="-1"])'
+      )).filter(el => el.offsetParent !== null); // Only visible elements
+      
+      if (!focusable.length) return;
+      
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      
       if (e.shiftKey) {
-        if (document.activeElement === firstEl) {
-          lastEl.focus();
+        if (document.activeElement === first) {
+          last.focus();
           e.preventDefault();
         }
       } else {
-        if (document.activeElement === lastEl) {
-          firstEl.focus();
+        if (document.activeElement === last) {
+          first.focus();
           e.preventDefault();
         }
       }
     }
   });
 
-  // Theme switch demo (actually switches body background)
+  // 4. Section buttons
+  document.querySelectorAll('.circle-option-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const section = this.classList.contains('about') ? 'about' :
+                     this.classList.contains('services') ? 'services' :
+                     this.classList.contains('features') ? 'features' :
+                     this.classList.contains('news') ? 'news' :
+                     this.classList.contains('contact') ? 'contact' :
+                     this.classList.contains('theme') ? 'theme' : null;
+      if (section) showSection(section);
+    });
+  });
+
+  // 5. Theme switcher
   function setTheme(theme) {
-    document.body.classList.remove('theme-light','theme-dark','theme-glass');
-    let status = '';
-    if(theme === 'light') {
-      document.body.classList.add('theme-light');
-      status = "Light mode activated!";
-      document.body.style.background = "#fff";
-      document.body.style.color = "#232526";
-    } else if(theme === 'dark') {
+    document.body.className = ''; // Reset all classes
+    const statusEl = document.getElementById('themeStatus');
+    
+    if (theme === 'dark') {
       document.body.classList.add('theme-dark');
-      status = "Dark mode activated!";
-      document.body.style.background = "linear-gradient(135deg,#232526 0,#414345 100%)";
-      document.body.style.color = "#fcb900";
-    } else {
+      document.body.style.backgroundColor = '#232526';
+      document.body.style.color = '#fcb900';
+      if (statusEl) statusEl.textContent = 'Dark theme activated!';
+    } 
+    else if (theme === 'glass') {
       document.body.classList.add('theme-glass');
-      status = "Glassmorphism mode activated!";
-      document.body.style.background = "linear-gradient(135deg,rgba(255,255,255,0.89) 0%,rgba(143,148,251,0.09) 100%)";
-      document.body.style.color = "#232526";
+      document.body.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(143,148,251,0.1) 100%)';
+      document.body.style.color = '#232526';
+      if (statusEl) statusEl.textContent = 'Glass theme activated!';
     }
-    document.getElementById('themeStatus').innerText = status;
-    setTimeout(()=>{ document.getElementById('themeStatus').innerText='';}, 2200);
+    else {
+      // Light theme (default)
+      document.body.classList.add('theme-light');
+      document.body.style.backgroundColor = '#ffffff';
+      document.body.style.color = '#232526';
+      if (statusEl) statusEl.textContent = 'Light theme activated!';
+    }
+    
+    // Clear status message after 2 seconds
+    if (statusEl) {
+      setTimeout(() => {
+        statusEl.textContent = '';
+      }, 2000);
+    }
   }
+
+  // Theme button handlers
+  document.querySelectorAll('[onclick^="setTheme"]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const theme = this.getAttribute('onclick').replace('setTheme(\'', '').replace('\')', '');
+      setTheme(theme);
+    });
+  });
+
+  // Initialize with light theme
+  setTheme('light');
+});
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
