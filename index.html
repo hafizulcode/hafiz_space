@@ -2196,7 +2196,47 @@
 
 
 
-
+@media (min-width: 768px) {
+  /* Reset all main containers */
+  .divine-ultra-root,
+  .divine-ultra-heading-card,
+  .ultra-cards-flex,
+  .furfura-card-container,
+  .islamic-library-card-embedbox {
+    width: 100% !important;
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  /* Fix card widths */
+  .ultra-card {
+    width: calc(33.333% - 24px) !important;
+    max-width: none !important;
+  }
+  
+  /* Center special cards */
+  .premium-card,
+  .islamic-library-card {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 700px !important; /* Match the main card width */
+    width: 100% !important;
+  }
+  
+  /* Adjust the Islamic Library card layout */
+  .islamic-library-card {
+    flex-direction: row !important; /* Keep horizontal layout on desktop */
+    padding: 2rem !important;
+  }
+  
+  /* Adjust book gallery spacing */
+  .book-gallery {
+    justify-content: flex-start !important;
+  }
+}
 
   </style>
 </head>
