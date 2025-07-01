@@ -599,8 +599,8 @@
     }
 
     .ultra-card {
-      width: calc(33.33% - 24px);
-      max-width: 380px;
+      width: 100%;
+      max-width: 340px;
       min-height: 205px;
       border-radius: 2.4rem;
       box-shadow: 0 9px 40px rgba(30,34,56,0.16);
@@ -2162,82 +2162,95 @@
       
       
       
-      
-      
-      
-  @media (min-width: 768px) {
-  /* Reset all main containers */
-  .divine-ultra-root,
-  .divine-ultra-heading-card,
-  .ultra-cards-flex,
-  .furfura-card-container,
-  .islamic-library-card-embedbox {
-    width: 100% !important;
-    max-width: 900px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
-  
-  /* Fix card widths */
-  .ultra-card {
-    width: calc(33.333% - 24px) !important;
-    max-width: none !important;
-  }
-  
-  /* Center special cards */
-  .premium-card,
+      @media (min-width: 768px) { /* Desktop breakpoint */
   .islamic-library-card {
-    margin-left: auto !important;
-    margin-right: auto !important;
+    max-width: 700px; /* Increase from 500px */
+    padding: 2.5rem 2rem; /* Increase padding */
+  }
+  
+  .book-cover {
+    width: 100px; /* Increase from 70px */
+    height: 140px; /* Increase from 100px */
+  }
+  
+  .card-title {
+    font-size: 1.8rem; /* Increase from 1.4rem */
+  }
+  
+  .arabic-title {
+    font-size: 1.5rem; /* Increase from 1.2rem */
+  }
+  
+  .card-description {
+    font-size: 1.1rem; /* Increase from 0.95rem */
+    padding: 1rem; /* Increase padding */
+  }
+  
+  .action-button {
+    padding: 1rem 2.5rem; /* Increase button size */
+    font-size: 1.3rem; /* Increase font size */
   }
 }
 
 
 
-@media (min-width: 768px) {
-  /* Reset all main containers */
-  .divine-ultra-root,
-  .divine-ultra-heading-card,
-  .ultra-cards-flex,
-  .furfura-card-container,
-  .islamic-library-card-embedbox {
-    width: 100% !important;
-    max-width: 900px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+
+
+
+
+@media (min-width: 768px) { /* Desktop breakpoint */
+  .premium-card {
+    max-width: 700px; /* Increase from 340px */
+    padding: 2.5rem 1.5rem 2rem 1.5rem; /* Increase padding */
   }
   
-  /* Fix card widths */
-  .ultra-card {
-    width: calc(33.333% - 24px) !important;
-    max-width: none !important;
+  .main-title {
+    font-size: 3rem; /* Increase from 2.4rem */
+    margin-bottom: 1.5rem; /* Increase spacing */
   }
   
-  /* Center special cards */
-  .premium-card,
-  .islamic-library-card {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    max-width: 700px !important; /* Match the main card width */
-    width: 100% !important;
+  .main-desc {
+    font-size: 1.2rem; /* Increase from 1.01rem */
+    margin-bottom: 2rem; /* Increase spacing */
   }
   
-  /* Adjust the Islamic Library card layout */
-  .islamic-library-card {
-    flex-direction: row !important; /* Keep horizontal layout on desktop */
-    padding: 2rem !important;
-  }
-  
-  /* Adjust book gallery spacing */
-  .book-gallery {
-    justify-content: flex-start !important;
+  .go-btn {
+    padding: 1.1rem 2.5rem; /* Increase button size */
+    font-size: 1.2rem; /* Increase font size */
   }
 }
-
+      
+      
+      
+      
+      
+      
+      @media (min-width: 768px) { /* Desktop breakpoint */
+  .slider-wrap {
+    max-width: 700px; /* Increase from 340px */
+    padding: 2.5rem 1.5rem 2rem 1.5rem; /* Increase padding */
+  }
+  
+  .main-title {
+    font-size: 3rem; /* Increase from 2.4rem */
+    margin-bottom: 1.5rem; /* Increase spacing */
+  }
+  
+  .main-desc {
+    font-size: 1.2rem; /* Increase from 1.01rem */
+    margin-bottom: 2rem; /* Increase spacing */
+  }
+  
+  .go-btn {
+    padding: 1.1rem 2.5rem; /* Increase button size */
+    font-size: 1.2rem; /* Increase font size */
+  }
+}
+      
+      
+      
+      
+      
   </style>
 </head>
 <body>
