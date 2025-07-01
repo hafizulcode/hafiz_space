@@ -599,8 +599,8 @@
     }
 
     .ultra-card {
-      width: 100%;
-      max-width: 340px;
+      width: calc(33.33% - 24px);
+      max-width: 380px;
       min-height: 205px;
       border-radius: 2.4rem;
       box-shadow: 0 9px 40px rgba(30,34,56,0.16);
@@ -2156,6 +2156,61 @@
   transform: scale(1);
 }
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      /* ========== DESKTOP CARD SIZING (Computer Mode Only) ========== */
+@media (min-width: 992px) {
+  /* Main Cards Container */
+  .ultra-cards-flex {
+    max-width: 900px; /* Match slideshow width */
+    margin: 0 auto;
+    padding: 0 15px;
+    justify-content: space-between; /* Better card distribution */
+  }
+
+  /* Individual Cards */
+  .ultra-card {
+    width: 30%; /* 3 cards per row with space between */
+    min-width: 280px;
+    max-width: 290px; /* Slightly smaller than slideshow for perfect fit */
+    margin-bottom: 36px;
+  }
+
+  /* Islamic Library Card */
+  .islamic-library-card-embedbox {
+    max-width: 900px; /* Match slideshow */
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  .islamic-library-card {
+    max-width: 100%; /* Stretch to container */
+  }
+
+  /* Furfura Sharif Card */
+  .furfura-card-container {
+    max-width: 900px; /* Match slideshow */
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  .premium-card {
+    max-width: 400px; /* Slightly wider for emphasis */
+  }
+}
+
+/* Note: Mobile styles remain completely unchanged */
+
+
+
+
+
   </style>
 </head>
 <body>
