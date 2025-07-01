@@ -2165,39 +2165,36 @@
       
       
       
-      
- /* Add this to your CSS */
-@media (min-width: 992px) {
-  /* Main content container */
-  .divine-ultra-root {
-    max-width: 900px; /* Match slideshow width */
-    margin: 0 auto;
-    padding: 32px 15px;
-  }
-  
-  /* Islamic Library Card */
+  @media (min-width: 768px) {
+  /* Reset all main containers */
+  .divine-ultra-root,
+  .divine-ultra-heading-card,
+  .ultra-cards-flex,
+  .furfura-card-container,
   .islamic-library-card-embedbox {
-    max-width: 900px; /* Match slideshow */
-    margin: 30px auto;
+    width: 100% !important;
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
   
-  /* Furfura Sharif Card */
-  .furfura-card-container {
-    max-width: 900px; /* Match slideshow */
-    margin: 30px auto;
+  /* Fix card widths */
+  .ultra-card {
+    width: calc(33.333% - 24px) !important;
+    max-width: none !important;
   }
   
-  /* Main heading card */
-  .divine-ultra-heading-card {
-    max-width: 900px; /* Match slideshow */
-  }
-  
-  /* Cards grid */
-  .ultra-cards-flex {
-    max-width: 900px; /* Match slideshow */
-    margin: 0 auto;
+  /* Center special cards */
+  .premium-card,
+  .islamic-library-card {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
+
+
 
 
 
