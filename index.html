@@ -2166,48 +2166,38 @@
       
       
       
-      /* ========== DESKTOP CARD SIZING (Computer Mode Only) ========== */
+ /* Add this to your CSS */
 @media (min-width: 992px) {
-  /* Main Cards Container */
-  .ultra-cards-flex {
+  /* Main content container */
+  .divine-ultra-root {
     max-width: 900px; /* Match slideshow width */
     margin: 0 auto;
-    padding: 0 15px;
-    justify-content: space-between; /* Better card distribution */
+    padding: 32px 15px;
   }
-
-  /* Individual Cards */
-  .ultra-card {
-    width: 30%; /* 3 cards per row with space between */
-    min-width: 280px;
-    max-width: 290px; /* Slightly smaller than slideshow for perfect fit */
-    margin-bottom: 36px;
-  }
-
+  
   /* Islamic Library Card */
   .islamic-library-card-embedbox {
     max-width: 900px; /* Match slideshow */
     margin: 30px auto;
-    padding: 0 15px;
   }
-  .islamic-library-card {
-    max-width: 100%; /* Stretch to container */
-  }
-
+  
   /* Furfura Sharif Card */
   .furfura-card-container {
     max-width: 900px; /* Match slideshow */
     margin: 30px auto;
-    padding: 0 15px;
   }
-  .premium-card {
-    max-width: 400px; /* Slightly wider for emphasis */
+  
+  /* Main heading card */
+  .divine-ultra-heading-card {
+    max-width: 900px; /* Match slideshow */
+  }
+  
+  /* Cards grid */
+  .ultra-cards-flex {
+    max-width: 900px; /* Match slideshow */
+    margin: 0 auto;
   }
 }
-
-/* Note: Mobile styles remain completely unchanged */
-
-
 
 
 
