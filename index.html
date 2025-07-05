@@ -31,7 +31,7 @@
     }
 
     /* ===== Premium Backgrounds ===== */
-    .islamic-section1 {
+    .islamic-section2 {
      background: 
     linear-gradient(135deg, #00f2fe 0%, #00d2ff 50%, #3a7bd5 100%),
     repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg 10deg, rgba(255,255,255,0.6) 10deg 20deg);
@@ -39,7 +39,7 @@
       background-attachment: scroll;
     }
 
-    .islamic-section2 {
+    .islamic-section1 {
       background: 
         url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover fixed;
     }
@@ -76,7 +76,7 @@
 
     /* ===== Premium Content Cards ===== */
     .islamic-content {
-      max-width: 900px;
+      max-width: 90px;
       text-align: center;
       position: relative;
       z-index: 10;
@@ -97,12 +97,12 @@
                   inset 0 1px 0 rgba(255,255,255,0.15);
     }
 
-    .islamic-section1 .islamic-content {
+    .islamic-section2 .islamic-content {
       background: rgba(255, 255, 255, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    .islamic-section2 .islamic-content {
+    .islamic-section1 .islamic-content {
       background: rgba(4, 48, 32, 0.7);
       border: 1px solid rgba(212, 175, 55, 0.5);
     }
@@ -150,10 +150,10 @@
     }
 
     /* ===== Color Schemes ===== */
-    .islamic-section1 h1 { color: #01579b; }
-    .islamic-section1 p { color: #006064; }
-    .islamic-section2 h1 { color: #d4af37; }
-    .islamic-section2 p { color: #e8f5e9; }
+    .islamic-section2 h1 { color: #01579b; }
+    .islamic-section2 p { color: #006064; }
+    .islamic-section1 h1 { color: #d4af37; }
+    .islamic-section1 p { color: #e8f5e9; }
     .islamic-section3 h1 { color: #ff009d; }
     .islamic-section3 p { color: #4e342e; }
     .islamic-section4 h1 { color: #d4af37; }
@@ -178,8 +178,8 @@
       filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
     }
 
-    .islamic-section1 .islamic-pattern { color: #0288d1; }
-    .islamic-section2 .islamic-pattern { color: #d4af37; }
+    .islamic-section2 .islamic-pattern { color: #0288d1; }
+    .islamic-section1 .islamic-pattern { color: #d4af37; }
     .islamic-section3 .islamic-pattern { color: #5d4037; }
     .islamic-section4 .islamic-pattern { color: #d4af37; }
     .islamic-section5 .islamic-pattern { color: #0a3d62; }
@@ -226,14 +226,14 @@
       opacity: 0.4;
     }
 
-    /* Divider 1: Water Ripples */
+    /* Divider 2: Water Ripples */
     .islamic-divider-1 {
       background-image: 
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path d="M0,70 C200,30 400,110 600,70 C800,30 1000,110 1200,70 L1200,100 L0,100 Z" fill="%233fb4e8"/></svg>');
       background-color: #6bd1e7;
     }
 
-    /* Divider 2: Quranic Scroll */
+    /* Divider 1: Quranic Scroll */
     .islamic-divider-2 {
       background-image: 
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path d="M0,100 L0,80 Q300,60 600,80 T1200,60 L1200,100 Z" fill="%23d4af37"/><rect x="200" y="40" width="800" height="10" rx="5" fill="%23043220"/></svg>');
@@ -1938,21 +1938,7 @@
     @keyframes rotateIcon {
       100% { transform: rotate(360deg);}
     }
-    .footer-circle-btn[data-has-news="true"]::after {
-      content: '';
-      position: absolute;
-      top: -14px; left: -14px; right: -14px; bottom: -14px;
-      border-radius: 50%;
-      border: 3px solid var(--main-pink);
-      animation: pulseRing 1.6s infinite cubic-bezier(.44,0,.56,1);
-      z-index: 1;
-      pointer-events: none;
-    }
-    @keyframes pulseRing {
-      0% { opacity: .42; transform: scale(0.95);}
-      60% { opacity: .31;}
-      100% { opacity: 0; transform: scale(1.19);}
-    }
+
     /* Click indicator */
     .footer-circle-btn .click-indicator {
       position: absolute;
@@ -2164,17 +2150,7 @@
       --btn-icon-hover-bg: #fff;
       --btn-icon-hover-color: #232526;
     }
-    .circle-option-btn.news {
-      --btn-color: #fc4a1a;
-      --btn-text-color: #fff;
-      --btn-hover-color: #fcb900;
-      --btn-hover-text: #fff;
-      --btn-shadow-rgb: 252, 74, 26;
-      --btn-icon-bg: linear-gradient(135deg,#fc4a1a 0%,#fcb900 100%);
-      --btn-icon-color: #fff;
-      --btn-icon-hover-bg: #fff;
-      --btn-icon-hover-color: #fc4a1a;
-    }
+  
     .circle-option-btn.contact {
       --btn-color: #25d366;
       --btn-text-color: #fff;
@@ -2186,17 +2162,7 @@
       --btn-icon-hover-bg: #fff;
       --btn-icon-hover-color: #25d366;
     }
-    .circle-option-btn.theme {
-      --btn-color: #ff51a4;
-      --btn-text-color: #fff;
-      --btn-hover-color: #fcb900;
-      --btn-hover-text: #fff;
-      --btn-shadow-rgb: 255, 81, 164;
-      --btn-icon-bg: linear-gradient(135deg,var(--main-pink) 0%, #fcb900 100%);
-      --btn-icon-color: #fff;
-      --btn-icon-hover-bg: #fff;
-      --btn-icon-hover-color: #ff51a4;
-    }
+ 
 
     /* Content Sections */
     .circle-section-content {
@@ -2219,22 +2185,11 @@
     .circle-section-title .about { background:var(--main-dark);color:var(--main-gold);}
     .circle-section-title .services { background:var(--main-blue);color:#fff; }
     .circle-section-title .features { background:var(--main-dark);color:var(--main-gold);}
-    .circle-section-title .news { background:var(--main-orange);color:#fff;}
+   
     .circle-section-title .contact { background:var(--main-green);color:#fff;}
-    .circle-section-title .theme { background:var(--main-pink);color:#fff;}
+  
 
-    .circle-news-badge {
-      display: inline-block;
-      background: linear-gradient(135deg,#fc4a1a 0,#fcb900 100%);
-      color: #fff;
-      border-radius: 11px;
-      font-size: 0.91em;
-      font-weight: 700;
-      padding: 2.5px 11px 2.5px 10px;
-      margin-left: 9px;
-      letter-spacing: .07em;
-      animation: hotPulse 1.45s infinite;
-    }
+ 
     .circle-social-links {
       display:flex; flex-wrap:wrap; gap:7px 6px; margin-top:10px; justify-content:center;
     }
@@ -2549,21 +2504,52 @@
 
 
 
-    <div class="islamic-pattern islamic-rotate-slow" style="top:10%; left:5%; font-size:10rem;">۞</div>
-    <div class="islamic-pattern islamic-rotate-fast" style="bottom:15%; right:5%; font-size:12rem;">ﷲ</div>
+    <div class="islamic-pattern islamic-rotate-slow" style="top:10%; left:5%; font-size:10rem;">🌻</div>
+    <div class="islamic-pattern islamic-rotate-fast" style="bottom:15%; right:5%; font-size:12rem;">🌺</div>
     
-    <i class="fas fa-mosque islamic-icon islamic-floating" style="top:20%; left:15%;"></i>
-    <i class="fas fa-star-and-crescent islamic-icon islamic-pulse" style="bottom:25%; right:20%;"></i>
+   
+   
+    
+    
+    
+    
+    
+
+
+
+
+
+   
+  </section>
+
+  <div class="islamic-divider islamic-divider-1"></div>
+
+  <!-- Section 2 -->
+  <section class="islamic-section islamic-section2" id="islamic-section2">
+    <div class="islamic-pattern islamic-rotate-fast" style="top:15%; right:10%; font-size:11rem;">🌹</div>
+    <div class="islamic-pattern islamic-rotate-slow" style="bottom:10%; left:10%; font-size:9rem;">🌺</div>
+    
+    <i class="fas fa-quran islamic-icon islamic-floating" style="top:30%; right:15%;"></i>
+   
     
     <div class="islamic-content">
-      <h1 class="islamic-glow-text">welcome</h1>
-      
+      <h1 class="islamic-glow-text">Hafizul9996@gmail </h1>
+      <p>The Holy Quran shines like gold against the deep green of paradise. </p>
     </div>
     
     
     
     
     
+    
+    
+    
+    
+        
+  
+  <br>  </br>
+ 
+  
     
         
       <!-- ========== IMAGE SLIDER ========== -->
@@ -2599,40 +2585,23 @@
 
 
 
-   
-  </section>
 
-  <div class="islamic-divider islamic-divider-1"></div>
 
-  <!-- Section 2 -->
-  <section class="islamic-section islamic-section2" id="islamic-section2">
-    <div class="islamic-pattern islamic-rotate-fast" style="top:15%; right:10%; font-size:11rem;">﷽</div>
-    <div class="islamic-pattern islamic-rotate-slow" style="bottom:10%; left:10%; font-size:9rem;">۩</div>
-    
-    <i class="fas fa-quran islamic-icon islamic-floating" style="top:30%; right:15%;"></i>
-    <i class="fas fa-praying-hands islamic-icon islamic-pulse" style="bottom:30%; left:15%;"></i>
-    
-    <div class="islamic-content">
-      <h1 class="islamic-glow-text">القرآن الكريم</h1>
-      <p>The Holy Quran shines like gold against the deep green of paradise. These patterns reflect the divine wisdom contained within its sacred verses, guiding humanity toward enlightenment and peace.</p>
-    </div>
-    
-    
   </section>
 
   <div class="islamic-divider islamic-divider-2"></div>
 
   <!-- Section 3 -->
   <section class="islamic-section islamic-section3" id="islamic-section3">
-    <div class="islamic-pattern islamic-rotate-slow" style="top:20%; right:15%; font-size:10rem;">۞</div>
+    <div class="islamic-pattern islamic-rotate-slow" style="top:20%; right:15%; font-size:10rem;">🕌</div>
     <div class="islamic-pattern islamic-rotate-fast" style="bottom:20%; left:15%; font-size:8rem;">ﷲ</div>
-    
+    <i class="fas fa-mosque islamic-icon islamic-floating" style="top:20%; left:15%;"></i><i class="fas fa-star-and-crescent islamic-icon islamic-pulse" style="bottom:25%; right:20%;"></i>
     <i class="fas fa-kaaba islamic-icon islamic-floating" style="top:25%; left:20%;"></i>
     <i class="fas fa-pray islamic-icon islamic-pulse" style="bottom:25%; right:20%;"></i>
     
     <div class="islamic-content">
       <h1 class="islamic-glow-text">الصلاة والعبادة</h1>
-      <p>Golden moments of prayer and worship, structured like the precise patterns of Islamic art. Each line connects us to the divine, creating harmony between the physical and spiritual realms.</p>
+      <p>Golden moments of prayer and worship, structured like the precise patterns of Islamic art. </p>
     </div>
     <!-- ========== MAIN CONTENT ========== -->
 <div class="divine-ultra-root">
@@ -2921,11 +2890,11 @@
 
   <!-- Section 4 -->
   <section class="islamic-section islamic-section4" id="islamic-section4">
-    <div class="islamic-pattern islamic-rotate-fast" style="top:10%; left:10%; font-size:14rem;">﷽</div>
-    <div class="islamic-pattern islamic-rotate-slow" style="bottom:10%; right:10%; font-size:11rem;">۩</div>
+    <div class="islamic-pattern islamic-rotate-fast" style="top:10%; left:10%; font-size:14rem;">🌺</div>
+    <div class="islamic-pattern islamic-rotate-slow" style="bottom:10%; right:10%; font-size:11rem;">❤️</div>
     
     <i class="fas fa-dove islamic-icon islamic-floating" style="top:15%; right:15%;"></i>
-    <i class="fas fa-hands-praying islamic-icon islamic-pulse" style="bottom:15%; left:15%;"></i>
+  
     
     <div class="islamic-content">
       <h1 class="islamic-glow-text">الزخرفة الإسلامية</h1>
@@ -2939,8 +2908,8 @@
 
   <!-- Section 5 -->
   <section class="islamic-section islamic-section5" id="islamic-section5">
-    <div class="islamic-pattern islamic-rotate-slow" style="top:10%; right:10%; font-size:12rem;">۞</div>
-    <div class="islamic-pattern islamic-rotate-fast" style="bottom:10%; left:10%; font-size:10rem;">ﷲ</div>
+    <div class="islamic-pattern islamic-rotate-slow" style="top:10%; right:10%; font-size:12rem;">🌺</div>
+    <div class="islamic-pattern islamic-rotate-fast" style="bottom:10%; left:10%; font-size:10rem;">💐</div>
     
     <i class="fas fa-moon islamic-icon islamic-floating" style="top:20%; left:20%;"></i>
     <i class="fas fa-star islamic-icon islamic-pulse" style="bottom:20%; right:20%;"></i>
@@ -2977,11 +2946,11 @@
 
   <!-- Section 6 -->
   <section class="islamic-section islamic-section6" id="islamic-section6">
-    <div class="islamic-pattern islamic-rotate-fast" style="top:15%; left:15%; font-size:13rem;">﷽</div>
-    <div class="islamic-pattern islamic-rotate-slow" style="bottom:15%; right:15%; font-size:11rem;">۩</div>
+    <div class="islamic-pattern islamic-rotate-fast" style="top:15%; left:15%; font-size:13rem;">❤️</div>
+    <div class="islamic-pattern islamic-rotate-slow" style="bottom:15%; right:15%; font-size:11rem;">🕌</div>
     
     <i class="fas fa-mosque islamic-icon islamic-floating" style="top:30%; right:20%;"></i>
-    <i class="fas fa-praying-hands islamic-icon islamic-pulse" style="bottom:30%; left:20%;"></i>
+    
     
     <div class="islamic-content">
       <h1 class="islamic-glow-text">الوحدة الإسلامية</h1>
@@ -3074,19 +3043,9 @@
         <button class="circle-option-btn features" onclick="showSection('features')" aria-label="Key Features">
           <span class="circle-option-icon"><i class="fas fa-star"></i></span>
           Features
-        </button>
-        <button class="circle-option-btn news" onclick="showSection('news')" aria-label="News and Updates" data-hot="true">
-          <span class="circle-option-icon"><i class="fas fa-bolt"></i></span>
-          News
-        </button>
-        <button class="circle-option-btn contact" onclick="showSection('contact')" aria-label="Contact">
-          <span class="circle-option-icon"><i class="fas fa-paper-plane"></i></span>
-          Contact
-        </button>
-        <button class="circle-option-btn theme" onclick="showSection('theme')" aria-label="Theme Switcher">
-          <span class="circle-option-icon"><i class="fas fa-adjust"></i></span>
-          Theme
-        </button>
+        
+       
+       
       </div>
     </div>
     
@@ -3095,11 +3054,25 @@
     <div class="circle-section-content" id="circle-section-about">
       <div class="circle-section-title"><span class="about">HI</span> About Developer</div>
       <div style="font-size:1.01em; line-height:1.38; color: #232526;">
-        <b>Hafizul Islam</b><br>
+        <h1>Hafizul Islam</h1><br>
+        
+        
+        
+        
+         <button class="circle-option-btn contact" onclick="showSection('contact')" aria-label="Contact">
+          <span class="circle-option-icon"><i class="fas fa-paper-plane"></i></span>
+          Contact
+        </button>
+        
+        
+        
+        
         <span style="color: #4e54c8; font-weight: 700;">Owner &amp; Lead Developer</span><br>
         <span style="margin-top:4px; font-size:1em; color:#232526;">Crafting <span style="color:#000000;font-weight:400;">world-class</span> web experiences with a passion for innovation, usability, and scalability.</span>
         <div style="margin-top: 9px; font-size: 0.98em; color: #8f94fb;">Specializes in JavaScript, Next.js, Node, UI/UX, API and secure web apps.</div>
       </div>
+      
+      
       <div style="margin:13px 0 7px 0; border-top: 1.5px solid rgba(252,185,0,0.20);"></div>
       <div style="font-size:1em; color: #232526;">
         <div style="font-weight:700; color:#4e54c8; margin-bottom:8px;">Find Me</div>
@@ -3156,21 +3129,7 @@
       </ul>
       <div style="margin-top:10px;font-size:0.97em;color:#4e54c8;">Always evolving with the latest trends!</div>
     </div>
-    <!-- News Section -->
-    <div class="circle-section-content" id="circle-section-news">
-      <div class="circle-section-title">
-        <span class="news"><i class="fas fa-bolt"></i></span>
-        News & Updates <span class="circle-news-badge">New</span>
-      </div>
-      <ul style="padding-left:1em; margin:0;font-size:1.01em; color:#232526;">
-        <li><b>June 2025:</b> <span style="color:#fc4a1a;">✨</span> <b>Major UI upgrade!</b> Circle popup now has 6 options, glass/gradient effects, and animated icons.</li>
-        <li><b>May 2025:</b> <span style="color:#8f94fb;">🛡️</span> Security & performance boosted. Faster load, safer data.</li>
-        <li><b>Apr 2025:</b> <span style="color:#4e54c8;">📱</span> Mobile theme enhancements & accessibility improvements.</li>
-      </ul>
-      <div style="margin-top:13px; font-size:.98em; color:#8f94fb;">
-        <b>Stay tuned for more updates!</b>
-      </div>
-    </div>
+
     <!-- Contact Section -->
     <div class="circle-section-content" id="circle-section-contact">
       <div class="circle-section-title"><span class="contact"><i class="fas fa-paper-plane"></i></span> Contact</div>
@@ -3192,23 +3151,7 @@
         <i class="fas fa-clock"></i> <b>Available:</b> 10:00 - 23:00 (GMT+6)
       </div>
     </div>
-    <!-- Theme Section -->
-    <div class="circle-section-content" id="circle-section-theme">
-      <div class="circle-section-title"><span class="theme"><i class="fas fa-adjust"></i></span> Theme Switcher</div>
-      <div style="font-size:1.03em; margin-bottom:9px;">Try out different color themes!</div>
-      <div style="display: flex; gap:13px; margin-bottom: 13px;">
-        <button onclick="setTheme('light')" style="background:linear-gradient(135deg,#fff 0,#fcb900 100%);border:none;border-radius:11px;padding:7px 18px;font-weight:700;cursor:pointer;color:#232526;box-shadow:0 2px 6px #fcb90044;">Light</button>
-        <button onclick="setTheme('dark')" style="background:linear-gradient(135deg,#232526 0,#414345 100%);border:none;border-radius:11px;padding:7px 18px;font-weight:700;cursor:pointer;color:#fcb900;box-shadow:0 2px 7px #23252644;">Dark</button>
-        <button onclick="setTheme('glass')" style="background:linear-gradient(135deg,#e9e9e9 0,#8f94fb 100%);border:none;border-radius:11px;padding:7px 18px;font-weight:700;cursor:pointer;color:#232526;box-shadow:0 2px 6px #8f94fb44;">Glass</button>
-      </div>
-      <div id="themeStatus" style="font-size:.98em; color:#8f94fb;"></div>
-      <div style="margin-top:13px; font-size:.97em; color:#232526;">
-        <i class="fas fa-lightbulb"></i> <b>Tip:</b> The popup always adapts to your preferred mode!
-      </div>
-    </div>
-  </div>
-</div>
-
+ 
 
   </section>
 
@@ -3736,7 +3679,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const section = this.classList.contains('about') ? 'about' :
                      this.classList.contains('services') ? 'services' :
                      this.classList.contains('features') ? 'features' :
-                     this.classList.contains('news') ? 'news' :
+                     
                      this.classList.contains('contact') ? 'contact' :
                      this.classList.contains('theme') ? 'theme' : null;
       if (section) showSection(section);
