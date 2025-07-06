@@ -2485,19 +2485,442 @@
       }
       
    
+   
+   
+   
+   
+   
+   
+   
+   
+   :root {
+      --gold: #d4af37;
+      --gold-light: rgba(212, 175, 55, 0.5);
+      --highlight: #7fffd4;
+      --dark-green: #043020;
+      --header-bg: linear-gradient(135deg, rgba(4, 48, 32, 0.98), rgba(4, 31, 27, 0.98));
+      --cream: #f5f5e9;
+      --white: #ffffff;
+      --transition: all 0.4s ease;
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+      --arabic-pattern: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23d4af37" fill-opacity="0.1" d="M30,0 L50,20 L70,0 L100,30 L80,50 L100,70 L70,100 L50,80 L30,100 L0,70 L20,50 L0,30 Z"/></svg>');
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      scroll-behavior: smooth;
+    }
+
+    .islamic-header {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 0.8rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--header-bg);
+      background-image: var(--arabic-pattern);
+      background-size: 180px;
+      border-bottom: 1px solid var(--gold-light);
+      box-shadow: var(--shadow-lg);
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      animation: slideDown 0.8s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      padding: 0.8rem 1.5rem;
+      background: rgba(4, 48, 32, 0.8);
+      clip-path: polygon(0% 15%, 15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%);
+      border: 1px solid var(--gold-light);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .logo-container::before {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      background: var(--header-bg);
+      clip-path: inherit;
+      z-index: -1;
+      opacity: 0.8;
+    }
+
+    .logo-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      border-color: var(--highlight);
+    }
+
+    .logo-icon {
+      font-size: 2.5rem;
+      color: var(--gold);
+      transition: var(--transition);
+      animation: pulseIcon 2s infinite;
+    }
+
+    @keyframes pulseIcon {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .logo-text {
+      font-family: 'El Messiri', sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--white);
+      transition: var(--transition);
+    }
+
+    .logo-container:hover .logo-icon,
+    .logo-container:hover .logo-text {
+      color: var(--highlight);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    .nav-item {
+      position: relative;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      font-family: 'Amiri', serif;
+      font-size: 1.25rem;
+      padding: 0.6rem 1rem;
+      background: rgba(212, 175, 55, 0.1);
+      clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%, 10% 50%);
+      transition: var(--transition);
+    }
+
+    .nav-item:hover,
+    .nav-item.active {
+      color: var(--highlight);
+      background: rgba(127, 255, 212, 0.15);
+      clip-path: polygon(0% 0%, 100% 0%, 85% 50%, 100% 100%, 0% 100%, 15% 50%);
+      transform: translateY(-3px);
+    }
+
+    .nav-item.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 20%;
+      width: 60%;
+      height: 3px;
+      background: var(--highlight);
+      border-radius: 3px;
+    }
+
+    .islamic-menu {
+      display: none;
+      position: relative;
+    }
+
+    .islamic-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.3);
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: var(--transition);
+      cursor: pointer;
+      z-index: 1001;
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .islamic-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        transparent, 
+        transparent, 
+        transparent, 
+        var(--highlight)
+      );
+      animation: rotate 4s linear infinite;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .islamic-btn:hover::before {
+      opacity: 0.7;
+    }
+
+
+.islamic-btn.active i {
+  color: #ffd700;
+}
+
+    .islamic-btn i {
+      font-size: 1.8rem;
+      transition: transform 0.3s ease;
+    }
+
+    .islamic-btn.active i {
+      transform: rotate(90deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      right: 0;
+      top: 70px;
+      background: rgba(14, 42, 71, 0.98);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--gold-light);
+      clip-path: polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%);
+      padding: 1.5rem 0.5rem;
+      min-width: 240px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-15px);
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 1001;
+    }
+
+    .dropdown-menu.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: 24px;
+      width: 20px;
+      height: 20px;
+      background: var(--header-bg);
+      transform: rotate(45deg);
+      border-top: 1px solid var(--gold-light);
+      border-left: 1px solid var(--gold-light);
+    }
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0.8rem 1.5rem;
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Amiri', serif;
+      transition: all 0.3s ease;
+      clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dropdown-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(127, 255, 212, 0.2), transparent);
+      transition: all 0.6s ease;
+    }
+
+    .dropdown-item:hover::before {
+      left: 100%;
+    }
+
+    .dropdown-item .icon {
+      width: 24px;
+      color: var(--gold);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .dropdown-item span {
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background: rgba(127, 255, 212, 0.07);
+      color: var(--highlight);
+      transform: translateX(8px) scale(1.02);
+      box-shadow: 0 0 8px rgba(127, 255, 212, 0.25);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .dropdown-item:hover .icon {
+      color: var(--highlight);
+      transform: scale(1.3) rotate(10deg);
+    }
+
+    .dropdown-item:hover span {
+      transform: translateX(5px);
+    }
+
+    /* Animation for dropdown items */
+    .dropdown-menu.active .dropdown-item {
+      opacity: 0;
+      transform: translateX(20px);
+      animation: fadeInRight 0.4s forwards;
+    }
+
+    @keyframes fadeInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Add delay for each dropdown item */
+    .dropdown-menu.active .dropdown-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    .dropdown-menu.active .dropdown-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .dropdown-menu.active .dropdown-item:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    .dropdown-menu.active .dropdown-item:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+    .dropdown-menu.active .dropdown-item:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+    .dropdown-menu.active .dropdown-item:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+
+    @media (max-width: 992px) {
+      .nav-menu { display: none; }
+      .islamic-menu { display: block; }
+    }
+
+    @media (max-width: 576px) {
+      .islamic-header { padding: 0.6rem 1.5rem; }
+      .logo-container { padding: 0.6rem 1rem; }
+      .logo-icon { font-size: 2rem; }
+      .logo-text { font-size: 1.6rem; }
+      .islamic-btn { width: 46px; height: 46px; }
+      .islamic-btn i { font-size: 1.5rem; }
+      .islamic-menu { position: absolute; top: 12px; right: 16px; }
+    }
+    
+    
+    
+    /* Hide nav by default on all sections except first */
+.islamic-section:not(:first-child) .islamic-header {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Show nav on first section */
+.islamic-section:first-child .islamic-header {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+
+
+
+
 
   </style>
 </head>
 <body class="islamic-art-body">
 
 
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+   <header class="islamic-header">
+    <div class="logo-container" tabindex="0" aria-label="Go to Home">
+      <i class="fas fa-mosque logo-icon"></i>
+      <span class="logo-text">Islamic Art</span>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="#islamic-section1" class="nav-item active">Home</a>
+      <a href="#islamic-section2" class="nav-item">Quran</a>
+      <a href="#islamic-section3" class="nav-item">Prayer</a>
+      <a href="#islamic-section4" class="nav-item">Design</a>
+      <a href="#islamic-section5" class="nav-item">Library</a>
+      <a href="#islamic-section6" class="nav-item">Contact</a>
+    </nav>
+
+    <div class="islamic-menu">
+      <button class="islamic-btn" id="islamicBtn" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#islamic-section1" class="dropdown-item"><i class="fas fa-home icon"></i><span>Home</span></a>
+        <a href="#islamic-section2" class="dropdown-item"><i class="fas fa-quran icon"></i><span>Quran</span></a>
+        <a href="#islamic-section3" class="dropdown-item"><i class="fas fa-pray icon"></i><span>Prayer</span></a>
+        <a href="#islamic-section4" class="dropdown-item"><i class="fas fa-paint-brush icon"></i><span>Design</span></a>
+        <a href="#islamic-section5" class="dropdown-item"><i class="fas fa-book-open icon"></i><span>Library</span></a>
+        <a href="#islamic-section6" class="dropdown-item"><i class="fas fa-envelope icon"></i><span>Contact</span></a>
+      </div>
+    </div>
+  </header>
+
+ 
   <!-- Section 1 -->
   
   <section class="islamic-section islamic-section1" id="islamic-section1">
       
       
       
-      
+   
+
   
 
 
@@ -2514,7 +2937,6 @@
     
     
     
-
 
 
 
@@ -3220,17 +3642,29 @@ window.addEventListener('scroll', function() {
 
 function updateIslamicActiveSection() {
   const sections = document.querySelectorAll('.islamic-section');
-  let currentSection = '';
+  const header = document.querySelector('.islamic-header');
   
-  sections.forEach(section => {
+  sections.forEach((section, index) => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
-    if (window.scrollY >= sectionTop - sectionHeight * 0.3) {
-      currentSection = section.id;
+    
+    // Check if current section is in view
+    if (window.scrollY >= sectionTop - sectionHeight * 0.3 && 
+        window.scrollY < sectionTop + sectionHeight * 0.7) {
+      
+      // Only show header on first section
+      if (index === 0) {
+        header.style.transform = 'translateY(0)';
+        header.style.opacity = '1';
+        header.style.pointerEvents = 'auto';
+      } else {
+        header.style.transform = 'translateY(-100%)';
+        header.style.opacity = '0';
+        header.style.pointerEvents = 'none';
+      }
     }
   });
 }
-
 
 
 // ================== FULL INITIALIZATION ================== //
@@ -3901,6 +4335,106 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Navigation Click Handler
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', function() {
+    // Remove active class from all
+    document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+    
+    // Add to clicked item
+    this.classList.add('active');
+    
+    // Smooth scroll
+    const target = document.getElementById(this.dataset.section);
+    window.scrollTo({
+      top: target.offsetTop,
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Highlight active section on scroll
+window.addEventListener('scroll', function() {
+  const sections = document.querySelectorAll('.islamic-section');
+  const navItems = document.querySelectorAll('.nav-item');
+  
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (window.scrollY >= sectionTop - 200) {
+      current = section.id;
+    }
+  });
+  
+  navItems.forEach(item => {
+    item.classList.remove('active');
+    if (item.dataset.section === current) {
+      item.classList.add('active');
+    }
+  });
+});
+
+
+
+
+
+
+
+     const islamicBtn = document.getElementById('islamicBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    islamicBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('active');
+      islamicBtn.classList.toggle('active');
+    });
+
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+      islamicBtn.classList.remove('active');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        dropdownMenu.classList.remove('active');
+        islamicBtn.classList.remove('active');
+      }
+    });
+
+    // Add ripple effect to menu button
+    islamicBtn.addEventListener('click', function(e) {
+      let x = e.clientX - e.target.getBoundingClientRect().left;
+      let y = e.clientY - e.target.getBoundingClientRect().top;
+      
+      let ripple = document.createElement('span');
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      this.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+      }, 1000);
+    });
+    
+    
+    
+    
+    
+    
 
 
 </script>
