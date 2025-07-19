@@ -14,10 +14,10 @@
     }
 
     body.islamic-art-body {
-      font-family: 'Poppins', sans-serif;
+      
       overflow-x: hidden;
       scroll-behavior: smooth;
-      background: #f5f5f5;
+      
     }
 
     /* ===== Enhanced Sections ===== */
@@ -31,137 +31,323 @@
     }
 
     /* ===== Premium Backgrounds ===== */
-    .islamic-section2 {
-     background: 
-    linear-gradient(135deg, #00f2fe 0%, #00d2ff 50%, #3a7bd5 100%),
-    repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg 10deg, rgba(255,255,255,0.6) 10deg 20deg);
-      background-blend-mode: soft-light;
-      background-attachment: scroll;
-    }
+
+
+.islamic-section2 {
+  background:
+    /* Enhanced cosmic gradient: deeper, more vibrant */
+    radial-gradient(ellipse at 35% 45%,
+      #081a36 0%,
+      #243b7c 30%,
+      #3a5fcd 55%,
+      #73a0fc 85%,
+      #c3e2ff 100%
+    ),
+    /* More intricate Islamic star pattern (rotated, double layered) */
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><g opacity="0.35"><path fill="none" stroke="rgba(255,255,255,0.32)" stroke-width="1.5" d="M100 0l34.4 25.6L150 50l-25.6 34.4L150 150l-34.4 25.6L100 200l-34.4-25.6L50 150l25.6-34.4L50 50l34.4-25.6L100 0z"/><circle cx="100" cy="100" r="40" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/></g><g transform="rotate(22 100 100)" opacity="0.24"><path fill="none" stroke="rgba(255,255,255,0.23)" stroke-width="1.1" d="M100 0l34.4 25.6L150 50l-25.6 34.4L150 150l-34.4 25.6L100 200l-34.4-25.6L50 150l25.6-34.4L50 50l34.4-25.6L100 0z"/></g></svg>'),
+    /* Micro-dot Islamic texture: smaller, denser dots for silk effect */
+    radial-gradient(circle, rgba(255,255,255,0.045) 0.7px, transparent 1.8px);
+
+  background-blend-mode: overlay, screen, lighten;
+  background-size: cover, 110px 110px, 16px 16px;
+  
+  
+
+  /* Animated cosmic shimmer: more subtle, variable path */
+  animation: cosmicShine 28s infinite alternate;
+}
+
+@keyframes cosmicShine {
+  0%   { background-position: 35% 45%, 0 0, 0 0; }
+  25%  { background-position: 60% 60%, 90px 90px, 12px 12px; }
+  50%  { background-position: 75% 70%, 55px 55px, 8px 8px; }
+  75%  { background-position: 60% 30%, 20px 20px, 2px 2px; }
+  100% { background-position: 35% 45%, 0 0, 0 0; }
+}
+
+/* Floating Islamic calligraphy fragments: more fluid, varied size & opacity */
+.islamic-section2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 C40,5 60,25 80,10 C90,30 70,50 90,70 C70,85 30,75 10,90 C15,60 5,40 20,20 Z" fill="rgba(255,255,255,0.08)"/></svg>'),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="15" cy="15" r="4" fill="rgba(255,255,255,0.07)"/><circle cx="85" cy="25" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="80" r="5" fill="rgba(255,255,255,0.06)"/></svg>');
+background-size: 200px 200px, 120px 120px;
+background-repeat: no-repeat;
+animation: floatCalligraphy 45s infinite linear;
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+
+@keyframes floatCalligraphy {
+  0%   { background-position: 8% 16%, 92% 82%; }
+  35%  { background-position: 75% 65%, 20% 30%; }
+  70%  { background-position: 25% 75%, 60% 20%; }
+  100% { background-position: 8% 16%, 92% 82%; }
+}
+
+/* Dynamic golden overlay: more organic, subtle shift in direction & intensity */
+.islamic-section2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      35deg,
+      transparent,
+      transparent 38px,
+      rgba(255,215,0,0.04) 40px,
+      rgba(255,215,0,0.04) 41px
+    );
+  pointer-events: none;
+  animation: goldPulse 13s infinite alternate;
+  z-index: 2;
+}
+
+@keyframes goldPulse {
+  0%   { opacity: 0.27; transform: scale(1); }
+  50%  { opacity: 0.58; transform: scale(1.03); }
+  100% { opacity: 0.27; transform: scale(1); }
+}
+
+/* Interactive elements: shimmer and calligraphy react to hover */
+.islamic-section2:hover {
+  animation-duration: 19s;
+}
+.islamic-section2:hover::before {
+  animation-duration: 15s;
+  filter: blur(0.5px) brightness(1.2);
+}
+.islamic-section2:hover::after {
+  opacity: 0.45;
+}
+
+/* Mobile optimization: denser patterns, smaller sizes, higher contrast */
+@media (max-width: 768px) {
+  .islamic-section2 {
+    background-size: cover, 70px 70px, 11px 11px;
+  }
+  .islamic-section2::before {
+    background-size: 120px 120px, 75px 75px;
+  }
+}
 
     .islamic-section1 {
       background: 
         url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover fixed;
     }
 
-    .islamic-section3 {
-      background: 
-        radial-gradient(circle at center, #0a5c36 0%, #043020 100%),
-        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(212, 175, 55, 0.3) 40px, rgba(212, 175, 55, 0.3) 80px),
-        repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(212, 175, 55, 0.2) 40px, rgba(212, 175, 55, 0.2) 80px);
-      background-blend-mode: overlay;
-      background-attachment: scroll;
-    }
+
+
+
+
+.islamic-section3 {
+  background: 
+    /* Base gradient */
+    radial-gradient(circle at center, #0a5c36 0%, #022618 100%),
+    
+    /* Golden geometric pattern */
+    repeating-linear-gradient(45deg, 
+      transparent, 
+      transparent 25px, 
+      rgba(212, 175, 55, 0.4) 25px, 
+      rgba(212, 175, 55, 0.4) 50px),
+    
+    /* Complementary geometric pattern */
+    repeating-linear-gradient(-45deg, 
+      transparent, 
+      transparent 30px, 
+      rgba(212, 175, 55, 0.25) 30px, 
+      rgba(212, 175, 55, 0.25) 60px),
+    
+    /* Subtle texture */
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23000000" opacity="0.05" d="M0 0h100v100H0z"/><path fill="none" stroke="%23ffffff" opacity="0.03" stroke-width="1" d="M0 0h100v100H0z"/></svg>');
+  
+  background-blend-mode: soft-light, overlay, overlay, normal;
+  background-attachment: fixed;
+  background-size: cover;
+  
+  /* Additional enhancements */
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional pseudo-element for extra depth */
+.islamic-section3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
 
     .islamic-section4 {
       background: 
         url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c') center/cover fixed;
     }
 
-    .islamic-section5 {
-      background: 
-        radial-gradient(circle at center, #fff8e1 0%, #ffe082 30%, #fbc02d 100%),
-        repeating-linear-gradient(45deg, transparent, transparent 40px, #d4af37 40px, #d4af37 42px);
-      background-blend-mode: multiply;
-      background-attachment: scroll;
-    }
 
-    .islamic-section6 {
-      background: 
-        repeating-conic-gradient(from 45deg, #0a3d62 0deg 10deg, #d4af37 10deg 20deg),
-        linear-gradient(to bottom, rgba(10, 61, 98, 0.2), rgba(212, 175, 55, 0.1));
-      background-size: 100px 100px;
-      background-attachment: scroll;
-    }
 
-    /* ===== Premium Content Cards ===== */
-    .islamic-content {
-      max-width: 90px;
-      text-align: center;
-      position: relative;
-      z-index: 10;
-      padding: 3rem;
-      border-radius: 20px;
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 
-                  inset 0 1px 0 rgba(255,255,255,0.1);
-      margin: 0 auto;
-      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
 
-    .islamic-content:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3),
-                  inset 0 1px 0 rgba(255,255,255,0.15);
-    }
+.islamic-section5 {
+  /* Base structure for all devices */
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  
+  /* New color scheme: Deep Teal & Gold */
+  background: 
+    /* Base gradient */
+    radial-gradient(circle at 20% 50%, #0d9488 0%, #115e59 70%, #042f2e 100%),
+    
+    /* Responsive Islamic pattern (scales with screen) */
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice"><path fill="%23d4af37" opacity="0.3" d="M50 0l12 38h38l-30 22 12 38-32-22-32 22 12-38-30-22h38z"/><circle cx="50" cy="50" r="10" fill="none" stroke="%23d4af37" stroke-width="0.5" opacity="0.5"/></svg>'),
+    
+    /* Cross-hatch texture */
+    repeating-linear-gradient(
+      45deg,
+      rgba(212, 175, 55, 0.05),
+      rgba(212, 175, 55, 0.05) 2px,
+      transparent 2px,
+      transparent 5px
+    );
 
-    .islamic-section2 .islamic-content {
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
+  background-blend-mode: overlay, screen, normal;
+  background-size: cover, clamp(150px, 30vw, 300px), auto;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 
-    .islamic-section1 .islamic-content {
-      background: rgba(4, 48, 32, 0.7);
-      border: 1px solid rgba(212, 175, 55, 0.5);
-    }
+  /* Universal visibility enhancements */
+  box-shadow: 
+    inset 0 0 30px rgba(0, 0, 0, 0.7),
+    inset 0 0 100px rgba(4, 47, 46, 0.5);
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
 
-    .islamic-section3 .islamic-content {
-      background: rgba(255, 248, 225, 0.5);
-      border: 1px solid rgba(93, 64, 55, 0.3);
-    }
+/* Responsive pattern overlay */
+.islamic-section5::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 19px,
+      rgba(212, 175, 55, 0.1) 19px,
+      rgba(212, 175, 55, 0.1) 20px
+    );
+  pointer-events: none;
+}
 
-    .islamic-section4 .islamic-content {
-      background: rgba(10, 61, 98, 0.75);
-      border: 1px solid rgba(212, 175, 55, 0.6);
-    }
+/* Mobile-optimized adjustments */
+@media (max-width: 768px) {
+  .islamic-section5 {
+    background-size: cover, clamp(100px, 40vw, 200px), auto;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+  }
+}
 
-    .islamic-section5 .islamic-content {
-      background: rgba(93, 64, 55, 0.7);
-      border: 1px solid rgba(212, 175, 55, 0.6);
-    }
+.islamic-section6 {
+  background: 
+    /* Original gradients (kept identical) */
+    repeating-conic-gradient(from 45deg, #0a3d62 0deg 10deg, #d4af37 10deg 20deg),
+    linear-gradient(to bottom, rgba(10, 61, 98, 0.2), rgba(212, 175, 55, 0.1));
+  
+  background-size: 100px 100px;
+  background-attachment: scroll;
+  
+  /* ---- IMPROVEMENTS BELOW (without changing structure) ---- */
+  
+  /* 1. Enhanced Gold-Blue Contrast */
+  background-blend-mode: screen;
+  
+  /* 2. Subtle Pulse Animation */
+  animation: islamicPulse 12s ease-in-out infinite;
+  
+  /* 3. Depth Effects (non-intrusive) */
+  box-shadow: 
+    inset 0 0 15px rgba(10, 61, 98, 0.7),
+    inset 0 0 30px rgba(212, 175, 55, 0.2);
+  
+  /* 4. Metallic Border Glow */
+  border: 1px solid transparent;
+  border-image: linear-gradient(
+    to right,
+    transparent,
+    rgba(212, 175, 55, 0.3),
+    transparent
+  ) 1;
+}
 
-    .islamic-section6 .islamic-content {
-      background: rgba(255, 255, 255, 0.35);
-      border: 1px solid rgba(212, 175, 55, 0.6);
-    }
+@keyframes islamicPulse {
+  0%, 100% {
+    opacity: 1;
+    background-position: 0 0;
+  }
+  50% {
+    opacity: 0.95;
+    background-position: 50px 50px; /* Gentle pattern shift */
+  }
+}
 
-    /* ===== Typography ===== */
-    .islamic-content h1 {
-      font-family: 'Amiri', serif;
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
-      transition: all 0.3s ease;
-    }
+/* Optional: Floating Particles (adds life without structural changes) */
+.islamic-section6::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(212, 175, 55, 0.15) 0%,
+      transparent 20%
+    );
+  pointer-events: none;
+  animation: float 18s infinite alternate ease-in-out;
+}
 
-    .islamic-content:hover h1 {
-      text-shadow: 0 4px 8px rgba(0,0,0,0.25);
-    }
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, 15px); }
+}
+}
 
-    .islamic-content p {
-      font-size: 1.3rem;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-      font-weight: 400;
-    }
+
+
+
+
+   
+
+
 
     /* ===== Color Schemes ===== */
-    .islamic-section2 h1 { color: #01579b; }
-    .islamic-section2 p { color: #006064; }
+    .islamic-section2 h1 { color: #11ff00; }
+    .islamic-section2 p { color: #a5ff80; }
     .islamic-section1 h1 { color: #d4af37; }
     .islamic-section1 p { color: #e8f5e9; }
-    .islamic-section3 h1 { color: #ff009d; }
-    .islamic-section3 p { color: #4e342e; }
+    .islamic-section3 h1 { color: #ebebeb; }
+    .islamic-section3 p { color: #b3b3b3; }
     .islamic-section4 h1 { color: #d4af37; }
     .islamic-section4 p { color: #f5f5f5; }
     .islamic-section5 h1 { color: #11ff00; }
     .islamic-section5 p { color: #f5f5f5; }
-    .islamic-section6 h1 { color: #2600ff; }
-    .islamic-section6 p { color: #5d4037; }
+    .islamic-section6 h1 { color: #2bffff; }
+    .islamic-section6 p { color: #00d3c2; }
 
     /* ===== Islamic Decorations ===== */
     .islamic-pattern {
@@ -202,7 +388,7 @@
 
     /* ===== DIVIDER BLOCK ===== */
     .islamic-divider {
-      height: 100px;
+      height: 20px;
       width: 100%;
       position: relative;
       background-repeat: no-repeat;
@@ -268,7 +454,7 @@
 
     @media (max-width: 768px) {
       .islamic-divider {
-        height: 70px;
+        height: 20px;
         background-size: 150% 100%;
       }
       .islamic-divider::before {
@@ -277,94 +463,6 @@
     }
 
   
-
-    /* ===== Animations ===== */
-    @keyframes islamic-float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(3deg); }
-    }
-
-    @keyframes islamic-pulse {
-      0%, 100% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.15); opacity: 1; }
-    }
-
-    @keyframes islamic-rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes islamic-fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes islamic-glow {
-      0%, 100% { text-shadow: 0 0 5px rgba(212, 175, 55, 0.5); }
-      50% { text-shadow: 0 0 15px rgba(212, 175, 55, 0.8); }
-    }
-
-    .islamic-content {
-      animation: islamic-fadeIn 1s ease-out forwards;
-    }
-
-    .islamic-floating {
-      animation: islamic-float 8s ease-in-out infinite;
-    }
-
-    .islamic-pulse {
-      animation: islamic-pulse 3.5s ease-in-out infinite;
-    }
-
-    .islamic-rotate-slow {
-      animation: islamic-rotate 30s linear infinite;
-    }
-
-    .islamic-rotate-fast {
-      animation: islamic-rotate 20s linear infinite reverse;
-    }
-
-    .islamic-glow-text {
-      animation: islamic-glow 3s ease-in-out infinite;
-    }
-
-
-
-
-
-
-
-
-  /* Slider Responsive */
-        .slider-wrap {
-          max-width: 98vw;
-          aspect-ratio: 16 / 10;
-        }
-        .audio-btn {
-          width: 32px;
-          height: 32px;
-          right: 8px;
-          bottom: 8px;
-        }
-        .audio-btn .music-icon-on,
-        .audio-btn .music-icon-off {
-          font-size: 1.3rem;
-        }
-        .timer-fab {
-          width: 32px;
-          height: 32px;
-          left: 8px;
-          bottom: 8px;
-          font-size: 0.95rem;
-        }
-        .slider-dot {
-          width: 10px;
-          height: 10px;
-        }
-        .slider-dots {
-          gap: 8px;
-          bottom: 7px;
-        }
 
 
 
@@ -375,11 +473,11 @@
 
     /* ========== IMAGE SLIDER ========== */
     .slider-wrap {
-      margin: 30px auto;
+      margin: 10px auto;
       padding: 0;
       width: 100%;
-      max-width: 900px;
-      aspect-ratio: 16 / 9;
+      max-width: none;
+      aspect-ratio: unset;
       background: #eee;
       border-radius: 22px;
       box-shadow: 0 2px 24px #3f51b11a;
@@ -1007,340 +1105,16 @@
       box-shadow: 0 12px 32px rgba(30,34,56,0.21);
     }
 
-    /* ========== MODAL STYLES ========== */
-    .ultra-modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1000;
-      background: rgba(30, 42, 73, 0.32);
-      backdrop-filter: blur(22px) saturate(1.22);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.34s cubic-bezier(.47,1.64,.41,.8);
-      padding: 18px;
-    }
 
-    .ultra-modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
 
-    .ultra-modal {
-      border-radius: 2.8rem;
-      width: 100%;
-      max-width: 950px;
-      height: 92vh;
-      max-height: 850px;
-      box-shadow: 0 22px 80px rgba(30, 34, 56, 0.22), 0 6px 32px rgba(244,140,6,0.22);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      background: rgba(255,255,255,0.995);
-      background-clip: padding-box;
-      animation: modal-fade-in 0.75s cubic-bezier(.47,1.64,.41,.8);
-      margin: 0;
-      border: 8px double;
-      outline: 5px solid #fffbe6;
-    }
 
-    .ultra-modal.modal1 { background: linear-gradient(120deg, #fff 85%, #fbeee6 100%); border-color: #f48c06; }
-    .ultra-modal.modal2 { background: linear-gradient(120deg, #fff 85%, #e6f6fb 100%); border-color: #1cb5e0; }
-    .ultra-modal.modal3 { background: linear-gradient(120deg, #fff 85%, #f5e6fb 100%); border-color: #a259d9; }
-
-    @keyframes modal-fade-in {
-        from { opacity:0; transform:scale(0.97) translateY(44px);}
-        to { opacity:1; transform:scale(1) translateY(0);}
-    }
-
-    .ultra-modal-header {
-      display: flex;
-      align-items: center;
-      padding: 28px 24px 10px;
-      min-height: 75px;
-      background: transparent;
-      z-index: 2;
-      position: relative;
-    }
-
-    .ultra-modal-header .modal-header-icon {
-      font-size: 2.3rem;
-      margin: 0 20px 0 22px;
-      padding: 9px 0;
-      border-radius: 1.5rem;
-      background: #fff;
-      box-shadow: 0 2px 13px rgba(30,34,56,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: inherit;
-      width: 60px;
-      height: 60px;
-    }
-
-    .ultra-modal-header h2 {
-      font-size: 1.65rem;
-      font-weight: 900;
-      letter-spacing: 0.7px;
-      margin: 0;
-      color: #1a2238;
-      text-shadow: 0 1px 8px rgba(55,114,255,0.11);
-      flex: 1;
-      text-align: left;
-    }
-
-    .ultra-modal-close {
-      position: absolute;
-      top: 18px;
-      right: 26px;
-      width: 45px;
-      height: 45px;
-      background: #fff;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      border: none;
-      color: #1a2238;
-      font-size: 1.65rem;
-      z-index: 3;
-      transition: all 0.25s cubic-bezier(.47,1.64,.41,.8);
-      box-shadow: 0 2px 12px rgba(55,114,255,0.15);
-    }
-
-    .ultra-modal-close:hover {
-      background: #ffe6d0;
-      color: #fff;
-      box-shadow: 0 5px 30px rgba(244,140,6,0.13);
-      transform: scale(1.11);
-    }
-
-    .ultra-modal-tabs {
-      display: flex;
-      border-bottom: 2.5px solid #efefef;
-      background: #fff;
-      border-radius: 0;
-      font-weight: 700;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      z-index: 2;
-      position: relative;
-      box-shadow: 0 2px 11px rgba(28,181,224,0.13);
-    }
-
-    .ultra-modal-tab {
-      background: none;
-      border: none;
-      outline: none;
-      padding: 16px 38px;
-      color: #888;
-      cursor: pointer;
-      border-radius: 0;
-      transition: all 0.22s cubic-bezier(.47,1.64,.41,.8);
-      font-size: 1.09rem;
-      letter-spacing: 0.18px;
-      position: relative;
-      font-weight: 700;
-      flex: 1;
-      max-width: 230px;
-      text-align: center;
-      user-select: none;
-    }
-
-    .ultra-modal-tab.active,
-    .ultra-modal-tab:focus {
-      color: #fff;
-      background: linear-gradient(90deg, #f48c06 0%, #ffbb00 100%);
-      box-shadow: 0 -2px 22px rgba(244,140,6,0.14);
-      z-index: 2;
-    }
-
-    .ultra-modal.modal2 .ultra-modal-tab.active,
-    .ultra-modal.modal2 .ultra-modal-tab:focus {
-      background: linear-gradient(90deg, #1cb5e0 0%, #1de9b6 100%);
-    }
-
-    .ultra-modal.modal3 .ultra-modal-tab.active,
-    .ultra-modal.modal3 .ultra-modal-tab:focus {
-      background: linear-gradient(90deg, #a259d9 0%, #6741d9 100%);
-    }
-
-    .ultra-modal-content {
-      flex: 1;
-      width: 100%;
-      padding: 22px 0;
-      overflow-y: auto;
-      border-radius: 0 0 2.8rem 2.8rem;
-      font-size: 1.05rem;
-      background: none;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: flex-start;
-      scrollbar-width: thin;
-      scrollbar-color: #f48c06 transparent;
-    }
-
-    .ultra-modal.modal2 .ultra-modal-content {
-      scrollbar-color: #1cb5e0 transparent;
-    }
-
-    .ultra-modal.modal3 .ultra-modal-content {
-      scrollbar-color: #a259d9 transparent;
-    }
-
-    .ultra-modal-content::-webkit-scrollbar {
-      width: 7px;
-      background: transparent;
-    }
-
-    .ultra-modal.modal1 .ultra-modal-content::-webkit-scrollbar-thumb {
-      background: linear-gradient(#f48c06, #ffbb00);
-      border-radius: 4px;
-    }
-
-    .ultra-modal.modal2 .ultra-modal-content::-webkit-scrollbar-thumb {
-      background: linear-gradient(#1cb5e0, #1de9b6);
-      border-radius: 4px;
-    }
-
-    .ultra-modal.modal3 .ultra-modal-content::-webkit-scrollbar-thumb {
-      background: linear-gradient(#a259d9, #6741d9);
-      border-radius: 4px;
-    }
-
-    .ultra-modal-content::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .ultra-modal-col {
-      width: 100%;
-      margin: 0 auto;
-      max-width: 870px;
-      background: none;
-      padding: 0 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .ultra-modal-col strong {
-      font-size: 1.16rem;
-      color: #1a2238;
-      margin: 14px 18px 8px;
-      letter-spacing: 0.15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-    }
-
-    .media-item {
-      display: flex;
-      flex-direction: column;
-      background: #fff;
-      border-radius: 1.5rem;
-      box-shadow: 0 6px 26px rgba(0,0,0,0.11);
-      overflow: hidden;
-      transition: transform 0.22s cubic-bezier(.47,1.64,.41,.8), box-shadow 0.22s;
-      border-left: 6px solid;
-      border-right: 1px solid #ece8e0;
-    }
-
-    .ultra-modal.modal1 .media-item { border-left-color: #f48c06; }
-    .ultra-modal.modal2 .media-item { border-left-color: #1cb5e0; }
-    .ultra-modal.modal3 .media-item { border-left-color: #a259d9; }
-
-    .media-item:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 16px 45px rgba(244,140,6,0.17);
-    }
-
-    .media-header {
-      display: flex;
-      align-items: center;
-      padding: 16px 20px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.97) 0%, rgba(245,248,250,0.98) 100%);
-      border-bottom: 1px solid #f7eee7;
-    }
-
-    .media-icon {
-      font-size: 1.7rem;
-      margin-right: 16px;
-      min-width: 36px;
-      text-align: center;
-    }
-
-    .ultra-modal.modal1 .media-icon { color: #f48c06; }
-    .ultra-modal.modal2 .media-icon { color: #1cb5e0; }
-    .ultra-modal.modal3 .media-icon { color: #a259d9; }
-
-    .media-info {
-      flex: 1;
-    }
-
-    .media-title {
-      font-size: 1.13rem;
-      font-weight: 700;
-      color: #1a2238;
-      margin-bottom: 2px;
-      line-height: 1.3;
-    }
-
-    .media-date {
-      font-size: 0.94rem;
-      color: #5e698e;
-      opacity: 0.84;
-    }
-
-    .media-player {
-      width: 100%;
-      padding: 0 20px 20px;
-      background: #fcfbf9;
-    }
-
-    .media-player audio,
-    .media-player video {
-      width: 100%;
-      border-radius: 1rem;
-      margin: 0;
-      background: #000;
-      display: block;
-      outline: 1px solid #f0f0f0;
-    }
-
-    .media-player video {
-      aspect-ratio: 16/9;
-      object-fit: cover;
-    }
-    
-    .media-player iframe {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 1rem;
-      border: none;
-      background: #000;
-      display: block;
-      outline: 1px solid #f0f0f0;
-      margin: 0;
-      min-height: 180px;
-    }
-
-    /* ========== ISLAMIC LIBRARY CARD ========== */
+    /* Islamic Library Card Styles */
     .islamic-library-card-embedbox {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
-      padding: 25px 0;
+      padding: 30px 0;
       background: none !important;
     }
 
@@ -1351,16 +1125,16 @@
                 rgba(255,246,222,0.93) 0%,   
                 rgba(240,222,255,0.97) 60%,  
                 rgba(210,227,255,0.79) 100%);
-      border-radius: 2.2rem;
-      box-shadow: 0 25px 60px -10px rgba(123,76,38,0.19),
-                  0 15px 25px -15px rgba(44,99,142,0.13),
-                  inset 0 0 15px rgba(255,255,255,0.85);
-      max-width: 500px;
+      border-radius: 2.8rem;
+      box-shadow: 0 30px 70px -10px rgba(123,76,38,0.19),
+                  0 20px 35px -15px rgba(44,99,142,0.13),
+                  inset 0 0 20px rgba(255,255,255,0.85);
+      max-width: 700px; /* Increased from 500px */
       width: 95vw;
-      min-height: 150px;
-      padding: 1.8rem 1.6rem;
-      gap: 1.4rem;
-      border: 3px solid rgba(210,180,140,0.38);
+      min-height: 220px; /* Increased from 150px */
+      padding: 2.5rem 2rem; /* Increased padding */
+      gap: 2rem; /* Increased gap */
+      border: 4px solid rgba(210,180,140,0.38); /* Thicker border */
       position: relative;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -1375,9 +1149,9 @@
     .islamic-library-card::before {
       content: '';
       position: absolute;
-      inset: -3px;
-      border-radius: 2.4rem;
-      padding: 3px;
+      inset: -4px; /* Increased to match thicker border */
+      border-radius: 3rem; /* Slightly larger to match new card size */
+      padding: 4px; /* Increased to match thicker border */
       background: linear-gradient(135deg, 
                   #FFD700 0%,      
                   #E9C46A 10%,     
@@ -1398,9 +1172,9 @@
     }
 
     .islamic-library-card:hover {
-      transform: translateY(-5px) scale(1.025);
-      box-shadow: 0 30px 70px -5px rgba(123,76,38,0.25),
-                  0 20px 30px -10px rgba(44,99,142,0.20);
+      transform: translateY(-8px) scale(1.03); /* More pronounced hover effect */
+      box-shadow: 0 35px 80px -5px rgba(123,76,38,0.25),
+                  0 25px 40px -10px rgba(44,99,142,0.20);
     }
 
     .islamic-library-card:hover::before {
@@ -1424,21 +1198,21 @@
 
     .book-gallery {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.8rem; /* Increased gap */
       min-width: 0;
       perspective: 1000px;
       z-index: 2;
     }
 
     .book-cover {
-      width: 70px;
-      height: 100px;
-      border-radius: 1.4rem;
+      width: 100px; /* Increased from 70px */
+      height: 140px; /* Increased from 100px */
+      border-radius: 1.6rem; /* Slightly larger */
       overflow: hidden;
-      border: 2px solid rgba(255,220,130,0.98);
+      border: 3px solid rgba(255,220,130,0.98); /* Thicker border */
       background: linear-gradient(145deg, #fff9e6 0%, #f0e7fa 100%);
-      box-shadow: 0 8px 25px -5px rgba(210,180,140,0.08),
-                  inset 0 0 12px rgba(255,255,255,0.85);
+      box-shadow: 0 10px 30px -5px rgba(210,180,140,0.08),
+                  inset 0 0 15px rgba(255,255,255,0.85);
       flex: 0 0 auto;
       position: relative;
       transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1452,8 +1226,8 @@
     .book-cover:nth-child(3) { animation-delay: 0.4s; }
 
     @keyframes bookFloat {
-      0% { transform: translateY(0) rotate(-6deg); }
-      100% { transform: translateY(-15px) rotate(6deg); }
+      0% { transform: translateY(0) rotate(-2deg); }
+      100% { transform: translateY(-12px) rotate(3deg); } /* More pronounced float */
     }
 
     .book-image {
@@ -1461,25 +1235,25 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 1.1rem;
+      border-radius: 1.3rem; /* Slightly larger */
       transition: all 0.4s ease;
       transform: translateZ(0);
     }
 
     .islamic-library-card:hover .book-cover {
       animation: bookHover 0.8s ease forwards;
-      box-shadow: 0 12px 35px -3px rgba(131,96,195,0.18);
+      box-shadow: 0 15px 40px -3px rgba(131,96,195,0.18);
     }
 
     @keyframes bookHover {
       0% { transform: translateY(0) rotate(0); }
-      50% { transform: translateY(-15px) rotate(-5deg) scale(1.1); }
-      100% { transform: translateY(-8px) rotate(-3deg) scale(1.08); }
+      50% { transform: translateY(-18px) rotate(-6deg) scale(1.12); }
+      100% { transform: translateY(-10px) rotate(-4deg) scale(1.1); }
     }
 
     .islamic-library-card:hover .book-image {
-      filter: brightness(1.14) contrast(.09) saturate(1.16);
-      transform: scale(1.05) translateZ(5px);
+      filter: brightness(1.16) contrast(1.12) saturate(1.18);
+      transform: scale(1.08) translateZ(8px);
     }
 
     .card-content {
@@ -1494,20 +1268,20 @@
 
     .card-title {
       font-family: 'Poppins', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.8rem; /* Increased from 1.4rem */
       font-weight: 900;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.4rem;
       background: linear-gradient(90deg, 
                   #FFD700 0%, 
                   #8360c3 35%, 
                   #5390D9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
       line-height: 1.2;
       position: relative;
-      padding-bottom: 0.5rem;
-      text-shadow: 0 2px 4px rgba(131,96,195,0.07);
+      padding-bottom: 0.6rem;
+      text-shadow: 0 3px 6px rgba(131,96,195,0.09);
     }
 
     .card-title::after {
@@ -1515,59 +1289,59 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 40px;
-      height: 3px;
+      width: 50px; /* Increased from 40px */
+      height: 4px; /* Thicker */
       background: linear-gradient(90deg, #FFD700, #5390D9);
-      border-radius: 3px;
+      border-radius: 4px;
       transition: width 0.4s ease;
     }
 
     .islamic-library-card:hover .card-title::after {
-      width: 60px;
+      width: 80px; /* Increased from 60px */
     }
 
     .arabic-title {
-      font-family: 'Noto Naskh Arabic', serif;
-      font-size: 1.2rem;
+      font-family: 'Traditional Arabic', 'Arial', serif;
+      font-size: 1.5rem; /* Increased from 1.2rem */
       font-weight: 700;
       color: #2EB872;
-      margin: 0.3rem 0;
+      margin: 0.4rem 0;
       direction: rtl;
       text-align: left;
-      line-height: 1.3;
-      text-shadow: 0 1px 2px rgba(255,215,0,0.08);
+      line-height: 1.4;
+      text-shadow: 0 2px 3px rgba(255,215,0,0.1);
       position: relative;
       display: inline-block;
       background: linear-gradient(90deg, rgba(46,184,114,0.1), transparent);
-      padding: 0.2rem 0.5rem;
-      border-radius: 0.5rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 0.6rem;
       transition: all 0.3s ease;
     }
 
     .islamic-library-card:hover .arabic-title {
       color: #FFD700;
-      transform: translateX(3px);
+      transform: translateX(5px);
     }
 
     .card-description {
-      font-size: 0.95rem;
+      font-size: 1.1rem; /* Increased from 0.95rem */
       color: #8360c3;
-      margin: 0.5rem 0 0.8rem;
+      margin: 0.6rem 0 1rem;
       font-family: 'Poppins', sans-serif;
-      line-height: 1.4;
+      line-height: 1.5;
       background: rgba(255,246,220,0.85);
-      backdrop-filter: blur(5px);
-      border-radius: 0.8rem;
-      padding: 0.7rem;
-      box-shadow: 0 2px 10px rgba(123,76,38,0.07),
-                  inset 0 0 0 1px rgba(210,180,140,0.18);
+      backdrop-filter: blur(6px);
+      border-radius: 1rem;
+      padding: 0.9rem;
+      box-shadow: 0 3px 12px rgba(123,76,38,0.09),
+                  inset 0 0 0 1px rgba(210,180,140,0.2);
       transition: all 0.4s ease;
     }
 
     .islamic-library-card:hover .card-description {
       background: rgba(240,222,255,0.93);
-      box-shadow: 0 4px 15px rgba(123,76,38,0.10),
-                  inset 0 0 0 1px rgba(210,180,140,0.21);
+      box-shadow: 0 5px 18px rgba(123,76,38,0.12),
+                  inset 0 0 0 1px rgba(210,180,140,0.25);
     }
 
     .action-button {
@@ -1575,14 +1349,14 @@
       background: linear-gradient(90deg, #FFD700 0%, #5390D9 100%);
       color: #4d4034;
       border: none;
-      border-radius: 2rem;
-      padding: 0.7rem 1.8rem;
+      border-radius: 2.5rem;
+      padding: 0.9rem 2.2rem;
       font-family: 'Poppins', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.3rem; /* Increased from 1.1rem */
       font-weight: 800;
-      letter-spacing: 0.5px;
-      box-shadow: 0 5px 20px -5px rgba(255,215,0,0.17),
-                  0 3px 10px -3px rgba(131,96,195,0.22),
+      letter-spacing: 0.6px;
+      box-shadow: 0 6px 24px -5px rgba(255,215,0,0.19),
+                  0 4px 12px -3px rgba(131,96,195,0.24),
                   inset 0 1px 1px rgba(255,255,255,0.4);
       cursor: pointer;
       position: relative;
@@ -1591,7 +1365,14 @@
       z-index: 2;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.8rem;
+      animation: breathing 3s ease-in-out infinite;
+    }
+
+    @keyframes breathing {
+      0% { transform: scale(1); box-shadow: 0 6px 24px -5px rgba(255,215,0,0.19); }
+      50% { transform: scale(1.06); box-shadow: 0 10px 30px -5px rgba(255,215,0,0.28); }
+      100% { transform: scale(1); box-shadow: 0 6px 24px -5px rgba(255,215,0,0.19); }
     }
 
     .action-button::before {
@@ -1611,10 +1392,11 @@
     }
 
     .action-button:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 25px -5px rgba(131,96,195,0.16),
-                  0 5px 15px -3px rgba(255,215,0,0.19),
+      transform: translateY(-4px) scale(1.06); /* More pronounced hover */
+      box-shadow: 0 10px 30px -5px rgba(131,96,195,0.18),
+                  0 6px 18px -3px rgba(255,215,0,0.22),
                   inset 0 1px 1px rgba(255,255,255,0.5);
+      animation: none;
     }
 
     .action-button:hover::before {
@@ -1630,16 +1412,17 @@
     .action-button i {
       transition: all 0.3s ease;
       font-style: normal;
+      font-size: 1.2em;
     }
 
     .action-button:hover i {
-      transform: translateX(5px);
+      transform: translateX(8px);
     }
 
     .islamic-ornament {
       position: absolute;
-      width: 60px;
-      height: 60px;
+      width: 80px; /* Increased from 60px */
+      height: 80px; /* Increased from 60px */
       background-size: contain;
       background-repeat: no-repeat;
       opacity: 0.16;
@@ -1649,31 +1432,100 @@
     }
 
     .ornament-1 {
-      top: -20px;
-      right: -20px;
+      top: -25px; /* Adjusted position */
+      right: -25px; /* Adjusted position */
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0a50 50 0 1 0 0 100 50 50 0 0 0 0-100zm0 20a30 30 0 1 1 0 60 30 30 0 0 1 0-60z" fill="%23FFD700"/><path d="M50 10a40 40 0 1 0 0 80 40 40 0 0 0 0-80zm0 15a25 25 0 1 1 0 50 25 25 0 0 1 0-50z" fill="%238360c3"/></svg>');
       transform: rotate(15deg);
     }
 
     .ornament-2 {
-      bottom: -15px;
-      left: -15px;
+      bottom: -20px; /* Adjusted position */
+      left: -20px; /* Adjusted position */
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0 50a50 50 0 0 1 100 0 50 50 0 0 1-100 0zm20 0a30 30 0 0 0 60 0 30 30 0 0 0-60 0z" fill="%235BE7C4"/><path d="M10 50a40 40 0 0 1 80 0 40 40 0 0 1-80 0zm15 0a25 25 0 0 0 50 0 25 25 0 0 0-50 0z" fill="%235390D9"/></svg>');
       transform: rotate(-10deg);
     }
 
     .islamic-library-card:hover .islamic-ornament {
       opacity: 0.25;
-      transform: scale(1.1);
+      transform: scale(1.15); /* More pronounced scale */
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .islamic-library-card {
+        flex-direction: column;
+        padding: 1.8rem 1.2rem;
+        gap: 1.5rem;
+        border-radius: 2.2rem;
+        max-width: 500px; /* Slightly smaller max-width for tablet */
+      }
+      
+      .book-gallery {
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      
+      .card-content {
+        align-items: center;
+        text-align: center;
+      }
+      
+      .card-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .arabic-title {
+        text-align: center;
+      }
+      
+      .action-button {
+        align-self: center;
+      }
+      
+      .card-title {
+        font-size: 1.5rem;
+      }
+      
+      .arabic-title {
+        font-size: 1.3rem;
+      }
+      
+      .card-description {
+        font-size: 1rem;
+      }
+      
+      .book-cover {
+        width: 85px;
+        height: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .islamic-library-card {
+        padding: 1.5rem 1rem;
+        min-height: auto;
+      }
+      
+      .book-cover {
+        width: 70px;
+        height: 100px;
+      }
+      
+      .card-title {
+        font-size: 1.3rem;
+      }
+      
+      .arabic-title {
+        font-size: 1.1rem;
+      }
+      
+      .action-button {
+        padding: 0.7rem 1.8rem;
+        font-size: 1.1rem;
+      }
+    }
     
 
        /* ========== COMPACT FURFURA CARD ========== */
@@ -1690,7 +1542,7 @@
       padding: 1.6rem 1rem 1.2rem;
       text-align: center;
       max-width: 300px;
-      width: 98vw;
+      width: 980vw;
       margin: 0 auto;
       color: #212a39;
       background-image:
@@ -1719,8 +1571,8 @@
 
     .furfura-main-title {
       font-family: 'Oswald', 'Montserrat', Arial, sans-serif;
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 2.9rem;
+      font-weight: 900;
       margin-bottom: 0.8rem;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -1734,8 +1586,8 @@
 
     .furfura-main-desc {
       color: #2d4969;
-      font-size: 0.9rem;
-      font-weight: 400;
+      font-size: 1.0rem;
+      font-weight: 9000;
       margin-bottom: 1.3rem;
       line-height: 1.5;
       background: rgba(255, 215, 0, 0.08);
@@ -1744,17 +1596,18 @@
       padding: 0.5rem;
       display: inline-block;
     }
+    
 
     /* BREATHING BUTTON */
     .furfura-go-btn {
-      position: relative;
-      background: linear-gradient(90deg, #ffd700 0%, #23e3c9 68%, #1e68d6 100%);
+      position: center;
+      background: linear-gradient(90deg, #0f2027 0%, #2c5364 50%, #203a43 100%);   
       color: #fff;
       border: none;
       border-radius: 1.8rem;
       padding: 0.7rem 1.6rem;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 1rem;
       letter-spacing: 1px;
       font-family: 'Montserrat', sans-serif;
       box-shadow: 
@@ -1773,7 +1626,7 @@
 
     @keyframes furfura-btn-breathing {
       0% { transform: scale(1); }
-      50% { transform: scale(1.03); }
+      50% { transform: scale(1.15); }
       100% { transform: scale(1); }
     }
 
@@ -1790,77 +1643,24 @@
     
 
  
-        
-        /* Slider Responsive */
-        .slider-wrap {
-          max-width: 98vw;
-          aspect-ratio: 16 / 10;
-        }
-        .audio-btn {
-          width: 32px;
-          height: 32px;
-          right: 8px;
-          bottom: 8px;
-        }
-        .audio-btn .music-icon-on,
-        .audio-btn .music-icon-off {
-          font-size: 1.3rem;
-        }
-        .timer-fab {
-          width: 32px;
-          height: 32px;
-          left: 8px;
-          bottom: 8px;
-          font-size: 0.95rem;
-        }
-        .slider-dot {
-          width: 10px;
-          height: 10px;
-        }
-        .slider-dots {
-          gap: 8px;
-          bottom: 7px;
-        }
-        
-        /* Islamic Library Card Responsive */
-        .islamic-library-card {
-          flex-direction: column;
-          padding: 1.5rem 1rem;
-          gap: 1.2rem;
-          border-radius: 1.8rem;
-        }
-        
-        .book-gallery {
-          justify-content: center;
-          flex-wrap: wrap;
-          width: 100%;
-        }
-        
-        .card-content {
-          align-items: center;
-          text-align: center;
-        }
-        
-        .card-title::after {
-          left: 50%;
-          transform: translateX(-50%);
-        }
-        
-        .arabic-title {
-          text-align: center;
-        }
-        
-        .action-button {
-          align-self: center;
-        }
-        
-        
-        
-        
-        
-        
-        
-        
+        /* ADD these responsive rules */
+@media (min-width: 768px) {
+
+  .furfura-premium-card {
+    width: 80%;
+    max-width: 1000px;
+    min-height: 620px;
+    padding: 2rem;
+  }
+  
+  .furfura-main-title {
+    font-size: 5.8rem;
+  }
+  
+
+}
+
+
         
         
         
@@ -2309,91 +2109,13 @@
       
       
       
-      @media (min-width: 768px) { /* Desktop breakpoint */
-  .islamic-library-card {
-    max-width: 700px; /* Increase from 500px */
-    padding: 2.5rem 2rem; /* Increase padding */
-  }
-  
-  .book-cover {
-    width: 100px; /* Increase from 70px */
-    height: 140px; /* Increase from 100px */
-  }
-  
-  .card-title {
-    font-size: 1.8rem; /* Increase from 1.4rem */
-  }
-  
-  .arabic-title {
-    font-size: 1.5rem; /* Increase from 1.2rem */
-  }
-  
-  .card-description {
-    font-size: 1.1rem; /* Increase from 0.95rem */
-    padding: 1rem; /* Increase padding */
-  }
-  
-  .action-button {
-    padding: 1rem 2.5rem; /* Increase button size */
-    font-size: 1.3rem; /* Increase font size */
-  }
-}
+ 
 
 
 
 
 
 
-
-@media (min-width: 768px) { /* Desktop breakpoint */
-  .premium-card {
-    max-width: 700px; /* Increase from 340px */
-    padding: 2.5rem 1.5rem 2rem 1.5rem; /* Increase padding */
-  }
-  
-  .main-title {
-    font-size: 3rem; /* Increase from 2.4rem */
-    margin-bottom: 1.5rem; /* Increase spacing */
-  }
-  
-  .main-desc {
-    font-size: 1.2rem; /* Increase from 1.01rem */
-    margin-bottom: 2rem; /* Increase spacing */
-  }
-  
-  .go-btn {
-    padding: 1.1rem 2.5rem; /* Increase button size */
-    font-size: 1.2rem; /* Increase font size */
-  }
-}
-      
-      
-      
-      
-      
-      
-      @media (min-width: 768px) { /* Desktop breakpoint */
-  .slider-wrap {
-    max-width: 700px; /* Increase from 340px */
-    padding: 2.5rem 1.5rem 2rem 1.5rem; /* Increase padding */
-  }
-  
-  .main-title {
-    font-size: 3rem; /* Increase from 2.4rem */
-    margin-bottom: 1.5rem; /* Increase spacing */
-  }
-  
-  .main-desc {
-    font-size: 1.2rem; /* Increase from 1.01rem */
-    margin-bottom: 2rem; /* Increase spacing */
-  }
-  
-  .go-btn {
-    padding: 1.1rem 2.5rem; /* Increase button size */
-    font-size: 1.2rem; /* Increase font size */
-  }
-}
-      
       
       
       
@@ -2427,65 +2149,7 @@
 
 
 
-    /* ===== Responsive Design ===== */
-    @media (max-width: 1200px) {
-      .islamic-section-dots {
-        right: 15px;
-      }
-    }
 
-    @media (max-width: 992px) {
-      .islamic-content h1 { font-size: 3.2rem; }
-      .islamic-content p { font-size: 1.2rem; }
-      
-      .islamic-divider {
-        height: 80px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .islamic-section {
-        padding: 5rem 1.5rem 1.5rem;
-      }
-      
-      .islamic-content h1 { font-size: 2.5rem; }
-      .islamic-content p { font-size: 1.1rem; }
-      
-      .islamic-content { 
-        padding: 2rem;
-        max-width: 95%;
-        backdrop-filter: blur(12px);
-      }
-      
-      .islamic-divider { 
-        height: 60px;
-      }
-      
-      .islamic-icon { 
-        font-size: 2rem; 
-      }
-      
-      .islamic-pattern { 
-        font-size: 5rem !important; 
-      }
-      
-     
-
-    @media (max-width: 480px) {
-      .islamic-content h1 { font-size: 2rem; }
-      .islamic-content p { font-size: 1rem; }
-      
-      .islamic-content { 
-        padding: 1.5rem;
-        border-radius: 12px;
-      }
-      
-      .islamic-divider {
-        height: 50px;
-      }
-      
-   
-   
    
    
    
@@ -2860,6 +2524,62 @@
 
 
 
+/* ========== UNIFIED SLIDER SIZE ========== */
+.slider-wrap {
+  /* Both Desktop & Mobile - Same Size */
+  width: 95vw;
+  max-width: none;
+  height: 55vh;                /* Same height as mobile */
+  margin: 15px auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);  /* Perfect centering */
+  
+  /* Shared Styles */
+  background: #eee;
+  border-radius: 22px;
+  box-shadow: 0 2px 24px #3f51b11a;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image Containers */
+.slide-img {
+  position: absolute;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  left: 2px;
+  top: 2px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Unified Controls */
+.arrow {
+  width: 55px;
+  height: 55px;
+  font-size: 2.5rem;
+}
+.slider-dot {
+  width: 15px;
+  height: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   </style>
@@ -2902,12 +2622,12 @@
         <i class="fas fa-bars"></i>
       </button>
       <div class="dropdown-menu" id="dropdownMenu">
-        <a href="#islamic-section1" class="dropdown-item"><i class="fas fa-home icon"></i><span>Home</span></a>
-        <a href="#islamic-section2" class="dropdown-item"><i class="fas fa-quran icon"></i><span>Quran</span></a>
-        <a href="#islamic-section3" class="dropdown-item"><i class="fas fa-pray icon"></i><span>Prayer</span></a>
-        <a href="#islamic-section4" class="dropdown-item"><i class="fas fa-paint-brush icon"></i><span>Design</span></a>
-        <a href="#islamic-section5" class="dropdown-item"><i class="fas fa-book-open icon"></i><span>Library</span></a>
-        <a href="#islamic-section6" class="dropdown-item"><i class="fas fa-envelope icon"></i><span>Contact</span></a>
+        <a href="#islamic-section1" class="dropdown-item"><i class="fas fa-home icon"></i><span>Home page.</span></a>
+        <a href="#islamic-section2" class="dropdown-item"><i class="fas fa-images icon"></i><span> The Image slideshow.</span></a>
+        <a href="#islamic-section3" class="dropdown-item"><i class="fas fa-microphone-alt icon"></i><span>Nasaih of MMD Ashraf Alimullah Siddique (MZA).</span></a>
+        <a href="#islamic-section5" class="dropdown-item"><i class="fas fa-microphone-alt icon"></i><span>Nasaih of Furfura Sharif.</span></a>
+        <a href="#islamic-section6" class="dropdown-item"><i class="fas fa-book-open icon"></i><span> The Library of PDF books.</span></a>
+  
       </div>
     </div>
   </header>
@@ -2919,60 +2639,360 @@
       
       
       
-   
-
+      
+      
+      
+<!-- ISLAMIC GREETING CARD - PURE GOLDEN TEXT VERSION -->
+<div id="islamic-greeting-card-2024" class="isgc-container">
+  <!-- Container for particles -->
+  <div class="isgc-particles"></div>
   
+  <!-- Decorative elements -->
+  <div class="isgc-decor isgc-moon"></div>
+  <div class="isgc-decor isgc-star"></div>
+  <div class="isgc-decor isgc-pattern"></div>
+  
+  <!-- Main content -->
+  <div class="isgc-bismillah">﷽</div>
+  
+  <div class="isgc-divider">
+    <div class="isgc-divider-line"></div>
+  </div>
+  
+  <h3 class="isgc-greeting">Peace Be Upon You</h3>
+  
+  <div class="isgc-message-box">
+    <p class="isgc-message">
+      Welcome to the light of divine wisdom<br>
+      Discover the beauty of Quran and Sunnah
+    </p>
+  </div>
+  
+  <button class="isgc-prayer-btn" id="isgc-prayer-btn">
+    <span class="isgc-hand-emoji">🤲</span>
+    <span>May Allah Guide Us — Ameen</span>
+  </button>
+</div>
+
+<style>
+  .isgc-container {
+    position: relative;
+    max-width: 360px;
+    margin: 15px auto;
+    padding: 18px;
+    background: transparent;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    animation: isgc-fadeIn 1s ease-out;
+  }
+
+  .isgc-bismillah {
+    font-size: 32px;
+    text-align: center;
+    margin: 10px 0;
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+  }
+
+  .isgc-divider {
+    height: 2px;
+    width: 60px;
+    margin: 15px auto;
+    overflow: hidden;
+  }
+
+  .isgc-divider-line {
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    animation: isgc-beam 2s infinite;
+  }
+
+  .isgc-greeting {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #FFD700;
+    text-align: center;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    font-weight: bold;
+  }
+
+  .isgc-message-box {
+    padding: 12px;
+    border-radius: 10px;
+    margin: 18px 0;
+    border: 1px solid rgba(255,215,0,0.2);
+  }
+
+  .isgc-message {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #FFD700;
+    text-align: center;
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+    font-weight: 500;
+  }
+
+  .isgc-prayer-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    max-width: 180px;
+    margin: 15px auto 0;
+    padding: 10px;
+    border: none;
+    border-radius: 40px;
+    background: transparent;
+    color: #FFD700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+    border: 1px solid rgba(255,215,0,0.3);
+    font-weight: bold;
+  }
+
+  .isgc-prayer-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,215,0,0.3);
+    border-color: rgba(255,215,0,0.6);
+  }
+
+  .isgc-decor {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .isgc-moon {
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 8px -8px 0 #FFD700;
+    opacity: 0.6;
+  }
+
+  .isgc-star {
+    bottom: 25px;
+    left: 20px;
+    width: 16px;
+    height: 16px;
+    background: #FFD700;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: isgc-twinkle 3s infinite alternate;
+    opacity: 0.8;
+  }
+
+  .isgc-pattern {
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    background-image: 
+      radial-gradient(circle at 10px 10px, #FFD700 1px, transparent 2px),
+      radial-gradient(circle at 30px 30px, #FFD700 1px, transparent 2px);
+    background-size: 40px 40px;
+    opacity: 0.2;
+  }
+
+  @keyframes isgc-fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes isgc-beam {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes isgc-twinkle {
+    0%, 100% { opacity: 0.6; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+</style>
+
+<script>
+  (function() {
+    function setupIslamicGreetingCard() {
+      const container = document.getElementById('islamic-greeting-card-2024');
+      const btn = document.getElementById('isgc-prayer-btn');
+      if (!btn) return;
+
+      btn.addEventListener('click', function() {
+        const originalHTML = this.innerHTML;
+        this.innerHTML = '<span class="isgc-hand-emoji">🤲</span><span>Allahumma Ameen!</span>';
+        this.style.color = '#FFD700';
+        this.style.textShadow = '0 0 8px rgba(255, 215, 0, 0.8)';
+        this.style.borderColor = 'rgba(255,215,0,0.8)';
+
+        setTimeout(() => {
+          this.innerHTML = originalHTML;
+          this.style.color = '#FFD700';
+          this.style.textShadow = '0 0 5px rgba(255, 215, 0, 0.4)';
+          this.style.borderColor = 'rgba(255,215,0,0.3)';
+        }, 1500);
+      });
+
+      const particlesContainer = container.querySelector('.isgc-particles');
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+          position: absolute;
+          width: ${Math.random() * 3 + 1}px;
+          height: ${Math.random() * 3 + 1}px;
+          background: #FFD700;
+          border-radius: 50%;
+          top: ${Math.random() * 100}%;
+          left: ${Math.random() * 100}%;
+          opacity: ${Math.random() * 0.3 + 0.1};
+          animation: isgc-float ${Math.random() * 10 + 5}s linear infinite ${Math.random() * 5}s;
+        `;
+        particlesContainer.appendChild(particle);
+      }
+
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes isgc-float {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-100vh); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupIslamicGreetingCard);
+    } else {
+      setupIslamicGreetingCard();
+    }
+  })();
+</script>
+      
+      
+      
 
 
 
 
-
-    <div class="islamic-pattern islamic-rotate-slow" style="top:10%; left:5%; font-size:10rem;">🌻</div>
-    <div class="islamic-pattern islamic-rotate-fast" style="bottom:15%; right:5%; font-size:12rem;">🌺</div>
-    
-   
-   
-    
-    
-    
-    
-    
-
-
-
-
-   
-  </section>
+  </section>  
 
   <div class="islamic-divider islamic-divider-1"></div>
 
   <!-- Section 2 -->
   <section class="islamic-section islamic-section2" id="islamic-section2">
-    <div class="islamic-pattern islamic-rotate-fast" style="top:15%; right:10%; font-size:11rem;">🌹</div>
-    <div class="islamic-pattern islamic-rotate-slow" style="bottom:10%; left:10%; font-size:9rem;">🌺</div>
+
     
-    <i class="fas fa-quran islamic-icon islamic-floating" style="top:30%; right:15%;"></i>
-   
+<div class="islamic-card" style="
+  font-family: 'Hind Siliguri', 'SolaimanLipi', sans-serif;
+  width: 100%;
+  max-width: 320px;
+  margin: 20px auto;
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 16px rgba(58, 123, 213, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+">
+  <!-- Decorative elements -->
+  <div style="
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(58, 123, 213, 0.15) 0%, transparent 70%);
+    z-index: -1;
+  "></div>
+  <div style="
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(0, 210, 255, 0.1) 0%, transparent 70%);
+    z-index: -1;
+  "></div>
+  
+  <!-- Header -->
+  <div style="display: flex; align-items: center; margin-bottom: 22px;">
+    <div style="width: 5px; height: 35px; background: linear-gradient(to bottom, #3a7bd5, #00d2ff); margin-right: 18px; border-radius: 3px;"></div>
+    <h3 style="color: #f0f8ff; font-size: 1.4rem; font-weight: 600; margin: 0; letter-spacing: 0.5px; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+      Love for Prophet Muhammad (PBUH)
+    </h3>
+  </div>
+  
+  
+ 
+  
+  <!-- Quotes -->
+  <div style="color: rgba(240,248,255,0.9); font-size: 0.97rem; line-height: 1.8;">
+    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(58,123,213,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #3a7bd5; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "যে ব্যক্তি আমার সুন্নাতকে ভালোবাসে, সে আমাকে ভালোবাসে। আর যে আমাকে ভালোবাসে, সে জান্নাতে আমার সঙ্গেই থাকবে।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(180,220,255,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>সহীহ বুখারী, হাদীস নং ৬৪৪২</span>
+      </div>
+    </div>
     
-    <div class="islamic-content">
-      <h1 class="islamic-glow-text">Hafizul9996@gmail </h1>
-      <p>The Holy Quran shines like gold against the deep green of paradise. </p>
+    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(58,123,213,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #3a7bd5; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "তোমাদের কেউ প্রকৃত মুমিন হতে পারবে না, যতক্ষণ না আমি তার নিকট তার পিতা-মাতা, সন্তান-সন্ততি ও সকল মানুষের চেয়ে বেশি প্রিয় হই।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(180,220,255,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>সহীহ বুখারী, হাদীস নং ১৫, মুসলিম, হাদীস নং ৪৪</span>
+      </div>
     </div>
     
     
     
     
-    
-    
-    
-    
-    
-        
-  
-  <br>  </br>
+    <div style="position: relative; padding-left: 24px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(58,123,213,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #3a7bd5; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "যে আমার উপর দরূদ পাঠ করবে, আল্লাহ তার উপর দশটি রহমত নাযিল করবেন এবং তার দশটি গুনাহ মাফ করবেন।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(180,220,255,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>সহীহ মুসলিম, হাদীস নং ৪০৮, সুনান নাসাঈ</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+
+.islamic-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.islamic-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+</style>
  
-  
-    
         
       <!-- ========== IMAGE SLIDER ========== -->
 <div class="slider-wrap" id="slider1" tabindex="0" aria-label="Hero Slider">
@@ -3015,16 +3035,105 @@
 
   <!-- Section 3 -->
   <section class="islamic-section islamic-section3" id="islamic-section3">
-    <div class="islamic-pattern islamic-rotate-slow" style="top:20%; right:15%; font-size:10rem;">🕌</div>
-    <div class="islamic-pattern islamic-rotate-fast" style="bottom:20%; left:15%; font-size:8rem;">ﷲ</div>
-    <i class="fas fa-mosque islamic-icon islamic-floating" style="top:20%; left:15%;"></i><i class="fas fa-star-and-crescent islamic-icon islamic-pulse" style="bottom:25%; right:20%;"></i>
-    <i class="fas fa-kaaba islamic-icon islamic-floating" style="top:25%; left:20%;"></i>
-    <i class="fas fa-pray islamic-icon islamic-pulse" style="bottom:25%; right:20%;"></i>
-    
-    <div class="islamic-content">
-      <h1 class="islamic-glow-text">الصلاة والعبادة</h1>
-      <p>Golden moments of prayer and worship, structured like the precise patterns of Islamic art. </p>
+
+
+
+
+<div class="islamic-card" style="
+  font-family: 'Hind Siliguri', 'SolaimanLipi', sans-serif;
+  width: 100%;
+  max-width: 320px;
+  margin: 20px auto;
+  background: linear-gradient(145deg, #0f271f, #1e4032, #2d6a4f);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 16px rgba(76, 175, 80, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+">
+  <!-- Decorative elements -->
+  <div style="
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(76, 175, 80, 0.15) 0%, transparent 70%);
+    z-index: -1;
+  "></div>
+  
+  <!-- Header -->
+  <div style="display: flex; align-items: center; margin-bottom: 22px;">
+    <div style="width: 5px; height: 35px; background: linear-gradient(to bottom, #4CAF50, #8BC34A); margin-right: 18px; border-radius: 3px;"></div>
+    <h3 style="color: #f0f8ff; font-size: 1.4rem; font-weight: 600; margin: 0; letter-spacing: 0.5px; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+      Importance of Islamic Lectures
+    </h3>
+  </div>
+  
+  <!-- Quotes -->
+  <div style="color: rgba(240,248,255,0.9); font-size: 0.97rem; line-height: 1.8;">
+    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(76,175,80,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #4CAF50; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "যে ব্যক্তি আল্লাহর পথে মানুষকে ডাকে, তার প্রতিটি পদক্ষেপের বিনিময়ে একটি সাদাকাহর সওয়াব লেখা হয়।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(200,240,210,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>সুনান আত-তিরমিযী, হাদীস নং ৬৬৪</span>
+      </div>
     </div>
+    
+    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(76,175,80,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #4CAF50; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "ওয়াজ-মাহফিলে উপস্থিত হওয়া ঈমান বৃদ্ধি করে এবং গুনাহ থেকে বিরত রাখে।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(200,240,210,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>সুনান ইবনে মাজাহ, হাদীস নং ৬৬</span>
+      </div>
+    </div>
+    
+    <div style="position: relative; padding-left: 24px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(76,175,80,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #4CAF50; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "জ্ঞানীদের ওয়াজ শোনা ইবাদতের সমতুল্য, কেননা তা হৃদয়ে নূর সৃষ্টি করে।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(200,240,210,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>মুসনাদ আহমদ, হাদীস নং ৮৮৫৪</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+
+.islamic-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.islamic-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+</style>
+
+
+
+
+
+
     <!-- ========== MAIN CONTENT ========== -->
 <div class="divine-ultra-root">
     
@@ -3036,292 +3145,29 @@
   
   <!-- Add this button -->
 <button class="explore-btn" onclick="event.stopPropagation(); openModal('main-content')">
+    <a href="https://example.com" target="_blank" class="button">
   <span class="btn-content">
     <i class="fa-solid fa-play btn-icon"></i>
     <span class="btn-text">Explore</span>
   </span>
   <span class="btn-glow"></span>
+  </a>
 </button>
   
   <div class="subtitle">Divine Islamic Content: Lectures, Q&A, Debates and more</div>
 </div>
 
 
-
-
-
-  
-  <!-- Main Content Modal -->
-  <div class="ultra-modal-overlay" id="modal-main-content" aria-modal="true" role="dialog">
-    <div class="ultra-modal" style="max-width: 900px; height: auto; max-height: 90vh;">
-      <div class="ultra-modal-header">
-        <span class="modal-header-icon"><i class="fa-solid fa-mosque"></i></span>
-        <h2>MMD ASHRAF ALIMULLAH SIDDIQUE</h2>
-        <button class="ultra-modal-close" aria-label="Close modal" onclick="closeModal('main-content')"><i class="fa-solid fa-arrow-left"></i></button>
-      </div>
-      <div class="ultra-modal-content" style="padding: 20px;">
-        <div class="ultra-cards-flex" style="margin: 0; gap: 24px;">
-          <!-- Waz Lectures Card -->
-          <div class="ultra-card card1" data-modal="waz-lectures" tabindex="0" aria-label="Waz Lectures" role="button" onclick="openModal('waz-lectures')" onkeydown="if(event.key==='Enter'||event.key===' '){openModal('waz-lectures');}">
-            <div class="corner-glow"></div>
-            <div class="ultra-card-content">
-              <div class="ultra-card-icon"><i class="fa-solid fa-mosque"></i></div>
-              <div class="ultra-card-title">Waz Lectures</div>
-              <div class="ultra-card-desc">Inspirational Islamic sermons from renowned scholars.</div>
-              <button class="ultra-card-btn" onclick="event.stopPropagation();openModal('waz-lectures')"><i class="fa-solid fa-play"></i> Explore</button>
-            </div>
-          </div>
-          <!-- Munazad Card -->
-          <div class="ultra-card card2" data-modal="munazad" tabindex="0" aria-label="Munazad" role="button" onclick="openModal('munazad')" onkeydown="if(event.key==='Enter'||event.key===' '){openModal('munazad');}">
-            <div class="corner-glow"></div>
-            <div class="ultra-card-content">
-              <div class="ultra-card-icon"><i class="fa-solid fa-comments"></i></div>
-              <div class="ultra-card-title">Munazad</div>
-              <div class="ultra-card-desc">Engaging debates and Islamic discussions.</div>
-              <button class="ultra-card-btn" onclick="event.stopPropagation();openModal('munazad')"><i class="fa-solid fa-play"></i> Explore</button>
-            </div>
-          </div>
-          <!-- Q&A Card -->
-          <div class="ultra-card card3" data-modal="question-answer" tabindex="0" aria-label="Q & A" role="button" onclick="openModal('question-answer')" onkeydown="if(event.key==='Enter'||event.key===' '){openModal('question-answer');}">
-            <div class="corner-glow"></div>
-            <div class="ultra-card-content">
-              <div class="ultra-card-icon"><i class="fa-solid fa-circle-question"></i></div>
-              <div class="ultra-card-title">Q & A</div>
-              <div class="ultra-card-desc">Get answers to your Islamic questions.</div>
-              <button class="ultra-card-btn" onclick="event.stopPropagation();openModal('question-answer')"><i class="fa-solid fa-play"></i> Explore</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-   <!-- Waz Lectures Modal -->
-  <div class="ultra-modal-overlay" id="modal-waz-lectures" aria-modal="true" role="dialog">
-    <div class="ultra-modal modal1">
-      <div class="ultra-modal-header">
-        <span class="modal-header-icon"><i class="fa-solid fa-mosque"></i></span>
-        <h2>Waz Lectures</h2>
-        <button class="ultra-modal-close" aria-label="Close modal" onclick="closeModal('waz-lectures')"><i class="fa-solid fa-arrow-left"></i></button>
-      </div>
-      <div class="ultra-modal-tabs">
-        <button class="ultra-modal-tab active" data-tab="audio" onclick="showTab(this, 'waz-lectures', 'audio')" tabindex="0">Audios</button>
-        <button class="ultra-modal-tab" data-tab="video" onclick="showTab(this, 'waz-lectures', 'video')" tabindex="0">Videos</button>
-      </div>
-      <div class="ultra-modal-content">
-        <!-- Audio Tab Content -->
-        <div class="ultra-modal-col modal-tab-content" data-tab="audio">
-          <strong><i class="fa-solid fa-microphone-lines"></i> Listen (Audio)</strong>
-          <div class="media-item">
-            <div class="media-header">
-              <div class="media-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-              <div class="media-info">
-                <div class="media-title">The Light of Guidance</div>
-                <div class="media-date">May 2025 • 35m</div>
-              </div>
-            </div>
-            <div class="media-player">
-              <audio controls controlsList="nodownload noremoteplayback">
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3">
-              </audio>
-            </div>
-          </div>
-          <div class="media-item">
-            <div class="media-header">
-              <div class="media-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-              <div class="media-info">
-                <div class="media-title">Mercy to Mankind</div>
-                <div class="media-date">April 2025 • 42m</div>
-              </div>
-            </div>
-            <div class="media-player">
-              <audio controls controlsList="nodownload noremoteplayback">
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mp3">
-              </audio>
-            </div>
-          </div>
-        </div>
-        <!-- Video Tab Content -->
-        <div class="ultra-modal-col modal-tab-content" data-tab="video" style="display:none;">
-          <strong><i class="fa-solid fa-play"></i> Watch (Video)</strong>
-          <div class="media-item">
-            <div class="media-header">
-              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="media-info">
-                <div class="media-title">Ramadan Special: Night of Power</div>
-                <div class="media-date">May 2025 • 21m</div>
-              </div>
-            </div>
-            <div class="media-player">
-              <iframe class="yt-embed" width="400" height="225"  
-                src="https://www.youtube.com/embed/WC7VtoMHFiE?enablejsapi=1"  
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="Ramadan Special: Night of Power"></iframe>  
-            </div>
-          </div>
-          <div class="media-item">
-            <div class="media-header">
-              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="media-info">
-                <div class="media-title"> Night of Power</div>
-                <div class="media-date">May 2025 • 21m</div>
-              </div>
-            </div>
-            <div class="media-player">
-              <iframe class="yt-embed" width="400" height="225"  
-                src="https://www.youtube.com/embed/WC7VtoMHFiE?enablejsapi=1"  
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="Night of Power"></iframe>  
-            </div>
-          </div>
-          <div class="media-item">
-            <div class="media-header">
-              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="media-info">
-                <div class="media-title">The Prophet's Character</div>
-                <div class="media-date">April 2025 • 18m</div>
-              </div>
-            </div>
-            <div class="media-player">
-              <iframe class="yt-embed" width="400" height="225"  
-                src="https://www.youtube.com/embed/CV6zPo7L1vI?enablejsapi=1"  
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="The Prophet's Character"></iframe>  
-            </div>
-          </div>
-          <div class="media-item">
-            <div class="media-header">
-              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="media-info">
-                <div class="media-title">Stories of the Sahabah</div>
-                <div class="media-date">March 2025 • 24m</div>
-              </div>
-            </div>
-            <div class="media-player">
-              <iframe class="yt-embed" width="932" height="524"  
-                src="https://www.youtube.com/embed/wviz5Bj7UXM?enablejsapi=1"  
-                frameborder="0"  
-                allow="autoplay; encrypted-media" allowfullscreen title="Stories of the Sahabah"></iframe>  
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Munazad Modal -->
-  <div class="ultra-modal-overlay" id="modal-munazad" aria-modal="true" role="dialog">
-    <div class="ultra-modal modal2">
-      <div class="ultra-modal-header">
-        <span class="modal-header-icon"><i class="fa-solid fa-comments"></i></span>
-        <h2>Munazad</h2>
-        <button class="ultra-modal-close" aria-label="Close modal" onclick="closeModal('munazad')"><i class="fa-solid fa-arrow-left"></i></button>
-      </div>
-      <div class="ultra-modal-tabs">
-        <button class="ultra-modal-tab active" data-tab="audio" onclick="showTab(this, 'munazad', 'audio')" tabindex="0">Audios</button>
-        <button class="ultra-modal-tab" data-tab="video" onclick="showTab(this, 'munazad', 'video')" tabindex="0">Videos</button>
-      </div>
-      <div class="ultra-modal-content">
-        <div class="ultra-modal-col modal-tab-content" data-tab="audio">
-          <strong><i class="fa-solid fa-microphone-lines"></i> Listen (Audio)</strong>
-          <div class="media-item">
-            <div class="media-header">
-              <div class="media-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-              <div class="media-info">
-                <div class="media-title">Debate: Faith & Reason</div>
-                <div class="media-date">May 2025 • 47m</div>
-              </div>
-            </div>
-            <div class="media-player">
-              <audio controls controlsList="nodownload noremoteplayback">
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" type="audio/mp3">
-              </audio>
-            </div>
-          </div>
-        </div>
-        <div class="ultra-modal-col modal-tab-content" data-tab="video" style="display:none;">
-          <strong><i class="fa-solid fa-play"></i> Watch (Video)</strong>
-          <div class="media-item">
-            <div class="media-header">
-              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="media-info">
-                <div class="media-title">Debate: Islam & Modernity</div>
-                <div class="media-date">May 2025 • 33m</div>
-              </div>
-            </div>
-            <div class="media-player">
-              <iframe class="yt-embed" src="https://www.youtube.com/embed/6b2Ew3v3p7c?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen title="Debate: Islam & Modernity"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Q&A Modal -->
-  <div class="ultra-modal-overlay" id="modal-question-answer" aria-modal="true" role="dialog">
-    <div class="ultra-modal modal3">
-      <div class="ultra-modal-header">
-        <span class="modal-header-icon"><i class="fa-solid fa-circle-question"></i></span>
-        <h2>Q & A</h2>
-        <button class="ultra-modal-close" aria-label="Close modal" onclick="closeModal('question-answer')"><i class="fa-solid fa-arrow-left"></i></button>
-      </div>
-      <div class="ultra-modal-tabs">
-        <button class="ultra-modal-tab active" data-tab="audio" onclick="showTab(this, 'question-answer', 'audio')" tabindex="0">Audios</button>
-        <button class="ultra-modal-tab" data-tab="video" onclick="showTab(this, 'question-answer', 'video')" tabindex="0">Videos</button>
-      </div>
-      <div class="ultra-modal-content">
-        <div class="ultra-modal-col modal-tab-content" data-tab="audio">
-          <strong><i class="fa-solid fa-microphone-lines"></i> Listen (Audio)</strong>
-          <div class="media-item">
-            <div class="media-header">
-              <div class="media-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-              <div class="media-info">
-                <div class="media-title">Q&A: Common Islamic Queries</div>
-                <div class="media-date">May 2025 • 29m</div>
-              </div>
-            </div>
-            <div class="media-player">
-              <audio controls controlsList="nodownload noremoteplayback">
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mp3">
-              </audio>
-            </div>
-          </div>
-        </div>
-        <div class="ultra-modal-col modal-tab-content" data-tab="video" style="display:none;">
-          <strong><i class="fa-solid fa-play"></i> Watch (Video)</strong>
-          <div class="media-item">
-            <div class="media-header">
-              <div class="media-icon"><i class="fa-solid fa-play"></i></div>
-              <div class="media-info">
-                <div class="media-title">Q&A: Live Audience Session</div>
-                <div class="media-date">May 2025 • 14m</div>
-              </div>
-            </div>
-            <div class="media-player">
-              <iframe class="yt-embed" src="https://www.youtube.com/embed/4e1k5X5TQbU?enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen title="Q&A: Live Audience Session"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-   
   </section>
 
   <div class="islamic-divider islamic-divider-3"></div>
 
   <!-- Section 4 -->
   <section class="islamic-section islamic-section4" id="islamic-section4">
-    <div class="islamic-pattern islamic-rotate-fast" style="top:10%; left:10%; font-size:14rem;">🌺</div>
-    <div class="islamic-pattern islamic-rotate-slow" style="bottom:10%; right:10%; font-size:11rem;">❤️</div>
-    
-    <i class="fas fa-dove islamic-icon islamic-floating" style="top:15%; right:15%;"></i>
+ 
   
     
-    <div class="islamic-content">
-      <h1 class="islamic-glow-text">الزخرفة الإسلامية</h1>
-      <p>Traditional Islamic geometry meets contemporary design in this celebration of mathematical beauty and spiritual harmony. The intricate patterns symbolize the infinite nature of divine creation.</p>
-    </div>
+
     
    
   </section>
@@ -3330,29 +3176,113 @@
 
   <!-- Section 5 -->
   <section class="islamic-section islamic-section5" id="islamic-section5">
-    <div class="islamic-pattern islamic-rotate-slow" style="top:10%; right:10%; font-size:12rem;">🌺</div>
-    <div class="islamic-pattern islamic-rotate-fast" style="bottom:10%; left:10%; font-size:10rem;">💐</div>
+ 
     
-    <i class="fas fa-moon islamic-icon islamic-floating" style="top:20%; left:20%;"></i>
-    <i class="fas fa-star islamic-icon islamic-pulse" style="bottom:20%; right:20%;"></i>
-    
-    <div class="islamic-content">
-      <h1 class="islamic-glow-text">الأنوار السماوية</h1>
-      <p>The celestial lights of Islamic tradition shine brightly in this golden design, representing divine guidance and the illumination of knowledge that comes from faith and devotion.</p>
+<div class="islamic-card" style="
+  font-family: 'Hind Siliguri', 'SolaimanLipi', sans-serif;
+  width: 100%;
+  max-width: 320px;
+  margin: 20px auto;
+  background: linear-gradient(145deg, #270f1f, #401e32, #6a2d4f);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 16px rgba(156, 39, 176, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+">
+  <!-- Decorative elements -->
+  <div style="
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(156, 39, 176, 0.15) 0%, transparent 70%);
+    z-index: -1;
+  "></div>
+  
+  <!-- Header -->
+  <div style="display: flex; align-items: center; margin-bottom: 22px;">
+    <div style="width: 5px; height: 35px; background: linear-gradient(to bottom, #9C27B0, #E91E63); margin-right: 18px; border-radius: 3px;"></div>
+    <h3 style="color: #f0f8ff; font-size: 1.4rem; font-weight: 600; margin: 0; letter-spacing: 0.5px; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+      Love for Spiritual Guide
+    </h3>
+  </div>
+  
+  <!-- Quotes -->
+  <div style="color: rgba(240,248,255,0.9); font-size: 0.97rem; line-height: 1.8;">
+    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(156,39,176,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #9C27B0; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "মুরশিদে কামেল হচ্ছেন আল্লাহর নৈকট্য লাভের মাধ্যম, যিনি জাহের-বাতেনের ইলম দ্বারা মানুষকে হিদায়াত দেন।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(240,200,220,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>ইমাম গাজ্জালী, কিমিয়ায়ে সা'আদাত, পৃষ্ঠা ১৫৬</span>
+      </div>
     </div>
     
+    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(156,39,176,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #9C27B0; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "কিবলাহ্-ই মুর্শিদের দিকে মুখ করে দু'আ করলে আল্লাহ তা কবুল করেন, কেননা তিনি হচ্ছেন আল্লাহর ওয়াসিলা।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(240,200,220,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>শায়েখ আবদুল কাদের জিলানী, গুনিয়াতুত তালেবীন, খণ্ড ২</span>
+      </div>
+    </div>
     
-    </br></br>
-    </br></br>
+    <div style="position: relative; padding-left: 24px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(156,39,176,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #9C27B0; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "মুরশিদের মহব্বত ঈমানের অংশ, কেননা তিনিই আল্লাহর পথে আহ্বানকারী।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(240,200,220,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>ইমাম রাব্বানী, মাকতুবাত, চিঠি নং ২৫৬</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+
+.islamic-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.islamic-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+</style>
     
       <!-- ========== COMPACT FURFURA CARD ========== -->
-  <div class="furfura-premium-card" onclick="window.location='furfura.html'" tabindex="0" role="button" aria-label="Furfura Sharif Library">
+  <div class="furfura-premium-card" onclick="window.location='fl tabindex="0" role="button" aria-label="Furfura Sharif Library">
     <div class="furfura-main-title">FURFURA SHARIF</div>
+    
+    
+      <br>  </br>
     <div class="furfura-main-desc">
       Premium spiritual audio & video library<br>
-      <span style="font-weight:600;color:#1e68d6;">Explore Sufi soundscapes</span>
+      <span style="font-weight:600;color:#1e68d6;">Explore Sufi syoyes</span>
     </div>
+    
+  <br>  </br>
     <button class="furfura-go-btn" type="button"
+    
+  
       onclick="event.stopPropagation(); window.location='furfura.html';">
       Enter Library
     </button>
@@ -3368,21 +3298,102 @@
 
   <!-- Section 6 -->
   <section class="islamic-section islamic-section6" id="islamic-section6">
-    <div class="islamic-pattern islamic-rotate-fast" style="top:15%; left:15%; font-size:13rem;">❤️</div>
-    <div class="islamic-pattern islamic-rotate-slow" style="bottom:15%; right:15%; font-size:11rem;">🕌</div>
+
     
-    <i class="fas fa-mosque islamic-icon islamic-floating" style="top:30%; right:20%;"></i>
-    
-    
-    <div class="islamic-content">
-      <h1 class="islamic-glow-text">الوحدة الإسلامية</h1>
-      <p>The unity of Islamic art and faith is represented in these interlocking patterns, where blue and gold come together to symbolize the harmony of the ummah under the guidance of Allah.</p>
+<div class="islamic-card" style="
+  font-family: 'Hind Siliguri', 'SolaimanLipi', sans-serif;
+  width: 100%;
+  max-width: 320px;
+  margin: 20px auto;
+  background: linear-gradient(145deg, #27220f, #403a1e, #6a5d2d);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 16px rgba(255, 152, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+">
+  <!-- Decorative elements -->
+  <div style="
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 152, 0, 0.15) 0%, transparent 70%);
+    z-index: -1;
+  "></div>
+  
+  <!-- Header -->
+  <div style="display: flex; align-items: center; margin-bottom: 22px;">
+    <div style="width: 5px; height: 35px; background: linear-gradient(to bottom, #FF9800, #FFC107); margin-right: 18px; border-radius: 3px;"></div>
+    <h3 style="color: #f0f8ff; font-size: 1.4rem; font-weight: 600; margin: 0; letter-spacing: 0.5px; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+      Islamic Books & Knowledge
+    </h3>
+  </div>
+  
+  <!-- Quotes -->
+  <div style="color: rgba(240,248,255,0.9); font-size: 0.97rem; line-height: 1.8;">
+    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(255,152,0,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #FF9800; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "ইলম অর্জনের জন্য বই হচ্ছে সবচেয়ে উত্তম সঙ্গী। জ্ঞানীর কলমের কালি শহীদের রক্ত থেকেও মূল্যবান।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(255,230,180,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>সুনান আত-তিরমিযী, হাদীস নং ২৬৯৪</span>
+      </div>
     </div>
     
+    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(255,152,0,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #FF9800; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "যে ব্যক্তি ইলম শিক্ষা করে এবং তা অন্যকে শিক্ষা দেয়, সে জান্নাতে বিশেষ মর্যাদা লাভ করবে।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(255,230,180,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>সুনান ইবনে মাজাহ, হাদীস নং ২২৪</span>
+      </div>
+    </div>
+    
+    <div style="position: relative; padding-left: 24px;">
+      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(255,152,0,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #FF9800; font-size: 0.7rem; line-height: 0;">❝</span>
+      </div>
+      <p style="margin: 0 0 8px 0; position: relative;">
+        "কুরআন-হাদিসের বই অধ্যয়ন ঈমানকে সতেজ রাখে এবং আমলকে শুদ্ধ করে।"
+      </p>
+      <div style="font-size: 0.82rem; color: rgba(255,230,180,0.7); display: flex; align-items: center; margin-top: 8px;">
+        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+        <span>সহীহ বুখারী, হাদীস নং ৫০২৭</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+
+.islamic-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.islamic-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+</style>
     
     
     
-    <!-- ========== ISLAMIC LIBRARY CARD ========== -->
+    
+<!-- Islamic Library Card -->
 <div class="islamic-library-card-embedbox">
   <div class="islamic-library-card">
     <div class="islamic-ornament ornament-1"></div>
@@ -3413,23 +3424,13 @@
   </div>
 </div>
 
-
-
+ 
 
 
 
     <!-- Up button (initially hidden) -->
     
-    
-    
-    </br></br>
-    </br></br>
-    </br></br>
-    </br></br>
-    </br></br>
-    
-    
-    
+   
     
     <!-- ========== CIRCLE FOOTER BUTTON ========== -->
 <button class="footer-circle-btn" id="footerCircleBtn" aria-label="Open footer popup" title="More info & navigation">
@@ -3915,56 +3916,6 @@ if (document.querySelector('.yt-embed') && !window.YT) {
     document.head.appendChild(tag);
 }
 
-function openModal(modal) {
-    document.getElementById('modal-' + modal).classList.add('active');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => {
-        const modalOverlay = document.getElementById('modal-' + modal);
-        const focusable = modalOverlay.querySelectorAll('button, [tabindex="0"], audio, iframe');
-        if(focusable.length) focusable[0].focus();
-    }, 100);
-}
-
-function closeModal(modal) {
-    document.getElementById('modal-' + modal).classList.remove('active');
-    document.body.style.overflow = '';
-    if (currentPlayingMedia) {
-        if (currentPlayingMedia.pause) currentPlayingMedia.pause();
-        if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
-        currentPlayingMedia = null;
-    }
-}
-
-function showTab(btn, modal, tab) {
-    const modalElem = document.getElementById('modal-' + modal);
-    modalElem.querySelectorAll('.ultra-modal-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-    modalElem.querySelectorAll('.modal-tab-content').forEach(col => {
-        col.style.display = (col.getAttribute('data-tab') === tab) ? '' : 'none';
-    });
-    if (currentPlayingMedia) {
-        if (currentPlayingMedia.pause) currentPlayingMedia.pause();
-        if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
-        currentPlayingMedia = null;
-    }
-}
-
-document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-        document.querySelectorAll('.ultra-modal-overlay.active').forEach(modal => {
-            modal.classList.remove('active');
-        });
-        document.querySelectorAll('.tazft-modal').forEach(modal => {
-            modal.style.display = 'none';
-        });
-        document.body.style.overflow = '';
-        if (currentPlayingMedia) {
-            if (currentPlayingMedia.pause) currentPlayingMedia.pause();
-            if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
-            currentPlayingMedia = null;
-        }
-    }
-});
 
 // ================== FULL FOOTER CIRCLE BUTTON SCRIPT ================== //
 document.addEventListener('DOMContentLoaded', function() {
