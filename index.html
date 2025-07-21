@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Islamic Art & Design</title>
@@ -877,21 +878,6 @@ animation: floatCalligraphy 45s infinite linear;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     .divine-ultra-heading-card h1 {
       font-size: clamp(2.3rem, 6vw, 3.6rem);
       font-weight: 900;
@@ -1457,7 +1443,7 @@ animation: floatCalligraphy 45s infinite linear;
         padding: 1.8rem 1.2rem;
         gap: 1.5rem;
         border-radius: 2.2rem;
-        max-width: 500px; /* Slightly smaller max-width for tablet */
+        max-width: 900px; /* Slightly smaller max-width for tablet */
       }
       
       .book-gallery {
@@ -1505,11 +1491,11 @@ animation: floatCalligraphy 45s infinite linear;
     @media (max-width: 480px) {
       .islamic-library-card {
         padding: 1.5rem 1rem;
-        min-height: auto;
+        min-height: 350px;
       }
       
       .book-cover {
-        width: 70px;
+        width: 80px;
         height: 100px;
       }
       
@@ -1682,9 +1668,9 @@ animation: floatCalligraphy 45s infinite linear;
       --main-green: #25d366;
       --main-cyan: #24c6dc;
       --main-bg-glass: rgba(255,255,255,0.98);
-      --circle-btn-size: 72px;
+      --circle-btn-size: 50px;
       --modal-max-width: 380px;
-      --click-indicator-size: 29px;
+      --click-indicator-size: 20px;
     }
     html { scroll-behavior: smooth; }
     body { min-height: 180vh; transition: background 0.25s, color 0.25s; }
@@ -1692,7 +1678,7 @@ animation: floatCalligraphy 45s infinite linear;
     /* ========== CIRCLE FOOTER BUTTON ========== */
     .footer-circle-btn {
       position: fixed;
-      bottom: 32px;
+      bottom: 120px;
       right: 32px;
       width: var(--circle-btn-size);
       height: var(--circle-btn-size);
@@ -2095,7 +2081,7 @@ animation: floatCalligraphy 45s infinite linear;
       .footer-circle-btn {
   transition: opacity 0.5s ease, transform 0.5s ease;
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(1.5);
 }
 
 .footer-circle-btn.visible {
@@ -2105,57 +2091,8 @@ animation: floatCalligraphy 45s infinite linear;
       
       
       
-      
-      
-      
-      
- 
-
-
-
-
-
-
-      
-      
-      
-      
-      
-      
+                  
     
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-   
-   
-   
-   
-   
    
    :root {
       --gold: #d4af37;
@@ -2730,9 +2667,9 @@ animation: floatCalligraphy 45s infinite linear;
     margin: 0;
     font-size: 13px;
     line-height: 1.5;
-    color: #FFD700;
+    color: #000000;
     text-align: center;
-    text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+    
     font-weight: 500;
   }
 
@@ -2815,7 +2752,30 @@ animation: floatCalligraphy 45s infinite linear;
     0%, 100% { opacity: 0.6; transform: scale(0.9); }
     50% { opacity: 1; transform: scale(1.1); }
   }
+  
+  
+  
+  
+  
+  @media (min-width: 768px) {
+  .isgc-container {
+    transform: scale(2);
+    transform-origin: relavent;
+    margin: 300px auto;
+  }
+}
+  
 </style>
+
+
+
+
+
+
+
+
+
+
 
 <script>
   (function() {
@@ -2888,90 +2848,214 @@ animation: floatCalligraphy 45s infinite linear;
   <section class="islamic-section islamic-section2" id="islamic-section2">
 
     
-  <!-- Block 1: Love for Prophet Muhammad (PBUH) -->
-  <div style="
-    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
-    border-radius: 16px;
-    padding: 28px;
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.3),
-      inset 0 0 16px rgba(58, 123, 213, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  ">
-    <!-- Decorative elements -->
-    <div style="
-      position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(58, 123, 213, 0.15) 0%, transparent 70%);
-      z-index: -1;
-    "></div>
-    <div style="
-      position: absolute;
-      bottom: -30px;
-      left: -30px;
-      width: 150px;
-      height: 150px;
-      background: radial-gradient(circle, rgba(0, 210, 255, 0.1) 0%, transparent 70%);
-      z-index: -1;
-    "></div>
-    
-    <!-- Header -->
-    <div style="display: flex; align-items: center; margin-bottom: 22px;">
-      <div style="width: 5px; height: 35px; background: linear-gradient(to bottom, #3a7bd5, #00d2ff); margin-right: 18px; border-radius: 3px;"></div>
-      <h3 style="color: #f0f8ff; font-size: 1.4rem; font-weight: 600; margin: 0; letter-spacing: 0.5px; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
-       Love for Prophet Muhammad (PBUH)
-      </h3>
+<!-- Improved Love for Prophet Muhammad (PBUH) Block -->
+<div class="islamic-card">
+  <!-- Decorative elements -->
+  <div class="decor-circle top-right"></div>
+  <div class="decor-circle bottom-left"></div>
+  
+  <!-- Header -->
+  <div class="card-header">
+    <div class="accent-bar"></div>
+    <h3>Love for Prophet Muhammad (PBUH)</h3>
+  </div>
+  
+  <!-- Quotes -->
+  <div class="quotes-container">
+    <div class="quote-item">
+      <div class="quote-mark">❝</div>
+      <p>"যে ব্যক্তি আমার সুন্নাতকে ভালোবাসে, সে আমাকে ভালোবাসে। আর যে আমাকে ভালোবাসে, সে জান্নাতে আমার সঙ্গেই থাকবে।"</p>
+      <div class="hadith-reference">
+        <span class="book-icon">📖</span>
+        <span>সহীহ বুখারী, হাদীস নং ৬৪৪২</span>
+      </div>
     </div>
     
-    <!-- Quotes -->
-    <div style="color: rgba(240,248,255,0.9); font-size: 0.97rem; line-height: 1.8;">
-      <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
-        <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(58,123,213,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-          <span style="color: #3a7bd5; font-size: 0.7rem; line-height: 0;">❝</span>
-        </div>
-        <p style="margin: 0 0 8px 0; position: relative;">
-          "যে ব্যক্তি আমার সুন্নাতকে ভালোবাসে, সে আমাকে ভালোবাসে। আর যে আমাকে ভালোবাসে, সে জান্নাতে আমার সঙ্গেই থাকবে।"
-        </p>
-        <div style="font-size: 0.82rem; color: rgba(180,220,255,0.7); display: flex; align-items: center; margin-top: 8px;">
-          <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
-          <span>সহীহ বুখারী, হাদীস নং ৬৪৪২</span>
-        </div>
+    <div class="quote-item">
+      <div class="quote-mark">❝</div>
+      <p>"তোমাদের কেউ প্রকৃত মুমিন হতে পারবে না, যতক্ষণ না আমি তার নিকট তার পিতা-মাতা, সন্তান-সন্ততি ও সকল মানুষের চেয়ে বেশি প্রিয় হই।"</p>
+      <div class="hadith-reference">
+        <span class="book-icon">📖</span>
+        <span>সহীহ বুখারী, হাদীস নং ১৫, মুসলিম, হাদীস নং ৪৪</span>
       </div>
-      
-      <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
-        <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(58,123,213,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-          <span style="color: #3a7bd5; font-size: 0.7rem; line-height: 0;">❝</span>
-        </div>
-        <p style="margin: 0 0 8px 0; position: relative;">
-          "তোমাদের কেউ প্রকৃত মুমিন হতে পারবে না, যতক্ষণ না আমি তার নিকট তার পিতা-মাতা, সন্তান-সন্ততি ও সকল মানুষের চেয়ে বেশি প্রিয় হই।"
-        </p>
-        <div style="font-size: 0.82rem; color: rgba(180,220,255,0.7); display: flex; align-items: center; margin-top: 8px;">
-          <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
-          <span>সহীহ বুখারী, হাদীস নং ১৫, মুসলিম, হাদীস নং ৪৪</span>
-        </div>
-      </div>
-      
-      <div style="position: relative; padding-left: 24px;">
-        <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(58,123,213,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-          <span style="color: #3a7bd5; font-size: 0.7rem; line-height: 0;">❝</span>
-        </div>
-        <p style="margin: 0 0 8px 0; position: relative;">
-          "যে আমার উপর দরূদ পাঠ করবে, আল্লাহ তার উপর দশটি রহমত নাযিল করবেন এবং তার দশটি গুনাহ মাফ করবেন।"
-        </p>
-        <div style="font-size: 0.82rem; color: rgba(180,220,255,0.7); display: flex; align-items: center; margin-top: 8px;">
-          <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
-          <span>সহীহ মুসলিম, হাদীস নং ৪০৮, সুনান নাসাঈ</span>
-        </div>
+    </div>
+    
+    <div class="quote-item">
+      <div class="quote-mark">❝</div>
+      <p>"যে আমার উপর দরূদ পাঠ করবে, আল্লাহ তার উপর দশটি রহমত নাযিল করবেন এবং তার দশটি গুনাহ মাফ করবেন।"</p>
+      <div class="hadith-reference">
+        <span class="book-icon">📖</span>
+        <span>সহীহ মুসলিম, হাদীস নং ৪০৮, সুনান নাসাঈ</span>
       </div>
     </div>
   </div>
+</div>
+
+<style>
+  /* Base Styles */
+  .islamic-card {
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
+                inset 0 0 16px rgba(58, 123, 213, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 360px;
+    margin: 20px auto;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+  }
+
+  /* Decorative Elements */
+  .decor-circle {
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+  }
+  
+  .top-right {
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(58, 123, 213, 0.15) 0%, transparent 70%);
+  }
+  
+  .bottom-left {
+    bottom: -30px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(0, 210, 255, 0.1) 0%, transparent 70%);
+  }
+
+  /* Header Styles */
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .accent-bar {
+    width: 5px;
+    height: 35px;
+    background: linear-gradient(to bottom, #3a7bd5, #00d2ff);
+    margin-right: 18px;
+    border-radius: 3px;
+  }
+  
+  h3 {
+    color: #f0f8ff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  /* Quotes Section */
+  .quotes-container {
+    color: rgba(240,248,255,0.9);
+    font-size: 0.87rem;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .quote-item {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 22px;
+  }
+  
+  .quote-mark {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: rgba(58,123,213,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3a7bd5;
+    font-size: 0.7rem;
+    line-height: 0;
+  }
+  
+  .quote-item p {
+    margin: 0 0 8px 0;
+    position: relative;
+  }
+  
+  .hadith-reference {
+    font-size: 0.82rem;
+    color: rgba(180,220,255,0.7);
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .book-icon {
+    margin-right: 8px;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .islamic-card {
+      max-width: 800px;
+      padding: 35px;
+    }
+    
+    h3 {
+      font-size: 1.8rem;
+    }
+    
+    .quotes-container {
+      font-size: 1.1rem;
+    }
+    
+    .hadith-reference {
+      font-size: 0.9rem;
+    }
+    
+    .top-right {
+      width: 250px;
+      height: 250px;
+    }
+    
+    .bottom-left {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  /* Animation Effects */
+  .islamic-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .islamic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+</style>
  
+ 
+ 
+ 
+ 
+ 
+ 
+<br></br>
+<br></br>
+
         
       <!-- ========== IMAGE SLIDER ========== -->
 <div class="slider-wrap" id="slider1" tabindex="0" aria-label="Hero Slider">
@@ -3018,76 +3102,44 @@ animation: floatCalligraphy 45s infinite linear;
 
 
 
-<div class="islamic-card" style="
-  font-family: 'Hind Siliguri', 'SolaimanLipi', sans-serif;
-  width: 100%;
-  max-width: 320px;
-  margin: 20px auto;
-  background: linear-gradient(145deg, #0f271f, #1e4032, #2d6a4f);
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 16px rgba(76, 175, 80, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-">
+<br></br>
+
+<div class="nasihah-card">
   <!-- Decorative elements -->
-  <div style="
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(76, 175, 80, 0.15) 0%, transparent 70%);
-    z-index: -1;
-  "></div>
+  <div class="decor-circle top-right"></div>
+  <div class="decor-circle bottom-left"></div>
   
   <!-- Header -->
-  <div style="display: flex; align-items: center; margin-bottom: 22px;">
-    <div style="width: 5px; height: 35px; background: linear-gradient(to bottom, #4CAF50, #8BC34A); margin-right: 18px; border-radius: 3px;"></div>
-    <h3 style="color: #f0f8ff; font-size: 1.4rem; font-weight: 600; margin: 0; letter-spacing: 0.5px; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
-     The Importance of a Nasihah
-    </h3>
+  <div class="card-header">
+    <div class="accent-bar"></div>
+    <h3>The Importance of a Nasihah</h3>
   </div>
   
   <!-- Quotes -->
-  <div style="color: rgba(240,248,255,0.9); font-size: 0.97rem; line-height: 1.8;">
-    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
-      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(76,175,80,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-        <span style="color: #4CAF50; font-size: 0.7rem; line-height: 0;">❝</span>
-      </div>
-      <p style="margin: 0 0 8px 0; position: relative;">
-        "যে ব্যক্তি আল্লাহর পথে মানুষকে ডাকে, তার প্রতিটি পদক্ষেপের বিনিময়ে একটি সাদাকাহর সওয়াব লেখা হয়।"
-      </p>
-      <div style="font-size: 0.82rem; color: rgba(200,240,210,0.7); display: flex; align-items: center; margin-top: 8px;">
-        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+  <div class="quotes-container">
+    <div class="quote-item">
+      <div class="quote-mark">❝</div>
+      <p>"যে ব্যক্তি আল্লাহর পথে মানুষকে ডাকে, তার প্রতিটি পদক্ষেপের বিনিময়ে একটি সাদাকাহর সওয়াব লেখা হয়।"</p>
+      <div class="hadith-reference">
+        <span class="book-icon">📖</span>
         <span>সুনান আত-তিরমিযী, হাদীস নং ৬৬৪</span>
       </div>
     </div>
     
-    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
-      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(76,175,80,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-        <span style="color: #4CAF50; font-size: 0.7rem; line-height: 0;">❝</span>
-      </div>
-      <p style="margin: 0 0 8px 0; position: relative;">
-        "ওয়াজ-মাহফিলে উপস্থিত হওয়া ঈমান বৃদ্ধি করে এবং গুনাহ থেকে বিরত রাখে।"
-      </p>
-      <div style="font-size: 0.82rem; color: rgba(200,240,210,0.7); display: flex; align-items: center; margin-top: 8px;">
-        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+    <div class="quote-item">
+      <div class="quote-mark">❝</div>
+      <p>"ওয়াজ-মাহফিলে উপস্থিত হওয়া ঈমান বৃদ্ধি করে এবং গুনাহ থেকে বিরত রাখে।"</p>
+      <div class="hadith-reference">
+        <span class="book-icon">📖</span>
         <span>সুনান ইবনে মাজাহ, হাদীস নং ৬৬</span>
       </div>
     </div>
     
-    <div style="position: relative; padding-left: 24px;">
-      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(76,175,80,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-        <span style="color: #4CAF50; font-size: 0.7rem; line-height: 0;">❝</span>
-      </div>
-      <p style="margin: 0 0 8px 0; position: relative;">
-        "জ্ঞানীদের ওয়াজ শোনা ইবাদতের সমতুল্য, কেননা তা হৃদয়ে নূর সৃষ্টি করে।"
-      </p>
-      <div style="font-size: 0.82rem; color: rgba(200,240,210,0.7); display: flex; align-items: center; margin-top: 8px;">
-        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+    <div class="quote-item">
+      <div class="quote-mark">❝</div>
+      <p>"জ্ঞানীদের ওয়াজ শোনা ইবাদতের সমতুল্য, কেননা তা হৃদয়ে নূর সৃষ্টি করে।"</p>
+      <div class="hadith-reference">
+        <span class="book-icon">📖</span>
         <span>মুসনাদ আহমদ, হাদীস নং ৮৮৫৪</span>
       </div>
     </div>
@@ -3095,23 +3147,164 @@ animation: floatCalligraphy 45s infinite linear;
 </div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
-@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+  /* Base Styles */
+  .nasihah-card {
+    font-family: 'Hind Siliguri', 'SolaimanLipi', sans-serif;
+    width: 100%;
+    max-width: 320px;
+    margin: 20px auto;
+    background: linear-gradient(145deg, #0f271f, #1e4032, #2d6a4f);
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
+                inset 0 0 16px rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
 
-.islamic-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  /* Decorative Elements */
+  .decor-circle {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+  }
+  
+  .top-right {
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(76, 175, 80, 0.15) 0%, transparent 70%);
+  }
+  
+  .bottom-left {
+    bottom: -30px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(139, 195, 74, 0.1) 0%, transparent 70%);
+  }
 
-.islamic-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-}
+  /* Header Styles */
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .accent-bar {
+    width: 5px;
+    height: 35px;
+    background: linear-gradient(to bottom, #4CAF50, #8BC34A);
+    margin-right: 18px;
+    border-radius: 3px;
+  }
+  
+  .nasihah-card h3 {
+    color: #f0f8ff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  /* Quotes Section */
+  .quotes-container {
+    color: rgba(240,248,255,0.9);
+    font-size: 0.97rem;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .quote-item {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 22px;
+  }
+  
+  .quote-mark {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: rgba(76,175,80,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4CAF50;
+    font-size: 0.7rem;
+    line-height: 0;
+  }
+  
+  .quote-item p {
+    margin: 0 0 8px 0;
+    position: relative;
+  }
+  
+  .hadith-reference {
+    font-size: 0.82rem;
+    color: rgba(200,240,210,0.7);
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .book-icon {
+    margin-right: 8px;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .nasihah-card {
+      max-width: 800px;
+      padding: 35px;
+    }
+    
+    .nasihah-card h3 {
+      font-size: 1.6rem;
+    }
+    
+    .quotes-container {
+      font-size: 1.05rem;
+    }
+    
+    .hadith-reference {
+      font-size: 0.9rem;
+    }
+    
+    .top-right {
+      width: 250px;
+      height: 250px;
+    }
+    
+    .bottom-left {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  /* Hover Effects */
+  .nasihah-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
 </style>
 
 
 
 
-
+<br></br>
+<br></br>
 
     <!-- ========== MAIN CONTENT ========== -->
 <div class="divine-ultra-root">
@@ -3120,11 +3313,11 @@ animation: floatCalligraphy 45s infinite linear;
   <!-- Main Heading Card -->
   
  <div class="divine-ultra-heading-card" onclick="openModal('main-content')" style="cursor: pointer;" tabindex="0" role="button">
-  <h1>MMD ASHRAF <br> </br>ALIMULLAH SIDDIQUE</h1>
+  <h1>MMD ASHRAF ALIMULLAH SIDDIQUE</h1>
   
   <!-- Add this button -->
 <button class="explore-btn" onclick="event.stopPropagation(); openModal('main-content')">
-    <a href="https://example.com" target="_blank" class="button">
+    <a href="hdsd.html" target="_blank" class="button">
   <span class="btn-content">
     <i class="fa-solid fa-play btn-icon"></i>
     <span class="btn-text">Explore</span>
@@ -3157,76 +3350,46 @@ animation: floatCalligraphy 45s infinite linear;
   <section class="islamic-section islamic-section5" id="islamic-section5">
  
     
-<div class="islamic-card" style="
-  font-family: 'Hind Siliguri', 'SolaimanLipi', sans-serif;
-  width: 100%;
-  max-width: 320px;
-  margin: 20px auto;
-  background: linear-gradient(145deg, #270f1f, #401e32, #6a2d4f);
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 16px rgba(156, 39, 176, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-">
+
+<br></br>
+
+
+<div class="spiritual-guide-card">
   <!-- Decorative elements -->
-  <div style="
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(156, 39, 176, 0.15) 0%, transparent 70%);
-    z-index: -1;
-  "></div>
+  <div class="decor-circle top-right"></div>
+  <div class="decor-circle bottom-left"></div>
   
   <!-- Header -->
-  <div style="display: flex; align-items: center; margin-bottom: 22px;">
-    <div style="width: 5px; height: 35px; background: linear-gradient(to bottom, #9C27B0, #E91E63); margin-right: 18px; border-radius: 3px;"></div>
-    <h3 style="color: #f0f8ff; font-size: 1.4rem; font-weight: 600; margin: 0; letter-spacing: 0.5px; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
-     A Spiritual Guide
-    </h3>
+  <div class="card-header">
+    <div class="accent-bar"></div>
+    <h3>A Spiritual Guide</h3>
   </div>
   
   <!-- Quotes -->
-  <div style="color: rgba(240,248,255,0.9); font-size: 0.97rem; line-height: 1.8;">
-    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
-      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(156,39,176,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-        <span style="color: #9C27B0; font-size: 0.7rem; line-height: 0;">❝</span>
-      </div>
-      <p style="margin: 0 0 8px 0; position: relative;">
-        "মুরশিদে কামেল হচ্ছেন আল্লাহর নৈকট্য লাভের মাধ্যম, যিনি জাহের-বাতেনের ইলম দ্বারা মানুষকে হিদায়াত দেন।"
-      </p>
-      <div style="font-size: 0.82rem; color: rgba(240,200,220,0.7); display: flex; align-items: center; margin-top: 8px;">
-        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+  <div class="quotes-container">
+    <div class="quote-item">
+      <div class="quote-mark">❝</div>
+      <p>"মুরশিদে কামেল হচ্ছেন আল্লাহর নৈকট্য লাভের মাধ্যম, যিনি জাহের-বাতেনের ইলম দ্বারা মানুষকে হিদায়াত দেন।"</p>
+      <div class="reference">
+        <span class="book-icon">📖</span>
         <span>ইমাম গাজ্জালী, কিমিয়ায়ে সা'আদাত, পৃষ্ঠা ১৫৬</span>
       </div>
     </div>
     
-    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
-      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(156,39,176,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-        <span style="color: #9C27B0; font-size: 0.7rem; line-height: 0;">❝</span>
-      </div>
-      <p style="margin: 0 0 8px 0; position: relative;">
-        "কিবলাহ্-ই মুর্শিদের দিকে মুখ করে দু'আ করলে আল্লাহ তা কবুল করেন, কেননা তিনি হচ্ছেন আল্লাহর ওয়াসিলা।"
-      </p>
-      <div style="font-size: 0.82rem; color: rgba(240,200,220,0.7); display: flex; align-items: center; margin-top: 8px;">
-        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+    <div class="quote-item">
+      <div class="quote-mark">❝</div>
+      <p>"কিবলাহ্-ই মুর্শিদের দিকে মুখ করে দু'আ করলে আল্লাহ তা কবুল করেন, কেননা তিনি হচ্ছেন আল্লাহর ওয়াসিলা।"</p>
+      <div class="reference">
+        <span class="book-icon">📖</span>
         <span>শায়েখ আবদুল কাদের জিলানী, গুনিয়াতুত তালেবীন, খণ্ড ২</span>
       </div>
     </div>
     
-    <div style="position: relative; padding-left: 24px;">
-      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(156,39,176,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-        <span style="color: #9C27B0; font-size: 0.7rem; line-height: 0;">❝</span>
-      </div>
-      <p style="margin: 0 0 8px 0; position: relative;">
-        "মুরশিদের মহব্বত ঈমানের অংশ, কেননা তিনিই আল্লাহর পথে আহ্বানকারী।"
-      </p>
-      <div style="font-size: 0.82rem; color: rgba(240,200,220,0.7); display: flex; align-items: center; margin-top: 8px;">
-        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+    <div class="quote-item">
+      <div class="quote-mark">❝</div>
+      <p>"মুরশিদের মহব্বত ঈমানের অংশ, কেননা তিনিই আল্লাহর পথে আহ্বানকারী।"</p>
+      <div class="reference">
+        <span class="book-icon">📖</span>
         <span>ইমাম রাব্বানী, মাকতুবাত, চিঠি নং ২৫৬</span>
       </div>
     </div>
@@ -3237,15 +3400,179 @@ animation: floatCalligraphy 45s infinite linear;
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
 @import url('https://fonts.maateen.me/solaiman-lipi/font.css');
 
-.islamic-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Base Styles */
+.spiritual-guide-card {
+  font-family: 'Hind Siliguri', 'SolaimanLipi', sans-serif;
+  width: 100%;
+  max-width: 340px;
+  margin: 25px auto;
+  background: linear-gradient(145deg, #270f1f, #401e32, #6a2d4f);
+  border-radius: 18px;
+  padding: 10px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4), 
+              inset 0 0 20px rgba(156, 39, 176, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.islamic-card:hover {
+/* Decorative Elements */
+.decor-circle {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(8px);
+}
+  
+.top-right {
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(156, 39, 176, 0.2) 0%, transparent 70%);
+}
+  
+.bottom-left {
+  bottom: -40px;
+  left: -40px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(233, 30, 99, 0.15) 0%, transparent 70%);
+}
+
+/* Header Styles */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+}
+  
+.accent-bar {
+  width: 6px;
+  height: 38px;
+  background: linear-gradient(to bottom, #9C27B0, #E91E63);
+  margin-right: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(156, 39, 176, 0.5);
+}
+  
+.spiritual-guide-card h3 {
+  color: #f8f0ff;
+  font-size: 1.5rem;
+  font-weight: 650;
+  margin: 0;
+  letter-spacing: 0.6px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+/* Quotes Section */
+.quotes-container {
+  color: rgba(248,240,255,0.95);
+  font-size: 1rem;
+  line-height: 1.85;
+  position: relative;
+  z-index: 2;
+}
+  
+.quote-item {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 25px;
+}
+  
+.quote-mark {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  background: rgba(156,39,176,0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9C27B0;
+  font-size: 0.75rem;
+  line-height: 0;
+  box-shadow: 0 0 10px rgba(156, 39, 176, 0.3);
+}
+  
+.quote-item p {
+  margin: 0 0 10px 0;
+  position: relative;
+  font-weight: 500;
+}
+  
+.reference {
+  font-size: 0.85rem;
+  color: rgba(240,200,220,0.8);
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+  
+.book-icon {
+  margin-right: 10px;
+  font-size: 1rem;
+  text-shadow: 0 0 8px rgba(156, 39, 176, 0.4);
+}
+
+/* Hover Effects */
+.spiritual-guide-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5),
+              inset 0 0 25px rgba(156, 39, 176, 0.3);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .spiritual-guide-card {
+    max-width: 800px;
+    padding: 35px;
+  }
+  
+  .spiritual-guide-card h3 {
+    font-size: 1.8rem;
+  }
+  
+  .quotes-container {
+    font-size: 1.1rem;
+  }
+  
+  .reference {
+    font-size: 0.95rem;
+  }
+  
+  .top-right {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .bottom-left {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.spiritual-guide-card:hover .decor-circle {
+  animation: float 4s ease-in-out infinite;
 }
 </style>
+
+
+
+<br></br>
+<br></br>
     
       <!-- ========== COMPACT FURFURA CARD ========== -->
   <div class="furfura-premium-card" onclick="window.location='fl tabindex="0" role="button" aria-label="Furfura Sharif Library">
@@ -3279,76 +3606,42 @@ animation: floatCalligraphy 45s infinite linear;
   <section class="islamic-section islamic-section6" id="islamic-section6">
 
     
-<div class="islamic-card" style="
-  font-family: 'Hind Siliguri', 'SolaimanLipi', sans-serif;
-  width: 100%;
-  max-width: 320px;
-  margin: 20px auto;
-  background: linear-gradient(145deg, #27220f, #403a1e, #6a5d2d);
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 16px rgba(255, 152, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-">
+<div class="islamic-books-card">
   <!-- Decorative elements -->
-  <div style="
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(255, 152, 0, 0.15) 0%, transparent 70%);
-    z-index: -1;
-  "></div>
+  <div class="decor-glow top-right"></div>
+  <div class="decor-pattern bottom-left"></div>
   
   <!-- Header -->
-  <div style="display: flex; align-items: center; margin-bottom: 22px;">
-    <div style="width: 5px; height: 35px; background: linear-gradient(to bottom, #FF9800, #FFC107); margin-right: 18px; border-radius: 3px;"></div>
-    <h3 style="color: #f0f8ff; font-size: 1.4rem; font-weight: 600; margin: 0; letter-spacing: 0.5px; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
-      Islamic Books
-    </h3>
+  <div class="section-header">
+    <div class="gold-bar"></div>
+    <h3>Islamic Books</h3>
   </div>
   
   <!-- Quotes -->
-  <div style="color: rgba(240,248,255,0.9); font-size: 0.97rem; line-height: 1.8;">
-    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
-      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(255,152,0,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-        <span style="color: #FF9800; font-size: 0.7rem; line-height: 0;">❝</span>
-      </div>
-      <p style="margin: 0 0 8px 0; position: relative;">
-        "ইলম অর্জনের জন্য বই হচ্ছে সবচেয়ে উত্তম সঙ্গী। জ্ঞানীর কলমের কালি শহীদের রক্ত থেকেও মূল্যবান।"
-      </p>
-      <div style="font-size: 0.82rem; color: rgba(255,230,180,0.7); display: flex; align-items: center; margin-top: 8px;">
-        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+  <div class="wisdom-quotes">
+    <div class="quote">
+      <div class="quote-icon">❝</div>
+      <p>"ইলম অর্জনের জন্য বই হচ্ছে সবচেয়ে উত্তম সঙ্গী। জ্ঞানীর কলমের কালি শহীদের রক্ত থেকেও মূল্যবান।"</p>
+      <div class="reference">
+        <span class="icon">📖</span>
         <span>সুনান আত-তিরমিযী, হাদীস নং ২৬৯৪</span>
       </div>
     </div>
     
-    <div style="position: relative; padding-left: 24px; margin-bottom: 22px;">
-      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(255,152,0,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-        <span style="color: #FF9800; font-size: 0.7rem; line-height: 0;">❝</span>
-      </div>
-      <p style="margin: 0 0 8px 0; position: relative;">
-        "যে ব্যক্তি ইলম শিক্ষা করে এবং তা অন্যকে শিক্ষা দেয়, সে জান্নাতে বিশেষ মর্যাদা লাভ করবে।"
-      </p>
-      <div style="font-size: 0.82rem; color: rgba(255,230,180,0.7); display: flex; align-items: center; margin-top: 8px;">
-        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+    <div class="quote">
+      <div class="quote-icon">❝</div>
+      <p>"যে ব্যক্তি ইলম শিক্ষা করে এবং তা অন্যকে শিক্ষা দেয়, সে জান্নাতে বিশেষ মর্যাদা লাভ করবে।"</p>
+      <div class="reference">
+        <span class="icon">📖</span>
         <span>সুনান ইবনে মাজাহ, হাদীস নং ২২৪</span>
       </div>
     </div>
     
-    <div style="position: relative; padding-left: 24px;">
-      <div style="position: absolute; left: 0; top: 5px; width: 18px; height: 18px; background: rgba(255,152,0,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-        <span style="color: #FF9800; font-size: 0.7rem; line-height: 0;">❝</span>
-      </div>
-      <p style="margin: 0 0 8px 0; position: relative;">
-        "কুরআন-হাদিসের বই অধ্যয়ন ঈমানকে সতেজ রাখে এবং আমলকে শুদ্ধ করে।"
-      </p>
-      <div style="font-size: 0.82rem; color: rgba(255,230,180,0.7); display: flex; align-items: center; margin-top: 8px;">
-        <span style="margin-right: 8px; font-size: 0.9rem;">📖</span>
+    <div class="quote">
+      <div class="quote-icon">❝</div>
+      <p>"কুরআন-হাদিসের বই অধ্যয়ন ঈমানকে সতেজ রাখে এবং আমলকে শুদ্ধ করে।"</p>
+      <div class="reference">
+        <span class="icon">📖</span>
         <span>সহীহ বুখারী, হাদীস নং ৫০২৭</span>
       </div>
     </div>
@@ -3359,16 +3652,184 @@ animation: floatCalligraphy 45s infinite linear;
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
 @import url('https://fonts.maateen.me/solaiman-lipi/font.css');
 
-.islamic-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Base Styles */
+.islamic-books-card {
+  font-family: 'Hind Siliguri', 'SolaimanLipi', sans-serif;
+  width: 100%;
+  max-width: 350px;
+  margin: 25px auto;
+  background: linear-gradient(145deg, #27220f, #403a1e, #6a5d2d);
+  border-radius: 18px;
+  padding: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35), 
+              inset 0 0 25px rgba(255, 152, 0, 0.25);
+  border: 1px solid rgba(255, 213, 79, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.islamic-card:hover {
+/* Decorative Elements */
+.decor-glow {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(12px);
+  opacity: 0.7;
+}
+  
+.top-right {
+  top: -70px;
+  right: -70px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(255, 152, 0, 0.25) 0%, transparent 70%);
+}
+
+.decor-pattern {
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 150px;
+  height: 150px;
+  background-image: radial-gradient(circle, rgba(255, 193, 7, 0.15) 1px, transparent 2px);
+  background-size: 20px 20px;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Header Styles */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+}
+  
+.gold-bar {
+  width: 6px;
+  height: 40px;
+  background: linear-gradient(to bottom, #FF9800, #FFC107);
+  margin-right: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(255, 152, 0, 0.5);
+}
+  
+.islamic-books-card h3 {
+  color: #fff8e1;
+  font-size: 1.5rem;
+  font-weight: 650;
+  margin: 0;
+  letter-spacing: 0.6px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+/* Quotes Section */
+.wisdom-quotes {
+  color: rgba(255, 248, 225, 0.95);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  position: relative;
+  z-index: 2;
+}
+  
+.quote {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 26px;
+}
+  
+.quote-icon {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 22px;
+  height: 22px;
+  background: rgba(255,152,0,0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF9800;
+  font-size: 0.8rem;
+  line-height: 0;
+  box-shadow: 0 0 12px rgba(255, 152, 0, 0.3);
+}
+  
+.quote p {
+  margin: 0 0 10px 0;
+  position: relative;
+  font-weight: 500;
+}
+  
+.reference {
+  font-size: 0.88rem;
+  color: rgba(255, 230, 180, 0.85);
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+  
+.icon {
+  margin-right: 10px;
+  font-size: 1rem;
+  text-shadow: 0 0 10px rgba(255, 152, 0, 0.4);
+}
+
+/* Hover Effects */
+.islamic-books-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45),
+              inset 0 0 30px rgba(255, 152, 0, 0.3);
+  border-color: rgba(255, 213, 79, 0.3);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .islamic-books-card {
+    max-width: 800px;
+    padding: 40px;
+  }
+  
+  .islamic-books-card h3 {
+    font-size: 1.8rem;
+  }
+  
+  .wisdom-quotes {
+    font-size: 1.15rem;
+  }
+  
+  .reference {
+    font-size: 0.95rem;
+  }
+  
+  .top-right {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .decor-pattern {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Animation */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.9; }
+}
+
+.islamic-books-card:hover .decor-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
 }
 </style>
     
+    
+    <br></br>
+    <br></br>
     
     
     
@@ -3403,15 +3864,11 @@ animation: floatCalligraphy 45s infinite linear;
   </div>
 </div>
 
- 
+
+<br></br>
 
 
-
-    <!-- Up button (initially hidden) -->
-    
-   
-    
-    <!-- ========== CIRCLE FOOTER BUTTON ========== -->
+<!-- ========== CIRCLE FOOTER BUTTON ========== -->
 <button class="footer-circle-btn" id="footerCircleBtn" aria-label="Open footer popup" title="More info & navigation">
   <i class="fas fa-circle-notch circle-icon-animate"></i>
   <span class="click-indicator" aria-hidden="true">
@@ -3445,38 +3902,30 @@ animation: floatCalligraphy 45s infinite linear;
         <button class="circle-option-btn features" onclick="showSection('features')" aria-label="Key Features">
           <span class="circle-option-icon"><i class="fas fa-star"></i></span>
           Features
-        
-       
-       
+        </button>
+ 
       </div>
     </div>
-    
     
     <!-- About Section -->
     <div class="circle-section-content" id="circle-section-about">
       <div class="circle-section-title"><span class="about">HI</span> About Developer</div>
       <div style="font-size:1.01em; line-height:1.38; color: #232526;">
         <h1>Hafizul Islam</h1><br>
-        
-        
-        
-        
-         <button class="circle-option-btn contact" onclick="showSection('contact')" aria-label="Contact">
-          <span class="circle-option-icon"><i class="fas fa-paper-plane"></i></span>
-          Contact
-        </button>
-        
-        
-        
-        
         <span style="color: #4e54c8; font-weight: 700;">Owner &amp; Lead Developer</span><br>
         <span style="margin-top:4px; font-size:1em; color:#232526;">Crafting <span style="color:#000000;font-weight:400;">world-class</span> web experiences with a passion for innovation, usability, and scalability.</span>
         <div style="margin-top: 9px; font-size: 0.98em; color: #8f94fb;">Specializes in JavaScript, Next.js, Node, UI/UX, API and secure web apps.</div>
       </div>
       
-      
       <div style="margin:13px 0 7px 0; border-top: 1.5px solid rgba(252,185,0,0.20);"></div>
       <div style="font-size:1em; color: #232526;">
+        <div style="font-weight:700; color:#4e54c8; margin-bottom:8px;">Contact Details</div>
+        <div style="margin-bottom: 8px;">
+          <b>Email:</b> <a href="mailto:hafizul9996@gmail.com" style="color: #4e54c8; font-weight:600; text-decoration:underline;">hafizul9996@gmail.com</a>
+        </div>
+        <div style="margin-bottom: 8px;">
+          <b>Phone:</b> <a href="tel:+8801744348961" style="color:#fc4a1a;font-weight:600;text-decoration:underline;">01744348961</a>
+        </div>
         <div style="font-weight:700; color:#4e54c8; margin-bottom:8px;">Find Me</div>
         <a href="https://facebook.com/your.profile1" target="_blank" class="circle-fb-profile">
           <img src="https://graph.facebook.com/100011122233344/picture?width=32&height=32" alt="Facebook Profile 1"> /your.profile1
@@ -3532,28 +3981,64 @@ animation: floatCalligraphy 45s infinite linear;
       <div style="margin-top:10px;font-size:0.97em;color:#4e54c8;">Always evolving with the latest trends!</div>
     </div>
 
-    <!-- Contact Section -->
-    <div class="circle-section-content" id="circle-section-contact">
-      <div class="circle-section-title"><span class="contact"><i class="fas fa-paper-plane"></i></span> Contact</div>
-      <div style="margin-bottom: 10px;">
-        <b>Email:</b>
-        <a href="mailto:hafizul9996@gmail.com" style="color: #4e54c8; font-weight:600; text-decoration:underline;">hafizul9996@gmail.com</a>
-      </div>
-      <div style="margin-bottom: 10px;">
-        <b>Phone:</b>
-        <a href="tel:+8801744348961" style="color:#fc4a1a;font-weight:600;text-decoration:underline;">01744348961</a>
-      </div>
-      <div style="font-weight:600; color: #fcb900; margin-bottom:8px;">Or chat via:</div>
-      <div class="circle-social-links">
-        <a href="https://wa.me/8801744348961" target="_blank" class="circle-social-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="https://t.me/" target="_blank" class="circle-social-link telegram"><i class="fab fa-telegram"></i> Telegram</a>
-        <a href="https://facebook.com/your.profile1" target="_blank" class="circle-social-link" style="background:linear-gradient(135deg,#1877f2 0,#4e54c8 100%);"><i class="fab fa-facebook"></i> Facebook</a>
-      </div>
-      <div style="margin-top:12px; font-size:.98em; color:#8f94fb;">
-        <i class="fas fa-clock"></i> <b>Available:</b> 10:00 - 23:00 (GMT+6)
+
       </div>
     </div>
+  </div>
+</div>
  
+ 
+ 
+ 
+ <br></br>
+ 
+ 
+ 
+ <style>
+  /* ===== FOOTER STYLES ===== */
+  .universal-footer {
+    --footer-text-color: #333333;         /* Text color */
+    --footer-bg-color: rgba(248,249,250,0.9); /* Text background */
+    --footer-font: Arial, sans-serif;     /* Font family */
+    --footer-padding: 0.25rem 0.5rem;     /* Text padding */
+    --footer-radius: 4px;                 /* Border radius */
+    
+    text-align: center;
+    padding: 1rem;
+    font-family: var(--footer-font);
+  }
+  
+  .universal-footer p {
+    margin: 0;
+    font-weight: bold;
+    color: var(--footer-text-color);
+    display: inline-block;
+    padding: var(--footer-padding);
+    background-color: var(--footer-bg-color);
+    border-radius: var(--footer-radius);
+  }
+  
+  /* ===== THEME EXAMPLES ===== */
+  /* Dark Mode Version */
+  .footer-dark {
+    --footer-text-color: #ffffff;
+    --footer-bg-color: rgba(40,40,40,0.9);
+  }
+  
+  /* Colorful Version */
+  .footer-colorful {
+    --footer-text-color: #2c3e50;
+    --footer-bg-color: rgba(236, 240, 241, 0.9);
+    --footer-radius: 8px;
+  }
+</style>
+<footer class="universal-footer footer-dark">
+  <p>&copy; <span id="year"></span> All Rights Reserved.</p>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 
   </section>
 
