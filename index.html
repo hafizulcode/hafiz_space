@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Islamic Art & Design</title>
+  <title>Islamic Art</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -143,56 +143,12 @@ animation: floatCalligraphy 45s infinite linear;
 
 
 
-.islamic-section3 {
+
+
+.islamic-section4 {
   background: 
-    /* Base gradient */
-    radial-gradient(circle at center, #0a5c36 0%, #022618 100%),
-    
-    /* Golden geometric pattern */
-    repeating-linear-gradient(45deg, 
-      transparent, 
-      transparent 25px, 
-      rgba(212, 175, 55, 0.4) 25px, 
-      rgba(212, 175, 55, 0.4) 50px),
-    
-    /* Complementary geometric pattern */
-    repeating-linear-gradient(-45deg, 
-      transparent, 
-      transparent 30px, 
-      rgba(212, 175, 55, 0.25) 30px, 
-      rgba(212, 175, 55, 0.25) 60px),
-    
-    /* Subtle texture */
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23000000" opacity="0.05" d="M0 0h100v100H0z"/><path fill="none" stroke="%23ffffff" opacity="0.03" stroke-width="1" d="M0 0h100v100H0z"/></svg>');
-  
-  background-blend-mode: soft-light, overlay, overlay, normal;
-  background-attachment: fixed;
-  background-size: cover;
-  
-  /* Additional enhancements */
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
-  border-top: 1px solid rgba(212, 175, 55, 0.3);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-  position: relative;
-  overflow: hidden;
+    url('https://raw.githubusercontent.com/hafizulcode/hafiz_space/11812db0ea45974d448858a43125d654ff7b6d94/IMG_20250725_153719.png') center/cover fixed;
 }
-
-/* Optional pseudo-element for extra depth */
-.islamic-section3::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-    .islamic-section4 {
-      background: 
-        url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c') center/cover fixed;
-    }
 
 
 
@@ -333,140 +289,6 @@ animation: floatCalligraphy 45s infinite linear;
 
 
    
-
-
-
-    /* ===== Color Schemes ===== */
-    .islamic-section2 h1 { color: #11ff00; }
-    .islamic-section2 p { color: #a5ff80; }
-    .islamic-section1 h1 { color: #d4af37; }
-    .islamic-section1 p { color: #e8f5e9; }
-    .islamic-section3 h1 { color: #ebebeb; }
-    .islamic-section3 p { color: #b3b3b3; }
-    .islamic-section4 h1 { color: #d4af37; }
-    .islamic-section4 p { color: #f5f5f5; }
-    .islamic-section5 h1 { color: #11ff00; }
-    .islamic-section5 p { color: #f5f5f5; }
-    .islamic-section6 h1 { color: #2bffff; }
-    .islamic-section6 p { color: #00d3c2; }
-
-    /* ===== Islamic Decorations ===== */
-    .islamic-pattern {
-      position: absolute;
-      opacity: 0.1;
-      z-index: 1;
-      pointer-events: none;
-      transition: all 0.5s ease;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-    }
-
-    .islamic-section:hover .islamic-pattern {
-      opacity: 0.15;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
-    }
-
-    .islamic-section2 .islamic-pattern { color: #0288d1; }
-    .islamic-section1 .islamic-pattern { color: #d4af37; }
-    .islamic-section3 .islamic-pattern { color: #5d4037; }
-    .islamic-section4 .islamic-pattern { color: #d4af37; }
-    .islamic-section5 .islamic-pattern { color: #0a3d62; }
-    .islamic-section6 .islamic-pattern { color: #d4af37; }
-
-    .islamic-icon {
-      position: absolute;
-      z-index: 2;
-      font-size: 3rem;
-      opacity: 0.7;
-      pointer-events: none;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-      transition: all 0.5s ease;
-    }
-
-    .islamic-section:hover .islamic-icon {
-      opacity: 0.9;
-      filter: drop-shadow(0 6px 8px rgba(0,0,0,0.4));
-    }
-
-    /* ===== DIVIDER BLOCK ===== */
-    .islamic-divider {
-      height: 20px;
-      width: 100%;
-      position: relative;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100% 100%;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-      transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
-      overflow: hidden;
-      z-index: 5;
-    }
-
-    .islamic-divider::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20"><path d="M0,10 Q25,15 50,10 T100,10" stroke="rgba(212,175,55,0.3)" fill="none" stroke-width="0.8"/></svg>');
-      opacity: 0.4;
-    }
-
-    /* Divider 2: Water Ripples */
-    .islamic-divider-1 {
-      background-image: 
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path d="M0,70 C200,30 400,110 600,70 C800,30 1000,110 1200,70 L1200,100 L0,100 Z" fill="%233fb4e8"/></svg>');
-      background-color: #6bd1e7;
-    }
-
-    /* Divider 1: Quranic Scroll */
-    .islamic-divider-2 {
-      background-image: 
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path d="M0,100 L0,80 Q300,60 600,80 T1200,60 L1200,100 Z" fill="%23d4af37"/><rect x="200" y="40" width="800" height="10" rx="5" fill="%23043220"/></svg>');
-      background-color: #043020;
-    }
-
-    /* Divider 3: Prayer Mihrab */
-    .islamic-divider-3 {
-      background-image: 
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path d="M0,100 L0,40 Q600,-30 1200,40 L1200,100 Z" fill="%23fbc02d"/><path d="M400,100 L400,60 Q600,30 800,60 L800,100 Z" fill="%230a5c36"/></svg>');
-      background-color: #e6d5a1;
-    }
-
-    /* Divider 4: Geometric Mosaic */
-    .islamic-divider-4 {
-      background-image: 
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><polygon points="0,100 600,0 1200,100" fill="%230a3d62"/><polygon points="300,100 600,50 900,100" fill="%23d4af37"/></svg>');
-      background-color: #0a5c36;
-    }
-
-    /* Divider 5: Celestial Crescents */
-    .islamic-divider-5 {
-      background-image: 
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path d="M0,100 C400,-10 800,110 1200,50 L1200,100 Z" fill="%23d4af37"/><path d="M250,30 Q350,10 450,30 T650,30" stroke="%230a3d62" stroke-width="3" fill="none"/></svg>');
-      background-color: #f5e8c8;
-    }
-
-    .islamic-divider:hover {
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)) brightness(1.08);
-      transform: scaleY(1.15);
-    }
-
-    @media (max-width: 768px) {
-      .islamic-divider {
-        height: 20px;
-        background-size: 150% 100%;
-      }
-      .islamic-divider::before {
-        background-size: 80px 20px;
-      }
-    }
-
-  
-
-
-
 
 
 
@@ -749,14 +571,17 @@ animation: floatCalligraphy 45s infinite linear;
     
     
     
-        /* ========== MAIN CONTENT ========== */
+ 
+
+
+
+
+    /* ========== MAIN CONTENT ========== */
     .divine-ultra-root {
       padding: 32px 15px 80px;
       max-width: 1440px;
       margin: 0 auto;
     }
-    
-   
 
     .divine-ultra-heading-card {
       margin: 30px auto 48px;
@@ -783,100 +608,99 @@ animation: floatCalligraphy 45s infinite linear;
         to { opacity: 1; transform: translateY(0);}
     }
 
+    /* Base Button Styles */
+    .explore-btn {
+      position: relative;
+      background: #fff;
+      color: #ff0049;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: 2.5px solid #ff0049;
+      border-radius: 1.8rem;
+      padding: 0;
+      margin: 1.5rem 0 0;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(244, 140, 6, 0.15);
+      z-index: 2;
+      min-width: 140px;
+      text-decoration: none;
+      display: inline-block;
+    }
 
+    /* Button Content Layout */
+    .btn-content {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      position: relative;
+      z-index: 2;
+    }
 
-/* Base Button Styles */
-.explore-btn {
-  position: relative;
-  background: #fff;
-  color: #ff0049;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border: 2.5px solid #ff0049;
-  border-radius: 1.8rem;
-  padding: 0;
-  margin: 1.5rem 0 0;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(244, 140, 6, 0.15);
-  z-index: 2;
-  min-width: 140px;
-}
+    /* Icon Animation */
+    .btn-icon {
+      font-size: 0.9em;
+      transition: transform 0.6s ease;
+    }
 
-/* Button Content Layout */
-.btn-content {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 24px;
-  position: relative;
-  z-index: 2;
-}
+    /* Hover Glow Effect */
+    .btn-glow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+                  rgba(244, 140, 6, 0) 0%, 
+                  rgba(244, 140, 6, 0.1) 50%, 
+                  rgba(244, 140, 6, 0) 100%);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+      z-index: 1;
+    }
 
-/* Icon Animation */
-.btn-icon {
-  font-size: 0.9em;
-  transition: transform 0.6s ease;
-}
+    /* Hover State */
+    .explore-btn:hover {
+      background: #f48c06;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(244, 140, 6, 0.3);
+    }
 
-/* Hover Glow Effect */
-.btn-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-              rgba(244, 140, 6, 0) 0%, 
-              rgba(244, 140, 6, 0.1) 50%, 
-              rgba(244, 140, 6, 0) 100%);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-  z-index: 1;
-}
+    .explore-btn:hover .btn-icon {
+      transform: translateX(4px);
+      color: #fff;
+    }
 
-/* Hover State */
-.explore-btn:hover {
-  background: #f48c06;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(244, 140, 6, 0.3);
-}
+    .explore-btn:hover .btn-glow {
+      transform: translateX(100%);
+    }
 
-.explore-btn:hover .btn-icon {
-  transform: translateX(4px);
-  color: #fff;
-}
+    /* Active State */
+    .explore-btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 5px rgba(244, 140, 6, 0.2);
+    }
 
-.explore-btn:hover .btn-glow {
-  transform: translateX(100%);
-}
+    /* Focus State */
+    .explore-btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(244, 140, 6, 0.3);
+    }
 
-/* Active State */
-.explore-btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 5px rgba(244, 140, 6, 0.2);
-}
+    /* Subtle Pulse Animation */
+    @keyframes subtlePulse {
+      0% { transform: scale(1.2); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1.2); }
+    }
 
-/* Focus State */
-.explore-btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(244, 140, 6, 0.3);
-}
-
-/* Subtle Pulse Animation */
-@keyframes subtlePulse {
-  0% { transform: scale(1.2); }
-  50% { transform: scale(1.03); }
-  100% { transform: scale(1.2); }
-}
-
-.explore-btn {
-  animation: subtlePulse 3s infinite;
-}
-
+    .explore-btn {
+      animation: subtlePulse 3s infinite;
+    }
 
     .divine-ultra-heading-card h1 {
       font-size: clamp(2.3rem, 6vw, 3.6rem);
@@ -1090,6 +914,157 @@ animation: floatCalligraphy 45s infinite linear;
       transform: scale(1.11);
       box-shadow: 0 12px 32px rgba(30,34,56,0.21);
     }
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+  /* ========== ELEGANT FURFURA CARD ========== */
+  .furfura-premium-card {
+    position: relative;
+    background: linear-gradient(120deg, #fffdf9 58%, #f7faff 100%);
+    border-radius: 1.8rem;
+    border: 5px solid transparent;
+    box-shadow:
+      0 0 0 6px #ffd70033,
+      0 8px 24px 0 rgba(36, 104, 214, 0.16),
+      0 3px 8px rgba(36, 227, 201, 0.08),
+      inset 0 0 20px rgba(255, 215, 0, 0.1);
+    padding: 1.6rem 1rem 1.2rem;
+    text-align: center;
+    max-width: 320px;
+    width: 80vw;
+    color: #212a39;
+    background-image:
+      linear-gradient(120deg, #fffdf9 58%, #f7faff 100%),
+      linear-gradient(95deg, #ffd700 10%, #23e3c9 60%, #1e68d6 100%);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    backdrop-filter: blur(1px);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+
+  }
+
+/* BACKGROUND PICTURE ABOVE BUTTON */
+.furfura-image-above-button {
+    position: relative;
+    width: calc(100% - 2rem);
+    height: 120px;
+    margin: 1.2rem auto 1.5rem;
+    background: url('https://raw.githubusercontent.com/hafizulcode/hafiz_space/f389a30c1a130f82baf1db80f52e1c9f9742cfee/IMG_20250725_155001.png') center/cover;
+    border-radius: 1rem;
+    box-shadow: 
+      inset 0 0 20px rgba(0,0,0,0.1),
+      0 4px 12px rgba(0,0,0,0.1);
+    filter: brightness(1.05) contrast(1.05) saturate(1.1);
+    z-index: 1;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+  .furfura-main-title {
+    position: relative;
+    z-index: 2;
+    font-family: 'Oswald', 'Montserrat', Arial, sans-serif;
+    font-size: 2.9rem;
+    font-weight: 900;
+    margin-bottom: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1e68d6;
+    text-shadow: 
+      0 2px 15px #ffd70077, 
+      0 1px 0px #fff6;
+    filter: drop-shadow(0 2px 0 #fff8);
+    line-height: 1.2;
+  }
+
+  .furfura-main-desc {
+    position: relative;
+    z-index: 2;
+    color: #2d4969;
+    font-size: 1.0rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    background: rgba(255, 215, 0, 0.08);
+    border-radius: 1rem;
+    border: 1px solid #ffeabf;
+    padding: 0.8rem;
+    display: inline-block;
+    backdrop-filter: blur(2px);
+  }
+
+  /* ENTER BUTTON - ONLY INTERACTIVE ELEMENT */
+  .furfura-go-btn {
+    position: relative;
+    z-index: 3;
+    background: linear-gradient(90deg, #0f2027 0%, #2c5364 50%, #203a43 100%);   
+    color: #fff;
+    border: none;
+    border-radius: 1.8rem;
+    padding: 0.8rem 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 
+      0 4px 14px rgba(36,214,255,0.1), 
+      0 2px 5px #ffd70022,
+      inset 0 0 10px rgba(255,255,255,0.2);
+    outline: none;
+    border: 2px solid #23e3c9;
+    margin-top: 0.5rem;
+    min-width: 160px;
+    text-shadow: 0 1px 4px #1e68d622;
+    text-transform: uppercase;
+    cursor: pointer;
+    animation: furfura-btn-breathing 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @keyframes furfura-btn-breathing {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  .furfura-go-btn:hover {
+    animation: none;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(36,214,255,0.2);
+  }
+
+  /* Responsive rules */
+  @media (min-width: 768px) {
+    .furfura-premium-card {
+      max-width: 800px;
+      min-height: 500px;
+      padding: 2rem;
+    }
+    
+    .furfura-image-above-button {
+      height: 150px;
+      margin: 1.5rem auto 2rem;
+    }
+    
+    .furfura-main-title {
+      font-size: 3.5rem;
+    }
+  }
+
+
+
+
 
 
 
@@ -1514,144 +1489,8 @@ animation: floatCalligraphy 45s infinite linear;
     }
     
 
-       /* ========== COMPACT FURFURA CARD ========== */
-    .furfura-premium-card {
-      position: relative;
-      background: linear-gradient(120deg, #fffdf9 58%, #f7faff 100%);
-      border-radius: 1.8rem;
-      border: 5px solid #23e3c9;
-      background-clip: padding-box, border-box;
-      box-shadow:
-        0 0 0 6px #ffd70033,
-        0 8px 24px 0 rgba(36, 104, 214, 0.16),
-        0 3px 8px rgba(36, 227, 201, 0.08);
-      padding: 1.6rem 1rem 1.2rem;
-      text-align: center;
-      max-width: 300px;
-      width: 980vw;
-      margin: 0 auto;
-      color: #212a39;
-      background-image:
-        linear-gradient(120deg, #fffdf9 58%, #f7faff 100%),
-        linear-gradient(95deg, #ffd700 10%, #23e3c9 60%, #1e68d6 100%);
-      background-origin: padding-box, border-box;
-      background-clip: padding-box, border-box;
-      backdrop-filter: blur(1px);
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
 
-    .furfura-premium-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      z-index: 0;
-      background: 
-        radial-gradient(ellipse at 80% 13%, #f2d89d44 0%, transparent 60%),
-        radial-gradient(circle at 12% 90%, #a6e3ff44 0%, transparent 80%);
-      opacity: 0.25;
-      pointer-events: none;
-      filter: blur(2px);
-    }
-
-    .furfura-main-title {
-      font-family: 'Oswald', 'Montserrat', Arial, sans-serif;
-      font-size: 2.9rem;
-      font-weight: 900;
-      margin-bottom: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #1e68d6;
-      text-shadow: 
-        0 2px 15px #ffd70077, 
-        0 1px 0px #fff6;
-      filter: drop-shadow(0 2px 0 #fff8);
-      line-height: 1.2;
-    }
-
-    .furfura-main-desc {
-      color: #2d4969;
-      font-size: 1.0rem;
-      font-weight: 9000;
-      margin-bottom: 1.3rem;
-      line-height: 1.5;
-      background: rgba(255, 215, 0, 0.08);
-      border-radius: 1rem;
-      border: 1px solid #ffeabf;
-      padding: 0.5rem;
-      display: inline-block;
-    }
-    
-
-    /* BREATHING BUTTON */
-    .furfura-go-btn {
-      position: center;
-      background: linear-gradient(90deg, #0f2027 0%, #2c5364 50%, #203a43 100%);   
-      color: #fff;
-      border: none;
-      border-radius: 1.8rem;
-      padding: 0.7rem 1.6rem;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      font-family: 'Montserrat', sans-serif;
-      box-shadow: 
-        0 4px 14px rgba(36,214,255,0.1), 
-        0 2px 5px #ffd70022;
-      outline: none;
-      border: 2px solid #23e3c9;
-      margin-top: 0.6rem;
-      min-width: 120px;
-      text-shadow: 0 1px 4px #1e68d622;
-      text-transform: uppercase;
-      cursor: pointer;
-      animation: furfura-btn-breathing 3s ease-in-out infinite;
-      transition: all 0.2s ease;
-    }
-
-    @keyframes furfura-btn-breathing {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.15); }
-      100% { transform: scale(1); }
-    }
-
-    .furfura-go-btn:hover {
-      animation: none;
-      transform: scale(1.05);
-      box-shadow: 0 6px 18px rgba(36,214,255,0.15);
-    }
-
-
-    
-    
-    
-    
-
- 
-        /* ADD these responsive rules */
-@media (min-width: 768px) {
-
-  .furfura-premium-card {
-    width: 80%;
-    max-width: 1000px;
-    min-height: 620px;
-    padding: 2rem;
-  }
-  
-  .furfura-main-title {
-    font-size: 5.8rem;
-  }
-  
-
-}
-
-
-        
-        
-        
-        
-        
+      
         
         
         
@@ -1675,355 +1514,7 @@ animation: floatCalligraphy 45s infinite linear;
     html { scroll-behavior: smooth; }
     body { min-height: 180vh; transition: background 0.25s, color 0.25s; }
 
-    /* ========== CIRCLE FOOTER BUTTON ========== */
-    .footer-circle-btn {
-      position: fixed;
-      bottom: 120px;
-      right: 32px;
-      width: var(--circle-btn-size);
-      height: var(--circle-btn-size);
-      border-radius: 50%;
-      background: conic-gradient(from 205deg, var(--main-gold) 0deg, var(--main-orange) 110deg, var(--main-blue) 250deg, var(--main-pink) 330deg, var(--main-gold) 360deg);
-      color: var(--main-white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.7rem;
-      box-shadow: 0 6px 26px rgba(252,185,0,0.33),0 2px 8px rgba(34,37,38,0.08);
-      cursor: pointer;
-      z-index: 10000;
-      transition: all 0.28s cubic-bezier(.32,1.2,.45,1);
-      border: none;
-      outline: none;
-      opacity: 0;
-      pointer-events: none;
-      overflow: visible;
-    }
-    .footer-circle-btn.visible {
-      opacity: 1;
-      pointer-events: auto;
-      animation: circlePopIn 0.37s cubic-bezier(.45,1.5,.5,1.05);
-    }
-    @keyframes circlePopIn {
-      from { transform: scale(0.7); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-    .footer-circle-btn:focus-visible {
-      outline: 3px solid var(--main-cyan);
-      outline-offset: 2px;
-    }
-    .footer-circle-btn:hover {
-      transform: scale(1.16) rotate(-5deg);
-      box-shadow: 0 13px 38px rgba(252,185,0,0.43), 0 8px 20px rgba(34,37,38,0.13);
-      filter: brightness(1.12);
-    }
-    .footer-circle-btn .circle-icon-animate {
-      animation: rotateIcon 1.25s infinite linear;
-      z-index: 2;
-    }
-    @keyframes rotateIcon {
-      100% { transform: rotate(360deg);}
-    }
 
-    /* Click indicator */
-    .footer-circle-btn .click-indicator {
-      position: absolute;
-      bottom: -11px; right: -11px;
-      width: var(--click-indicator-size);
-      height: var(--click-indicator-size);
-      background: linear-gradient(135deg,#fff 0%,#fcb900 70%);
-      color: var(--main-orange);
-      border-radius: 50%;
-      box-shadow: 0 2px 12px 0 #fcb90021;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.18em;
-      border: 2.3px solid #fcb900;
-      z-index: 10;
-      animation: clickPulse 1.3s infinite;
-      pointer-events: none;
-      opacity: 0.91;
-    }
-    @keyframes clickPulse {
-      0% { box-shadow: 0 0 0 0 #fcb90055; transform: scale(0.90);}
-      60% { box-shadow: 0 0 0 7px #fcb90011; }
-      100% { box-shadow: 0 0 0 0 #fcb90055; transform: scale(1);}
-    }
-
-    /* ========== POPUP MODAL ========== */
-    .circle-popup-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(ellipse at center, #26293bde 53%,#4a4e69d2 100%);
-      animation: circlePopupIn 0.18s cubic-bezier(.45,1.5,.5,1.05);
-    }
-    @keyframes circlePopupIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .circle-popup-content {
-      background: linear-gradient(135deg, var(--main-bg-glass) 0%, rgba(252,185,0,0.17) 100%);
-      color: #232526;
-      border-radius: 22px;
-      box-shadow: 0 12px 36px 8px rgba(0,0,0,0.23), 0 2px 8px rgba(252,185,0,0.11);
-      padding: 30px 22px 24px 22px;
-      width: 98vw;
-      max-width: var(--modal-max-width);
-      min-width: 0;
-      position: relative;
-      text-align: left;
-      animation: circleContentPopIn 0.24s cubic-bezier(.44,1.55,.41,1.04);
-      border: 2px solid rgba(252,185,0,0.13);
-      min-height: 38px;
-      font-size: 1.08rem;
-      backdrop-filter: blur(13px);
-      overflow: visible;
-    }
-    @keyframes circleContentPopIn {
-      from { transform: scale(0.82) rotate(-8deg); opacity: 0; }
-      60% { transform: scale(1.08) rotate(2.2deg);}
-      to { transform: scale(1) rotate(0); opacity: 1; }
-    }
-    .circle-popup-close {
-      position: absolute; top: 16px; left: 19px;
-      background: linear-gradient(135deg, #fcb900 70%, #fff 130%);
-      border: none; font-size: 1.36em; cursor: pointer; padding: 0;
-      border-radius: 50%; width: 32px; height: 32px; min-width: 32px; min-height: 32px;
-      box-shadow: 0 2px 7px rgba(0,0,0,0.13);
-      border: 1.3px solid #ffedb8;
-      transition: all 0.22s;
-      outline: none; z-index: 2;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .circle-popup-close:hover, .circle-popup-close:focus {
-      background: linear-gradient(135deg, #fff 15%, #fcb900 100%);
-      color: #232526; transform: scale(1.09);
-    }
-    /* Back button at the right in options mode */
-    .circle-popup-back {
-      position: absolute;
-      top: 16px;
-      right: 19px;
-      background: linear-gradient(135deg, #232526 0%, #fcb900 100%);
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 32px; height: 32px; min-width: 32px; min-height: 32px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.18em;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.13);
-      outline: none;
-      z-index: 2;
-      transition: all 0.2s;
-      border: 1.5px solid #d1b800;
-    }
-    .circle-popup-back:hover, .circle-popup-back:focus {
-      background: linear-gradient(135deg, #fcb900 0%, #232526 100%);
-      color: #232526;
-      transform: scale(1.09);
-    }
-
-    /* Options grid */
-    .circle-footer-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px 14px;
-      margin-top: 20px;
-      align-items: center;
-      justify-content: center;
-    }
-    @media (max-width: 360px) {
-      .circle-footer-options { grid-template-columns: 1fr; }
-    }
-    .circle-option-btn {
-      background: linear-gradient(135deg, #fff 0%, var(--btn-color) 100%);
-      color: var(--btn-text-color);
-      border: none;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 1.13em;
-      padding: 14px 17px 14px 15px;
-      cursor: pointer;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.09), 0 1px 3px var(--btn-color);
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      min-width: 120px;
-      position: relative;
-      border: 1.6px solid rgba(252,185,0,0.17);
-      transition: background 0.19s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.19s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.19s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.19s cubic-bezier(0.25, 0.8, 0.25, 1); /* Only background, color, shadow, filter */
-      letter-spacing: 0.06em;
-      outline: none;
-      box-shadow: 0 2px 7px rgba(var(--btn-shadow-rgb), 0.15);
-      /* Removed transform from transition */
-    }
-    .circle-option-btn .circle-option-icon {
-      width: 32px; height: 32px; font-size: 1.19em;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background .18s, color .18s;
-      background: var(--btn-icon-bg) !important;
-      color: var(--btn-icon-color) !important;
-    }
-    .circle-option-btn[data-hot="true"]::after {
-      content: '';
-      display: inline-block;
-      width: 13px; height: 13px;
-      background: radial-gradient(circle at 60% 40%, #fc4a1a 70%, #fcb900 100%);
-      border-radius: 50%;
-      margin-left: 6px;
-      box-shadow: 0 0 8px 3px #fc4a1a7a;
-      animation: hotPulse 1.2s infinite;
-      vertical-align: middle;
-    }
-    @keyframes hotPulse {
-      0% { box-shadow: 0 0 8px 2.5px #fc4a1a7a; }
-      60% { box-shadow: 0 0 15px 7.5px #fc4a1a33;}
-      100% { box-shadow: 0 0 8px 2.5px #fc4a1a7a;}
-    }
-    .circle-option-btn:hover, .circle-option-btn:focus {
-      background: linear-gradient(135deg, var(--btn-hover-color) 0%, var(--btn-color) 92%);
-      color: var(--btn-hover-text);
-      /* Removed: transform: scale(1.13) translateY(-2px); */
-      box-shadow: 0 12px 30px rgba(var(--btn-shadow-rgb), 0.23),0 3px 8px var(--main-pink);
-      /* No scaling or big size on touch/hover/focus */
-    }
-    .circle-option-btn:hover .circle-option-icon, .circle-option-btn:focus .circle-option-icon {
-      background: var(--btn-icon-hover-bg) !important;
-      color: var(--btn-icon-hover-color) !important;
-      box-shadow: 0 2px 8px rgba(252,185,0,0.13);
-    }
-    
-    /* Button specific styles */
-    .circle-option-btn.about {
-      --btn-color: #fcb900;
-      --btn-text-color: #232526;
-      --btn-hover-color: #fc4a1a;
-      --btn-hover-text: #fff;
-      --btn-shadow-rgb: 252, 185, 0;
-      --btn-icon-bg: linear-gradient(135deg,#fcb900 0%,#f7b733 100%);
-      --btn-icon-color: #232526;
-      --btn-icon-hover-bg: #fff;
-      --btn-icon-hover-color: #fc4a1a;
-    }
-    .circle-option-btn.services {
-      --btn-color: #8f94fb;
-      --btn-text-color: #fff;
-      --btn-hover-color: #4e54c8;
-      --btn-hover-text: #fff;
-      --btn-shadow-rgb: 143, 148, 251;
-      --btn-icon-bg: linear-gradient(135deg,#8f94fb 0%,#4e54c8 100%);
-      --btn-icon-color: #fff;
-      --btn-icon-hover-bg: #fff;
-      --btn-icon-hover-color: #4e54c8;
-    }
-    .circle-option-btn.features {
-      --btn-color: #232526;
-      --btn-text-color: #fcb900;
-      --btn-hover-color: #414345;
-      --btn-hover-text: #fcb900;
-      --btn-shadow-rgb: 35, 37, 38;
-      --btn-icon-bg: linear-gradient(135deg,#232526 0%,#414345 100%);
-      --btn-icon-color: var(--main-gold);
-      --btn-icon-hover-bg: #fff;
-      --btn-icon-hover-color: #232526;
-    }
-  
-    .circle-option-btn.contact {
-      --btn-color: #25d366;
-      --btn-text-color: #fff;
-      --btn-hover-color: #24c6dc;
-      --btn-hover-text: #fff;
-      --btn-shadow-rgb: 37, 211, 102;
-      --btn-icon-bg: linear-gradient(135deg, var(--main-green) 0%, var(--main-cyan) 100%);
-      --btn-icon-color: #fff;
-      --btn-icon-hover-bg: #fff;
-      --btn-icon-hover-color: #25d366;
-    }
- 
-
-    /* Content Sections */
-    .circle-section-content {
-      display: none;
-      margin-top: 8px;
-      animation: fadeIn 0.2s;
-    }
-    .circle-section-content.active {
-      display: block;
-    }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-    /* Section title */
-    .circle-section-title {
-      font-size: 1.16em; font-weight: 700; letter-spacing:.1px; margin-bottom: 11px; display:flex; align-items: center; gap:10px;
-    }
-    .circle-section-title span {
-      padding:3px 11px;font-size:1.08em;border-radius:8px;font-weight:700;
-    }
-    .circle-section-title .about { background:var(--main-dark);color:var(--main-gold);}
-    .circle-section-title .services { background:var(--main-blue);color:#fff; }
-    .circle-section-title .features { background:var(--main-dark);color:var(--main-gold);}
-   
-    .circle-section-title .contact { background:var(--main-green);color:#fff;}
-  
-
- 
-    .circle-social-links {
-      display:flex; flex-wrap:wrap; gap:7px 6px; margin-top:10px; justify-content:center;
-    }
-    .circle-social-link {
-      padding: 6px 14px;
-      border-radius: 22px;
-      font-weight: 600;
-      font-size: 1em;
-      text-decoration: none;
-      color: #fff;
-      background: linear-gradient(135deg,#8f94fb 0,#4e54c8 100%);
-      transition: all 0.20s cubic-bezier(0.25, 0.8, 0.25, 1);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.09);
-      display:inline-flex; align-items:center; gap:5px;
-    }
-    .circle-social-link.youtube { background:linear-gradient(135deg,#fc4a1a 0,#fcb900 100%);}
-    .circle-social-link.whatsapp { background:linear-gradient(135deg,#25d366 0,#128c7e 100%);}
-    .circle-social-link.telegram { background:linear-gradient(135deg,#229ed9 0,#0088cc 100%);}
-    .circle-social-link.github { background:linear-gradient(135deg,#232526 0,#414345 100%);color:#fcb900;}
-    .circle-social-link.linkedin { background:linear-gradient(135deg,#0077b5 0,#00a0dc 100%);}
-    .circle-social-link:hover, .circle-social-link:focus {
-      opacity: .94;
-      transform: scale(1.09) translateY(-1px);
-      filter: brightness(1.15);
-      text-decoration: underline;
-    }
-    .circle-fb-profile img {
-      width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; object-fit: cover; background: #fff;
-      margin-right: 7px;
-      transition: border-color .18s;
-    }
-    .circle-fb-profile:hover img { border-color: var(--main-gold);}
-    .circle-fb-profile {
-      display: flex; align-items: center; gap: 7px; text-decoration: none; font-size: 1.02em; font-weight: 600; color: #1877f2;
-      background: rgba(255,255,255,0.97); border-radius: 11px; padding: 6px 11px; margin-bottom: 2px;
-      transition: all .19s;
-    }
-    .circle-fb-profile:hover { background: #fff; color: var(--main-gold);}
-    .circle-footer-copyright {
-      display: block;
-      text-align: center;
-      font-size: 1em;
-      color: var(--main-gold);
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin: 7px auto 5px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.11);
-    }
 
     /* ========== RESPONSIVE STYLES ========== */
     @media (max-width: 900px) {
@@ -2513,12 +2004,114 @@ animation: floatCalligraphy 45s infinite linear;
 
 
 
+html {
+  scroll-behavior: smooth;
+}
 
 
 
 
 
 
+
+
+
+
+
+
+/* Enhanced Islamic Back Button */
+.islamic-art-back-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #0d9488cc, #042f2ecc);
+  backdrop-filter: blur(8px);
+  border: 2px solid #d4af37;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25),
+              0 0 0 1px rgba(212, 175, 55, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+  transform: translateX(-30px);
+  pointer-events: none;
+  font-family: 'Amiri', serif;
+}
+
+.islamic-art-back-btn.visible {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.islamic-art-back-btn:hover {
+  background: linear-gradient(145deg, #042f2e, #0d9488);
+  transform: scale(1.08) translateX(0);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35),
+              0 0 0 2px rgba(212, 175, 55, 0.5);
+}
+
+.islamic-art-back-btn:active {
+  transform: scale(0.96) translateX(0);
+}
+
+.islamic-art-back-btn::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: linear-gradient(145deg, #d4af37, #0d9488) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, 
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.islamic-art-back-btn:hover::after {
+  opacity: 0.6;
+  animation: borderRotate 6s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .islamic-art-back-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .islamic-art-back-btn {
+    width: 46px;
+    height: 46px;
+    font-size: 1.4rem;
+    bottom: 15px;
+    left: 15px;
+  }
+}
   </style>
 </head>
 <body class="islamic-art-body">
@@ -2529,29 +2122,19 @@ animation: floatCalligraphy 45s infinite linear;
   
 
 
-
-
-
-
-
-
-
-
-
-
-   <header class="islamic-header">
+<header class="islamic-header">
     <div class="logo-container" tabindex="0" aria-label="Go to Home">
       <i class="fas fa-mosque logo-icon"></i>
       <span class="logo-text">Islamic Art</span>
     </div>
 
     <nav class="nav-menu">
-      <a href="#islamic-section1" class="nav-item active">Home</a>
-      <a href="#islamic-section2" class="nav-item">Quran</a>
-      <a href="#islamic-section3" class="nav-item">Prayer</a>
-      <a href="#islamic-section4" class="nav-item">Design</a>
-      <a href="#islamic-section5" class="nav-item">Library</a>
-      <a href="#islamic-section6" class="nav-item">Contact</a>
+      <a href="#home" class="nav-item active">Home</a>
+      <a href="#quran-verses" class="nav-item">Quran</a>
+      <a href="#prayer-times" class="nav-item">Prayer</a>
+      <a href="#islamic-designs" class="nav-item">Design</a>
+      <a href="#islamic-library" class="nav-item">Library</a>
+      <a href="#contact-us" class="nav-item">Contact</a>
     </nav>
 
     <div class="islamic-menu">
@@ -2559,24 +2142,27 @@ animation: floatCalligraphy 45s infinite linear;
         <i class="fas fa-bars"></i>
       </button>
       <div class="dropdown-menu" id="dropdownMenu">
-        <a href="#islamic-section1" class="dropdown-item"><i class="fas fa-home icon"></i><span>Home page.</span></a>
-        <a href="#islamic-section2" class="dropdown-item"><i class="fas fa-images icon"></i><span> The Image slideshow.</span></a>
-        <a href="#islamic-section3" class="dropdown-item"><i class="fas fa-microphone-alt icon"></i><span>Nasaih of MMD Ashraf Alimullah Siddique (MZA).</span></a>
-        <a href="#islamic-section5" class="dropdown-item"><i class="fas fa-microphone-alt icon"></i><span>Nasaih of Furfura Sharif.</span></a>
-        <a href="#islamic-section6" class="dropdown-item"><i class="fas fa-book-open icon"></i><span> The Library of PDF books.</span></a>
-  
+        <a href="#home" class="dropdown-item"><i class="fas fa-home icon"></i><span>Home</span></a>
+        <a href="#quran-verses" class="dropdown-item"><i class="fas fa-images icon"></i><span>Slideshow</span></a>
+        <a href="#prayer-times" class="dropdown-item"><i class="fas fa-microphone-alt icon"></i><span>MMD Ashraf Alimullah Siddique (MZA)</span></a>
+        <a href="#islamic-designs" class="dropdown-item"><i class="fas fa-microphone-alt icon"></i><span>Furfura Sharif</span></a>
+        <a href="#islamic-library" class="dropdown-item"><i class="fas fa-book-open icon"></i><span>PDF Books</span></a>
       </div>
     </div>
   </header>
 
+
+
+
+
  
   <!-- Section 1 -->
-  
+    
   <section class="islamic-section islamic-section1" id="islamic-section1">
       
       
       
-      
+      <section id="home">
       
       
 <!-- ISLAMIC GREETING CARD - PURE GOLDEN TEXT VERSION -->
@@ -2834,21 +2420,26 @@ animation: floatCalligraphy 45s infinite linear;
   })();
 </script>
       
-      
-      
-
-
-
+    </section>
 
   </section>  
 
-  <div class="islamic-divider islamic-divider-1"></div>
 
-  <!-- Section 2 -->
-  <section class="islamic-section islamic-section2" id="islamic-section2">
+
+
+
+
+
+
+
+
+
+
+  <!-- Section 5 -->
+  <section class="islamic-section islamic-section5" id="islamic-section5">
 
     
-<!-- Improved Love for Prophet Muhammad (PBUH) Block -->
+<!-- Improved Love for Prophet Mohammad (PBUH) Block -->
 <div class="islamic-card">
   <!-- Decorative elements -->
   <div class="decor-circle top-right"></div>
@@ -2857,7 +2448,7 @@ animation: floatCalligraphy 45s infinite linear;
   <!-- Header -->
   <div class="card-header">
     <div class="accent-bar"></div>
-    <h3>Love for Prophet Muhammad (PBUH)</h3>
+    <h3>Love for Prophet Mohammad (PBUH)</h3>
   </div>
   
   <!-- Quotes -->
@@ -3053,9 +2644,8 @@ animation: floatCalligraphy 45s infinite linear;
  
  
  
-<br></br>
-<br></br>
 
+<section id="quran-verses">
         
       <!-- ========== IMAGE SLIDER ========== -->
 <div class="slider-wrap" id="slider1" tabindex="0" aria-label="Hero Slider">
@@ -3087,22 +2677,19 @@ animation: floatCalligraphy 45s infinite linear;
   </audio>
 </div>
 
+</section>
+<section></section>
+
+
+
+
+  
 
 
 
 
 
-  </section>
 
-  <div class="islamic-divider islamic-divider-2"></div>
-
-  <!-- Section 3 -->
-  <section class="islamic-section islamic-section3" id="islamic-section3">
-
-
-
-
-<br></br>
 
 <div class="nasihah-card">
   <!-- Decorative elements -->
@@ -3303,36 +2890,34 @@ animation: floatCalligraphy 45s infinite linear;
 
 
 
-<br></br>
-<br></br>
+<section id="prayer-times">
 
-    <!-- ========== MAIN CONTENT ========== -->
+<!-- ========== MAIN CONTENT ========== -->
 <div class="divine-ultra-root">
-    
-    
   <!-- Main Heading Card -->
-  
- <div class="divine-ultra-heading-card" onclick="openModal('main-content')" style="cursor: pointer;" tabindex="0" role="button">
-  <h1>MMD ASHRAF ALIMULLAH SIDDIQUE</h1>
-  
-  <!-- Add this button -->
-<button class="explore-btn" onclick="event.stopPropagation(); openModal('hdsd.html')">
-    <a href="hdsd.html" target="_blank" class="button">
-  <span class="btn-content">
-    <i class="fa-solid fa-play btn-icon"></i>
-    <span class="btn-text">Explore</span>
-  </span>
-  <span class="btn-glow"></span>
-  </a>
-</button>
-  
-  <div class="subtitle">Divine Islamic Content: Lectures, Q&A, Debates and more</div>
+  <div class="divine-ultra-heading-card" onclick="openModal('main-content')" style="cursor: pointer;" tabindex="0" role="button">
+    <h1>MMD ASHRAF ALIMULLAH SIDDIQUE</h1>
+    
+    <a href="hdsd.html" target="_blank" class="explore-btn">
+      <span class="btn-content">
+        <i class="fa-solid fa-play btn-icon"></i>
+        <span class="btn-text">Explore</span>
+      </span>
+      <span class="btn-glow"></span>
+    </a>
+    
+    <div class="subtitle">Discover divine islamic contents: Lectures, Q & A, Naat and more</div>
+  </div>
 </div>
+
+
+</section>
+
 
 
   </section>
 
-  <div class="islamic-divider islamic-divider-3"></div>
+
 
   <!-- Section 4 -->
   <section class="islamic-section islamic-section4" id="islamic-section4">
@@ -3344,7 +2929,7 @@ animation: floatCalligraphy 45s infinite linear;
    
   </section>
 
-  <div class="islamic-divider islamic-divider-4"></div>
+
 
   <!-- Section 5 -->
   <section class="islamic-section islamic-section5" id="islamic-section5">
@@ -3395,6 +2980,7 @@ animation: floatCalligraphy 45s infinite linear;
     </div>
   </div>
 </div>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
@@ -3571,45 +3157,42 @@ animation: floatCalligraphy 45s infinite linear;
 
 
 
-<br></br>
-<br></br>
-    
-      <!-- ========== COMPACT FURFURA CARD ========== -->
-  <div class="furfura-premium-card" onclick="window.location='fl tabindex="0" role="button" aria-label="Furfura Sharif Library">
-    <div class="furfura-main-title">FURFURA SHARIF</div>
-    
-    
-      <br>  </br>
-    <div class="furfura-main-desc">
-      Premium spiritual audio & video library<br>
-      <span style="font-weight:600;color:#1e68d6;">Explore Sufi syoyes</span>
-    </div>
-    
-  <br>  </br>
-    <button class="furfura-go-btn" type="button"
-    
-  
-      onclick="event.stopPropagation(); window.location='furfura.html';">
-      Enter Library
-    </button>
+
+    <section id="islamic-designs">
+
+<div class="furfura-premium-card">
+  <div class="furfura-main-title">FURFURA SHARIF</div>
+  <div class="furfura-main-desc">
+    Sacred Knowledge Repository
   </div>
-
-
+  
+  <!-- Background picture positioned above button -->
+  <div class="furfura-image-above-button"></div>
+  
+  <button class="furfura-go-btn" 
+          onclick="window.open('furfura.html', '_blank')"
+          aria-label="Enter Furfura Sharif Library">
+    Enter Into
+  </button>
+</div>
+</section>
     
     
   
-  </section>
+  
 
-  <div class="islamic-divider islamic-divider-5"></div>
-
-  <!-- Section 6 -->
-  <section class="islamic-section islamic-section6" id="islamic-section6">
 
     
 <div class="islamic-books-card">
+    
+    
+    
   <!-- Decorative elements -->
   <div class="decor-glow top-right"></div>
   <div class="decor-pattern bottom-left"></div>
+  
+  
+  
   
   <!-- Header -->
   <div class="section-header">
@@ -3647,6 +3230,7 @@ animation: floatCalligraphy 45s infinite linear;
     </div>
   </div>
 </div>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
@@ -3828,216 +3412,221 @@ animation: floatCalligraphy 45s infinite linear;
 </style>
     
     
-    <br></br>
-    <br></br>
     
     
+    <section id="islamic-library">
     
 <!-- Islamic Library Card -->
 <div class="islamic-library-card-embedbox">
   <div class="islamic-library-card">
     <div class="islamic-ornament ornament-1"></div>
     <div class="islamic-ornament ornament-2"></div>
-    
+ 
     <div class="book-gallery">
-      <div class="book-cover">
-        <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/r/i/riyadus-saliheen.jpg" alt="Riyad us Saliheen" loading="lazy">
-      </div>
-      <div class="book-cover">
-        <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/q/u/quran-english-interpretation.jpg" alt="Quran English Interpretation" loading="lazy">
-      </div>
-      <div class="book-cover">
-        <img class="book-image" src="https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/f/i/fiqh-us-sunnah.jpg" alt="Fiqh Us Sunnah" loading="lazy">
-      </div>
-    </div>
-    
+  <div class="book-cover">
+    <img class="book-image" src="https://raw.githubusercontent.com/hafizulcode/hafiz_space/9cb476a431745c8a7c8547b2a69cbcee17b47802/IMG_20250725_160150.png" alt="Riyad us Saliheen" loading="lazy">
+  </div>
+  <div class="book-cover">
+    <img class="book-image" src="https://raw.githubusercontent.com/hafizulcode/hafiz_space/9cb476a431745c8a7c8547b2a69cbcee17b47802/IMG_20250725_160001.png" alt="Quran English Interpretation" loading="lazy">
+  </div>
+  <div class="book-cover">
+    <img class="book-image" src="https://raw.githubusercontent.com/hafizulcode/hafiz_space/9cb476a431745c8a7c8547b2a69cbcee17b47802/IMG_20250725_160933.png" alt="Fiqh Us Sunnah" loading="lazy">
+  </div>
+</div>
+
     <div class="card-content">
-      <h3 class="card-title">Premium Islamic Library</h3>
-      <div class="arabic-title">المكتبة الإسلامية المميزة</div>
-      <p class="card-description">
-        Explore our exquisite collection of authentic Islamic books, manuscripts, and resources.
-      </p>
+      <h3 class="card-title">PDF Books</h3>
+ 
       <button class="action-button" onclick="window.location.href='library.html'">
-        Explore our library <i>➡</i>
+        Explore our Books <i>➡</i>
       </button>
     </div>
   </div>
 </div>
+ </section>
 
-
-<br></br>
-
-
-<!-- ========== CIRCLE FOOTER BUTTON ========== -->
-<button class="footer-circle-btn" id="footerCircleBtn" aria-label="Open footer popup" title="More info & navigation">
-  <i class="fas fa-circle-notch circle-icon-animate"></i>
-  <span class="click-indicator" aria-hidden="true">
-    <i class="fas fa-hand-pointer"></i>
-  </span>
+<button class="islamic-art-back-btn" id="islamicBackBtn" aria-label="Go back" title="Go back">
+  <span aria-hidden="true">⬆️</span>
 </button>
 
-<!-- ========== CIRCLE POPUP MODAL ========== -->
-<div class="circle-popup-modal" id="circlePopupModal" role="dialog" aria-modal="true" aria-labelledby="circlePopupTitle" tabindex="-1">
-  <div class="circle-popup-content" id="circlePopupContent">
-    <button class="circle-popup-close" id="circlePopupCloseBtn" aria-label="Close popup" title="Close">
-      <span aria-hidden="true" style="font-size:1.35em;line-height:1;">&times;</span>
-    </button>
-    <button class="circle-popup-back" id="circlePopupBackBtn" style="display:none;" aria-label="Back" title="Back">
-      <i class="fas fa-arrow-left"></i>
-    </button>
-    <div id="circle-popup-main">
-      <div style="text-align:center; margin-bottom:2px;">
-        <span class="circle-footer-copyright">&copy; 2025 Hafizul</span>
-        <span style="font-size:1.21em; color:var(--main-gold); font-weight:800; letter-spacing:.2px; text-shadow:0 1px 2px rgba(0,0,0,0.11);">Quick Access</span>
-      </div>
-      <div class="circle-footer-options">
-        <button class="circle-option-btn about" onclick="showSection('about')" aria-label="About Developer">
-          <span class="circle-option-icon"><i class="fas fa-info-circle"></i></span>
-          About
-        </button>
-        <button class="circle-option-btn services" onclick="showSection('services')" aria-label="Professional Services">
-          <span class="circle-option-icon"><i class="fas fa-cogs"></i></span>
-          Services
-        </button>
-        <button class="circle-option-btn features" onclick="showSection('features')" aria-label="Key Features">
-          <span class="circle-option-icon"><i class="fas fa-star"></i></span>
-          Features
-        </button>
- 
-      </div>
-    </div>
-    
-    <!-- About Section -->
-    <div class="circle-section-content" id="circle-section-about">
-      <div class="circle-section-title"><span class="about">HI</span> About Developer</div>
-      <div style="font-size:1.01em; line-height:1.38; color: #232526;">
-        <h1>Hafizul Islam</h1><br>
-        <span style="color: #4e54c8; font-weight: 700;">Owner &amp; Lead Developer</span><br>
-        <span style="margin-top:4px; font-size:1em; color:#232526;">Crafting <span style="color:#000000;font-weight:400;">world-class</span> web experiences with a passion for innovation, usability, and scalability.</span>
-        <div style="margin-top: 9px; font-size: 0.98em; color: #8f94fb;">Specializes in JavaScript, Next.js, Node, UI/UX, API and secure web apps.</div>
-      </div>
-      
-      <div style="margin:13px 0 7px 0; border-top: 1.5px solid rgba(252,185,0,0.20);"></div>
-      <div style="font-size:1em; color: #232526;">
-        <div style="font-weight:700; color:#4e54c8; margin-bottom:8px;">Contact Details</div>
-        <div style="margin-bottom: 8px;">
-          <b>Email:</b> <a href="mailto:hafizul9996@gmail.com" style="color: #4e54c8; font-weight:600; text-decoration:underline;">hafizul9996@gmail.com</a>
-        </div>
-        <div style="margin-bottom: 8px;">
-          <b>Phone:</b> <a href="tel:+8801744348961" style="color:#fc4a1a;font-weight:600;text-decoration:underline;">01744348961</a>
-        </div>
-        <div style="font-weight:700; color:#4e54c8; margin-bottom:8px;">Find Me</div>
-        <a href="https://facebook.com/your.profile1" target="_blank" class="circle-fb-profile">
-          <img src="https://graph.facebook.com/100011122233344/picture?width=32&height=32" alt="Facebook Profile 1"> /your.profile1
-        </a>
-        <a href="https://facebook.com/your.profile2" target="_blank" class="circle-fb-profile">
-          <img src="https://graph.facebook.com/100022233344455/picture?width=32&height=32" alt="Facebook Profile 2"> /your.profile2
-        </a>
-        <div class="circle-social-links">
-          <a href="https://www.youtube.com/" target="_blank" class="circle-social-link youtube"><i class="fab fa-youtube"></i> YouTube</a>
-          <a href="https://wa.me/8801744348961" target="_blank" class="circle-social-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-          <a href="https://t.me/" target="_blank" class="circle-social-link telegram"><i class="fab fa-telegram"></i> Telegram</a>
-          <a href="https://github.com/hafizul99" target="_blank" class="circle-social-link github"><i class="fab fa-github"></i> GitHub</a>
-          <a href="https://linkedin.com/in/hafizul99" target="_blank" class="circle-social-link linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        </div>
-      </div>
-    </div>
-    <!-- Services Section -->
-    <div class="circle-section-content" id="circle-section-services">
-      <div class="circle-section-title"><span class="services">S</span> Professional Services</div>
-      <ul style="padding-left:1em; margin:0; font-size:1.02em;">
-        <li><span style="color:#fc4a1a;font-weight:700;">1</span> Web &amp; App Development (SPA, PWA, API)</li>
-        <li><span style="color:#8f94fb;font-weight:700;">2</span> UI/UX Design, Branding &amp; Interactive Animations</li>
-        <li><span style="color:#fcb900;font-weight:700;">3</span> E-commerce, Payment & Membership Integration</li>
-        <li><span style="color:#4e54c8;font-weight:700;">4</span> Automation, API, System Integration</li>
-        <li><span style="color:#fc4a1a;font-weight:700;">5</span> SEO, Analytics, Performance Tuning</li>
-        <li><span style="color:#8f94fb;font-weight:700;">6</span> Security Consulting & Hardening</li>
-        <li><span style="color:#fcb900;font-weight:700;">7</span> Maintenance & Lifetime Support</li>
-      </ul>
-      <div style="margin:12px 0 8px 0; border-top: 1.5px solid rgba(252,185,0,0.15);"></div>
-      <div style="font-size:1em;">
-        <div style="font-weight:700; color:#8f94fb; margin-bottom:7px;">Why Choose Me?</div>
-        <ul style="padding-left:1.2em; margin:0;">
-          <li><span style="color:#fcb900;font-weight:700;">✓</span> Modern, scalable, secure solutions</li>
-          <li><span style="color:#8f94fb;font-weight:700;">✓</span> Fast delivery & excellent support</li>
-          <li><span style="color:#fc4a1a;font-weight:700;">✓</span> User-focused, mobile-first design</li>
-          <li><span style="color:#4e54c8;font-weight:700;">✓</span> Transparent, friendly collaboration</li>
-        </ul>
-      </div>
-    </div>
-    <!-- Features Section -->
-    <div class="circle-section-content" id="circle-section-features">
-      <div class="circle-section-title"><span class="features"><i class="fas fa-star"></i></span> Key Features</div>
-      <ul style="padding-left:1em; margin:0;font-size:1.01em;color:#232526;">
-        <li><span style="color:#fcb900;font-weight:700;">★</span> Modern Aesthetics &amp; Lively Animations</li>
-        <li><span style="color:#8f94fb;font-weight:700;">★</span> Adaptive Theming (Glass, Gradients, Dark/Light)</li>
-        <li><span style="color:#fcb900;font-weight:700;">★</span> Mobile-first Responsive UI</li>
-        <li><span style="color:#8f94fb;font-weight:700;">★</span> 1-click Social, Chat, & Contact links</li>
-        <li><span style="color:#fcb900;font-weight:700;">★</span> Modular & Clean, Scalable Code</li>
-        <li><span style="color:#8f94fb;font-weight:700;">★</span> Secure, Ultra-fast Hosting</li>
-        <li><span style="color:#fcb900;font-weight:700;">★</span> Accessibility &amp; UX Best Practices</li>
-        <li><span style="color:#fc4a1a;font-weight:700;">★</span> SEO Optimized, Fast Loading</li>
-      </ul>
-      <div style="margin-top:10px;font-size:0.97em;color:#4e54c8;">Always evolving with the latest trends!</div>
-    </div>
 
 
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; <span id="current-year"></span> Islamic. All rights reserved.
+      </div>
+      <div class="footer-logo">
+        <i class="fas fa-mosque"></i>
       </div>
     </div>
   </div>
-</div>
- 
- 
- 
- 
- <br></br>
- 
- 
- 
- <style>
-  /* ===== FOOTER STYLES ===== */
-  .universal-footer {
-    --footer-text-color: #333333;         /* Text color */
-    --footer-bg-color: rgba(248,249,250,0.9); /* Text background */
-    --footer-font: Arial, sans-serif;     /* Font family */
-    --footer-padding: 0.25rem 0.5rem;     /* Text padding */
-    --footer-radius: 4px;                 /* Border radius */
-    
+
+
+<style>
+/* Professional Footer Styles */
+.professional-footer {
+
+  color: #070065;
+  padding: 40px 0 20px;
+  font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  color: #0e00d0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #d4af37;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.contact-item i {
+  color: #d4af37;
+  width: 20px;
+  text-align: center;
+}
+
+.contact-item a {
+  color: #070065;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+  color: #d4af37;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #555;
+  transition: transform 0.2s ease;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #eaeaea;
+  transition: all 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.social-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.social-link span {
+  font-size: 0.85rem;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  color: #2c3e50;
+}
+
+.social-link:hover .social-icon {
+  border-color: #d4af37;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+  margin-top: 20px;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.footer-logo i {
+  color: #d4af37;
+  font-size: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
     text-align: center;
-    padding: 1rem;
-    font-family: var(--footer-font);
   }
-  
-  .universal-footer p {
-    margin: 0;
-    font-weight: bold;
-    color: var(--footer-text-color);
-    display: inline-block;
-    padding: var(--footer-padding);
-    background-color: var(--footer-bg-color);
-    border-radius: var(--footer-radius);
-  }
-  
-  /* ===== THEME EXAMPLES ===== */
-  /* Dark Mode Version */
-  .footer-dark {
-    --footer-text-color: #ffffff;
-    --footer-bg-color: rgba(40,40,40,0.9);
-  }
-  
-  /* Colorful Version */
-  .footer-colorful {
-    --footer-text-color: #2c3e50;
-    --footer-bg-color: rgba(236, 240, 241, 0.9);
-    --footer-radius: 8px;
-  }
+}
 </style>
-<footer class="universal-footer footer-dark">
-  <p>&copy; <span id="year"></span> All Rights Reserved.</p>
-</footer>
+
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+// Auto-update copyright year
+document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
+
+
+
+
+
+
+
+
 
 
   </section>
@@ -4847,11 +4436,95 @@ window.addEventListener('scroll', function() {
     
     
     
-    
+    // Smooth scroll and active class
+document.querySelectorAll('.nav-item, .dropdown-item').forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+    item.classList.add('active');
+    document.querySelector(item.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Highlight active section on scroll
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.islamic-section').forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 100 && rect.bottom >= 100) {
+      document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+      document.querySelector(`.nav-item[href="#${section.id}"]`).classList.add('active');
+    }
+  });
+});
     
     
 
+// Enhanced Back Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const backBtn = document.getElementById('islamicBackBtn');
+  let lastScrollPosition = 0;
+  let ticking = false;
 
+  // Scroll handler with debounce
+  function handleScroll() {
+    lastScrollPosition = window.scrollY;
+    
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        if (lastScrollPosition > 300) {
+          backBtn.classList.add('visible');
+        } else {
+          backBtn.classList.remove('visible');
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  // Click handler with history check
+  backBtn.addEventListener('click', function() {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      // Smooth scroll to top if no history
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  });
+
+  // Keyboard accessibility
+  backBtn.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      this.click();
+    }
+  });
+
+  // Initialize visibility
+  handleScroll();
+  
+  // Add scroll listener with passive for better performance
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // Handle popstate (browser back/forward)
+  window.addEventListener('popstate', function() {
+    // You can add additional logic here if needed
+  });
+});
+
+
+
+
+
+// You'll need to implement this function if you want modal functionality    
+function openModal(contentId) {
+  // Your modal implementation here
+  console.log("Opening modal for: ", contentId);
+}
 </script>
 </body>
 </html>
+
