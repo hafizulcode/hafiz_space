@@ -1,474 +1,1709 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Audio & Video - FURFURA SHARIF</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      max-width: 100vw;
-      overflow-x: hidden;
-      box-sizing: border-box;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furfura Sharif - Islamic Spiritual Center</title>
+    <meta name="description" content="Official website of Furfura Sharif, the renowned Islamic spiritual center in West Bengal. Learn about our history, spiritual leaders, and access Islamic resources.">
+    <meta name="keywords" content="Furfura Sharif, Pir Saheb, Islamic center West Bengal, Sufi Islam, Islamic spirituality, Dargah, Islamic teachings">
+    <meta name="author" content="Furfura Sharif Islamic Center">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/64">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+    :root {
+        --primary: #1e88e5;
+        --primary-light: #42a5f5;
+        --primary-dark: #1565c0;
+        --secondary: #4caf50;
+        --secondary-dark: #388e3c;
+        --dark: #1a237e;
+        --darker: #0d47a1;
+        --light: #f9f9f9;
+        --lighter: #ffffff;
+        --text: #424242;
+        --text-light: #757575;
+        --white: #ffffff;
+        --gold: #ffd700;
+        --green: #2ecc71;
+        
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+        --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+        --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+        --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
+        
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --transition-fast: all 0.15s ease;
+        --transition-slow: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     }
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
     body {
-      font-family: 'Montserrat', sans-serif;
-      min-height: 100vh;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: background 0.4s;
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--light);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
     }
-    header {
-      width: 100vw;
-      background: linear-gradient(90deg, #1c0f3c 0%, #6a53a1 100%);
-      color: #fff;
-      padding: 2.2rem 0 1.2rem 0;
-      text-align: center;
-      letter-spacing: 2.2px;
-      box-shadow: 0 4px 22px rgba(36,26,87,0.22), 0 0.5px 8px rgba(106,48,147,0.14);
-      font-size: 2.1rem;
-      font-weight: 900;
-      border-bottom-left-radius: 2.5rem;
-      border-bottom-right-radius: 2.5rem;
-      position: relative;
-      z-index: 2;
-      margin-bottom: 2.2rem;
-      text-shadow: 0 4px 18px #1c0f3cbb, 0 2px #6a53a1bb;
-      transition: background 0.3s;
-      box-sizing: border-box;
-      max-width: 100vw;
-      overflow-x: hidden;
-      user-select: none;
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Amiri', serif;
+        font-weight: 700;
+        color: var(--dark);
     }
-    .tab-row {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 1.5rem;
-      margin-bottom: 2.1rem;
-      background: transparent;
-      width: 100vw;
-      max-width: 100vw;
-      box-sizing: border-box;
-      overflow-x: hidden;
+    
+    /* Header Styles */
+    .header {
+        background: linear-gradient(135deg, rgba(30, 136, 229, 0.9) 0%, rgba(21, 101, 192, 0.9) 100%), 
+                    url('https://raw.githubusercontent.com/hafizulcode/hafiz_space/main/IMG_20250725_155001.png') no-repeat center center;
+        background-size: cover;
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .tab-btn {
-      background: linear-gradient(90deg, #fc5c7d 0%, #6a82fb 100%);
-      color: #fff;
-      border: none;
-      border-radius: 1.5rem 1.5rem 0 0;
-      padding: 0.9rem 3rem;
-      font-size: 1.22rem;
-      font-weight: 800;
-      letter-spacing: 1.4px;
-      cursor: pointer;
-      box-shadow: 0 4px 18px #fc5c7d33, 0 1px 6px #6a82fb33;
-      outline: none;
-      border-bottom: 4px solid transparent;
-      position: relative;
-      z-index: 5;
-      min-width: 120px;
-      box-sizing: border-box;
-      transition:
-        background 0.22s,
-        color 0.22s,
-        box-shadow 0.18s,
-        border-bottom 0.18s,
-        transform 0.15s,
-        box-shadow 0.33s cubic-bezier(.4,0,.2,1);
+    
+    .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
+        z-index: 1;
     }
-    .tab-btn.active,
-    .tab-btn:hover,
-    .tab-btn:focus {
-      background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
-      color: #fff;
-      border-bottom: 4px solid #f7c873;
-      box-shadow: 0 8px 32px #fc5c7d99, 0 2px 10px #6a82fb99, 0 0 0 6px #ffe25933;
-      transform: scale(1.09) translateY(-4px);
-      outline: none;
+    
+    .header-content {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 1s ease forwards 0.3s;
     }
-    .tab-btn:active {
-      filter: brightness(1.12) blur(0.5px);
-      box-shadow: 0 0 0 10px #ffe25922;
-      transform: scale(0.98);
+    
+
+ 
+    
+    .logo:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(30, 136, 229, 0.3);
     }
-    .section {
-      width: 100%;
-      max-width: 520px;
-      margin: 0 auto 2.2rem auto;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      background: linear-gradient(135deg, #f8f5ff 50%, #ebe3ff 100%);
-      border-radius: 2rem;
-      box-shadow: 0 8px 32px #d4c6ee22, 0 2px 10px #d5aaff18;
-      padding: 2.2rem 2rem 2.1rem 2rem;
-      border: 2px solid #cbbff1;
-      outline: none;
-      color: #2d225e;
-      min-height: 340px;
-      z-index: 2;
-      animation: fadeIn 0.6s;
-      box-sizing: border-box;
-      overflow-x: hidden;
-      transition: box-shadow .26s cubic-bezier(.4,0,.2,1), border 0.22s, background 0.18s;
+    
+    .logo::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            to bottom right,
+            transparent,
+            transparent,
+            transparent,
+            rgba(255,255,255,0.3)
+        );
+        transform: rotate(30deg);
+        animation: shine 3s infinite;
     }
-    .section.active {
-      display: flex;
-      animation: fadeIn 0.6s;
+    
+    .logo img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        border-radius: 50%;
+        z-index: 2;
     }
-    .section:hover, .section:focus-within {
-      box-shadow: 0 16px 48px #a483df44, 0 6px 24px #ffe25933, 0 0 0 2px #8f6ed5cc;
-      border-color: #8f6ed5;
-      background: linear-gradient(125deg, #fdf9ff 70%, #e2d2ff 100%);
+    
+    .header h1 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--white);
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        line-height: 1.2;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(40px);}
-      to { opacity: 1; transform: translateY(0);}
+    
+    .header p {
+        font-size: clamp(1.1rem, 2vw, 1.3rem);
+        color: rgba(255,255,255,0.9);
+        max-width: 700px;
+        margin: 0 auto 30px;
+        position: relative;
     }
+    
+    .header p::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 3px;
+        background: var(--white);
+        margin: 20px auto 0;
+        border-radius: 3px;
+    }
+    
+    .scroll-down {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--white);
+        font-size: 1.5rem;
+        animation: bounce 2s infinite;
+        cursor: pointer;
+        z-index: 10;
+        opacity: 0;
+        transition: var(--transition);
+    }
+    
+    .scroll-down.visible {
+        opacity: 1;
+    }
+    
+    /* Navigation */
+    .nav-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: var(--transition);
+    }
+    
+    .nav-container.scrolled {
+        background: rgba(30, 136, 229, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .navbar {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    
+    .nav-logo img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: 2px solid var(--white);
+    }
+    
+    .nav-logo span {
+        color: var(--white);
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+    
+    .nav-link {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        position: relative;
+        transition: var(--transition-fast);
+        opacity: 0.9;
+    }
+    
+    .nav-link:hover {
+        opacity: 1;
+        color: var(--gold);
+    }
+    
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gold);
+        transition: var(--transition-fast);
+    }
+    
+    .nav-link:hover::after {
+        width: 100%;
+    }
+    
+    .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--white);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--dark);
+        z-index: 1000;
+        transition: var(--transition);
+        padding: 80px 30px 30px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    }
+    
+    .mobile-menu.active {
+        right: 0;
+    }
+    
+    .mobile-menu .nav-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .mobile-menu .nav-link {
+        font-size: 1.1rem;
+    }
+    
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+    }
+    
+    .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Main Content */
+    .content-container {
+        max-width: 1200px;
+        margin: 0 auto 60px;
+        padding: 0 20px;
+        position: relative;
+    }
+    
+    .section-title {
+        text-align: center;
+        margin: 60px 0 40px;
+        position: relative;
+    }
+    
+    .section-title h2 {
+        font-size: clamp(1.8rem, 3vw, 2.2rem);
+        display: inline-block;
+        position: relative;
+        padding-bottom: 15px;
+    }
+    
+    .section-title h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        border-radius: 2px;
+    }
+    
+    /* Tab Navigation */
+    .content-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .content-tab {
+        padding: 12px 30px;
+        font-size: 1rem;
+        font-weight: 600;
+        background: var(--white);
+        border: none;
+        cursor: pointer;
+        color: var(--text);
+        transition: var(--transition);
+        border-radius: 30px;
+        margin: 0 8px;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .content-tab::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        z-index: -1;
+        opacity: 0;
+        transition: var(--transition);
+    }
+    
+    .content-tab:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+        color: var(--white);
+    }
+    
+    .content-tab:hover::before {
+        opacity: 1;
+    }
+    
+    .content-tab.active {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: var(--white);
+        box-shadow: 0 5px 15px rgba(30, 136, 229, 0.3);
+        transform: translateY(-3px);
+    }
+    
+    .content-tab.active:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* Tab Content */
+    .tab-content {
+        display: none;
+        animation: fadeIn 0.6s ease forwards;
+    }
+    
+    .tab-content.active {
+        display: block;
+    }
+    
+    /* Media Grid */
+    .media-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 25px;
+    }
+    
+    .media-item {
+        background: var(--white);
+        border-radius: 12px;
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
+        transition: var(--transition);
+        transform: translateY(0);
+        position: relative;
+    }
+    
+    .media-item:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-xl);
+    }
+    
+    .media-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+    
+    .media-header {
+        display: flex;
+        align-items: center;
+        padding: 18px;
+        background: var(--white);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .media-icon {
+        font-size: 1.3rem;
+        margin-right: 15px;
+        width: 40px;
+        height: 40px;
+        background: rgba(30, 136, 229, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        flex-shrink: 0;
+    }
+    
+    .media-info {
+        flex: 1;
+        overflow: hidden;
+    }
+    
     .media-title {
-      font-size: 1.7rem;
-      font-weight: 900;
-      background: linear-gradient(90deg, #ffe259 0%, #8f6ed5 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 1.2rem;
-      letter-spacing: 2.7px;
-      text-transform: uppercase;
-      text-shadow: 0 3px 14px #ffe25944, 0 1.5px #8f6ed5;
-      transition: letter-spacing 0.14s, filter 0.18s;
-      text-align: center;
-      user-select: none;
-      filter: drop-shadow(0 2px 8px #8f6ed522);
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
-    .media-title:hover, .media-title:focus {
-      letter-spacing: 4.4px;
-      filter: drop-shadow(0 6px 18px #ffe25999);
+    
+    .media-date {
+        font-size: 0.85rem;
+        color: var(--text-light);
+        display: flex;
+        align-items: center;
     }
-    .media-desc {
-      color: #8f6ed5;
-      font-size: 1.14rem;
-      text-align: center;
-      margin-bottom: 0.6rem;
-      letter-spacing: 0.12em;
-      text-shadow: 0 1px 0 #8f6ed544, 0 0.5px 0 #fff5;
-      background: #f3f0fa;
-      border-radius: 0.95rem;
-      padding: 0.28rem 0.95rem;
-      border: 1.7px solid #cbbff1;
-      box-shadow: 0 1px 5px #ffe25911;
-      display: inline-block;
-      transition: background 0.19s, border 0.12s, color 0.16s, box-shadow 0.23s;
-      margin-top: 0.5rem;
-      cursor: pointer;
-      user-select: none;
+    
+    .media-date i {
+        margin-right: 5px;
+        font-size: 0.8rem;
     }
-    .media-desc:hover, .media-desc:focus {
-      background: #ffe259;
-      color: #6a53a1;
-      border-color: #8f6ed5;
-      box-shadow: 0 4px 12px #ffe25955, 0 2px 8px #8f6ed533;
-      outline: none;
+    
+    .media-player {
+        width: 100%;
+        padding: 0 18px 18px;
     }
-    .media-content {
-      width: 100%;
-      margin-bottom: 1.15rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-sizing: border-box;
-      overflow-x: hidden;
+    
+    /* Video Player Styles */
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        background: #000;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-    .audio-block, .video-block {
-      width: 100%;
-      background: #fff;
-      border-radius: 1.2rem;
-      box-shadow: 0 2px 8px #cbbff13a;
-      border: 1.5px solid #ebe3ff;
-      margin-bottom: 1.4rem;
-      padding: 1.2rem 1rem 1rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition:
-        box-shadow 0.25s cubic-bezier(.4,0,.2,1),
-        border 0.17s, background 0.21s, transform 0.18s;
-      box-sizing: border-box;
-      overflow-x: hidden;
-      cursor: pointer;
+    
+    .video-player {
+        width: 100%;
+        height: auto;
+        display: block;
+        background: #000;
+        border-radius: 8px;
     }
-    .audio-block:last-child, .video-block:last-child { margin-bottom: 0; }
-    .audio-block:hover, .audio-block:focus-within,
-    .video-block:hover, .video-block:focus-within {
-      background: linear-gradient(120deg, #f8f5ff 80%, #ffe25922 100%);
-      border-color: #ffe259;
-      box-shadow: 0 10px 32px #8f6ed544, 0 3px 12px #ffe25944;
-      transform: scale(1.025) translateY(-2px) rotate(-0.7deg);
-      outline: none;
+    
+    /* Hide unwanted controls */
+    .video-player::-webkit-media-controls-enclosure {
+        overflow: hidden;
     }
-    .audio-title, .video-title {
-      font-size: 1.11rem;
-      font-weight: 800;
-      margin-bottom: 0.6rem;
-      color: #6a53a1;
-      letter-spacing: 1.1px;
-      text-align: center;
-      transition: color 0.18s;
-      user-select: none;
+    
+    .video-player::-webkit-media-controls-panel {
+        display: flex !important;
     }
-    .audio-block:hover .audio-title, .audio-block:focus-within .audio-title,
-    .video-block:hover .video-title, .video-block:focus-within .video-title {
-      color: #fc5c7d;
-      text-shadow: 0 1px 8px #8f6ed555;
+    
+    .video-player::-webkit-media-controls-playback-rate-button,
+    .video-player::-webkit-media-controls-download-button,
+    .video-player::-webkit-media-controls-fullscreen-button {
+        display: none !important;
     }
+    
+    .video-logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 38px;
+        height: 38px;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(5px);
+        padding: 4px;
+        border-radius: 6px;
+        pointer-events: none;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+    
+    .video-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 4px;
+        pointer-events: none;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+    
+    /* Audio Player Styles */
     audio {
-      width: 100%;
-      border-radius: 0.8rem;
-      background: #f8f5ff;
-      border: 2px solid #ffe259;
-      accent-color: #8f6ed5;
-      margin-bottom: 0.3rem;
-      outline: none;
-      box-shadow: 0 1px 5px #8f6ed522;
-      box-sizing: border-box;
-      transition: border 0.18s, box-shadow 0.17s;
+        width: 100%;
+        border-radius: 30px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .audio-block:hover audio,
-    .audio-block:focus-within audio {
-      border-color: #8f6ed5;
-      box-shadow: 0 3px 12px #8f6ed533;
+    
+    audio::-webkit-media-controls-panel {
+        background: linear-gradient(90deg,#e3f2fd 0,#bbdefb 100%);
+        border-radius: 30px;
     }
-    .audio-block p, .video-block p {
-      color: #8f6ed5;
-      font-size: 1.01rem;
-      text-align: center;
-      margin: 0.4rem 0 0 0;
-      letter-spacing: 0.03em;
-      transition: color 0.16s;
-      user-select: none;
+    
+    /* Pagination */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        gap: 10px;
     }
-    .audio-block:hover p, .audio-block:focus-within p,
-    .video-block:hover p, .video-block:focus-within p {
-      color: #fc5c7d;
+    
+    .page-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--white);
+        color: var(--text);
+        border: 1px solid rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: var(--transition);
     }
-    .video-frame {
-      position:relative;
-      padding-bottom:56.25%;
-      height:0;
-      width:100%;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 2px 14px #8f6ed533, 0 1px 7px #ffe25933;
-      border: 2.5px solid #ffe259;
-      background: #000;
-      margin-bottom: 0.5rem;
-      box-sizing: border-box;
-      transition: border 0.17s, box-shadow 0.17s;
+    
+    .page-btn:hover {
+        background: var(--primary);
+        color: var(--white);
+        transform: translateY(-2px);
     }
-    .video-block:hover .video-frame, .video-block:focus-within .video-frame {
-      border-color: #8f6ed5;
-      box-shadow: 0 8px 32px #ffe25955, 0 2px 10px #8f6ed544;
+    
+    .page-btn.active {
+        background: var(--primary);
+        color: var(--white);
+        box-shadow: 0 4px 8px rgba(30, 136, 229, 0.2);
     }
-    .video-frame iframe {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      border: none;
-      border-radius: 1rem;
-      background: #000;
-      box-sizing: border-box;
+    
+    .page-btn.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
-    .back-btn {
-      margin: 2.4rem auto 1.2rem auto;
-      display: block;
-      background: linear-gradient(90deg, #8f6ed5 0%, #ffe259 100%);
-      color: #2d225e;
-      border: none;
-      border-radius: 2rem;
-      padding: 0.8rem 2.7rem;
-      font-weight: 900;
-      font-size: 1.2rem;
-      letter-spacing: 1.6px;
-      cursor: pointer;
-      transition: 
-        background 0.24s, 
-        color 0.16s,
-        box-shadow 0.22s,
-        transform 0.16s,
-        letter-spacing 0.15s;
-      box-shadow: 0 4px 18px #8f6ed522, 0 1px 7px #ffe25918;
-      outline: none;
-      position: relative;
-      z-index: 3;
-      border: 2.5px solid #cbbff1;
-      box-sizing: border-box;
-      user-select: none;
+    
+    /* Featured Content */
+    .featured-section {
+        margin: 80px 0;
+        position: relative;
     }
-    .back-btn:hover, .back-btn:focus {
-      background: linear-gradient(90deg, #ffe259 10%, #8f6ed5 100%);
-      color: #fff;
-      box-shadow: 0 12px 32px #ffe25933, 0 5px 13px #8f6ed544, 0 0 0 8px #fc5c7d33;
-      transform: scale(1.10) rotate(-2deg);
-      text-shadow: 0 2px 6px #fff7;
-      letter-spacing: 2.2px;
-      border-color: #ffe259;
+    
+    .featured-content {
+        background: linear-gradient(135deg, rgba(30, 136, 229, 0.9) 0%, rgba(21, 101, 192, 0.9) 100%), 
+                    url('https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+        background-size: cover;
+        border-radius: 15px;
+        padding: 60px;
+        box-shadow: var(--shadow-xl);
+        position: relative;
+        overflow: hidden;
     }
-    .back-btn:active::after {
-      content: "";
-      position: absolute;
-      left: 50%; top: 50%;
-      width: 120%; height: 120%;
-      border-radius: 50%;
-      background: rgba(143,110,213,0.18);
-      transform: translate(-50%, -50%) scale(1.18);
-      animation: ripple .33s linear;
-      pointer-events: none;
-      z-index: 4;
+    
+    .featured-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.15) 0%, transparent 70%);
     }
-    @keyframes ripple {
-      from { opacity: 0.8; }
-      to   { opacity: 0; }
+    
+    .featured-title {
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        color: var(--white);
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
     }
-    @media (max-width: 600px) {
-      html, body { max-width: 100vw; overflow-x: hidden; }
-      header { font-size: 1.19rem; padding: 1.2rem 0 0.7rem 0; border-bottom-left-radius: 1.2rem; border-bottom-right-radius: 1.2rem; }
-      .section { padding: 1.3rem .7rem 1.1rem .7rem; }
-      .audio-block, .video-block { padding: 0.8rem 0.5rem 0.7rem 0.5rem;}
-      .media-title { font-size: 1.14rem; }
-      .media-desc { font-size: 0.99rem; }
-      .back-btn { font-size: 0.98rem; padding: 0.5rem 1.5rem; }
-      .tab-btn { font-size: 1rem; padding: 0.7rem 1.5rem;}
-      .tab-row { gap: 0.7rem; }
-      .section { max-width: 99vw; }
+    
+    .featured-description {
+        color: rgba(255,255,255,0.9);
+        margin-bottom: 30px;
+        max-width: 600px;
+        position: relative;
+        z-index: 2;
     }
-  </style>
+    
+    .featured-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: var(--white);
+        color: var(--primary);
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        transition: var(--transition);
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+    }
+    
+    .featured-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(255,255,255,0.4);
+        background: var(--primary-dark);
+        color: var(--white);
+    }
+    
+    .featured-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: 0.5s;
+    }
+    
+    .featured-btn:hover::before {
+        left: 100%;
+    }
+    
+    /* About Section */
+    .about-section {
+        margin: 80px 0;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+    
+    .about-image {
+        flex: 1;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        transform: rotate(-2deg);
+        transition: var(--transition-slow);
+    }
+    
+    .about-image:hover {
+        transform: rotate(0deg);
+    }
+    
+    .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: var(--transition-slow);
+    }
+    
+    .about-image:hover img {
+        transform: scale(1.05);
+    }
+    
+    .about-content {
+        flex: 1;
+    }
+    
+    .about-content h2 {
+        font-size: clamp(1.8rem, 3vw, 2.2rem);
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .about-content h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        border-radius: 2px;
+    }
+    
+    .about-content p {
+        margin-bottom: 15px;
+        line-height: 1.7;
+    }
+    
+    /* History Section */
+    .history-section {
+        background: var(--light);
+        padding: 60px 0;
+    }
+    
+    .history-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .history-timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 40px auto 0;
+    }
+    
+    .history-timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    }
+    
+    .timeline-item {
+        position: relative;
+        margin-bottom: 40px;
+    }
+    
+    .timeline-item:nth-child(odd) {
+        padding-right: 50%;
+        text-align: right;
+    }
+    
+    .timeline-item:nth-child(even) {
+        padding-left: 50%;
+        text-align: left;
+    }
+    
+    .timeline-content {
+        background: var(--white);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+    }
+    
+    .timeline-year {
+        position: absolute;
+        top: 10px;
+        background: var(--primary);
+        color: var(--white);
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-year {
+        right: -80px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-year {
+        left: -80px;
+    }
+    
+    .timeline-dot {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 16px;
+        height: 16px;
+        background: var(--secondary);
+        border-radius: 50%;
+        border: 3px solid var(--white);
+        box-shadow: 0 0 0 3px var(--primary);
+    }
+    
+    /* Footer */
+    .footer {
+        background: var(--dark);
+        color: var(--white);
+        padding: 60px 20px 30px;
+        position: relative;
+    }
+    
+    .footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+    
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+    }
+    
+    .footer-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: var(--primary);
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        transition: var(--transition-fast);
+    }
+    
+    .footer-links a:hover {
+        color: var(--white);
+        padding-left: 5px;
+    }
+    
+    .footer-contact p {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .footer-contact i {
+        margin-right: 10px;
+        color: var(--primary);
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        color: var(--white);
+        transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        text-align: center;
+        color: rgba(255,255,255,0.7);
+        font-size: 0.9rem;
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #1212121e;
+        color: #000000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        box-shadow: var(--shadow-md);
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+    }
+    
+    .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .back-to-top:hover {
+        background: var(--primary-dark);
+        transform: translateY(-3px);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    @keyframes fadeInUp {
+        from { 
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to { 
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+        40% { transform: translateY(-20px) translateX(-50%); }
+        60% { transform: translateY(-10px) translateX(-50%); }
+    }
+    
+    @keyframes shine {
+        to {
+            transform: translateX(100%) rotate(30deg);
+        }
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    
+    @keyframes slideInLeft {
+        from {
+            transform: translateX(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideInRight {
+        from {
+            transform: translateX(50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes scaleIn {
+        from {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .about-section {
+            flex-direction: column;
+        }
+        
+        .about-image {
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        
+        .timeline-item:nth-child(odd),
+        .timeline-item:nth-child(even) {
+            padding-left: 70px;
+            padding-right: 0;
+            text-align: left;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-year,
+        .timeline-item:nth-child(even) .timeline-year {
+            left: 0;
+            right: auto;
+            top: -25px;
+        }
+        
+        .history-timeline::before {
+            left: 30px;
+        }
+        
+        .timeline-dot {
+            left: 30px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .header {
+            padding: 100px 20px 80px;
+            min-height: auto;
+        }
+        
+        .navbar {
+            padding: 15px;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+        }
+        
+        .content-tabs {
+            flex-wrap: wrap;
+        }
+        
+        .content-tab {
+            margin: 5px;
+        }
+        
+        .featured-content {
+            padding: 40px 30px;
+        }
+        
+        .media-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .featured-content {
+            padding: 30px 20px;
+        }
+        
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .pagination {
+            flex-wrap: wrap;
+        }
+    }
+    </style>
 </head>
 <body>
-  <header>
-    FURFURA SHARIF &mdash; Audio & Video Collection
-  </header>
 
-  <div class="tab-row">
-    <button class="tab-btn active" id="audio-tab" onclick="showSection('audio-section')">Audio</button>
-    <button class="tab-btn" id="video-tab" onclick="showSection('video-section')">Video</button>
-  </div>
-
-  <section class="section active" id="audio-section">
-    <div class="media-title">Audio</div>
-    <div class="media-content">
-      <div class="audio-block" tabindex="0">
-        <div class="audio-title">Sufi Song 1</div>
-        <audio controls class="audio-player" preload="none">
-          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mp3">
-          Your browser does not support the audio element.
-        </audio>
-        <p>Deep Sufi melodies for spiritual upliftment.</p>
-      </div>
-      <div class="audio-block" tabindex="0">
-        <div class="audio-title">Sufi Song 2</div>
-        <audio controls class="audio-player" preload="none">
-          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3">
-          Your browser does not support the audio element.
-        </audio>
-        <p>Traditional Sufi rhythms and chants.</p>
-      </div>
-      <div class="audio-block" tabindex="0">
-        <div class="audio-title">Recitation 1</div>
-        <audio controls class="audio-player" preload="none">
-          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mp3">
-          Your browser does not support the audio element.
-        </audio>
-        <p>Peaceful spiritual recitation.</p>
-      </div>
+    <!-- Navigation -->
+    <div class="nav-container">
+      
+           
+        
+              
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+               
+            </button>
+        </nav>
     </div>
-    <div class="media-desc" tabindex="0">Spiritual recitations and Sufi music. Only one track can play at a time.</div>
-    <button class="back-btn" onclick="window.location='index.html'">&larr; Back Home</button>
-  </section>
-
-  <section class="section" id="video-section">
-    <div class="media-title">Video</div>
-    <div class="media-content">
-      <div class="video-block" tabindex="0">
-        <div class="video-title">Inspirational Lecture</div>
-        <div class="video-frame">
-          <iframe class="video-player" src="https://www.youtube.com/embed/6Dh-RL__uN4" allowfullscreen title="Sufi Lecture"></iframe>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      
         </div>
-        <p>Motivational and enlightening talk for all.</p>
-      </div>
-      <div class="video-block" tabindex="0">
-        <div class="video-title">Dhikr Gathering</div>
-        <div class="video-frame">
-          <iframe class="video-player" src="https://www.youtube.com/embed/a3ICNMQW7Ok" allowfullscreen title="Dhikr Gathering"></iframe>
-        </div>
-        <p>Experience the serenity of a Dhikr session.</p>
-      </div>
-      <div class="video-block" tabindex="0">
-        <div class="video-title">Event Highlights</div>
-        <div class="video-frame">
-          <iframe class="video-player" src="https://www.youtube.com/embed/AQHk2bEvZy0" allowfullscreen title="Event Highlights"></iframe>
-        </div>
-        <p>Memorable moments from spiritual events.</p>
-      </div>
     </div>
-    <div class="media-desc" tabindex="0">Inspirational lectures and events. Only one video can play at a time.</div>
-    <button class="back-btn" onclick="window.location='index.html'">Back Home</button>
-  </section>
 
-  <script>
-    // Section tab handling
-    function showSection(id) {
-      document.getElementById('audio-section').classList.remove('active');
-      document.getElementById('video-section').classList.remove('active');
-      document.getElementById('audio-tab').classList.remove('active');
-      document.getElementById('video-tab').classList.remove('active');
-      if(id === 'audio-section') {
-        document.getElementById('audio-section').classList.add('active');
-        document.getElementById('audio-tab').classList.add('active');
-      } else {
-        document.getElementById('video-section').classList.add('active');
-        document.getElementById('video-tab').classList.add('active');
-      }
-      document.getElementById(id).scrollIntoView({behavior: "smooth"});
-    }
-    // Only one audio can play at a time
-    document.addEventListener('play', function(e){
-      if(e.target.classList.contains('audio-player')){
-        var audios = document.querySelectorAll('.audio-player');
-        for(var i = 0, len = audios.length; i < len; i++){
-          if(audios[i] != e.target){
-            audios[i].pause();
-            audios[i].currentTime = 0;
-          }
-        }
-      }
-    }, true);
-    // Only one video can play at a time (YouTube)
-    function pauseOtherVideos(currentFrame) {
-      var iframes = document.querySelectorAll('.video-player');
-      for(var i=0; i<iframes.length; i++) {
-        if(iframes[i] !== currentFrame) {
-          var src = iframes[i].src;
-          iframes[i].src = src; // reload to stop
-        }
-      }
-    }
-    window.onload = function() {
-      var iframes = document.querySelectorAll('.video-player');
-      iframes.forEach(function(frame) {
-        frame.addEventListener('mouseenter', function() {
-          pauseOtherVideos(frame);
-        });
-        frame.addEventListener('focus', function() {
-          pauseOtherVideos(frame);
-        });
-      });
+    <!-- Header -->
+    <header class="header" id="home">
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://raw.githubusercontent.com/hafizulcode/hafiz_space/main/IMG_20250725_155001.png" alt="Furfura Sharif Logo">
+                </div>
+            </div>
+            <h1>Furfura Sharif</h1>
+            <p>The spiritual center of Islamic learning and Sufi traditions in West Bengal</p>
+        </div>
+        <div class="scroll-down" aria-label="Scroll down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section class="about-section content-container" id="about">
+            <div class="about-image">
+                <img src="https://raw.githubusercontent.com/hafizulcode/hafiz_space/main/IMG_20250725_155001.png" alt="Furfura Sharif Dargah" loading="lazy">
+            </div>
+            <div class="about-content">
+                <h2>About Furfura Sharif</h2>
+                <p>Furfura Sharif is a renowned Islamic spiritual center located in Hooghly district of West Bengal, India. It is the burial place of the prominent Sufi saint Hazrat Abu Bakr Siddique (R.A.) and his descendants.</p>
+                <p>Established in the 19th century, Furfura Sharif has been a beacon of Islamic spirituality, education, and social reform in the region, attracting devotees from all over India and beyond.</p>
+                <p>The center is known for its peaceful atmosphere, spiritual teachings, and contributions to Islamic scholarship and interfaith harmony.</p>
+            </div>
+        </section>
+        
+        <!-- History Section -->
+        <section class="history-section" id="history">
+            <div class="history-container">
+                <div class="section-title">
+                    <h2>Our History & Legacy</h2>
+                </div>
+                
+                <div class="history-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1829</div>
+                            <h3>Birth of Hazrat Abu Bakr Siddique (R.A.)</h3>
+                            <p>Hazrat Abu Bakr Siddique (R.A.), the founder of Furfura Sharif, was born in Furfura village. He would go on to become one of the most revered Islamic scholars and spiritual leaders of his time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1873</div>
+                            <h3>Establishment of the Khanqah</h3>
+                            <p>The spiritual center (Khanqah) was formally established, becoming a hub for Islamic learning and Sufi practices. It attracted students and devotees from across Bengal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1939</div>
+                            <h3>Passing of Hazrat Abu Bakr Siddique (R.A.)</h3>
+                            <p>After decades of spiritual leadership and social reform, Hazrat Abu Bakr Siddique (R.A.) passed away and was buried in Furfura Sharif. His mazar (shrine) became a place of pilgrimage.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">1950s-60s</div>
+                            <h3>Expansion Under Successors</h3>
+                            <p>Under the leadership of his descendants, particularly Hazrat Shah Sufi Mohiuddin Siddique (R.A.), the center expanded its educational and charitable activities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Present Day</div>
+                            <h3>Modern Spiritual Center</h3>
+                            <p>Today, Furfura Sharif continues to serve as an important center of Islamic spirituality in Eastern India, hosting annual Urs celebrations and providing religious guidance to millions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Media Content Section -->
+        <section class="content-container" id="content">
+            <div class="section-title">
+                <h2>Spiritual Resources</h2>
+            </div>
+            
+            <!-- Tab Navigation -->
+            <div class="content-tabs" role="tablist">
+                <button class="content-tab active" data-tab="audio" role="tab" aria-selected="true" aria-controls="audio-content">Audio Lectures</button>
+                <button class="content-tab" data-tab="video" role="tab" aria-selected="false" aria-controls="video-content">Video Lectures</button>
+                <button class="content-tab" data-tab="lectures" role="tab" aria-selected="false" aria-controls="lectures-content">Special Events</button>
+            </div>
+            
+            <!-- Audio Content -->
+            <div class="tab-content active" id="audio-content" role="tabpanel" aria-labelledby="audio-tab">
+                <div class="media-grid" id="audio-grid">
+                    <!-- Audio items will be loaded here -->
+                </div>
+                <div class="pagination" id="audio-pagination">
+                    <button class="page-btn active" data-page="1">1</button>
+                    <button class="page-btn" data-page="2">2</button>
+                    <button class="page-btn" data-page="3">3</button>
+                    <button class="page-btn" data-page="4">4</button>
+                    <button class="page-btn" data-page="5">5</button>
+                </div>
+            </div>
+            
+            <!-- Video Content -->
+            <div class="tab-content" id="video-content" role="tabpanel" aria-labelledby="video-tab">
+                <div class="media-grid" id="video-grid">
+                    <!-- Video items will be loaded here -->
+                </div>
+                <div class="pagination" id="video-pagination">
+                    <button class="page-btn active" data-page="1">1</button>
+                    <button class="page-btn" data-page="2">2</button>
+                    <button class="page-btn" data-page="3">3</button>
+                    <button class="page-btn" data-page="4">4</button>
+                    <button class="page-btn" data-page="5">5</button>
+                </div>
+            </div>
+            
+            <!-- Lectures & Events Content -->
+            <div class="tab-content" id="lectures-content" role="tabpanel" aria-labelledby="lectures-tab">
+                <div class="media-grid" id="lectures-grid">
+                    <!-- Lecture items will be loaded here -->
+                </div>
+                <div class="pagination" id="lectures-pagination">
+                    <button class="page-btn active" data-page="1">1</button>
+                    <button class="page-btn" data-page="2">2</button>
+                    <button class="page-btn" data-page="3">3</button>
+                    <button class="page-btn" data-page="4">4</button>
+                    <button class="page-btn" data-page="5">5</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Content -->
+        <section class="featured-section">
+            <div class="content-container">
+                <div class="featured-content">
+                    <h2 class="featured-title">Annual Urs Celebration</h2>
+                    <p class="featured-description">Join us for the sacred Urs celebration commemorating Hazrat Abu Bakr Siddique (R.A.). Experience spiritual discourses, Qawwali performances, and special prayers during this auspicious occasion.</p>
+                    <a href="#" class="featured-btn">Learn More About Urs</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+        
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Furfura Sharif Islamic Center. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+    // Sample data for media content
+    const mediaData = {
+        audio: [
+            {
+                title: "Spiritual Teachings of Hazrat Abu Bakr Siddique (R.A.)",
+                date: "May 2025 • 35m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+            },
+            {
+                title: "The Sufi Path to Inner Peace - Bayan by Pir Saheb",
+                date: "April 2025 • 42m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+            },
+            {
+                title: "Tafsir of Surah Al-Fatiha - Special Lecture",
+                date: "March 2025 • 38m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+            },
+            {
+                title: "Daily Zikr and Its Benefits - Morning Session",
+                date: "February 2025 • 25m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+            },
+            {
+                title: "The Concept of Tawhid in Sufism - Evening Discourse",
+                date: "January 2025 • 45m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+            },
+            {
+                title: "Importance of Durood Shareef - Weekly Majlis",
+                date: "December 2024 • 50m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+            }
+        ],
+        video: [
+            {
+                title: "Annual Urs Celebration 2025 - Live from Furfura Sharif",
+                date: "May 2025 • 21m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Qawwali Night at Furfura Sharif - Spiritual Performance",
+                date: "April 2025 • 28m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Documentary: The Legacy of Furfura Sharif",
+                date: "March 2025 • 32m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Friday Khutbah from Furfura Sharif Mosque",
+                date: "February 2025 • 45m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Children's Islamic Education Program",
+                date: "January 2025 • 38m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Women's Spiritual Gathering - Special Session",
+                date: "December 2024 • 40m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            }
+        ],
+        lectures: [
+            {
+                title: "Interfaith Harmony Conference 2025 - Full Event",
+                date: "January 2025 • 1h 12m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Milad-un-Nabi Celebration at Furfura Sharif",
+                date: "November 2024 • 1h 30m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Annual Islamic Seminar: Sufism in Modern Times",
+                date: "October 2024 • 2h 15m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Charity Event for Flood Victims - Full Coverage",
+                date: "September 2024 • 1h 25m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Islamic Book Fair Inauguration - Furfura Sharif 2024",
+                date: "August 2024 • 1h 40m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Memorial Lecture: Life of Hazrat Abu Bakr Siddique (R.A.)",
+                date: "July 2024 • 1h 35m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1604866830513-d547664f2d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            }
+        ]
     };
-  </script>
+
+    // Pagination variables
+    const itemsPerPage = 4;
+    let currentAudioPage = 1;
+    let currentVideoPage = 1;
+    let currentLecturesPage = 1;
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        mobileMenuOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+    });
+    
+    mobileMenuOverlay.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.mobile-menu .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+    
+    // Tab switching functionality
+    document.querySelectorAll('.content-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs and content
+            document.querySelectorAll('.content-tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding content
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            const tabId = tab.getAttribute('data-tab');
+            document.getElementById(tabId + '-content').classList.add('active');
+        });
+    });
+    
+    // Pause other media when one plays
+    document.addEventListener('play', function(e) {
+        const mediaElements = document.querySelectorAll('audio, video');
+        mediaElements.forEach(media => {
+            if (media !== e.target) {
+                media.pause();
+            }
+        });
+    }, true);
+    
+    // Show scroll-down arrow when header is in view
+    const checkHeaderVisibility = () => {
+        const header = document.querySelector('.header');
+        const scrollDown = document.querySelector('.scroll-down');
+        const headerBottom = header.getBoundingClientRect().bottom;
+        
+        if (headerBottom > window.innerHeight * 0.8) {
+            scrollDown.classList.add('visible');
+        } else {
+            scrollDown.classList.remove('visible');
+        }
+    };
+    
+    // Show/hide back to top button
+    const toggleBackToTop = () => {
+        const backToTop = document.querySelector('.back-to-top');
+        if (window.scrollY > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    };
+    
+    // Navbar scroll effect
+    const navbarScroll = () => {
+        const navbar = document.querySelector('.nav-container');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    };
+    
+    // Create audio item HTML
+    const createAudioItem = (item) => {
+        return `
+            <article class="media-item">
+                <div class="media-header">
+                    <div class="media-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
+                    <div class="media-info">
+                        <h3 class="media-title">${item.title}</h3>
+                        <div class="media-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${item.date}</div>
+                    </div>
+                </div>
+                <div class="media-player">
+                    <audio controls controlsList="nodownload" aria-label="Audio player for ${item.title}">
+                        <source src="${item.src}" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </article>
+        `;
+    };
+    
+    // Create video item HTML
+    const createVideoItem = (item) => {
+        return `
+            <article class="media-item">
+                <div class="media-header">
+                    <div class="media-icon"><i class="fas fa-play" aria-hidden="true"></i></div>
+                    <div class="media-info">
+                        <h3 class="media-title">${item.title}</h3>
+                        <div class="media-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${item.date}</div>
+                    </div>
+                </div>
+                <div class="media-player">
+                    <div class="video-wrapper">
+                        <div class="video-logo">
+                            <img src="https://via.placeholder.com/38" alt="Furfura Sharif Logo">
+                        </div>
+                        <video class="video-player" controls playsinline controlsList="nodownload nofullscreen" poster="${item.poster}">
+                            <source src="${item.src}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </article>
+        `;
+    };
+    
+    // Load audio content
+    const loadAudioContent = (page) => {
+        const audioGrid = document.getElementById('audio-grid');
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedItems = mediaData.audio.slice(startIndex, endIndex);
+        
+        audioGrid.innerHTML = paginatedItems.map(item => createAudioItem(item)).join('');
+        
+        // Update pagination buttons
+        updatePagination('audio', page);
+    };
+    
+    // Load video content
+    const loadVideoContent = (page) => {
+        const videoGrid = document.getElementById('video-grid');
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedItems = mediaData.video.slice(startIndex, endIndex);
+        
+        videoGrid.innerHTML = paginatedItems.map(item => createVideoItem(item)).join('');
+        
+        // Update pagination buttons
+        updatePagination('video', page);
+    };
+    
+    // Load lectures content
+    const loadLecturesContent = (page) => {
+        const lecturesGrid = document.getElementById('lectures-grid');
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedItems = mediaData.lectures.slice(startIndex, endIndex);
+        
+        lecturesGrid.innerHTML = paginatedItems.map(item => createVideoItem(item)).join('');
+        
+        // Update pagination buttons
+        updatePagination('lectures', page);
+    };
+    
+    // Update pagination buttons
+    const updatePagination = (type, currentPage) => {
+        const paginationContainer = document.getElementById(`${type}-pagination`);
+        const totalPages = Math.ceil(mediaData[type].length / itemsPerPage);
+        
+        // Clear existing buttons
+        paginationContainer.innerHTML = '';
+        
+        // Create page buttons
+        for (let i = 1; i <= totalPages; i++) {
+            const button = document.createElement('button');
+            button.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+            button.textContent = i;
+            button.dataset.page = i;
+            
+            button.addEventListener('click', () => {
+                if (type === 'audio') {
+                    currentAudioPage = i;
+                    loadAudioContent(currentAudioPage);
+                } else if (type === 'video') {
+                    currentVideoPage = i;
+                    loadVideoContent(currentVideoPage);
+                } else if (type === 'lectures') {
+                    currentLecturesPage = i;
+                    loadLecturesContent(currentLecturesPage);
+                }
+            });
+            
+            paginationContainer.appendChild(button);
+        }
+    };
+    
+    // Initialize event listeners
+    window.addEventListener('scroll', () => {
+        checkHeaderVisibility();
+        toggleBackToTop();
+        navbarScroll();
+    });
+    
+    window.addEventListener('load', () => {
+        checkHeaderVisibility();
+        
+        // Load initial content
+        loadAudioContent(currentAudioPage);
+        loadVideoContent(currentVideoPage);
+        loadLecturesContent(currentLecturesPage);
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without page reload
+                    if (history.pushState) {
+                        history.pushState(null, null, targetId);
+                    } else {
+                        location.hash = targetId;
+                    }
+                }
+            });
+        });
+        
+        // Scroll down arrow click
+        document.querySelector('.scroll-down').addEventListener('click', () => {
+            window.scrollTo({
+                top: document.querySelector('#content').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Back to top button
+        document.querySelector('.back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+    </script>
 </body>
 </html>
