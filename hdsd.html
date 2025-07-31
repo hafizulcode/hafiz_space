@@ -793,73 +793,7 @@
         background: linear-gradient(90deg, var(--primary), var(--secondary));
     }
     
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 40px;
-    }
-    
-    .footer-column h3 {
-        font-size: 1.3rem;
-        margin-bottom: 20px;
-        position: relative;
-        display: inline-block;
-    }
-    
-    .footer-column h3::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 0;
-        width: 40px;
-        height: 3px;
-        background: var(--primary);
-    }
-    
-    .footer-links {
-        list-style: none;
-    }
-    
-    .footer-link-item {
-        margin-bottom: 12px;
-    }
-    
-    .footer-link {
-        color: rgba(255,255,255,0.8);
-        text-decoration: none;
-        transition: var(--transition-fast);
-        display: inline-block;
-    }
-    
-    .footer-link:hover {
-        color: var(--primary);
-        transform: translateX(5px);
-    }
-    
-    .social-links {
-        display: flex;
-        gap: 15px;
-        margin-top: 20px;
-    }
-    
-    .social-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: rgba(255,255,255,0.1);
-        border-radius: 50%;
-        color: var(--white);
-        transition: var(--transition-fast);
-    }
-    
-    .social-link:hover {
-        background: var(--primary);
-        transform: translateY(-3px);
-    }
+   
     
     .footer-bottom {
         max-width: 1200px;
@@ -878,8 +812,8 @@
         right: 30px;
         width: 50px;
         height: 50px;
-        background: var(--primary);
-        color: var(--white);
+        background: #60606061;
+        color: #000000;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -1035,36 +969,20 @@
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <div class="nav-container">
-        <nav class="navbar">
-            <a href="#" class="nav-logo">
-                <img src="https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S2.jpg" alt="MMD Ashraf Logo">
-                <span>MMD ASHRAF</span>
-            </a>
-            <div class="nav-links">
-                <a href="#content" class="nav-link">Content</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
-                <i class="fas fa-bars"></i>
+        
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+               
             </button>
         </nav>
     </div>
     
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <div class="nav-links">
-            <a href="#content" class="nav-link">Content</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#testimonials" class="nav-link">Testimonials</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </div>
-    </div>
+    <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay"></div>
     
+
     <!-- Header -->
     <header class="header" id="home">
         <div class="header-content">
@@ -1098,95 +1016,43 @@
             
             <!-- Audio Content -->
             <div class="tab-content active" id="audio-content" role="tabpanel" aria-labelledby="audio-tab">
-                <div class="media-grid">
-                    <article class="media-item">
-                        <div class="media-header">
-                            <div class="media-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
-                            <div class="media-info">
-                                <h3 class="media-title">The Light of Guidance - Surah Al-Baqarah Tafseer</h3>
-                                <div class="media-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> May 2025 • 35m</div>
-                            </div>
-                        </div>
-                        <div class="media-player">
-                            <audio controls controlsList="nodownload" aria-label="Audio player for The Light of Guidance - Surah Al-Baqarah Tafseer">
-                                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mp3">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </div>
-                    </article>
+                <div class="media-grid" id="audio-grid">
+                    <!-- Audio items will be loaded here -->
                 </div>
-                <div class="pagination">
-                    <button class="page-btn active">1</button>
-                    <button class="page-btn">2</button>
-                    <button class="page-btn">3</button>
-                    <button class="page-btn">4</button>
-                    <button class="page-btn">5</button>
+                <div class="pagination" id="audio-pagination">
+                    <button class="page-btn active" data-page="1">1</button>
+                    <button class="page-btn" data-page="2">2</button>
+                    <button class="page-btn" data-page="3">3</button>
+                    <button class="page-btn" data-page="4">4</button>
+                    <button class="page-btn" data-page="5">5</button>
                 </div>
             </div>
             
             <!-- Video Content -->
             <div class="tab-content" id="video-content" role="tabpanel" aria-labelledby="video-tab">
-                <div class="media-grid">
-                    <article class="media-item">
-                        <div class="media-header">
-                            <div class="media-icon"><i class="fas fa-play" aria-hidden="true"></i></div>
-                            <div class="media-info">
-                                <h3 class="media-title">Ramadan Special: Night of Power - Laylatul Qadr</h3>
-                                <div class="media-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> May 2025 • 21m</div>
-                            </div>
-                        </div>
-                        <div class="media-player">
-                            <div class="video-wrapper">
-                                <div class="video-logo">
-                                    <img src="https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S2.jpg" alt="MMD Ashraf Logo">
-                                </div>
-                                <video class="video-player" controls playsinline controlsList="nodownload nofullscreen" poster="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
-                                    <source src="https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        </div>
-                    </article>
+                <div class="media-grid" id="video-grid">
+                    <!-- Video items will be loaded here -->
                 </div>
-                <div class="pagination">
-                    <button class="page-btn active">1</button>
-                    <button class="page-btn">2</button>
-                    <button class="page-btn">3</button>
-                    <button class="page-btn">4</button>
-                    <button class="page-btn">5</button>
+                <div class="pagination" id="video-pagination">
+                    <button class="page-btn active" data-page="1">1</button>
+                    <button class="page-btn" data-page="2">2</button>
+                    <button class="page-btn" data-page="3">3</button>
+                    <button class="page-btn" data-page="4">4</button>
+                    <button class="page-btn" data-page="5">5</button>
                 </div>
             </div>
             
             <!-- Lectures & Debates Content -->
             <div class="tab-content" id="lectures-content" role="tabpanel" aria-labelledby="lectures-tab">
-                <div class="media-grid">
-                    <article class="media-item">
-                        <div class="media-header">
-                            <div class="media-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
-                            <div class="media-info">
-                                <h3 class="media-title">The Concept of God in Islam - Full Lecture</h3>
-                                <div class="media-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> January 2025 • 1h 12m</div>
-                            </div>
-                        </div>
-                        <div class="media-player">
-                            <div class="video-wrapper">
-                                <div class="video-logo">
-                                    <img src="https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S2.jpg" alt="MMD Ashraf Logo">
-                                </div>
-                                <video class="video-player" controls playsinline controlsList="nodownload nofullscreen" poster="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
-                                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        </div>
-                    </article>
+                <div class="media-grid" id="lectures-grid">
+                    <!-- Lecture items will be loaded here -->
                 </div>
-                <div class="pagination">
-                    <button class="page-btn active">1</button>
-                    <button class="page-btn">2</button>
-                    <button class="page-btn">3</button>
-                    <button class="page-btn">4</button>
-                    <button class="page-btn">5</button>
+                <div class="pagination" id="lectures-pagination">
+                    <button class="page-btn active" data-page="1">1</button>
+                    <button class="page-btn" data-page="2">2</button>
+                    <button class="page-btn" data-page="3">3</button>
+                    <button class="page-btn" data-page="4">4</button>
+                    <button class="page-btn" data-page="5">5</button>
                 </div>
             </div>
         </section>
@@ -1217,43 +1083,9 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li class="footer-link-item"><a href="#" class="footer-link">Home</a></li>
-                    <li class="footer-link-item"><a href="#content" class="footer-link">Content</a></li>
-                    <li class="footer-link-item"><a href="#about" class="footer-link">About</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Content</h3>
-                <ul class="footer-links">
-                    <li class="footer-link-item"><a href="#content" class="footer-link">Audio Lectures</a></li>
-                    <li class="footer-link-item"><a href="#content" class="footer-link">Video Lectures</a></li>
-                    <li class="footer-link-item"><a href="#content" class="footer-link">Debates</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Connect</h3>
-                <ul class="footer-links">
-                    <li class="footer-link-item"><a href="#" class="footer-link">Contact Us</a></li>
-                    <li class="footer-link-item"><a href="#" class="footer-link">Request a Lecture</a></li>
-                </ul>
-                
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 2025 MMD Ashraf Alimullah Siddique. All Rights Reserved.</p>
-            <p>Designed with <i class="fas fa-heart" style="color: #ff4757;"></i> for the Ummah</p>
         </div>
     </footer>
     
@@ -1263,6 +1095,124 @@
     </div>
 
     <script>
+    // Sample data for media content
+    const mediaData = {
+        audio: [
+            {
+                title: "The Light of Guidance - Surah Al-Baqarah Tafseer",
+                date: "May 2025 • 35m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+            },
+            {
+                title: "Understanding the Five Pillars of Islam",
+                date: "April 2025 • 42m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+            },
+            {
+                title: "The Life of Prophet Muhammad (PBUH) - Part 1",
+                date: "March 2025 • 38m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+            },
+            {
+                title: "Daily Supplications for Protection",
+                date: "February 2025 • 25m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+            },
+            {
+                title: "The Concept of Tawheed in Islam",
+                date: "January 2025 • 45m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+            },
+            {
+                title: "Fiqh of Salah - Complete Guide",
+                date: "December 2024 • 50m",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+            }
+        ],
+        video: [
+            {
+                title: "Ramadan Special: Night of Power - Laylatul Qadr",
+                date: "May 2025 • 21m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "The Importance of Zakat in Islam",
+                date: "April 2025 • 28m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Hajj: A Spiritual Journey",
+                date: "March 2025 • 32m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "The Science in the Quran",
+                date: "February 2025 • 45m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Islamic Ethics in Business",
+                date: "January 2025 • 38m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Parenting in Islam",
+                date: "December 2024 • 40m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            }
+        ],
+        lectures: [
+            {
+                title: "The Concept of God in Islam - Full Lecture",
+                date: "January 2025 • 1h 12m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Islam vs Christianity - Comparative Study",
+                date: "November 2024 • 1h 30m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Debate: Is Quran the Word of God?",
+                date: "October 2024 • 2h 15m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Women's Rights in Islam - Complete Lecture",
+                date: "September 2024 • 1h 25m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "The Finality of Prophethood - Detailed Analysis",
+                date: "August 2024 • 1h 40m",
+                src: "https://www.w3schools.com/html/mov_bbb.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                title: "Islamic Perspective on Modern Science",
+                date: "July 2024 • 1h 35m",
+                src: "https://ia800904.us.archive.org/23/items/20250707_20250707_1403/%E0%A6%B9%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A7%81%20%E0%A6%AE%E0%A7%81%E0%A6%B8%E0%A6%B2%E0%A6%AE%E0%A6%BE%E0%A6%A8.mp4",
+                poster: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            }
+        ]
+    };
+
+    // Pagination variables
+    const itemsPerPage = 4;
+    let currentAudioPage = 1;
+    let currentVideoPage = 1;
+    let currentLecturesPage = 1;
+
     // Mobile menu functionality
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -1350,6 +1300,124 @@
         }
     };
     
+    // Create audio item HTML
+    const createAudioItem = (item) => {
+        return `
+            <article class="media-item">
+                <div class="media-header">
+                    <div class="media-icon"><i class="fas fa-microphone-alt" aria-hidden="true"></i></div>
+                    <div class="media-info">
+                        <h3 class="media-title">${item.title}</h3>
+                        <div class="media-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${item.date}</div>
+                    </div>
+                </div>
+                <div class="media-player">
+                    <audio controls controlsList="nodownload" aria-label="Audio player for ${item.title}">
+                        <source src="${item.src}" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </article>
+        `;
+    };
+    
+    // Create video item HTML
+    const createVideoItem = (item) => {
+        return `
+            <article class="media-item">
+                <div class="media-header">
+                    <div class="media-icon"><i class="fas fa-play" aria-hidden="true"></i></div>
+                    <div class="media-info">
+                        <h3 class="media-title">${item.title}</h3>
+                        <div class="media-date"><i class="far fa-calendar-alt" aria-hidden="true"></i> ${item.date}</div>
+                    </div>
+                </div>
+                <div class="media-player">
+                    <div class="video-wrapper">
+                        <div class="video-logo">
+                            <img src="https://raw.githubusercontent.com/hafizulcode/hafiz_space/be7a9608954d09936b3840618de2eafbf819e46b/S2.jpg" alt="MMD Ashraf Logo">
+                        </div>
+                        <video class="video-player" controls playsinline controlsList="nodownload nofullscreen" poster="${item.poster}">
+                            <source src="${item.src}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </article>
+        `;
+    };
+    
+    // Load audio content
+    const loadAudioContent = (page) => {
+        const audioGrid = document.getElementById('audio-grid');
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedItems = mediaData.audio.slice(startIndex, endIndex);
+        
+        audioGrid.innerHTML = paginatedItems.map(item => createAudioItem(item)).join('');
+        
+        // Update pagination buttons
+        updatePagination('audio', page);
+    };
+    
+    // Load video content
+    const loadVideoContent = (page) => {
+        const videoGrid = document.getElementById('video-grid');
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedItems = mediaData.video.slice(startIndex, endIndex);
+        
+        videoGrid.innerHTML = paginatedItems.map(item => createVideoItem(item)).join('');
+        
+        // Update pagination buttons
+        updatePagination('video', page);
+    };
+    
+    // Load lectures content
+    const loadLecturesContent = (page) => {
+        const lecturesGrid = document.getElementById('lectures-grid');
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedItems = mediaData.lectures.slice(startIndex, endIndex);
+        
+        lecturesGrid.innerHTML = paginatedItems.map(item => createVideoItem(item)).join('');
+        
+        // Update pagination buttons
+        updatePagination('lectures', page);
+    };
+    
+    // Update pagination buttons
+    const updatePagination = (type, currentPage) => {
+        const paginationContainer = document.getElementById(`${type}-pagination`);
+        const totalPages = Math.ceil(mediaData[type].length / itemsPerPage);
+        
+        // Clear existing buttons
+        paginationContainer.innerHTML = '';
+        
+        // Create page buttons
+        for (let i = 1; i <= totalPages; i++) {
+            const button = document.createElement('button');
+            button.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+            button.textContent = i;
+            button.dataset.page = i;
+            
+            button.addEventListener('click', () => {
+                if (type === 'audio') {
+                    currentAudioPage = i;
+                    loadAudioContent(currentAudioPage);
+                } else if (type === 'video') {
+                    currentVideoPage = i;
+                    loadVideoContent(currentVideoPage);
+                } else if (type === 'lectures') {
+                    currentLecturesPage = i;
+                    loadLecturesContent(currentLecturesPage);
+                }
+            });
+            
+            paginationContainer.appendChild(button);
+        }
+    };
+    
     // Initialize event listeners
     window.addEventListener('scroll', () => {
         checkHeaderVisibility();
@@ -1359,6 +1427,11 @@
     
     window.addEventListener('load', () => {
         checkHeaderVisibility();
+        
+        // Load initial content
+        loadAudioContent(currentAudioPage);
+        loadVideoContent(currentVideoPage);
+        loadLecturesContent(currentLecturesPage);
         
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1401,31 +1474,7 @@
             });
         });
     });
-    
-    // Pagination functionality
-    document.querySelectorAll('.pagination .page-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all buttons in this pagination
-            const paginationContainer = this.closest('.pagination');
-            paginationContainer.querySelectorAll('.page-btn').forEach(b => {
-                b.classList.remove('active');
-            });
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Here you would normally fetch and load the content for the selected page
-            // For demonstration, we'll just show an alert
-            alert(`Page ${this.textContent} content would load here in a real implementation`);
-            
-            // In a real implementation, you would:
-            // 1. Get the current active tab
-            // 2. Make an AJAX request to get the content for the selected page
-            // 3. Update the media-grid with the new content
-        });
-    });
     </script>
 </body>
 </html>
+
