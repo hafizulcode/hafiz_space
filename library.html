@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islamic PDF Book Library</title>
+    <title>Library</title>
     <meta name="theme-color" content="#502274">
+    <meta name="description" content="Free Islamic book library with PDF downloads of authentic Islamic literature">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #502274;
             --primary-dark: #2d153a;
+            --primary-light: #743bbd;
             --accent: #ffcb6b;
             --accent-dark: #ff9800;
             --success: #329d9c;
+            --error: #e74c3c;
             --card-bg: #fff;
+            --text-dark: #2d153a;
+            --text-light: #f5f5f5;
             --bg-gradient: linear-gradient(135deg, #ffe29f 0%, #b7ffea 65%, #b8b5ff 100%);
+            --header-gradient: linear-gradient(90deg, #502274 60%, #743bbd 120%);
             --radius: 22px;
+            --radius-sm: 12px;
             --transition: 0.19s cubic-bezier(.46,.03,.52,.96);
+            --shadow: 0 4px 22px rgba(80,34,116,0.13);
+            --shadow-hover: 0 8px 28px rgba(80,34,116,0.18);
         }
 
         * {
@@ -38,19 +48,21 @@
             background: var(--bg-gradient);
             font-family: 'Cairo', 'Montserrat', Arial, sans-serif;
             color: var(--primary-dark);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(90deg, #502274 60%, #743bbd 120%);
+            background: var(--header-gradient);
             color: #fff;
             padding: 2.2rem 1rem 1.2rem;
             text-align: center;
             width: 100%;
             border-bottom-left-radius: 36px;
             border-bottom-right-radius: 36px;
-            box-shadow: 0 2px 22px rgba(80,34,116,0.19);
+            box-shadow: var(--shadow);
             flex-shrink: 0;
+            position: relative;
+            z-index: 10;
         }
         
         header h1 {
@@ -63,6 +75,36 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-3px);
         }
 
         main {
@@ -87,8 +129,14 @@
             align-items: center;
             background: linear-gradient(120deg, #fffde7 60%, #fcf8e8 120%);
             border-radius: var(--radius);
-            box-shadow: 0 4px 32px rgba(80,34,116,0.13);
+            box-shadow: var(--shadow);
             padding: 0.5rem 0.8rem;
+            transition: var(--transition);
+        }
+
+        .search-bar:focus-within {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
         
         .search-bar input {
@@ -103,6 +151,10 @@
             color: var(--primary-dark);
         }
         
+        .search-bar input::placeholder {
+            color: rgba(80,34,116,0.6);
+        }
+        
         .search-bar button {
             width: 30%;
             background: linear-gradient(90deg, #ff9800 55%, #ffcb6b 100%);
@@ -114,7 +166,7 @@
             font-weight: 800;
             cursor: pointer;
             padding: 1.08rem 0;
-            transition: all var(--transition);
+            transition: var(--transition);
         }
 
         .search-bar button:hover {
@@ -131,13 +183,13 @@
         
         .book-card {
             background: var(--card-bg);
-            border-radius: 22px;
+            border-radius: var(--radius);
             box-shadow: 0 10px 38px 0 #b8b5ff33;
             padding: 2rem 1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            transition: transform var(--transition);
+            transition: transform var(--transition), box-shadow var(--transition);
             min-height: 380px;
             position: relative;
             overflow: hidden;
@@ -146,18 +198,18 @@
         
         .book-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 45px rgba(80,34,116,0.2);
+            box-shadow: var(--shadow-hover);
         }
         
         .book-cover {
             width: 160px;
             height: 220px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: var(--radius-sm);
             border: 3px solid var(--success);
             margin-bottom: 1rem;
             box-shadow: 0 8px 24px rgba(126,196,207,0.14);
-            transition: all var(--transition);
+            transition: var(--transition);
         }
         
         .book-card:hover .book-cover {
@@ -200,10 +252,14 @@
             border-radius: 32px;
             font-weight: 700;
             font-size: 1rem;
-            transition: all var(--transition);
+            transition: var(--transition);
             text-align: center;
             flex: 1;
             max-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
         
         .book-actions a:hover {
@@ -226,11 +282,27 @@
             z-index: 3;
         }
 
+        .badge-new {
+            position: absolute;
+            top: 10px;
+            left: -15px;
+            background: linear-gradient(90deg, #4e54c8 50%, #8f94fb 100%);
+            color: white;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 900;
+            font-size: 0.6rem;
+            padding: 0.3rem 1.5rem;
+            border-radius: 0 0 32px 32px;
+            transform: rotate(-11deg);
+            z-index: 3;
+        }
+
         .loading {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 200px;
+            grid-column: 1/-1;
         }
         
         .spinner {
@@ -244,6 +316,68 @@
         
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+
+        .no-results {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .no-results-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.7;
+        }
+
+        .reset-btn {
+            padding: 0.7rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .reset-btn:hover {
+            background: var(--accent-dark);
+            transform: scale(1.05);
+        }
+
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1rem auto 2rem;
+            max-width: 800px;
+        }
+
+        .category-btn {
+            padding: 0.6rem 1.2rem;
+            background: rgba(255,255,255,0.7);
+            color: var(--primary);
+            border: none;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            border: 1px solid rgba(80,34,116,0.1);
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background: var(--primary);
+            color: white;
         }
 
         footer {
@@ -279,6 +413,9 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .footer-links a:hover {
@@ -290,11 +427,191 @@
             color: rgba(255,255,255,0.7);
         }
 
+        .to-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(80,34,116,0.3);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 100;
+        }
+
+        .to-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .to-top-btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            width: 600px;
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+            background: none;
+            border: none;
+        }
+
+        .modal-title {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .book-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .book-details-row {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .book-modal-cover {
+            width: 180px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            border: 3px solid var(--success);
+            box-shadow: 0 8px 24px rgba(126,196,207,0.14);
+        }
+
+        .book-info {
+            flex: 1;
+        }
+
+        .book-modal-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .book-modal-author {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .book-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .book-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-item {
+            background: rgba(80,34,116,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .modal-btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .modal-btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+
+        .modal-btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .modal-btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .modal-btn-secondary:hover {
+            background: rgba(80,34,116,0.1);
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 800px) {
             .book-grid { grid-template-columns: 1fr; }
             header { padding: 1.5rem 0 1rem; }
             .book-actions { flex-direction: column; align-items: center; }
             .book-actions a { width: 80%; max-width: none; }
+            .book-details-row { flex-direction: column; }
+            .book-modal-cover { align-self: center; }
         }
         
         @media (max-width: 480px) {
@@ -305,168 +622,34 @@
             .book-title { font-size: 1.2rem; }
             .book-author { font-size: 1rem; }
             .footer-links { gap: 1rem; }
+            .modal-content { padding: 1.5rem; width: 95%; }
+            .modal-title { font-size: 1.3rem; }
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-           /* Premium Footer Styles */
-    #tazft-footer {
-      background: linear-gradient(135deg, #232526 0%, #414345 100%); 
-      color: #fff; 
-      padding: 8px 0 2px 0; 
-      font-family: 'Segoe UI', Arial, sans-serif; 
-      box-shadow: 0 -4px 24px rgba(0,0,0,0.3); 
-      position: relative; 
-      z-index: 2222; 
-      border-radius: 15px 15px 0 0; 
-      max-width: 430px; 
-      margin: 0 auto; 
-      border-top: 2px solid #fcb90055;
-    }
-
-    .tazft-explore-btn {
-      background: linear-gradient(135deg, #fcb900 0%, #fc4a1a 100%);
-      color: #fff; border: none; border-radius: 12px;
-      font-weight: 700; font-size: 0.95rem; padding: 9px 18px 9px 15px;
-      cursor: pointer; box-shadow: 0 4px 14px rgba(252,185,0,0.27);
-      letter-spacing: 0.11px; outline: none; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-      border: 2px solid rgba(255,255,255,0.22);
-      text-shadow: 0 1px 2px rgba(0,0,0,0.19);
-    }
-    .tazft-explore-btn:hover, .tazft-explore-btn:focus {
-      background: linear-gradient(135deg, #fc4a1a 0%, #fcb900 100%);
-      color: #232526; box-shadow: 0 6px 20px rgba(252,185,0,0.32); transform: scale(1.06);
-    }
-
-    .tazft-modal {
-      display: none; position: fixed; z-index: 99999;
-      left: 0; top: 0; width: 100vw; height: 100vh;
-      background: radial-gradient(ellipse at center, rgba(34,37,59,0.92) 66%,rgba(74,78,105,0.86) 100%);
-      justify-content: center; align-items: center;
-      animation: tazft-modalBgIn 0.18s ease-out;
-    }
-    @keyframes tazft-modalBgIn { from { opacity:0; } to { opacity:1; } }
-    .tazft-modal-content { 
-      background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(252,185,0,0.07) 100%);
-      color: #232526; border-radius: 14px;
-      box-shadow: 0 8px 22px 4px rgba(0,0,0,0.23), 0 2px 8px rgba(252,185,0,0.13);
-      padding: 15px; width: 97vw; 
-      max-width: 315px; position: relative; text-align: left;
-      animation: tazft-popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border: 1px solid rgba(255,255,255,0.2); outline: 1px solid rgba(255,255,255,0.06);
-      min-height: 38px; font-size: 0.98rem; backdrop-filter: blur(10px);
-    }
-    .tazft-glass { background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(35,37,38,0.89) 100%); backdrop-filter: blur(13px); }
-    .tazft-premium-option-wrap { display: flex; flex-wrap: wrap; gap: 16px 12px; justify-content: center; margin-top: 10px; }
-    .tazft-pill-option {
-      background: linear-gradient(135deg, rgba(255,255,255,0.91) 0%, #fcb900 100%);
-      color: #232526; border: none; border-radius: 999px;
-      font-weight: 700; font-size: 0.97rem; padding: 10px 20px 10px 14px;
-      cursor: pointer; box-shadow: 0 2px 7px rgba(0,0,0,0.08);
-      display: flex; align-items: center; gap: 8px; min-width: 108px;
-      position: relative; border: 1px solid rgba(252,185,0,0.18); transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    .tazft-pill-option .tazft-option-icon { width: 27px; height: 27px; font-size: 1em; margin-right:1px; }
-    .tazft-pill-option .tazft-option-label { font-size: 1em; font-weight: 700; }
-    .tazft-pill-option:hover, .tazft-pill-option:focus {
-      background: linear-gradient(135deg, #fcb900 0%, #8f94fb 100%);
-      color: #232526; transform: scale(1.07) translateY(-1px);
-    }
-    .tazft-premium-card { border: 1px solid rgba(252,185,0,0.18); box-shadow: 0 4px 12px rgba(0,0,0,0.10); margin-bottom: 0; margin-top: 5px; padding-bottom: 10px; padding-top: 7px; border-radius: 10px; }
-    .tazft-premium-glass-gold { background: linear-gradient(135deg, rgba(252,185,0,0.09) 0%, rgba(255,255,255,0.92) 100%); }
-    .tazft-premium-glass-blue { background: linear-gradient(135deg, rgba(143,148,251,0.07) 0%, rgba(255,255,255,0.91) 100%); }
-    .tazft-premium-glass-dark { background: linear-gradient(135deg, rgba(35,37,38,0.94) 0%, rgba(65,67,69,0.96) 100%); color: #fff; }
-    .tazft-card-attractive { box-shadow: 0 4px 12px rgba(0,0,0,0.10); }
-    .tazft-card-title { font-weight: 700; font-size: 1em; letter-spacing: 0.3px; }
-    .tazft-hi-initials, .tazft-card-badge { border-radius: 7px; padding: 3px 9px; font-size: 1em; font-weight: 700; box-shadow: 0 2px 8px rgba(252,185,0,0.10); }
-    .tazft-bg-blue { background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%); color: #fff; }
-    .tazft-bg-dark { background: linear-gradient(135deg, #232526 0%, #414345 100%); color: #fcb900;}
-    .tazft-card-section { margin-bottom: 7px; font-size: 0.97em; color: #232526; line-height: 1.35; }
-    .tazft-card-divider { border-top: 1px solid rgba(252,185,0,0.13); margin: 9px 0; }
-    .tazft-card-contact-title { font-weight: 600; color: #fcb900; margin-bottom: 6px; font-size: 0.98em; }
-    .tazft-card-contact { margin-bottom: 7px; }
-    .tazft-card-icon { display: inline-block; width: 1.4em; }
-    .tazft-contact-link { color: #fcb900; text-decoration: none; font-weight: 500; transition: all 0.18s; font-size: 0.97em; }
-    .tazft-contact-link:hover, .tazft-contact-link:focus { color: #8f94fb; text-decoration: underline; }
-    .tazft-fb-list { display: flex; flex-direction: column; gap: 8px 0; margin-bottom: 2px; }
-    .tazft-fb-profile { display: flex; align-items: center; gap: 7px; text-decoration: none; font-size: 0.96em; font-weight: 600; color: #232526; transition: all 0.22s; padding: 7px 8px; border-radius: 8px; background: rgba(255,255,255,0.8); }
-    .tazft-fb-profile img { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #fff; background: #fff; object-fit: cover; }
-    .tazft-fb-avatar-border { padding: 1px; border-radius: 50%; }
-    .tazft-fb-profile span { color: #1877f2; font-weight: 700; letter-spacing: 0.1px;}
-    .tazft-fb-profile:hover { background: #fff; transform: translateY(-1px);}
-    .tazft-fb-profile:hover span { color: #fcb900;}
-    .tazft-social-links { display: flex; flex-wrap: wrap; gap: 5px 4px; font-size: 0.97em; margin-top: 6px; justify-content: center; }
-    .tazft-contact-social { color: #fcb900; text-decoration: none; background: linear-gradient(135deg, rgba(252,185,0,0.08) 0%, rgba(255,255,255,0.79) 100%); border-radius: 20px; padding: 4px 10px; font-weight: 600; font-size: 0.95em; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);}
-    .tazft-contact-social:hover, .tazft-contact-social:focus { background: linear-gradient(135deg, #8f94fb 0%, #fcb900 100%); color: #fff; transform: scale(1.05) translateY(-1px);}
-    .tazft-card-section ul { margin: 0; padding-left: 1em; line-height: 1.3;}
-    .tazft-card-section ul li { margin-bottom: 5px;}
-    .tazft-bullet { font-size: 1em; font-weight: 700; margin-right: 6px; }
-    .tazft-gold { color: #fcb900; }
-    .tazft-blue { color: #8f94fb; }
-    /* Modal controls */
-    .tazft-close-btn.tazft-cross, .tazft-back-btn.tazft-creative { position: absolute; top: 10px; right: 10px; left: auto; background: linear-gradient(135deg, #fcb900 40%, #fff 120%); border: none; font-size: 1em; cursor: pointer; padding: 0; border-radius: 50%; width: 28px; height: 28px; min-width: 28px; min-height: 28px; box-shadow: 0 2px 7px rgba(0,0,0,0.14); border: 1.2px solid #ffedb8; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); outline: none; z-index: 2;}
-    .tazft-close-btn.tazft-cross:hover, .tazft-close-btn.tazft-cross:focus, 
-    .tazft-back-btn.tazft-creative:hover, .tazft-back-btn.tazft-creative:focus { background: linear-gradient(135deg, #fff 20%, #fcb900 100%); color: #232526; transform: scale(1.09);}
-    .tazft-back-btn.tazft-bluebtn svg ellipse { fill: #8f94fb!important; stroke: #232526!important;}
-    .tazft-back-btn.tazft-bluebtn svg polyline { stroke: #fff!important;}
-    .tazft-back-btn.tazft-darkbtn svg ellipse { fill: #232526!important; stroke: #fcb900!important;}
-    .tazft-back-btn.tazft-darkbtn svg polyline { stroke: #fcb900!important;}
-    @keyframes tazft-popIn { 0% { transform: scale(0.85) rotate(-5deg); opacity: 0; filter: blur(1.5px); } 55% { transform: scale(1.05) rotate(2deg); filter: blur(0); } 85% { transform: scale(0.97) rotate(-1deg); } 100% { transform: scale(1) rotate(0); opacity: 1; filter: blur(0); } }
-    
-         /* Footer Responsive */
-        .tazft-modal-content, .tazft-glass, .tazft-adv-modal { 
-          padding: 8px 2vw; 
-          max-width: 99vw;
-        } 
-        .tazft-pill-option { 
-          padding: 8px 3vw 8px 3vw; 
-          font-size: 0.96em;
-        }
-        .tazft-close-btn.tazft-cross, 
-        .tazft-back-btn.tazft-creative { 
-          top: 6px; 
-          right: 6px;
-        }
-        .tazft-fb-profile img { 
-          width: 22px; 
-          height: 22px;
-        }
-    }
-    
-    @media (max-width: 400px) {
-        .ultra-modal-tab { padding: 6px 2px; font-size: 0.85rem; }
-        .ultra-modal { border-radius: 1.2rem;}
-    }
     </style>
 </head>
 <body>
     <header>
-    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 1rem;">
-        <a href="index.html" style="background: rgba(255,255,255,0.2); color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 700; font-size: 1rem; transition: 0.3s; display: flex; align-items: center; gap: 5px;">
-            <span style="font-size: 1.2em;">←</span> Back
-        </a>
-        <h1>PDF Library</h1>
-        <div style="width: 48px;"></div> <!-- Empty div for balance -->
-    </div>
-</header>
-
-
-
-
+        <div class="header-container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back</span>
+            </a>
+            <h1>Library - PDF Books</h1>
+            <div style="width: 48px;"></div> <!-- Empty div for balance -->
+        </div>
+    </header>
 
     <main>
         <div class="search-container">
             <div class="search-bar" role="search">
-                <input type="text" id="searchInput" placeholder="Search books..." autocomplete="off" oninput="filterBooks()">
-                <button onclick="filterBooks()">Search</button>
+                <input type="text" id="searchInput" placeholder="Search books by title or author..." autocomplete="off" oninput="filterBooks()">
+                <button onclick="filterBooks()">
+                    <i class="fas fa-search"></i>
+                    <span>Search</span>
+                </button>
             </div>
-        </div>
+            
+     
         
         <section class="book-grid" id="bookGrid">
             <div class="loading" id="loadingIndicator">
@@ -475,210 +658,111 @@
         </section>
     </main>
 
+    <footer>
+        <div class="footer-content">
+           
+            <div class="copyright">
+                &copy; <span id="currentYear"></span> Islamic PDF Library. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
-
-
-
-
-
-
-
-
-    <!-- Premium Footer -->
-<footer id="tazft-footer">
-  <div class="tazft-bar" style="display: flex; align-items: center; justify-content: center; gap: 15px; padding: 6px 0 4px 0;">
-    <span class="tazft-footer-copyright" style="font-size: 1rem; color: #fcb900; letter-spacing: 0.5px; font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,0.3); transition:.18s;">&copy; 2025 Hafizul</span>
-    <button onclick="tazftOpenModal('tazft-main-modal')" aria-label="Open navigation"
-      class="tazft-explore-btn tazft-explore-btn-custom" style="background: linear-gradient(135deg, #fcb900 0%, #fc4a1a 100%); box-shadow: 0 4px 20px rgba(252,185,0,0.3);">
-      <span style="font-size:1.14em; filter:drop-shadow(0 1px 1px rgba(0,0,0,0.3)); color:#232526;">☰</span>
-      <span style="font-size:0.97em; font-weight:700; letter-spacing:.2px; color:#fff; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">Explore</span>
-    </button>
-  </div>
-  
-  <!-- Main Navigation Modal -->
-  <div id="tazft-main-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
-    <div class="tazft-modal-content tazft-glass animate-pop" style="background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(35,37,38,0.97) 100%); backdrop-filter: blur(14px); padding:18px 6vw; max-width:320px;">
-      <button class="tazft-close-btn tazft-cross" onclick="tazftCloseModal('tazft-main-modal')" aria-label="Close" title="Close">
-        <span aria-hidden="true" style="display:block;font-size:1.25em;line-height:1;">&times;</span>
-      </button>
-      <div class="tazft-premium-option-wrap" style="gap:16px 12px; margin-top:16px;">
-        <button onclick="tazftOpenSubModal('tazft-about-modal');" class="tazft-pill-option" style="background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, #fcb900 100%);color:#232526;">
-          <span class="tazft-option-icon tazft-glow-gold" style="background: linear-gradient(135deg, #fcb900 0%, #f7b733 100%);color:#232526;">&#8505;</span>
-          <span class="tazft-option-label">About</span>
-        </button>
-        <button onclick="tazftOpenSubModal('tazft-services-modal');" class="tazft-pill-option" style="background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, #8f94fb 100%);color:#232526;">
-          <span class="tazft-option-icon tazft-glow-blue" style="background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%);color:#fff;">&#9881;</span>
-          <span class="tazft-option-label">Services</span>
-        </button>
-        <button onclick="tazftOpenSubModal('tazft-features-modal');" class="tazft-pill-option" style="background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, #232526 100%);color:#fcb900;">
-          <span class="tazft-option-icon tazft-glow-dark" style="background: linear-gradient(135deg, #232526 0%, #414345 100%); color: #fcb900;">&#9733;</span>
-          <span class="tazft-option-label">Features</span>
-        </button>
-      </div>
+    <div class="to-top-btn" id="toTopBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
     </div>
-  </div>
-  
-  <!-- About Modal -->
-  <div id="tazft-about-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
-    <div class="tazft-modal-content animate-pop tazft-adv-modal" style="max-width: 288px; padding: 12px 6vw 18px 6vw;">
-      <button class="tazft-back-btn tazft-creative" onclick="tazftBackToMenu('tazft-about-modal')" aria-label="Back" title="Back">
-        <svg viewBox="0 0 29 29" width="20" height="20"><ellipse cx="14.5" cy="14.5" rx="13.5" ry="13.5" fill="#fcb900" stroke="#4a4e69" stroke-width="2"/><polyline points="17,9 12,14.5 17,20" fill="none" stroke="#232526" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="tazft-premium-card tazft-premium-glass-gold tazft-card-attractive" style="padding:12px 8px 10px 8px;">
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
-          <span class="tazft-hi-initials" style="padding:3px 9px;font-size:1em;background:#232526;color:#fcb900;">HI</span>
-          <div class="tazft-card-title" style="font-size:1em; color: #fcb900;">About Developer</div>
-        </div>
-        <div class="tazft-card-section" style="font-size:0.99em; line-height:1.38; color: #232526;">
-          <b style="font-size: 1.01em; color:#232526;">Hafizul Islam</b><br>
-          <span style="color: #4e54c8; font-weight: 700;">Owner &amp; Lead Developer</span><br>
-          <span style="margin-top:4px; font-size:0.98em; color:#232526;">Crafting <span style="color:#000000;font-weight:400;">world-class</span> web experiences</span>
-        </div>
-        <div class="tazft-card-divider" style="margin:11px 0; border-top: 1px solid rgba(252,185,0,0.3);"></div>
-        <div class="tazft-card-section tazft-card-contact" style="font-size:0.98em; color: #232526;">
-          <div class="tazft-card-contact-title" style="margin-bottom:6px; color: #4e54c8; font-weight: 700;">Contact</div>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <span class="tazft-card-icon" style="background:#4e54c8;color:#fff;width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;">📧</span>
-            <a href="mailto:hafizul9996@gmail.com" class="tazft-contact-link" style="color:#4e54c8;font-weight:600;">hafizul9996@gmail.com</a>
-          </div>
-          <div style="display:flex;align-items:center;gap:6px;margin-top:5px;">
-            <span class="tazft-card-icon" style="background:#fc4a1a;color:#fff;width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;">📞</span>
-            <a href="tel:+8801744348961" class="tazft-contact-link" style="color:#000000;font-weight:600;">01744348961</a>
-          </div>
-          <div class="tazft-card-contact-title" style="margin:10px 0 6px 0;font-size:0.98em;color:#4e54c8;font-weight:700;">Socials</div>
-          <div class="tazft-fb-list" style="gap:8px;">
-            <a href="https://facebook.com/your.profile1" target="_blank" class="tazft-fb-profile tazft-fb-visible" style="padding:7px 8px;background:rgba(255,255,255,0.9);">
-              <span class="tazft-fb-avatar-border"><img src="https://graph.facebook.com/100011122233344/picture?width=32&height=32" alt="Facebook Profile 1" style="width:28px;height:28px;"></span>
-              <span style="margin-left:8px;color:#1877f2;font-weight:600;">/your.profile1</span>
-            </a>
-            <a href="https://facebook.com/your.profile2" target="_blank" class="tazft-fb-profile tazft-fb-visible" style="padding:7px 8px;background:rgba(255,255,255,0.9);">
-              <span class="tazft-fb-avatar-border"><img src="https://graph.facebook.com/100022233344455/picture?width=32&height=32" alt="Facebook Profile 2" style="width:28px;height:28px;"></span>
-              <span style="margin-left:8px;color:#1877f2;font-weight:600;">/your.profile2</span>
-            </a>
-          </div>
-          <div class="tazft-social-links" style="margin-top:10px;gap:6px;">
-            <a href="https://www.youtube.com/" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#fc4a1a 0,#fcb900 100%);color:#fff;font-weight:600;padding:5px 12px;">YouTube</a>
-            <a href="https://wa.me/8801744348961" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#25d366 0,#128c7e 100%);color:#fff;font-weight:600;padding:5px 12px;">WhatsApp</a>
-            <a href="https://t.me/" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#229ed9 0,#0088cc 100%);color:#fff;font-weight:600;padding:5px 12px;">Telegram</a>
-            <a href="https://github.com/hafizul99" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#232526 0,#414345 100%);color:#fcb900;font-weight:600;padding:5px 12px;">GitHub</a>
-            <a href="https://linkedin.com/in/hafizul99" target="_blank" class="tazft-contact-social" style="background:linear-gradient(135deg,#0077b5 0,#00a0dc 100%);color:#fff;font-weight:600;padding:5px 12px;">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Services Modal -->
-  <div id="tazft-services-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
-    <div class="tazft-modal-content animate-pop tazft-adv-modal" style="max-width: 288px; padding: 12px 6vw 18px 6vw;">
-      <button class="tazft-back-btn tazft-creative tazft-bluebtn" onclick="tazftBackToMenu('tazft-services-modal')" aria-label="Back" title="Back">
-        <svg viewBox="0 0 29 29" width="20" height="20"><ellipse cx="14.5" cy="14.5" rx="13.5" ry="13.5" fill="#8f94fb" stroke="#232526" stroke-width="2"/><polyline points="17,9 12,14.5 17,20" fill="none" stroke="#fff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="tazft-premium-card tazft-premium-glass-blue tazft-card-attractive" style="padding:12px 8px 10px 8px;">
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
-          <span class="tazft-card-badge tazft-bg-blue" style="padding:3px 9px;font-size:1em;">S</span>
-          <div class="tazft-card-title" style="font-size:1em; color:#8f94fb;">Professional Services</div>
-        </div>
-        <div class="tazft-card-section" style="font-size:0.99em;">
-          <ul style="padding-left:0; margin:0;">
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-gold" style="color:#fc4a1a;">1</span>
-              <span style="color:#232526;">Premium Web & App Development</span>
-            </li>
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">2</span>
-              <span style="color:#232526;">Responsive UI/UX, Branding & Design</span>
-            </li>
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-gold" style="color:#fcb900;">3</span>
-              <span style="color:#232526;">E-commerce & Payment Integration</span>
-            </li>
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-blue" style="color:#4e54c8;">4</span>
-              <span style="color:#232526;">Automation, API & System Integration</span>
-            </li>
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-gold" style="color:#fc4a1a;">5</span>
-              <span style="color:#232526;">SEO, Performance & Analytics</span>
-            </li>
-            <li style="display: flex; gap: 6px; margin-bottom:7px;">
-              <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">6</span>
-              <span style="color:#232526;">Security Consulting & Hardening</span>
-            </li>
-            <li style="display: flex; gap: 6px;">
-              <span class="tazft-bullet tazft-gold" style="color:#fcb900;">7</span>
-              <span style="color:#232526;">Maintenance & Lifetime Support</span>
-            </li>
-          </ul>
-        </div>
-        <div class="tazft-card-divider" style="margin:9px 0;"></div>
-        <div class="tazft-card-section" style="font-size:0.96em;">
-          <div class="tazft-card-contact-title" style="margin-bottom:6px; color:#8f94fb;">About & Website</div>
-          <ul style="padding-left:0; margin:0;">
-            <li style="display:flex;gap:6px;">
-              <span class="tazft-bullet tazft-blue" style="font-size:1em;color:#8f94fb;">✓</span>
-              <span style="color:#232526;">This site is developed and maintained by Hafizul Islam.</span>
-            </li>
-            <li style="display:flex;gap:6px;">
-              <span class="tazft-bullet tazft-gold" style="font-size:1em;color:#fcb900;">✓</span>
-              <span style="color:#232526;">Comprehensive info about services & features.</span>
-            </li>
-            <li style="display:flex;gap:6px;">
-              <span class="tazft-bullet tazft-blue" style="font-size:1em;color:#4e54c8;">✓</span>
-              <span style="color:#232526;">Modern aesthetics, mobile-first design, premium UX.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Features Modal -->
-  <div id="tazft-features-modal" class="tazft-modal" role="dialog" aria-modal="true" tabindex="-1">
-    <div class="tazft-modal-content animate-pop tazft-adv-modal" style="max-width: 288px; padding: 12px 6vw 18px 6vw;">
-      <button class="tazft-back-btn tazft-creative tazft-darkbtn" onclick="tazftBackToMenu('tazft-features-modal')" aria-label="Back" title="Back">
-        <svg viewBox="0 0 29 29" width="20" height="20"><ellipse cx="14.5" cy="14.5" rx="13.5" ry="13.5" fill="#232526" stroke="#fcb900" stroke-width="2"/><polyline points="17,9 12,14.5 17,20" fill="none" stroke="#fcb900" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="tazft-premium-card tazft-premium-glass-dark tazft-card-attractive" style="color:#fff; padding:12px 8px 10px 8px;">
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
-          <span class="tazft-card-badge tazft-bg-dark" style="padding:3px 9px;font-size:1em;">F</span>
-          <div class="tazft-card-title" style="color:#fcb900;font-size:1em;">Key Features</div>
-        </div>
-        <ul style="padding-left:0; margin:0;font-size:0.99em;">
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
-            <span style="color:#fff;">Modern Aesthetics &amp; Animations</span>
-          </li>
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">★</span>
-            <span style="color:#fff;">Adaptive Theming (Glassmorphism, Gradients)</span>
-          </li>
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
-            <span style="color:#fff;">Mobile-first Responsive UI</span>
-          </li>
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">★</span>
-            <span style="color:#fff;">One-click Social &amp; Chat Links</span>
-          </li>
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
-            <span style="color:#fff;">Modular, Clean, Scalable Code</span>
-          </li>
-          <li style="display: flex; gap: 7px; margin-bottom:5px;">
-            <span class="tazft-bullet tazft-blue" style="color:#8f94fb;">★</span>
-            <span style="color:#fff;">Secure, Ultra-fast Hosting</span>
-          </li>
-          <li style="display: flex; gap: 7px;">
-            <span class="tazft-bullet tazft-gold" style="color:#fcb900;">★</span>
-            <span style="color:#fff;">Accessibility &amp; UX Best Practices</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
 
+    <!-- Book Details Modal -->
+    <div class="modal" id="bookModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('bookModal')">&times;</button>
+            <h2 class="modal-title" id="modalBookTitle">Book Title</h2>
+            <div class="book-details">
+                <div class="book-details-row">
+                    <img src="" alt="Book Cover" class="book-modal-cover" id="modalBookCover">
+                    <div class="book-info">
+                        <h3 class="book-modal-title" id="modalBookTitleText"></h3>
+                        <p class="book-modal-author" id="modalBookAuthor"></p>
+                        <div class="book-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-book-open"></i>
+                                <span id="modalBookPages">250 pages</span>
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-file-pdf"></i>
+                                <span id="modalBookSize">5.2 MB</span>
+                            </span>
+                        </div>
+                        <p class="book-description" id="modalBookDescription">
+                            Loading description...
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <a href="#" class="modal-btn modal-btn-primary" id="modalDownloadBtn" target="_blank">
+                        <i class="fas fa-download"></i>
+                        <span>Download PDF</span>
+                    </a>
+                    <button class="modal-btn modal-btn-secondary" onclick="closeModal('bookModal')">
+                        <i class="fas fa-times"></i>
+                        <span>Close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  
+    <!-- Request Book Modal -->
+    <div class="modal" id="requestModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('requestModal')">&times;</button>
+            <h2 class="modal-title">Request a Book</h2>
+            <div class="book-details">
+                <p>Can't find the book you're looking for? Let us know and we'll try to add it to our library!</p>
+                
+                <form id="bookRequestForm" style="margin-top: 1.5rem;">
+                    <div style="margin-bottom: 1rem;">
+                        <label for="bookTitle" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Book Title*</label>
+                        <input type="text" id="bookTitle" required style="width: 100%; padding: 0.8rem; border-radius: var(--radius-sm); border: 1px solid #ddd;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="bookAuthor" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Author</label>
+                        <input type="text" id="bookAuthor" style="width: 100%; padding: 0.8rem; border-radius: var(--radius-sm); border: 1px solid #ddd;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="bookCategory" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Category</label>
+                        <select id="bookCategory" style="width: 100%; padding: 0.8rem; border-radius: var(--radius-sm); border: 1px solid #ddd;">
+                            <option value="fiqh">Fiqh</option>
+                            <option value="aqeedah">Aqeedah</option>
+                            <option value="seerah">Seerah</option>
+                            <option value="hadith">Hadith</option>
+                            <option value="tazkiyah">Tazkiyah</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="bookNotes" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Additional Notes</label>
+                        <textarea id="bookNotes" rows="4" style="width: 100%; padding: 0.8rem; border-radius: var(--radius-sm); border: 1px solid #ddd;"></textarea>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button type="submit" class="modal-btn modal-btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Submit Request</span>
+                        </button>
+                        <button type="button" class="modal-btn modal-btn-secondary" onclick="closeModal('requestModal')">
+                            <i class="fas fa-times"></i>
+                            <span>Cancel</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script>
         const books = [
@@ -687,44 +771,82 @@
                 author: "Imam an-Nawawi",
                 cover: "https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/r/i/riyadus-saliheen.jpg",
                 pdf: "https://ia601901.us.archive.org/32/items/riyad-us-saliheen-english-translation/Riyad%20us-Saliheen%20-%20English%20Translation.pdf",
+                
+                
+                category: "seerah",
+                pages: 680,
+                size: "7.1 MB",
+                description: "Riyad as-Salihin is a classic compilation of authentic hadith from the Prophet Muhammad (peace be upon him) by Imam an-Nawawi. The book covers various aspects of Islamic life including worship, manners, and social conduct.",
                 popular: true
             }, 
-            {
-                title: "Fortress of the Muslim",
-                author: "Sa'id bin Ali bin Wahf Al-Qahtani",
-                cover: "https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/f/o/fortress_of_the_muslim.jpg",
-                pdf: "https://www.kalamullah.com/Books/Fortress%20of%20the%20Muslim.pdf",
-                popular: true
-            },
-            {
-                title: "The Life of Prophet Muhammad",
-                author: "Safii-ur-Rahman al-Mubarakpuri",
-                cover: "https://images-na.ssl-images-amazon.com/images/I/51+4f8X4hLL._SX336_BO1,204,203,200_.jpg",
-                pdf: "https://ia802504.us.archive.org/17/items/ArRaheeqEnglish/Ar-Raheeq%20English.pdf",
-                popular: true
-            },
+            
+            
+            
+            
+            
+            
+            
+            
+           
             {
                 title: "Stories of the Prophets",
                 author: "Ibn Kathir",
                 cover: "https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/s/t/stories-of-the-prophets-ibn-kathir.jpg",
-                pdf: "https://ia802909.us.archive.org/18/items/StoriesOfTheProphetsByIbnKathir_201303/Stories%20of%20the%20Prophets%20by%20Ibn%20Kathir.pdf"
-            }
+                pdf: "https://ia802909.us.archive.org/18/items/StoriesOfTheProphetsByIbnKathir_201303/Stories%20of%20the%20Prophets%20by%20Ibn%20Kathir.pdf",
+                category: "seerah",
+                pages: 680,
+                size: "7.1 MB",
+                description: "Ibn Kathir's classic work on the stories of the prophets from Adam to Jesus (peace be upon them all). The book provides valuable lessons from the lives of these noble messengers of Allah.",
+                new: true
+            },
+            
+            
+            
+            
+            
+            
+            
+            
+            {
+                title: "The Fundamentals of Tawheed",
+                author: "Dr. Bilal Philips",
+                cover: "https://www.darussalam.com/media/catalog/product/cache/1/image/500x650/9df78eab33525d08d6e5fb8d27136e95/f/u/fundamentals-of-tawheed.jpg",
+                pdf: "https://www.kalamullah.com/Books/The%20Fundamentals%20of%20Tawheed.pdf",
+                category: "aqeedah",
+                pages: 280,
+                size: "2.8 MB",
+                description: "A clear and concise explanation of the Islamic concept of monotheism (Tawheed) and its importance in the life of a Muslim. The book refutes common misconceptions and innovations."
+            },
+            
+            
+            
+           
+    
         ];
 
         const bookGrid = document.getElementById('bookGrid');
         const loadingIndicator = document.getElementById('loadingIndicator');
         const searchInput = document.getElementById('searchInput');
+        const toTopBtn = document.getElementById('toTopBtn');
+        let currentCategory = 'all';
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         function createBookCard(book, idx) {
             return `
-            <div class="book-card" tabindex="0">
+            <div class="book-card" tabindex="0" onclick="openBookModal(${idx})" data-category="${book.category}">
                 ${book.popular ? '<div class="badge-popular">POPULAR</div>' : ''}
+                ${book.new ? '<div class="badge-new">NEW</div>' : ''}
                 <img class="book-cover" src="${book.cover}" alt="${book.title}" loading="lazy" 
                      onerror="this.src='https://via.placeholder.com/160x220?text=Book+Cover'">
                 <div class="book-title">${book.title}</div>
                 <div class="book-author">${book.author}</div>
                 <div class="book-actions">
-                    <a href="${book.pdf}" target="_blank" rel="noopener noreferrer">Download PDF</a>
+                    <a href="${book.pdf}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                        <i class="fas fa-download"></i>
+                        <span>Download</span>
+                    </a>
                 </div>
             </div>`;
         }
@@ -734,10 +856,12 @@
             
             if (filteredBooks.length === 0) {
                 bookGrid.innerHTML = `
-                    <div style="grid-column:1/-1;text-align:center;padding:2rem;">
-                        <p style="font-size:1.2rem;color:#666;margin-bottom:1rem;">No books found matching your search.</p>
-                        <button onclick="resetSearch()" style="padding:0.7rem 1.5rem;background:var(--primary);color:white;border:none;border-radius:var(--radius);cursor:pointer;font-weight:600;">
-                            Reset Search
+                    <div class="no-results">
+                        <i class="fas fa-book-open no-results-icon"></i>
+                        <p style="font-size:1.2rem;color:var(--primary);margin-bottom:1rem;">No books found matching your search.</p>
+                        <button class="reset-btn" onclick="resetSearch()">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Reset Search</span>
                         </button>
                     </div>`;
             } else {
@@ -747,18 +871,112 @@
 
         function filterBooks() {
             const searchTerm = searchInput.value.trim().toLowerCase();
-            const filtered = books.filter(book => 
-                book.title.toLowerCase().includes(searchTerm) ||
-                book.author.toLowerCase().includes(searchTerm)
-            );
+            let filtered = books;
+            
+            // Filter by category first
+            if (currentCategory !== 'all') {
+                filtered = filtered.filter(book => book.category === currentCategory);
+            }
+            
+            // Then filter by search term if there is one
+            if (searchTerm) {
+                filtered = filtered.filter(book => 
+                    book.title.toLowerCase().includes(searchTerm) ||
+                    book.author.toLowerCase().includes(searchTerm)
+                );
+            }
+            
             loadBooks(filtered);
+        }
+
+        function filterByCategory(category) {
+            currentCategory = category;
+            
+            // Update active state of category buttons
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(category) || 
+                    (category === 'all' && btn.textContent.includes('All'))) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            filterBooks();
         }
 
         function resetSearch() {
             searchInput.value = '';
+            currentCategory = 'all';
+            filterByCategory('all');
             loadBooks(books);
             searchInput.focus();
         }
+
+        function openBookModal(index) {
+            const book = books[index];
+            
+            document.getElementById('modalBookTitle').textContent = book.title;
+            document.getElementById('modalBookTitleText').textContent = book.title;
+            document.getElementById('modalBookAuthor').textContent = `By ${book.author}`;
+            document.getElementById('modalBookCover').src = book.cover;
+            document.getElementById('modalBookCover').alt = book.title;
+            document.getElementById('modalBookPages').textContent = `${book.pages} pages`;
+            document.getElementById('modalBookSize').textContent = book.size;
+            document.getElementById('modalBookDescription').textContent = book.description;
+            document.getElementById('modalDownloadBtn').href = book.pdf;
+            
+            openModal('bookModal');
+        }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openAboutModal() {
+            openModal('aboutModal');
+        }
+
+        function openContactModal() {
+            openModal('contactModal');
+        }
+
+        function openDonateModal() {
+            openModal('donateModal');
+        }
+
+        function openRequestModal() {
+            openModal('requestModal');
+        }
+
+        // Scroll to top button
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                toTopBtn.classList.add('visible');
+            } else {
+                toTopBtn.classList.remove('visible');
+            }
+        });
+
+        toTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Handle book request form submission
+        document.getElementById('bookRequestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your book request! We will review it and add it to our library if appropriate.');
+            closeModal('requestModal');
+            this.reset();
+        });
 
         window.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
@@ -768,63 +986,16 @@
             searchInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') filterBooks();
             });
+            
+            // Close modal when clicking outside content
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeModal(this.id);
+                    }
+                });
+            });
         });
-        
-        
-        
-        
-        
-        
-        // Footer Modal Functions
-function tazftOpenModal(id) {
-  document.querySelectorAll('.tazft-modal').forEach(m => m.style.display = 'none');
-  document.getElementById(id).style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  setTimeout(function() {
-    const modal = document.getElementById(id);
-    const focusable = modal.querySelectorAll('a,button,input,[tabindex]:not([tabindex="-1"])');
-    if (focusable.length) focusable[0].focus();
-    modal.setAttribute('tabindex', '0');
-  }, 50);
-}
-function tazftOpenSubModal(id) {
-  document.querySelectorAll('.tazft-modal').forEach(m => m.style.display = 'none');
-  document.getElementById(id).style.display = 'flex';
-  setTimeout(function() {
-    const modal = document.getElementById(id);
-    const focusable = modal.querySelectorAll('a,button,input,[tabindex]:not([tabindex="-1"])');
-    if (focusable.length) focusable[0].focus();
-    modal.setAttribute('tabindex', '0');
-  }, 50);
-}
-function tazftBackToMenu(currentId) {
-  tazftCloseModal(currentId);
-  setTimeout(function() { tazftOpenModal('tazft-main-modal'); }, 60);
-}
-function tazftCloseModal(id) {
-  document.getElementById(id).style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
-
-// Accessibility: Escape closes modals
-document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-        document.querySelectorAll('.ultra-modal-overlay.active').forEach(modal => {
-            modal.classList.remove('active');
-        });
-        document.querySelectorAll('.tazft-modal').forEach(modal => {
-            modal.style.display = 'none';
-        });
-        document.body.style.overflow = '';
-        if (currentPlayingMedia) {
-            if (currentPlayingMedia.pause) currentPlayingMedia.pause();
-            if (currentPlayingMedia.stopVideo) currentPlayingMedia.stopVideo();
-            currentPlayingMedia = null;
-        }
-    }
-});
-
     </script>
-    
 </body>
 </html>
